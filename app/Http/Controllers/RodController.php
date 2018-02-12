@@ -26,9 +26,9 @@ class RodController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function about()
     {
-        //
+        return view('about');
     }
 
     /**
