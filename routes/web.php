@@ -18,4 +18,5 @@ Route::get('/', function () {
 
 Route::get('/index','RodController@index')->name('index'); //index
 Route::get('/login','RodController@login')->name('login'); //Login
-Route::get('/about','RodController@about')->name('about'); //Login
+Route::get('/about','RodController@about')->name('about'); //about
+Route::get('/jobPost','RodController@jobPost')->name('jobPost'); //jobpost

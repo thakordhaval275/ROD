@@ -30,6 +30,10 @@ class RodController extends Controller
     {
         return view('about');
     }
+    public function jobPost()
+    {
+        return view('company.jobPost');
+    }
 
     /**
      * Store a newly created resource in storage.
