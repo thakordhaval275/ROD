@@ -48,23 +48,6 @@
 
 @include('footer')
 
-<!-- Copyright Start  -->
-<div id="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="site-info text-center">
-                    <p>All Rights reserved &copy; 2017 - Designed & Developed by <a rel="nofollow" href="http://graygrids.com">GrayGrids</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Copyright End -->
-
-</footer>
-<!-- Footer Section End -->
-
 <!-- Go To Top Link -->
 <a href="#" class="back-to-top">
     <i class="ti-arrow-up"></i>
