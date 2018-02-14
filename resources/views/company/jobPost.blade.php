@@ -1,11 +1,10 @@
 @extends('mainlayout')
-
+@section('pageheader')
+    Job Post
+@endsection
 @section('contain')
     <div class="container">
-        <div class="text-center">
-            <BR>
-            <h1 class="nice" style="color: red;">Post New Job</h1><br>
-        </div>
+
         <form class="form-horizontal" method="post"
               action="#">
             <!-- Text input-->

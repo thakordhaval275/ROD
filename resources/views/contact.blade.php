@@ -1,6 +1,9 @@
 @extends('mainlayout')
-
+@section('pageheader')
+    Contact Us
+@endsection
 @section('contain')
+    <hr>
 <!-- Start Map Section -->
 <div id="google-map"></div>
 <!-- End Map Section -->
