@@ -16,7 +16,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/index','RodController@index')->name('index'); //index
 Route::get('/login','RodController@login')->name('login'); //Login
+
+//Home Page
+Route::get('/index','RodController@index')->name('index'); //index
 Route::get('/about','RodController@about')->name('about'); //about
-Route::get('/jobPost','RodController@jobPost')->name('jobPost'); //jobpost
+Route::get('/contact','RodController@contact')->name('contactus'); //contect
+
+//Company Page
+Route::get('/jobpost','RodController@jobpost')->name('jobpost'); //jobpost
