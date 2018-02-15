@@ -30,10 +30,14 @@ class RodController extends Controller
     {
         return view('contact');
     }
-
-    public function store(Request $request)
+    public function companyprofile()
     {
-        //
+        return view('company.companyProfile');
+    }
+
+    public function signup()
+    {
+        return view('signup');
     }
 
     public function show($id)

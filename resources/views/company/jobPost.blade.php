@@ -4,15 +4,15 @@
 @endsection
 @section('contain')
     <div class="container">
-
-        <form class="form-horizontal" method="post"
+        <br>
+        <form class="form-horizontal" method="get"
               action="#">
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="name">Company Name</label>
 
                 <div class="col-md-4">
-                    <input id="name" name="name" type="text" placeholder="Name of Company" class="form-control input-md" required="">
+                    <input id="name" name="name" type="text" placeholder="Name of Company" class="form-control input-md">
                     <span class="help-block">Please type in your full name</span>
                 </div>
             </div>
@@ -72,7 +72,7 @@
 
                 <div class="col-md-4">
                     <input id="termPeriod" name="termPeriod" type="text" placeholder="Ex.:No of Weeks,No of Days..etc"
-                           class="form-control input-md" required="">
+                           class="form-control input-md">
                     <span class="help-block">Please type in term period</span>
                 </div>
             </div>
@@ -82,7 +82,7 @@
 
                 <div class="col-md-4">
                     <input id="experience" name="experience" type="number" placeholder="experience"
-                           class="form-control input-md" required="">
+                           class="form-control input-md">
                     <span class="help-block">In year</span>
                 </div>
             </div>
@@ -91,8 +91,7 @@
                 <label class="col-md-4 control-label" for="Payment">Payment</label>
 
                 <div class="col-md-4">
-                    <input id="payment" name="payment" type="text" placeholder="Payment" class="form-control input-md"
-                           required="">
+                    <input id="payment" name="payment" type="text" placeholder="Payment" class="form-control input-md">
                     <span class="help-block">Please type in your Payment that you Give</span>
                 </div>
             </div>
@@ -115,7 +114,7 @@
 
                 <div class="col-md-4">
                     <input id="description" name="description" type="text" placeholder="description"
-                           class="form-control input-md" required="">
+                           class="form-control input-md">
                     <span class="help-block">Please provide your brief Description</span>
                 </div>
             </div>
@@ -125,8 +124,8 @@
                 <label class="col-md-4 control-label" for="button1id"></label>
 
                 <div class="col-md-8">
-                    <button type="submit" class="btn btn-success">Save</button>
-                    <a id="cancel" name="cancel" class="btn btn-danger" href="#">
+                    <button type="submit" class="btn btn-common">Save</button>
+                    <a id="cancel" name="cancel" class="btn btn-common" href="#">
                         Cancel</a>
                 </div>
             </div>
