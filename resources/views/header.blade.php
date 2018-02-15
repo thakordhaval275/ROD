@@ -40,7 +40,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right float-right">
                         <li class="left"><a href="{{route('jobpost')}}"><i class="ti-pencil-alt"></i> Post A Job</a></li>
-                        <li class="right"><a href="#"><i class="ti-lock"></i>  Log In</a></li>
+                        <li class="right"><a href="{{route('login')}}"><i class="ti-lock"></i>  Log In</a></li>
                         <li class="btn-m"><a href="#Who can join us"><i class="ti-user"></i>  Sign Up</a></li>
                     </ul>
                 </div>
@@ -60,7 +60,7 @@
                     <a href="{{route('contactus')}}">Contact Us</a>
                 </li>
                 <li class="btn-m"><a href="{{route('jobpost')}}"><i class="ti-pencil-alt"></i> Post A Job</a></li>
-                <li class="btn-m"><a href="#"><i class="ti-lock"></i>  Log In</a></li>
+                <li class="btn-m"><a href="{{route('login')}}"><i class="ti-lock"></i>  Log In</a></li>
                 <li class="btn-m"><a href="#"><i class="ti-user"></i>  Sign Up</a></li>
             </ul>
             <!-- Mobile Menu End -->
