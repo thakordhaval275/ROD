@@ -1,12 +1,10 @@
 @extends('mainlayout')
 @section('pageheader')
-    Company Profile
+    My Account
 @endsection
 @section('contain')
     <div class="container">
-        <div class="text-center">
-            <h1 class="nice">Company Profile</h1>
-        </div>
+        <br>
         <form class="form-horizontal" method="get"
               action="#" enctype="multipart/form-data">
             <!-- Text input-->

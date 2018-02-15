@@ -40,6 +40,10 @@ class RodController extends Controller
         return view('signup');
     }
 
+    public function recruiterprofile()
+    {
+        return view('recruiter.recruiterProfile');
+    }
     public function show($id)
     {
         //

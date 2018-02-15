@@ -4,24 +4,13 @@
 @endsection
 @section('contain')
     <div class="container">
-       <br>
-        <div class="row">
-            <form>
-                <div class="col-md-3"></div>
-                <div class=" form-group input-group col-md-6">
-                    <span class="input-group-addon"><i class="ti-user"></i></span>
-                    <input id="fname" type="text" class="form-control" name="fname" placeholder="First Name">
-                </div><!--/form-group,input grp, col-4-->
-                <div class="col-md-3"></div>
-            </form>
-        </div><!--/row main-->
-
+       <br><br>
         <div class="row">
             <form>
                 <div class="col-md-3"></div>
                 <div class=" form-group input-group col-md-6">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="lname" type="text" class="form-control" name="lname" placeholder="Last Name">
+                    <input id="email" type="text" class="form-control" name="userName" placeholder="User Name">
                 </div><!--/form-group,input grp, col-4-->
                 <div class="col-md-3"></div>
             </form>
@@ -33,17 +22,6 @@
                 <div class=" form-group input-group col-md-6">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                     <input id="email" type="email" class="form-control" name="email" placeholder="Email">
-                </div><!--/form-group,input grp, col-4-->
-                <div class="col-md-3"></div>
-            </form>
-        </div><!--/row main-->
-
-        <div class="row">
-            <form>
-                <div class="col-md-3"></div>
-                <div class=" form-group input-group col-md-6">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="email" type="text" class="form-control" name="userName" placeholder="User Name">
                 </div><!--/form-group,input grp, col-4-->
                 <div class="col-md-3"></div>
             </form>
@@ -82,7 +60,7 @@
             </div>
             <div class="col-md-3"></div>
         </div><!--/row-->
-        <br>
+        <br><br>
     </div><!--/container-->
 
 @endsection
