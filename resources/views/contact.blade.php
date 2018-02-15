@@ -56,24 +56,75 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required data-error="Please enter your name">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" id="email" placeholder="mail@sitename.com" required data-error="Please enter your email">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Massage" rows="11" data-error="Write your message" required></textarea>
+                                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required data-error="Please enter your First Name">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required data-error="Please enter your Last Name">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="emailid" name="emailid" placeholder="E-mail Address" required data-error="Please enter your E-mail Address">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 custom-dropdown">
+                                    <div class="form-group">
+                                        <select id="relationship" data-size="15" class="form-control validate-excluded-field" style="display: inline-block" name="relationship" data-bv-container=".validatorMessage" required data-bv-notempty-message="Please select your Relationship to ROD"  data-ul-id="sendquestion-related-ulid" data-label-id="sendquestion-related-label">
+                                            <option value="">Relationship to ROD</option>
+                                            <option value="#">Company</option>
+                                            <option value="#">Rrecruiter</option>
+                                            <option value="#">Job Seeker</option>
+                                            <option value="#">Other</option>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="companyname" name="companyname" placeholder="Company/Organization" required data-error="Please enter your Company/Organization">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="other" name="other" placeholder="If Other, please specify" required data-error="Please enter your If Other, please specify">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="country" name="country" placeholder="Country/Region" required data-error="Please enter your Country/Region">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contactno" name="contactno" placeholder="Contact No" required data-error="Please enter your Contact No">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="How can we help you ?" rows="11" data-error="Write How can we help you?"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
                                 <div class="col-md-12">
                                     <button type="submit" id="submit" class="btn btn-common">Send Us</button>
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>

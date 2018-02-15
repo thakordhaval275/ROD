@@ -21,14 +21,14 @@ class RodController extends Controller
         return view('about');
     }
 
-    public function jobpost()
-    {
-        return view('company.jobPost');
-    }
-
     public function contact()
     {
         return view('contact');
+    }
+
+    public function jobpost()
+    {
+        return view('company.jobPost');
     }
 
     public function store(Request $request)
