@@ -11,6 +11,11 @@ class RodController extends Controller
         return view('login');
     }
 
+    public function signup()
+    {
+        return view('signup');
+    }
+
     public function index()
     {
         return view('index');
@@ -26,41 +31,22 @@ class RodController extends Controller
         return view('contact');
     }
 
-    public function jobpost()
-    {
-        return view('company.jobPost');
-    }
-    public function companyprofile()
+    //======== Company Pages ==============
+
+    public function companyProfile()
     {
         return view('company.companyProfile');
     }
 
-    public function signup()
+    public function jobpost()
     {
-        return view('signup');
+        return view('company.jobPost');
     }
 
-    public function recruiterprofile()
+    //======== Recruiter Pages ===============
+
+    public function recruiterProfile()
     {
         return view('recruiter.recruiterProfile');
-    }
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

@@ -276,18 +276,12 @@
             <div class="touch-slider" class="owl-carousel owl-theme">
                 <div class="item active text-center">
                     <img class="img-member" src="assets/img/clients/img1.png" alt="">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img class="img-member" src="assets/img/clients/img2.png" alt="">
                 </div>
                 <div class="item text-center">
                     <img class="img-member" src="assets/img/clients/img3.png" alt="">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img class="img-member" src="assets/img/clients/img4.png" alt="">
                 </div>
                 <div class="item text-center">
                     <img class="img-member" src="assets/img/clients/img5.png" alt="">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img class="img-member" src="assets/img/clients/img6.png" alt="">
                 </div>
             </div>
         </div>
