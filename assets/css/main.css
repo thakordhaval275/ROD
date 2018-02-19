@@ -1412,30 +1412,10 @@ label {
   font-size: 32px;
   margin-left: 36px;
 }
-#testimonial .owl-theme .owl-controls .owl-buttons div {
-  border-radius: 50%;
-  font-size: 30px;
-  margin: 20px 10px 0;
-  padding: 0 12px;
-}
-.touch-slider .owl-controls .owl-buttons {
-  position: relative;
-  top: -190px;
-  left: 0;
-}
-.touch-slider .owl-controls .owl-buttons div.owl-prev {
-  float: left;
-  margin-left: -45px;
-}
-.touch-slider .owl-controls .owl-buttons div.owl-next {
-  float: right !important;
-  margin-right: -45px;
-}
 .owl-theme .owl-controls .owl-buttons div {
   width: 40px;
   height: 40px;
   line-height: 30px;
-  display: block !important;
   background: #ff4f57 !important;
   text-align: center;
   display: inline-block;
@@ -1446,15 +1426,6 @@ label {
   -moz-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
-}
-.owl-theme .owl-controls .owl-buttons div:hover {
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-  opacity: 0.8!important;
-}
-.owl-theme .owl-controls .owl-buttons div i {
-  color: #fff;
-  font-size: 14px;
-  line-height: 40px;
 }
 /* ==========================================================================
    Clients Section
