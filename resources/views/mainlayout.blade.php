@@ -18,7 +18,7 @@
     <!-- Material CSS -->
     <link rel="stylesheet" href="assets/css/material-kit.css" type="text/css">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="sassets/fonts/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="assets/fonts/themify-icons.css">
 
     <!-- Animate CSS -->
