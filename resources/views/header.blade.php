@@ -28,27 +28,25 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Services <i class="fa fa-angle-down"></i>
-                            </a>
+                            <a href="#">Services <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown">
                                 <li>
-                                    <a href="post-job.html">
+                                    <a href="">
                                         Add Job
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="manage-jobs.html">
+                                    <a href="">
                                         Manage Jobs
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="manage-applications.html">
+                                    <a href="">
                                         Manage Applications
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="browse-resumes.html">
+                                    <a href="">
                                         Browse Resumes
                                     </a>
                                 </li>
@@ -78,10 +76,10 @@
                 <li>
                     <a href="#">Services</a>
                     <ul>
-                        <li><a href="post-job.html">Add Job</a></li>
-                        <li><a href="manage-jobs.html">Manage Jobs</a></li>
-                        <li><a href="manage-applications.html">Manage Applications</a></li>
-                        <li><a href="browse-resumes.html">Browse Resumes</a></li>
+                        <li><a href="">Add Job</a></li>
+                        <li><a href="">Manage Jobs</a></li>
+                        <li><a href="">Manage Applications</a></li>
+                        <li><a href="">Browse Resumes</a></li>
                     </ul>
                 </li>
                 <li>
