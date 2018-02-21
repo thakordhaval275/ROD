@@ -49,4 +49,11 @@ class RodController extends Controller
     {
         return view('recruiter.recruiterProfile');
     }
+
+    //======== Recruiter Pages ===============
+
+    public function employeeprofile()
+    {
+        return view('employee.employeeEdit');
+    }
 }

@@ -62,11 +62,9 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required data-error="Please enter your First Name">
-                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                             </div>
-
 
                             <div class="row">
                                 <div class="col-md-12">
@@ -88,14 +86,18 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                        <div class="form-group">
-                                        <select id="relationship" name="relationship" class="form-control">
-                                            <option value="">Select Relationship to ROD</option>
-                                            <option value="#">Company</option>
-                                            <option value="#">Rrecruiter</option>
-                                            <option value="#">Job Seeker</option>
-                                            <option value="#">Other</option>
-                                        </select>
+                                    <div class="form-group">
+                                        <div class="search-category-container">
+                                            <label class="styled-select">
+                                                <select id="relationship" name="relationship" class="form-control dropdown-product selectpicker">
+                                                    <option value="">Select Relationship to ROD</option>
+                                                    <option value="Company">Company</option>
+                                                    <option value="Rrecruiter">Rrecruiter</option>
+                                                    <option value="Job Seeker">Job Seeker</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -160,4 +162,145 @@
     </div>
 </section>
 <!-- End Contact Us Section  -->
+    @endsection
+
+@section('jslinks')
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHo_WtZ2nIYCgCLf7sINZaqcrpqSDio9o"></script>
+    <!-- Google Maps JS Only for Contact Pages -->
+    <script type="text/javascript">
+        var map;
+        var defult = new google.maps.LatLng(23.749574, 90.396594,15);
+        var mapCoordinates = new google.maps.LatLng(23.749574, 90.396594,15);
+
+        var markers = [];
+        var image = new google.maps.MarkerImage(
+            'assets/img/map-marker.png',
+            new google.maps.Size(84, 70),
+            new google.maps.Point(0, 0),
+            new google.maps.Point(60, 60)
+        );
+
+        function addMarker() {
+            markers.push(new google.maps.Marker({
+                    position: defult,
+                    raiseOnDrag: false,
+                    icon: image,
+                    map: map,
+                    draggable: false
+                }
+            ));
+
+        }
+
+        function initialize() {
+            var mapOptions = {
+                    backgroundColor: "#ffffff",
+                    zoom: 14,
+                    disableDefaultUI: true,
+                    center: mapCoordinates,
+                    zoomControl: false,
+                    scaleControl: false,
+                    scrollwheel: false,
+                    disableDoubleClickZoom: true,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    styles: [{
+                        "featureType": "landscape.natural",
+                        "elementType": "geometry.fill",
+                        "stylers": [{
+                            "color": "#ffffff"
+                        }
+                        ]
+                    }
+                        , {
+                            "featureType": "landscape.man_made",
+                            "stylers": [{
+                                "color": "#ffffff"
+                            }
+                                , {
+                                    "visibility": "off"
+                                }
+                            ]
+                        }
+                        , {
+                            "featureType": "water",
+                            "stylers": [{
+                                "color": "#80C8E5"
+                            }
+                                , {
+                                    "saturation": 0
+                                }
+                            ]
+                        }
+                        , {
+                            "featureType": "road.arterial",
+                            "elementType": "geometry",
+                            "stylers": [{
+                                "color": "#999999"
+                            }
+                            ]
+                        }
+                        , {
+                            "elementType": "labels.text.stroke",
+                            "stylers": [{
+                                "visibility": "off"
+                            }
+                            ]
+                        }
+                        , {
+                            "elementType": "labels.text",
+                            "stylers": [{
+                                "color": "#333333"
+                            }
+                            ]
+                        }
+
+                        , {
+                            "featureType": "road.local",
+                            "stylers": [{
+                                "color": "#dedede"
+                            }
+                            ]
+                        }
+                        , {
+                            "featureType": "road.local",
+                            "elementType": "labels.text",
+                            "stylers": [{
+                                "color": "#666666"
+                            }
+                            ]
+                        }
+                        , {
+                            "featureType": "transit.station.bus",
+                            "stylers": [{
+                                "saturation": -57
+                            }
+                            ]
+                        }
+                        , {
+                            "featureType": "road.highway",
+                            "elementType": "labels.icon",
+                            "stylers": [{
+                                "visibility": "off"
+                            }
+                            ]
+                        }
+                        , {
+                            "featureType": "poi",
+                            "stylers": [{
+                                "visibility": "off"
+                            }
+                            ]
+                        }
+
+                    ]
+
+                }
+            ;
+            map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+            addMarker();
+
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
     @endsection

@@ -42,11 +42,15 @@
 
 <body>
 
+@yield('csslinks')
+
 @include('homeheader')
 
 @yield('contain')
 
 @include('footer')
+
+@yield('jslinks')
 
 <!-- Go To Top Link -->
 <a href="#" class="back-to-top">

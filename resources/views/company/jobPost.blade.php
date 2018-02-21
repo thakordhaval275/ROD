@@ -22,34 +22,46 @@
                         <!-- Select Job Type-->
                         <div class="form-group">
                             <div class="col-md-12">
-                                <select id="jobtype" name="jobtype" class="form-control">
-                                    <option value="">Select</option>
-                                    <option value="ContractBase">ContractBase</option>
-                                    <option value="CompanyBase">CompanyBase</option>
-                                </select>
+                                <div class="search-category-container">
+                                    <label class="styled-select">
+                                        <select id="jobtype" name="jobtype" class="form-control dropdown-product selectpicker">
+                                            <option value="">Select Job Type</option>
+                                            <option value="Contract Base">Contract Base</option>
+                                            <option value="Company Base">Company Base</option>
+                                        </select>
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Select Job Department-->
                         <div class="form-group">
                             <div class="col-md-12">
-                                <select id="department" name="department" class="form-control">
-                                    <option value="">Select</option>
-                                    <option value="IT solution">IT solution</option>
-                                    <option value="Finance">Finance</option>
-                                    <option value="Production">Production</option>
-                                    <option value="Accounting">Accounting</option>
-                                </select>
+                                <div class="search-category-container">
+                                    <label class="styled-select">
+                                        <select id="department" name="department" class="form-control dropdown-product selectpicker">
+                                            <option value="">Select Department</option>
+                                            <option value="IT solution">IT solution</option>
+                                            <option value="Finance">Finance</option>
+                                            <option value="Production">Production</option>
+                                            <option value="Accounting">Accounting</option>
+                                        </select>
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Term Input -->
                         <div class="form-group">
                             <div class="col-md-12">
-                                <div class="checkbox">
-                                    <label><input name="genderboxes" class="" id="genderboxeslong" value="1" type="radio"><b> Long Term</b></label>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <label><input name="genderboxes" id="genderboxesshort" value="2" type="radio"><b> Short Term</b></label>
+                                <div class="form-control">
+                                    <div class="col-md-6">
+                                        <input name="term" class="radio-inline" id="term" type="radio">&nbsp;&nbsp; <b>Long Term</b>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input name="term" class="radio-inline" id="term" type="radio">&nbsp;&nbsp; <b>Short Term</b>
+                                    </div>
+                                    <div class="col-md-6">
+                                    </div>
                                 </div>
                                 <span class="help-block">Please select term</span>
                             </div>
@@ -82,13 +94,17 @@
                         <!-- No of Positions input-->
                         <div class="form-group">
                             <div class="col-md-12">
-                                <select class="form-control">
-                                    <option value="">No Of Positions</option>
-                                    @for($i=0;$i<200;$i=$i+5)
-                                        <option>{{$i}}</option>
-                                    @endfor
-                                </select>
-                                <span class="help-block">Please select number of position</span>
+                                <div class="search-category-container">
+                                    <label class="styled-select">
+                                        <select class="form-control dropdown-product selectpicker">
+                                            <option value="">No Of Positions</option>
+                                            @for($i=0;$i<200;$i=$i+5)
+                                                <option>{{$i}}</option>
+                                            @endfor
+                                        </select>
+                                        <span class="help-block">Please select number of position</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
 

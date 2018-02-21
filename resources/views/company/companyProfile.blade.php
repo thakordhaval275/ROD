@@ -28,12 +28,14 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <select id="location" name="location" class="form-control">
-                                    <option value="">Select</option>
-                                    <option value="India">India</option>
-                                    <option value="USA">USA</option>
-                                    <option value="New York">New York</option>
-                                </select>
+                                <div class="search-category-container">
+                                        <select id="location" name="location" class="form-control dropdown-product selectpicker">
+                                            <option value="">Select Location</option>
+                                            <option value="India">India</option>
+                                            <option value="USA">USA</option>
+                                            <option value="New York">New York</option>
+                                        </select>
+                                </div>
                             </div>
                         </div>
                     </div>
