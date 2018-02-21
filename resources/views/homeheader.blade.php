@@ -21,7 +21,7 @@
                         <ul class="nav navbar-nav">
                             <li>
                                 <a class="active" href="{{route('index')}}">
-                                    Home Dhaval
+                                    Home
                                 </a>
                             </li>
                             <li>
