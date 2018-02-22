@@ -72,7 +72,7 @@
                                                         <h4>:</h4>
                                                     </div>
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5></h5>
+                                                        <h5>B/14 Jalaram Nagar, Alkapuri Road, Vadodara-390010</h5>
                                                     </div>
                                                 </div>
                                             </div>
