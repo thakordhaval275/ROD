@@ -1,7 +1,7 @@
 @extends('mainlayout')
 
 @section('pageheader')
-    Edit Profile
+    Profile
 @endsection
 
 @section('contain')
@@ -34,6 +34,7 @@
                                     <div class="panel panel-danger">
                                         <div class="panel-heading">Personal Information</div>
                                         <div class="panel-body">
+                                            <br>
                                             <div class="row">
                                                 <div class="col-md-12">
                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">

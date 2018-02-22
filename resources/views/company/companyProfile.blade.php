@@ -12,7 +12,7 @@
             <div class="col-md-3">
             </div>
             <div class="col-md-6 box box-primary">
-                <form class="form" method="get" action="#">
+                <form class="form method=get" action="#">
 
                     <!-- Text input-->
                     <div class="row">
