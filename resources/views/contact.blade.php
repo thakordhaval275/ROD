@@ -54,7 +54,7 @@
             </div>
             <div class="col-md-8 box box-primary">
                 <!-- Form -->
-                <form id="contactForm" class="contact-form" data-toggle="validator">
+                <form method="get" action="#" id="contactForm" class="contact-form" data-toggle="validator">
                     <div class="row">
                         <div class="col-md-12">
 
