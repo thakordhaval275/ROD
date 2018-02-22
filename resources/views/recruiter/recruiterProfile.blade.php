@@ -5,6 +5,7 @@
 @endsection
 
 @section('contain')
+
     <div class="profile-page">
         <div class="wrapper">
             <div class="header header-filter" style="background-image: url('assets/img/employee/city.jpg');"></div>
@@ -32,4 +33,5 @@
         </div>
     </div>
     <br><br>
+
 @endsection
