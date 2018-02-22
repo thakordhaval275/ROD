@@ -54,6 +54,6 @@ class RodController extends Controller
 
     public function employeeprofile()
     {
-        return view('employee.employeeEdit');
+        return view('employee.employeeprofile');
     }
 }
