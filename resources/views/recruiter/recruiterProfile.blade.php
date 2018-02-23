@@ -1,22 +1,22 @@
 @extends('mainlayout')
 
 @section('pageheader')
-    My Account
+    Profile
 @endsection
 
 @section('contain')
 
     <div class="profile-page">
         <div class="wrapper">
-            <div class="header header-filter" style="background-image: url('assets/img/employee/city.jpg');"></div>
-
+            {{--<div class="header header-filter" style="background-image: url('assets/img/employee/city.jpg');"></div>--}}
+            <br><br><br><br><br><br><br>
             <div class="main main-raised">
                 <div class="profile-content">
                     <div class="container">
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="assets/img/employee/christian.jpg" alt="Circle Image" class="img-circle img-responsive img-raised">
+                                    <img src="assets/img/employee/christian.jpg" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('recruiterEdit')}}"><i class="ti-pencil"> Edit</i></a>
                                 </div>
                                 <div class="name">
                                     <h3 class="title">Christian Louboutin</h3>
@@ -27,13 +27,14 @@
                         <div class="description text-center">
                             <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
                         </div>
-                    </div>
+                    </div><br>
+                    </div><br>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
                                 <div class="col-md-6">
                                     <div class="panel panel-danger">
-                                        <div class="panel-heading">Personal Details</div>
+                                        <div class="panel-heading">Personal Details<a href="{{route('recruiterEdit')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-12">
@@ -180,7 +181,7 @@
                                 </div><!--/col-6-->
                                 <div class="col-md-6">
                                     <div class="panel panel-danger">
-                                        <div class="panel-heading">Other Details</div>
+                                        <div class="panel-heading">Other Details<a href="{{route('recruiterEdit')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
                                         <div class="panel-body">
 
                                             <div class="row">
