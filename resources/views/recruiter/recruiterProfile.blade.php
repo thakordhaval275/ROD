@@ -8,8 +8,8 @@
 
     <div class="profile-page">
         <div class="wrapper">
-            <div class="header header-filter" style="background-image: url('assets/img/employee/city.jpg');"></div>
-
+            {{--<div class="header header-filter" style="background-image: url('assets/img/employee/city.jpg');"></div>--}}
+            <br><br><br><br><br><br><br>
             <div class="main main-raised">
                 <div class="profile-content">
                     <div class="container">
