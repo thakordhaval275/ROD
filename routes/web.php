@@ -26,11 +26,32 @@ Route::get('/signup','RodController@signup')->name('signup'); //signup
 
 
 //Company Pages
-Route::get('/companyjobpost','RodController@jobpost')->name('jobpost'); //jobpost
-Route::get('/companyprofile','RodController@companyprofile')->name('companyProfile');//company Profile
+Route::get('/companyjobpost','companyController@jobpost')->name('jobpost'); //jobpost
+Route::get('/companyprofile','companyController@companyprofile')->name('companyProfile');//company Profile
 
 //Recruiter Pages
-Route::get('/recruiterprofile','RodController@recruiterprofile')->name('recruiterProfile');//recruiter Profile
+Route::get('/recruiterprofile','recruiterController@recruiterprofile')->name('recruiterProfile');//recruiter Profile
+Route::get('/recruiterEdit','recruiterController@recruiteredit')->name('recruiterEdit');//recruiter Profile
 
 //Employee Pages
-Route::get('/employeeprofile','RodController@employeeprofile')->name('employeeProfile');//Employee Profile
+Route::get('/employeeprofile','employeeController@employeeprofile')->name('employeeProfile');//Employee Profile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -44,7 +44,133 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Christian Louboutin</h5>
+                                                        <h5>Louboutin</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>last Name</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>Christian</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Gender</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>Male</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Email ID</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>Louboutin@yahoo.com</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Contact Number</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>8160625047</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Address</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>47, comman street, new bagan, new york</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>City</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>New Jearsy</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>State</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>new York</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Country</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>USA</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Alternative Email ID</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>Louboutin123@hotmail.com</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -55,12 +181,111 @@
                                 <div class="col-md-6">
                                     <div class="panel panel-danger">
                                         <div class="panel-heading">Other Details</div>
-                                        <div class="panel-body">Panel Content</div>
+                                        <div class="panel-body">
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>GST Register</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>YES</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Company Name</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>Herly's limited</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Company Type</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>Limited</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Industry Type</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>Agriculture</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Company Address</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>67,stambos housy,new bagan</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Reference Name</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>Atul</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                        <h4>Reference's Designation</h4>
+                                                    </div><!--/col-4-->
+                                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                        <h4>:</h4>
+                                                    </div> <!--/col-1-->
+                                                    <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                        <h5>Manager</h5>
+                                                    </div><!--/col-7-->
+                                                </div><!--/col-12-->
+                                            </div><!--/row--><br>
+                                        </div><!--/panel-body-->
                                     </div>
                                 </div><!--/col-6-->
                             </div><!--/col-12-->
                         </div><!--/row-->
-                    </div><!--/container-->
+                    </div><!--/container--><br>
                 </div>
             </div>
         </div>

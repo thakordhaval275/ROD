@@ -31,29 +31,11 @@ class RodController extends Controller
         return view('contact');
     }
 
-    //======== Company Pages ==============
 
-    public function companyProfile()
-    {
-        return view('company.companyProfile');
-    }
 
-    public function jobpost()
-    {
-        return view('company.jobPost');
-    }
 
-    //======== Recruiter Pages ===============
 
-    public function recruiterProfile()
-    {
-        return view('recruiter.recruiterProfile');
-    }
 
-    //======== Recruiter Pages ===============
 
-    public function employeeprofile()
-    {
-        return view('employee.employeeprofile');
-    }
+
 }
