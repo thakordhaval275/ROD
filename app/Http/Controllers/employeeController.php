@@ -10,4 +10,9 @@ class employeeController extends Controller
     {
         return view('employee.employeeprofile');
     }
+
+    public function editprofile()
+    {
+        return view('employee.editprofile');
+    }
 }

@@ -35,6 +35,7 @@ Route::get('/recruiterEdit','recruiterController@recruiteredit')->name('recruite
 
 //Employee Pages
 Route::get('/employeeprofile','employeeController@employeeprofile')->name('employeeProfile');//Employee Profile
+Route::get('/editprofile','employeeController@editprofile')->name('editProfile');//Edit Profile
 
 
 

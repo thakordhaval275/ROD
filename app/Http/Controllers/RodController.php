@@ -30,12 +30,4 @@ class RodController extends Controller
     {
         return view('contact');
     }
-
-
-
-
-
-
-
-
 }
