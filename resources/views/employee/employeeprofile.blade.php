@@ -14,7 +14,7 @@
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="assets/img/employee/christian.jpg" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="#"><i class="ti-pencil"> Edit</i></a>
+                                    <img src="assets/img/employee/christian.jpg" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('editProfile')}}"><i class="ti-pencil"> Edit</i></a>
                                 </div>
                                 <div class="name">
                                     <h3 class="title">Christian Louboutin</h3>
@@ -33,7 +33,7 @@
                                 <form method="get" action="#">
                                     <div class="col-md-6">
                                         <div class="panel panel-danger">
-                                            <div class="panel-heading">Personal Information<a href="#" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
+                                            <div class="panel-heading">Personal Information<a href="{{route('editProfile')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
                                             <div class="panel-body">
                                                 <br>
                                                 <div class="row">
@@ -224,7 +224,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="panel panel-danger">
-                                            <div class="panel-heading">Education Information<a href="#" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
+                                            <div class="panel-heading">Education Information<a href="{{route('editProfile')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
                                             <div class="panel-body">
                                                 <br>
                                                 <div class="row">
