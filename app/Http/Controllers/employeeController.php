@@ -8,11 +8,11 @@ class employeeController extends Controller
 {
     public function employeeprofile()
     {
-        return view('employee.employeeprofile');
+        return view('employee.employeeProfile');
     }
 
-    public function editprofile()
+    public function employeeedit()
     {
-        return view('employee.editprofile');
+        return view('employee.employeeEdit');
     }
 }
