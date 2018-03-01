@@ -14,4 +14,12 @@ class recruiterController extends Controller
     {
         return view('recruiter.recruiterEdit');
     }
+    public function addmyemployee()
+    {
+        return view('recruiter.addmyEmployee');
+    }
+    public function myemployee()
+    {
+        return view('recruiter.myEmployee');
+    }
 }

@@ -33,6 +33,8 @@ Route::get('/companyedit','companyController@companyedit')->name('companyEdit');
 //Recruiter Pages
 Route::get('/recruiterprofile','recruiterController@recruiterprofile')->name('recruiterProfile');//recruiter Profile
 Route::get('/recruiterEdit','recruiterController@recruiteredit')->name('recruiterEdit');//recruiter Profile
+Route::get('/addmyemployee','recruiterController@addmyemployee')->name('addmyEmployee');//add new employee from list
+Route::get('/myemployee','recruiterController@myemployee')->name('myEmployee');//recruiter's employee
 
 //Employee Pages
 Route::get('/employeeprofile','employeeController@employeeprofile')->name('employeeProfile');//Employee Profile
