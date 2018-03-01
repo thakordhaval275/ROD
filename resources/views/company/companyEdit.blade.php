@@ -3,139 +3,164 @@
 @section('pageheader')
     My Account
 @endsection
-
 @section('contain')
     <br><br>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-6 box box-primary">
-                    <form class="form method=get" action="#">
-
-                        <!-- Text input-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input id="name" name="name" type="text" placeholder="Name of Company" class="form-control input-md">
-                                    <span class="help-block">Please type in your full name</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Select company head office location-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="search-category-container">
-                                        <select id="location" name="location" class="form-control dropdown-product selectpicker">
-                                            <option value="">Select Location</option>
-                                            <option value="India">India</option>
-                                            <option value="USA">USA</option>
-                                            <option value="New York">New York</option>
-                                        </select>
+    <div class="profile-page">
+        <div class="wrapper">
+            <br><br><br><br><br><br><br>
+            <form method="get" action="#">
+                <div class="main main-raised">
+                    <div class="profile-content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="profile">
+                                    <div class="avatar">
+                                        <img src="assets/img/company/Mtaj.png" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
+                                        <input type="file" class="text-center center-block well well-sm">
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="title">MTAJ Solutions PVT LTD</h3>
+                                        <h6>Software Company</h6>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Select address-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <textarea  class="form-control" name="companyaddress" id="companyaddress" placeholder="Address of company"></textarea>
-                                </div>
+                            <div class="description text-center">
+                                <textarea id="aboutcompany" name="aboutcompany" class="form-control" placeholder="About Company" rows="4"></textarea>
                             </div>
                         </div>
+                        <div class="container-fluid">
+                            <br><br>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="panel panel-danger">
+                                            <div class="panel-heading">Company Details</div>
+                                            <div class="panel-body">
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                            <h4>Company Name</h4>
+                                                        </div>
+                                                        <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                            <h4>:</h4>
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                            <input id="name" name="name" type="text" placeholder="Name of Company" class="form-control input-md">
+                                                        </div>
+                                                    </div>
+                                                </div><br>
 
-                        <!-- company Website Input -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="text" name="website" id="website" placeholder="Company's Website" class="form-control">
-                                    <span class="help-block">Please Enter Company's official Website</span>
-                                </div>
-                            </div>
-                        </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                            <h4>Location</h4>
+                                                        </div>
+                                                        <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                            <h4>:</h4>
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                            <div class="search-category-container">
+                                                                <select id="location" name="location" class="form-control dropdown-product selectpicker">
+                                                                    <option value="">Select Location</option>
+                                                                    <option value="India">India</option>
+                                                                    <option value="USA">USA</option>
+                                                                    <option value="New York">New York</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><br>
 
-                        <!-- company's Type input-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input id="companytype" name="companytype" type="text" placeholder="Ex.:PVT limited, limited...etc" class="form-control input-md">
-                                    <span class="help-block">Please Enter Type of Company</span>
-                                </div>
-                            </div>
-                        </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                            <h4>Address</h4>
+                                                        </div>
+                                                        <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                            <h4>:</h4>
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                            <textarea  class="form-control" name="companyaddress" id="companyaddress" placeholder="Address of company"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div><br>
 
-                        <!-- year of founded input-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input id="yearoffound" name="yearoffound" type="number" placeholder="year of found"
-                                           class="form-control input-md">
-                                    <span class="help-block"> year</span>
-                                </div>
-                            </div>
-                        </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                            <h4>Website</h4>
+                                                        </div>
+                                                        <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                            <h4>:</h4>
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                            <input type="text" name="website" id="website" placeholder="Company's Website" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div><br>
 
-                        <!-- No of Employees input-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input id="noofemp" name="noofemp" type="text" placeholder="No Of Employees working..." class="form-control input-md">
-                                    <span class="help-block">Please type No of Employees are working in Company</span>
-                                </div>
-                            </div>
-                        </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                            <h4>Type</h4>
+                                                        </div>
+                                                        <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                            <h4>:</h4>
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                            <input id="companytype" name="companytype" type="text" placeholder="Ex.:PVT limited, limited...etc" class="form-control input-md">
+                                                        </div>
+                                                    </div>
+                                                </div><br>
 
-                        <!-- Description input-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <textarea id="about" name="about" class="form-control" placeholder="Short Description About Company"></textarea>
-                                    <span class="help-block">Please type short description about Company</span>
-                                </div>
-                            </div>
-                        </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                            <h4>Year of Found</h4>
+                                                        </div>
+                                                        <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                            <h4>:</h4>
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                            <input id="yearoffound" name="yearoffound" type="number" placeholder="year of found" class="form-control input-md">
+                                                        </div>
+                                                    </div>
+                                                </div><br>
 
-                        <!-- Upload Comapny Logo input-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input id="companylogo" name="companylogo" type="file"
-                                           class="input-md" multiple>
-                                    <span class="help-block">Please provide your logo and cover photo</span>
-                                </div>
-                            </div>
-                        </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                            <h4>No. Of Employees</h4>
+                                                        </div>
+                                                        <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                            <h4>:</h4>
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                                            <input id="noofemp" name="noofemp" type="text" placeholder="No Of Employees working..." class="form-control input-md">
+                                                        </div>
+                                                    </div>
+                                                </div><br>
 
-                        <!-- Upload Comapny's Photos input-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input id="companyphoto" name="companyphoto" type="file"
-                                           class="input-md" multiple>
-                                    <span class="help-block">Please provide your photo</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- Button (Double) -->
-                        <div class="row">
-                            <div class="col-md-12 text-center">
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-common">Save</button>
-                                    <a id="cancel" name="cancel" class="btn btn-common" href="#">Cancel</a>
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-common">Save</button>
+                                        <a id="cancel" name="cancel" class="btn btn-common" href="{{route('companyProfile')}}">Cancel</a>
+                                    </div>
                                 </div>
-                            </div>
+                            </div><br><br>
                         </div>
-                    </form>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                </div>
-            </div>
+            </form>
         </div>
     </div>
     <br><br>

@@ -13,13 +13,13 @@ class companyController extends Controller
         return view('company.companyProfile');
     }
 
-    public function jobpost()
-    {
-        return view('company.jobPost');
-    }
-
     public function companyedit()
     {
         return view('company.companyEdit');
+    }
+
+    public function jobpost()
+    {
+        return view('company.jobPost');
     }
 }
