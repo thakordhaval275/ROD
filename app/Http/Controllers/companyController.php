@@ -27,4 +27,9 @@ class companyController extends Controller
     {
         return view('company.viewPostJobs');
     }
+    
+    public function jobdetail()
+    {
+        return view('company.jobDetail');
+    }
 }
