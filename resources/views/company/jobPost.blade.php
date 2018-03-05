@@ -5,30 +5,11 @@
 @endsection
 
 @section('contain')
-    <br><br>
+    <br>
     <div class="profile-page">
         <div class="wrapper">
-            <br><br><br><br><br><br><br>
             <form method="get" action="#">
-                <div class="main main-raised">
-                    <div class="profile-content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="profile">
-                                    <div class="avatar">
-                                        <img src="assets/img/company/Mtaj.png" alt="Circle Image" class="img-circle img-responsive img-raised"><br></a>
-                                    </div>
-                                    <div class="name">
-                                        <h3 class="title">MTAJ Solutions PVT LTD</h3>
-                                        <h6>Software Company</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="description text-center">
-                                <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
-                            </div>
-                        </div>
-                        <div class="container-fluid">
+				<div class="container-fluid">
                             <br><br>
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
@@ -54,6 +35,33 @@
                                                                     <span class="help-block">Please type in your full name</span>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </div><br>
+												
+												<div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                                            <h4>Company logo</h4>
+                                                        </div>
+                                                        <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                                                            <h4>:</h4>
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+															<div class="col-md-12">
+																<div class="row">
+																	<div class="col-md-12">
+																		<div class="form-group">
+																			<img src="assets/img/company/Mtaj.png" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised">
+																		</div>									
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-12">
+																		<input type="file" name="companylogo">
+																	</div>
+																</div>
+															</div>
                                                         </div>
                                                     </div>
                                                 </div><br>
@@ -162,8 +170,15 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <input id="experience" name="experience" type="number" placeholder="Experience" class="form-control input-md">
-                                                                    <span class="help-block">In year</span>
+                                                                    <div class="search-category-container">
+                                                                    <select id="experiance" name="experiance" class="form-control dropdown-product selectpicker">
+                                                                        <option value="">Select</option>
+                                                                        <option value="">Fresher</option>
+                                                                        @for($i=1;$i<=15;$i++)
+                                                                            <option>{{$i}} Year</option>
+                                                                        @endfor
+                                                                    </select>
+                                                                </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -229,9 +244,9 @@
                                                             <!-- description input-->
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <input id="description" name="description" type="text" placeholder="Description" class="form-control input-md">
+                                                                    <textarea id="description" name="description" placeholder="Description" class="form-control input-md"></textarea>
                                                                     <span class="help-block">Please provide brief job Description</span>
-                                                                </div>
+																</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -250,10 +265,8 @@
                                 </div>
                             </div>
                         </div><br><br>
-                    </div>
-                </div>
             </form>
         </div>
     </div>
-    <br><br>
+    <br>
 @endsection
