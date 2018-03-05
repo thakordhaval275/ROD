@@ -22,4 +22,12 @@ class recruiterController extends Controller
     {
         return view('recruiter.myEmployee');
     }
+    public  function joblist()
+    {
+        return view('recruiter.jobList');
+    }
+    public function proposal()
+    {
+        return view('recruiter.proposal');
+    }
 }

@@ -35,6 +35,8 @@ Route::get('/recruiterprofile','recruiterController@recruiterprofile')->name('re
 Route::get('/recruiterEdit','recruiterController@recruiteredit')->name('recruiterEdit');//recruiter Profile
 Route::get('/addmyemployee','recruiterController@addmyemployee')->name('addmyEmployee');//add new employee from list
 Route::get('/myemployee','recruiterController@myemployee')->name('myEmployee');//recruiter's employee
+Route::get('/joblist','recruiterController@joblist')->name('jobList');//list of jobs
+Route::get('/proposal','recruiterController@proposal')->name('proposal');//send a Proposal
 
 //Employee Pages
 Route::get('/employeeprofile','employeeController@employeeprofile')->name('employeeProfile');//Employee Profile
