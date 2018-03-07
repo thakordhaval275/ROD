@@ -25,9 +25,9 @@ class CreateCompanyProfileModelsTable extends Migration
             $table->string('companytype')->nullable();
             $table->string('foundyear')->nullable();
             $table->string('noofemployee')->nullable();
-            $table->increments('password');
-            $table->increments('securityque');
-            $table->increments('securityans');
+            $table->string('password');
+            $table->string('securityque');
+            $table->string('securityans');
             $table->timestamps();
         });
     }
