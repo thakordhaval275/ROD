@@ -10,15 +10,13 @@
         <div class="wrapper">
             <form method="get" action="#">
 				<div class="container-fluid">
-                            <br><br>
+                            <br>
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
                                     <div class="col-md-2">
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="panel panel-danger">
-                                            <div class="panel-heading">Post Job</div>
-                                            <div class="panel-body">
+                                        <div class="box box-primary">
                                                 <br>
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -250,20 +248,19 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div><br>
-                                            </div>
+                                                </div><br><br>
+                                                <div class="form-group">
+                                                    <div class="col-md-12 text-center">
+                                                        <button type="submit" class="btn btn-common">Save</button>
+                                                        <a id="cancel" name="cancel" class="btn btn-common" href="{{route('companyProfile')}}">Cancel</a>
+                                                    </div>
+                                                </div><br><br>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                     </div>
                                 </div>
                             </div><br>
-                            <div class="form-group">
-                                <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-common">Save</button>
-                                    <a id="cancel" name="cancel" class="btn btn-common" href="{{route('companyProfile')}}">Cancel</a>
-                                </div>
-                            </div>
                         </div><br><br>
             </form>
         </div>

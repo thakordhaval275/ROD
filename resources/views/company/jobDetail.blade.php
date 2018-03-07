@@ -34,9 +34,7 @@
                                 <div class="col-md-2">
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="panel panel-danger">
-                                            <div class="panel-heading">Job Details</div>
-                                            <div class="panel-body">
+                                    <div class="box box-primary">
                                                 <br>
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -199,19 +197,21 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div><br>
-                                            </div>
+                                                </div><br><br>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-12 text-center">
+                                                        <a id="cancel" name="cancel" class="btn btn-common" href="{{route('viewJobs')}}">Back</a>
+                                                        <a id="cancel" name="cancel" class="btn btn-common" href="{{route('proposal')}}">Send proposal</a>
+                                                    </div>
+                                                </div><br><br>
                                         </div>
                                  </div>
                                 <div class="col-md-2">
                                 </div>
                             </div>
-							<div class="form-group">
-                                <div class="col-md-12 text-center">
-                                    <a id="cancel" name="cancel" class="btn btn-common" href="{{route('viewJobs')}}">Back</a>
-                                </div>
-                            </div>
-                        </div><br>
+
+                        </div><br><br><br>
 					</div>
                 </div>
             </div>
