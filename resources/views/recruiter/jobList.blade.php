@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{route('jobpost')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
+                                    <a href="{{route('jobDetail')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{route('employeeProfile')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
+                                    <a href="{{route('jobDetail')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                 </div>
                             </div>
                         </div>
