@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecruiterPersonalDetailsTable extends Migration
+class CreateRecruiterProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRecruiterPersonalDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('recruiter_personal_details', function (Blueprint $table) {
+        Schema::create('recruiter_profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('profilephoto')->nullable();
             $table->string('aboutself')->nullable();
@@ -46,6 +46,6 @@ class CreateRecruiterPersonalDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recruiter_personal_details');
+        Schema::dropIfExists('recruiter_profiles');
     }
 }

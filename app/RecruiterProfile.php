@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class recruiterProfile extends Model
+class RecruiterProfile extends Model
 {
     protected $fillable=['profilephoto','aboutself','firstname','lastname','gender','emailid','password','contactno','address','city','state','country','otheremailid','gstregister','rcompanyname','rcompanytype','rindustrytype','companyaddress','rname','rdesignation'];
 }
