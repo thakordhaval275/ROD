@@ -24,11 +24,11 @@
                             <a href="{{route('companyProfile')}}"><img src="assets/img/company/Mtaj.png" height="100px" width="100px" class="img-circle" alt=""></a>
                         </div>
                         <div class="job-list-content">
-                            <h4><a href="{{route('companyProfile')}}">Php Developer</a><span class="full-time">full-time</span></h4>
+                            <h4><a href="{{route('companyProfile')}}">Php Developer</a><span class="full-time">Full-time</span></h4>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="col-md-6">
-                                        <strong>Hello Company Base</strong><br>
+                                        <strong>Company Base</strong><br>
                                         <strong>Minimum 5 years of experience</strong>
                                     </div><!--/col-6-->
                                     <div class="col-md-6">
@@ -62,7 +62,7 @@
                             <a href="{{route('companyProfile')}}"><img src="assets/img/company/Mtaj.png" height="100px" width="100px" alt=""></a>
                         </div>
                         <div class="job-list-content">
-                            <h4><a href="{{route('companyProfile')}}">MRAJ</a><span class="part-time">part-time</span></h4>
+                            <h4><a href="{{route('companyProfile')}}">MRAJ</a><span class="part-time">Part-time</span></h4>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="col-md-6">
