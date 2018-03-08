@@ -24,12 +24,22 @@ Route::get('/about','RodController@about')->name('about'); //about
 Route::get('/contact','RodController@contact')->name('contactus'); //contect
 Route::get('/signup','RodController@signup')->name('signup'); //signup
 
+
+//store Data
+Route::post('contactstore','RodController@contactstore')->name('contactstore');
+
+
+
 //Company Pages
 Route::get('/companyjobpost','companyController@jobpost')->name('jobpost'); //jobpost
 Route::get('/companyprofile','companyController@companyprofile')->name('companyProfile');//company Profile
 Route::get('/companyedit','companyController@companyedit')->name('companyEdit');//company Edit Profile
 Route::get('/viewjobs','companyController@viewjobs')->name('viewJobs');//view PostJobs
 Route::get('/jobdetail','companyController@jobdetail')->name('jobDetail');//Job Detail
+
+//sotre Data
+Route::post('jobpoststore','companyController@jobpoststore')->name('jobpoststore');
+
 
 //Recruiter Pages
 Route::get('/recruiterprofile','recruiterController@recruiterprofile')->name('recruiterProfile');//recruiter Profile

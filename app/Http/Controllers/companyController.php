@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\JobPostModel;
 use Illuminate\Http\Request;
 
 class companyController extends Controller
@@ -22,10 +23,30 @@ class companyController extends Controller
     {
         return view('company.jobPost');
     }
-    
-    public function viewjobs()
+    public function jobpoststore(Request $request)
     {
-        return view('company.viewPostJobs');
+        //dd($request);
+        JobPostModel::create([
+            'companyname'=>$request['compnayName'],
+            'logo'=>$request['companyLogo'],
+            'jobtype'=>$request['jobType'],
+            'department'=>$request['department'],
+            'term'=>$request['term'],
+            'termperiod0'=>$request['termPeriod'],
+            'experience'=>$request['experiance'],
+            'payment'=>$request['payment'],
+            'noofpositions'=>$request['noOfPostion'],
+            'jobdescription'=>$request['description']
+        ]);
+
+        return redirect(Route('jobDetail'));
+    }
+    
+    public function viewjobs(Request $request)
+    {
+        $viewJob=JobPostModel::get();
+        //dd($request);
+        return view('company.viewPostJobs',['JobPost'=>$viewJob]);
     }
     
     public function jobdetail()
