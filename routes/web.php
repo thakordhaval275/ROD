@@ -24,7 +24,6 @@ Route::get('/about','RodController@about')->name('about'); //about
 Route::get('/contact','RodController@contact')->name('contactus'); //contect
 Route::get('/signup','RodController@signup')->name('signup'); //signup
 
-
 //Company Pages
 Route::get('/companyjobpost','companyController@jobpost')->name('jobpost'); //jobpost
 Route::get('/companyprofile','companyController@companyprofile')->name('companyProfile');//company Profile
@@ -43,6 +42,11 @@ Route::get('/proposal','recruiterController@proposal')->name('proposal');//send 
 Route::get('/employeeprofile','employeeController@employeeprofile')->name('employeeProfile');//Employee Profile
 Route::get('/employeeedit','employeeController@employeeedit')->name('employeeEdit');//Edit Profile
 
+//Admin Pages
+Route::get('/admin','adminController@index')->name('index');//Admin Index
+Route::get('/admin/companyslist','adminController@companylist')->name('companyList');//company List
+Route::get('/admin/recruiterlist','adminController@recruiterlist')->name('recruiterList');//Recruiter List
+Route::get('/admin/employeelist','adminController@employeelist')->name('employeeList');//Employee List
 
 
 
