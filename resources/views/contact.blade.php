@@ -54,7 +54,8 @@
             </div>
             <div class="col-md-8 box box-primary">
                 <!-- Form -->
-                <form method="get" action="#" id="contactForm" class="contact-form" data-toggle="validator">
+                <form method="post" action="{{route('contactstore')}}" id="contactForm" class="contact-form" data-toggle="validator">
+                    {{csrf_field()}}
                     <div class="row">
                         <div class="col-md-12">
 
@@ -150,7 +151,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <button type="submit" id="submit" class="btn btn-common">Send Us</button>
-                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <div id="msgSubmit" class="h3 text-center"></div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>

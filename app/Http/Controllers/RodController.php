@@ -30,4 +30,8 @@ class RodController extends Controller
     {
         return view('contact');
     }
+    public function contactstore(Request $request)
+    {
+        dd($request);
+    }
 }

@@ -19,81 +19,46 @@
             </div><br>
             <div class="row">
                 <div class="col-md-9 col-sm-8">
-                    <div class="job-list" style="width: 100%;">
-                        <div class="thumb">
-                            <a href="{{route('companyProfile')}}"><img src="assets/img/company/Mtaj.png" height="100px" width="100px" class="img-circle" alt=""></a>
-                        </div>
-                        <div class="job-list-content">
-                            <h4><a href="{{route('companyProfile')}}">Php Developer</a><span class="full-time">Full-time</span></h4>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <strong>Company Base</strong><br>
-                                        <strong>Minimum 5 years of experience</strong>
-                                    </div><!--/col-6-->
-                                    <div class="col-md-6">
-                                        <strong>IT Solution</strong><br>
-                                        <strong>7 vacancy</strong>
-                                    </div><!--/col-6-->
-                                </div><!--/col-12-->
-                            </div><!--/row-->
-                            <div class="job-tag">
-                                <div class="pull-left">
-                                    <div class="meta-tag">
-                                        <span><a href="browse-categories.html"><i class="ti-desktop"></i>Technologies</a></span>
-                                        <span><i class="ti-location-pin"></i>Vadodara, Gujarat, India</span>
+                    @foreach($JobPost as $viewJob)
+                        <div class="job-list" style="width: 100%;">
+                            <div class="thumb">
+                                <a href="{{route('companyProfile')}}"><img src="assets/img/company/Mtaj.png" height="100px" width="100px" class="img-circle" alt=""></a>
+                            </div>
+                            <div class="job-list-content">
+                                <h4><a href="{{route('companyProfile')}}">{{$viewJob->companyname}}</a><span class="full-time">Full-time</span></h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <strong>{{$viewJob->jobtype}}</strong><br>
+                                            <strong>Minimum {{$viewJob->experience}} years of experience</strong>
+                                        </div><!--/col-6-->
+                                        <div class="col-md-6">
+                                            <strong>{{$viewJob->department}}</strong><br>
+                                            <strong>{{$viewJob->noofpositions}} vacancy</strong>
+                                        </div><!--/col-6-->
+                                    </div><!--/col-12-->
+                                </div><!--/row-->
+                                <div class="job-tag">
+                                    <div class="pull-left">
+                                        <div class="meta-tag">
+                                            <span><a href="browse-categories.html"><i class="ti-desktop"></i>Technologies</a></span>
+                                            <span><i class="ti-location-pin"></i>Vadodara, Gujarat, India</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="pull-right">
-                                    <div class="icon">
-                                        <i class="ti-pencil"></i>
+                                    <div class="pull-right">
+                                        <div class="icon">
+                                            <i class="ti-pencil"></i>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="ti-trash"></i>
+                                        </div>
+                                        <a href="{{route('jobDetail')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                     </div>
-                                    <div class="icon">
-                                        <i class="ti-trash"></i>
-                                    </div>
-                                    <a href="{{route('jobDetail')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="job-list" style="width: 100%;">
-                        <div class="thumb">
-                            <a href="{{route('companyProfile')}}"><img src="assets/img/company/Mtaj.png" height="100px" width="100px" alt=""></a>
-                        </div>
-                        <div class="job-list-content">
-                            <h4><a href="{{route('companyProfile')}}">MRAJ</a><span class="part-time">Part-time</span></h4>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <strong>Contract Base</strong><br>
-                                        <strong>Minimum 4 years of experience</strong>
-                                    </div><!--/col-6-->
-                                    <div class="col-md-6">
-                                        <strong>IT Solution</strong><br>
-                                        <strong>200 vacancy</strong>
-                                    </div><!--/col-6-->
-                                </div><!--/col-12-->
-                            </div><!--/row-->
-                            <div class="job-tag">
-                                <div class="pull-left">
-                                    <div class="meta-tag">
-                                        <span><a href="browse-categories.html"><i class="ti-desktop"></i>Technologies</a></span>
-                                        <span><i class="ti-location-pin"></i>Cupertino, CA, USA</span>
-                                    </div>
-                                </div>
-                                <div class="pull-right">
-                                    <div class="icon">
-                                        <i class="ti-pencil"></i>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ti-trash"></i>
-                                    </div>
-                                    <a href="{{route('jobDetail')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                     <br>
                     <!-- Start Pagination -->
                     <ul class="pagination">

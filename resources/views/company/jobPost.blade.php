@@ -8,7 +8,8 @@
     <br>
     <div class="profile-page">
         <div class="wrapper">
-            <form method="get" action="#">
+            <form method="post" action="{{route('jobpoststore')}}">
+                {{csrf_field()}}
 				<div class="container-fluid">
                             <br>
                             <div class="row">
@@ -29,7 +30,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <input id="name" name="name" type="text" placeholder="Name of Company" class="form-control input-md">
+                                                                    <input id="name" name="compnayName" type="text" placeholder="Name of Company" class="form-control input-md">
                                                                     <span class="help-block">Please type in your full name</span>
                                                                 </div>
                                                             </div>
@@ -50,7 +51,7 @@
 																<div class="row">
 																	<div class="col-md-12">
 																		<div class="form-group">
-																			<img src="assets/img/company/Mtaj.png" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised">
+																			<img src="assets/img/company/Mtaj.png" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
 																		</div>									
 																	</div>
 																</div>
@@ -77,7 +78,7 @@
                                                                 <div class="col-md-12">
                                                                     <div class="search-category-container">
                                                                         <label class="styled-select">
-                                                                            <select id="jobtype" name="jobtype" class="form-control dropdown-product selectpicker">
+                                                                            <select id="jobtype" name="jobType" class="form-control dropdown-product selectpicker">
                                                                                 <option value="">Select Job Type</option>
                                                                                 <option value="Contract Base">Contract Base</option>
                                                                                 <option value="Company Base">Company Base</option>
@@ -215,7 +216,7 @@
                                                                 <div class="col-md-12">
                                                                     <div class="search-category-container">
                                                                         <label class="styled-select">
-                                                                            <select class="form-control dropdown-product selectpicker">
+                                                                            <select class="form-control dropdown-product selectpicker" name="noOfPostion">
                                                                                 <option value="">No Of Positions</option>
                                                                                 @for($i=0;$i<200;$i=$i+5)
                                                                                     <option>{{$i}}</option>
