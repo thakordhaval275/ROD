@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\CompanyProfileModel;
+use App\EmployeeProfileModel;
+use App\RecruiterProfile;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -20,13 +22,22 @@ class adminController extends Controller
         return view('admin.company.companyList',['clist'=>$clist]);
     }
 
-    public function recruiterlist()
+    public function recruiterlist(Request $request)
     {
-        return view('admin.recruiter.recruiterList');
+        $rlist=RecruiterProfile::get();
+        return view('admin.recruiter.recruiterList',['rlist'=>$rlist]);
     }
 
-    public function employeelist()
+    public function employeelist(Request $request)
     {
-        return view('admin.employee.employeeList');
+        $elist=EmployeeProfileModel::get();
+        return view('admin.employee.employeeList',['elist'=>$elist]);
+    }
+
+    public function viewCompany($id)
+    {
+        //dd($id);
+        $company=CompanyProfileModel::where('id',$id)->first();
+        return view('admin.company.viewcompany',['company'=>$company]);
     }
 }

@@ -10,7 +10,7 @@
                 <div class="col-md-6">
                 </div>
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-block btn-danger">Add Company</button>
+                    <a href=""><button type="button" class="btn btn-block btn-danger">Add Company</button></a>
                 </div>
             </div>
         </div>
@@ -35,58 +35,35 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>Logo</th>
-                                    <th>About Company</th>
+                                    <th>Id</th>
                                     <th>Company Name</th>
                                     <th>Location</th>
                                     <th>Address</th>
                                     <th>Email id</th>
                                     <th>Website</th>
-                                    <th>Company Type</th>
                                     <th>Found Year</th>
-                                    <th>No.of Employee</th>
-                                    <th>Password</th>
-                                    <th>Security Que</th>
-                                    <th>Security Ans</th>
+                                    <th>Employees</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
                                 @foreach($clist as $list)
                                     <tr>
-                                        <td>{{$list->logo}}</td>
-                                        <td>{{$list->aboutcompany}}</td>
+                                        <td>{{$list->id}}</td>
                                         <td>{{$list->companyname}}</td>
                                         <td>{{$list->location}}</td>
                                         <td>{{$list->address}}</td>
                                         <td>{{$list->emailid}}</td>
                                         <td>{{$list->website}}</td>
-                                        <td>{{$list->companytype}}</td>
                                         <td>{{$list->foundyear}}</td>
                                         <td>{{$list->noofemployee}}</td>
-                                        <td>{{$list->password}}</td>
-                                        <td>{{$list->securityque}}</td>
-                                        <td>{{$list->securityans}}</td>
+                                        <td><a href="{{route('viewCompany',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash"></i></a></td>
                                     </tr>
-                                    @endforeach
+                                @endforeach
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Logo</th>
-                                    <th>About Company</th>
-                                    <th>Company Name</th>
-                                    <th>Location</th>
-                                    <th>Address</th>
-                                    <th>Email id</th>
-                                    <th>Website</th>
-                                    <th>Company Type</th>
-                                    <th>Found Year</th>
-                                    <th>No.of Employee</th>
-                                    <th>Password</th>
-                                    <th>Security Que</th>
-                                    <th>Security Ans</th>
-                                </tr>
-                                </tfoot>
                             </table>
                         </div>
                         <!-- /.box-body -->

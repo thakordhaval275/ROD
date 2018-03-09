@@ -15,10 +15,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-
 Route::get('/login','RodController@login')->name('login'); //Login
 
-//=================================================================================
+//============================================================= Frontend ======================================================================
 //Home Pages
 Route::get('/index','RodController@index')->name('index'); //index
 Route::get('/about','RodController@about')->name('about'); //about
@@ -53,11 +52,18 @@ Route::get('/proposal','recruiterController@proposal')->name('proposal');//send 
 Route::get('/employeeprofile','employeeController@employeeprofile')->name('employeeProfile');//Employee Profile
 Route::get('/employeeedit','employeeController@employeeedit')->name('employeeEdit');//Edit Profile
 
-//=================================================================================
-//Admin Pages
+
+//======================================================== Admin Pages ========================================================================
 Route::get('/admin','adminController@index')->name('admin');//Admin Index
+
+//Company Pages
 Route::get('/admin/companyslist','adminController@companylist')->name('companyList');//company List
+Route::get('/admin/view/company/{id}','adminController@viewCompany')->name('viewCompany');//Admin companyProfile
+
+//Recruiter Pages
 Route::get('/admin/recruiterlist','adminController@recruiterlist')->name('recruiterList');//Recruiter List
+
+//Employee Pages
 Route::get('/admin/employeelist','adminController@employeelist')->name('employeeList');//Employee List
 
 
