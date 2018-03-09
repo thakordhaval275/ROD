@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CompanyProfileModel;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -13,9 +14,10 @@ class adminController extends Controller
     }
 
 
-    public function companylist()
+    public function companylist(Request $request)
     {
-        return view('admin.company.companyList');
+        $clist=CompanyProfileModel::get();
+        return view('admin.company.companyList',['clist'=>$clist]);
     }
 
     public function recruiterlist()
@@ -26,35 +28,5 @@ class adminController extends Controller
     public function employeelist()
     {
         return view('admin.employee.employeeList');
-    }
-
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-    public function show($id)
-    {
-        //
-    }
-
-
-    public function edit($id)
-    {
-        //
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-
-    public function destroy($id)
-    {
-        //
     }
 }

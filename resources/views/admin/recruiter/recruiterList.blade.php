@@ -1,3 +1,5 @@
+@extends('admin.adminlayoute')
+
 @section('contain')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
