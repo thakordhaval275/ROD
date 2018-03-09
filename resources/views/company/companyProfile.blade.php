@@ -12,19 +12,21 @@
             <div class="main main-raised">
                 <div class="profile-content">
                     <div class="container">
+                        @foreach($ProfileData as $profiledata)
+                        @endforeach
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
                                     <img src="assets/img/company/Mtaj.png" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('companyEdit')}}"><i class="ti-pencil"> Edit</i></a>
                                 </div>
                                 <div class="name">
-                                    <h3 class="title">MTAJ Solutions PVT LTD</h3>
+                                    <h3 class="title">{{$profiledata->companyname}}</h3>
                                     <h6>Software Company</h6>
                                 </div>
                             </div>
                         </div>
                         <div class="description text-center">
-                            <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                            <p>{{$profiledata->aboutcompany}}</p>
                         </div>
                     </div>
                     <div class="container-fluid">
@@ -48,7 +50,7 @@
                                                         <h4>:</h4>
                                                     </div>
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Louboutin</h5>
+                                                        <h5>{{$profiledata->companyname}}</h5>
                                                     </div>
                                                 </div>
                                             </div><br>
@@ -62,7 +64,7 @@
                                                         <h4>:</h4>
                                                     </div>
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Vadodara, Gujarat ,India</h5>
+                                                        <h5>{{$profiledata->location}}</h5>
                                                     </div>
                                                 </div>
                                             </div><br>
@@ -76,7 +78,7 @@
                                                         <h4>:</h4>
                                                     </div>
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Vadodara</h5>
+                                                        <h5>{{$profiledata->address}}</h5>
                                                     </div>
                                                 </div>
                                             </div><br>
@@ -90,7 +92,7 @@
                                                         <h4>:</h4>
                                                     </div>
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>hr@mtajsolutions.com</h5>
+                                                        <h5>{{$profiledata->emailid}}</h5>
                                                     </div>
                                                 </div>
                                             </div><br>
@@ -104,7 +106,7 @@
                                                         <h4>:</h4>
                                                     </div>
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>www.mtajsolutions.com</h5>
+                                                        <h5>{{$profiledata->website}}</h5>
                                                     </div>
                                                 </div>
                                             </div><br>
@@ -118,7 +120,7 @@
                                                         <h4>:</h4>
                                                     </div>
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>PVT LTD</h5>
+                                                        <h5>{{$profiledata->companytype}}</h5>
                                                     </div>
                                                 </div>
                                             </div><br>
@@ -132,7 +134,7 @@
                                                         <h4>:</h4>
                                                     </div>
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>1994</h5>
+                                                        <h5>{{$profiledata->foundyear}}</h5>
                                                     </div>
                                                 </div>
                                             </div><br>
@@ -146,7 +148,7 @@
                                                         <h4>:</h4>
                                                     </div>
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>450</h5>
+                                                        <h5>{{$profiledata->noofemployee}}</h5>
                                                     </div>
                                                 </div>
                                             </div><br>

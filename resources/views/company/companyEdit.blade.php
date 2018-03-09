@@ -8,7 +8,8 @@
     <div class="profile-page">
         <div class="wrapper">
             <br><br><br><br><br><br><br>
-            <form method="get" action="#">
+            <form method="post" action="{{route('companyprofilestore')}}" enctype="multipart/form-data">
+                {{csrf_field()}}
                 <div class="main main-raised">
                     <div class="profile-content">
                         <div class="container">
@@ -16,7 +17,7 @@
                                 <div class="profile">
                                     <div class="avatar">
                                         <img src="assets/img/company/Mtaj.png" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
-                                        <input type="file" class="text-center center-block well well-sm">
+                                        <input type="file" class="text-center center-block well well-sm" name="companyLogo">
                                     </div>
                                     <div class="name">
                                         <h3 class="title">MTAJ Solutions PVT LTD</h3>
@@ -25,7 +26,7 @@
                                 </div>
                             </div>
                             <div class="description text-center">
-                                <textarea id="aboutcompany" name="aboutcompany" class="form-control" placeholder="About Company" rows="4"></textarea>
+                                <textarea id="aboutcompany" name="aboutCompany" class="form-control" placeholder="About Company" rows="4"></textarea>
                             </div>
                         </div>
                         <div class="container-fluid">
@@ -48,7 +49,7 @@
                                                             <h4>:</h4>
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                            <input id="name" name="name" type="text" placeholder="Name of Company" class="form-control input-md">
+                                                            <input id="name" name="companyName" type="text" placeholder="Name of Company" class="form-control input-md">
                                                         </div>
                                                     </div>
                                                 </div><br>
@@ -83,7 +84,7 @@
                                                             <h4>:</h4>
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                            <textarea  class="form-control" name="companyaddress" id="companyaddress" placeholder="Address of company"></textarea>
+                                                            <textarea  class="form-control" name="companyAddress" id="companyaddress" placeholder="Address of company"></textarea>
                                                         </div>
                                                     </div>
                                                 </div><br>
@@ -125,7 +126,7 @@
                                                             <h4>:</h4>
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                            <input id="companytype" name="companytype" type="text" placeholder="Ex.:PVT limited, limited...etc" class="form-control input-md">
+                                                            <input id="companytype" name="companyType" type="text" placeholder="Ex.:PVT limited, limited...etc" class="form-control input-md">
                                                         </div>
                                                     </div>
                                                 </div><br>
@@ -139,7 +140,7 @@
                                                             <h4>:</h4>
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                            <input id="yearoffound" name="yearoffound" type="number" placeholder="year of found" class="form-control input-md">
+                                                            <input id="yearoffound" name="yearOfFound" type="text" placeholder="year of found" class="form-control input-md">
                                                         </div>
                                                     </div>
                                                 </div><br>
@@ -153,7 +154,7 @@
                                                             <h4>:</h4>
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                            <input id="noofemp" name="noofemp" type="text" placeholder="No Of Employees working..." class="form-control input-md">
+                                                            <input id="noofemp" name="noOfEmp" type="text" placeholder="No Of Employees working..." class="form-control input-md">
                                                         </div>
                                                     </div>
                                                 </div><br>

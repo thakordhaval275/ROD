@@ -37,6 +37,7 @@ Route::get('/jobdetail','companyController@jobdetail')->name('jobDetail');//Job 
 
 //sotre Data
 Route::post('jobpoststore','companyController@jobpoststore')->name('jobpoststore');
+Route::post('companyprofilestore','companyController@companyprofilestore')->name('companyprofilestore');
 
 //=================================================================================
 //Recruiter Pages
@@ -53,7 +54,13 @@ Route::get('/employeeprofile','employeeController@employeeprofile')->name('emplo
 Route::get('/employeeedit','employeeController@employeeedit')->name('employeeEdit');//Edit Profile
 
 
-//======================================================== Admin Pages ========================================================================
+//======================================================== Admin Pages =======================================================================
+//store Data
+Route::post('employeeprofilestore','employeeController@employeeprofilestore')->name('employeeprofilestore');
+
+
+//=================================================================================
+//Admin Pages
 Route::get('/admin','adminController@index')->name('admin');//Admin Index
 
 //Company Pages
