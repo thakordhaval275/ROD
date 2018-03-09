@@ -8,7 +8,7 @@
     <br>
     <div class="profile-page">
         <div class="wrapper">
-            <form method="post" action="{{route('jobpoststore')}}">
+            <form method="post" action="{{route('jobpoststore')}}" enctype="multipart/form-data">
                 {{csrf_field()}}
 				<div class="container-fluid">
                             <br>
@@ -57,7 +57,7 @@
 																</div>
 																<div class="row">
 																	<div class="col-md-12">
-																		<input type="file" name="companylogo">
+																		<input type="file" name="companylogo" id="companylogo">
 																	</div>
 																</div>
 															</div>

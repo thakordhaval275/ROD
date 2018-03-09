@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CompanyProfileModel;
 use App\JobPostModel;
 use Illuminate\Http\Request;
 
@@ -11,12 +12,28 @@ class companyController extends Controller
 
     public function companyProfile()
     {
-        return view('company.companyProfile');
+        $profiledata=CompanyProfileModel::get();
+        return view('company.companyProfile',['ProfileData'=>$profiledata]);
     }
-
     public function companyedit()
     {
         return view('company.companyEdit');
+    }
+    public function companyprofilestore(Request $request)
+    {
+        //dd($request);
+        CompanyProfileModel::create([
+            'logo'=>$request['companyLogo'],
+            'aboutcompany'=>$request['aboutCompany'],
+            'companyname'=>$request['companyName'],
+            'location'=>$request['location'],
+            'address'=>$request['companyAddress'],
+            'emailid'=>$request['email'],
+            'website'=>$request['website'],
+            'companytype'=>$request['companyType'],
+            'foundyear'=>$request['yearOfFound'],
+            'noofemployee'=>$request['noOfEmp']
+        ]);
     }
 
     public function jobpost()
@@ -32,7 +49,7 @@ class companyController extends Controller
             'jobtype'=>$request['jobType'],
             'department'=>$request['department'],
             'term'=>$request['term'],
-            'termperiod0'=>$request['termPeriod'],
+            'termperiod'=>$request['termPeriod'],
             'experience'=>$request['experiance'],
             'payment'=>$request['payment'],
             'noofpositions'=>$request['noOfPostion'],
