@@ -53,13 +53,10 @@ Route::get('/proposal','recruiterController@proposal')->name('proposal');//send 
 Route::get('/employeeprofile','employeeController@employeeprofile')->name('employeeProfile');//Employee Profile
 Route::get('/employeeedit','employeeController@employeeedit')->name('employeeEdit');//Edit Profile
 
-
-//======================================================== Admin Pages =======================================================================
 //store Data
 Route::post('employeeprofilestore','employeeController@employeeprofilestore')->name('employeeprofilestore');
 
-
-//=================================================================================
+//======================================================== Admin Pages =======================================================================
 //Admin Pages
 Route::get('/admin','adminController@index')->name('admin');//Admin Index
 
