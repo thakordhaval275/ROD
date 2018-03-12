@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="description text-center">
-                            <p>{{$reprofile->firstname}}</p>
+                            <p>{{$reprofile->aboutself}}</p>
                         </div>
                     </div><br>
                     </div><br>
@@ -47,7 +47,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Louboutin</h5>
+                                                        <h5>{{$reprofile->firstname}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -61,7 +61,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Christian</h5>
+                                                        <h5>{{$reprofile->lastname}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -75,7 +75,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Male</h5>
+                                                        <h5>{{$reprofile->gender}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -89,7 +89,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Louboutin@yahoo.com</h5>
+                                                        <h5>{{$reprofile->emailid}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -103,7 +103,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>816062574725</h5>
+                                                        <h5>{{$reprofile->contactno}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -117,7 +117,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>47, comman street, new bagan, new york</h5>
+                                                        <h5>{{$reprofile->address}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -131,7 +131,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>New Jearsy</h5>
+                                                        <h5>{{$reprofile->city}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -145,7 +145,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>new York</h5>
+                                                        <h5>{{$reprofile->state}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -159,7 +159,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>USA</h5>
+                                                        <h5>{{$reprofile->country}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -173,7 +173,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Louboutin123@hotmail.com</h5>
+                                                        <h5>{{$reprofile->otheremailid}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -195,7 +195,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>YES</h5>
+                                                        <h5>{{$reprofile->gstregister}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -209,7 +209,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Herly's limited</h5>
+                                                        <h5>{{$reprofile->rcompanyname}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -223,7 +223,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Limited</h5>
+                                                        <h5>{{$reprofile->rcompanytype}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -237,7 +237,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Agriculture</h5>
+                                                        <h5>{{$reprofile->rindustrytype}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -251,7 +251,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>67,stambos housy,new bagan</h5>
+                                                        <h5>{{$reprofile->companyaddress}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -265,7 +265,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Atul</h5>
+                                                        <h5>{{$reprofile->rname}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -279,7 +279,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <h5>Manager</h5>
+                                                        <h5>{{$reprofile->rdesignation}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
