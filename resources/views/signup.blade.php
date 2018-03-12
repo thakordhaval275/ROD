@@ -82,6 +82,51 @@
                    </div>
 
                    <div class="row">
+                       <div class="col-md-12">
+                           <div class="form-group">
+                               <div class="search-category-container">
+                                   <select id="userType" name="userType" class="form-control dropdown-product selectpicker">
+                                       <option value="">Select UserType</option>
+                                       <option value="1">Company</option>
+                                       <option value="2">Recruiter</option>
+                                       <option value="3">Employee</option>
+                                   </select>
+                               </div>
+                               <span class="material-input"></span>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="row">
+                       <div class="col-md-12">
+                           <div class="form-group">
+                               <div class="search-category-container">
+                                   <select id="securityQue" name="securityQue" class="form-control dropdown-product selectpicker">
+                                       <option value="">Select Security Question</option>
+                                       <option value="In what city were you born?">In what city were you born?</option>
+                                       <option value="What is the name of your first school?">What is the name of your first school?</option>
+                                       <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                                       <option value="Who is your favorite actor, musician, or artist?">Who is your favorite actor, musician, or artist?</option>
+                                   </select>
+                               </div>
+                               <span class="material-input"></span>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="row">
+                       <div class="col-md-12">
+                           <div class="form-group">
+                               <div class="input-icon">
+                                   <i class="ti-user"></i>
+                                   <input id="securityAns" type="text" class="form-control" name="securityAns" placeholder="Security Ans">
+                               </div>
+                               <span class="material-input"></span>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="row">
                        <div class="col-nd-12">
                            <div class="form-group text-center">
                                <button type="submit" class="btn btn-common log-btn">Sign Up</button>
