@@ -1,6 +1,3 @@
-{{asset('/')}}
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,47 +78,48 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{route('companyList')}}"><i class="fa fa-circle-o"></i> list of Compnaies</a></li>
-                        <li><a href="{{route('recruiterList')}}"><i class="fa fa-circle-o"></i> list of Recruiter</a></li>
-                        <li><a href="{{route('employeeList')}}"><i class="fa fa-circle-o"></i> list of Employee</a></li>
+						<li><a href="{{route('admin')}}"><i class="fa fa-desktop"></i>Dashboard</a></li>
                     </ul>
                 </li>
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-bar-chart"></i> <span>Company Reports</span>
+                        <i class="fa fa-industry"></i> <span>Company</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Posted Jobs</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Proposal</a></li>
+						<li><a href="{{route('companyList')}}"><i class="fa fa-list"></i> List of Compnaies</a></li>
+                        <li><a href="{{route('postJobList')}}"><i class="fa fa-list"></i> List Of Posted Jobs</a></li>
+                        <li><a href="#"><i class="fa fa-list"></i> List of Proposal</a></li>
                     </ul>
                 </li>
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-bar-chart"></i> <span>Recruiter Reports</span>
+                        <i class="fa fa-users"></i> <span>Recruiter</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Sent Proposals</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Recruiter's Employee list</a></li>
+						<li><a href="{{route('recruiterList')}}"><i class="fa fa-list"></i> List of Recruiter</a></li>
+						<li><a href="#"><i class="fa fa-list"></i> List of Employees</a></li>
+                        <li><a href="#"><i class="fa fa-send-o"></i> Sent Proposals</a></li>
                     </ul>
                 </li>
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-bar-chart"></i> <span>Employee Reports</span>
+                        <i class="fa fa-user"></i> <span>Employee</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i></a></li>
+						<li><a href="{{route('employeeList')}}"><i class="fa fa-list"></i> List of Employee</a></li>
+                        <li><a href="#"><i class="fa fa-list"></i> Schedule</a></li>
                     </ul>
                 </li>
             </ul>

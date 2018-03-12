@@ -61,31 +61,17 @@ Route::post('employeeprofilestore','employeeController@employeeprofilestore')->n
 Route::get('/admin','adminController@index')->name('admin');//Admin Index
 
 //Company Pages
-Route::get('/admin/companyslist','adminController@companylist')->name('companyList');//company List
-Route::get('/admin/view/company/{id}','adminController@viewCompany')->name('viewCompany');//Admin companyProfile
+Route::get('/admin/company/companyslist','adminController@companylist')->name('companyList');//Admin company List
+Route::get('/admin/company/addcompany','adminController@addcompany')->name('addCompany');//Admin Add New Company
+Route::get('/admin/company/view/{id}','adminController@viewcompany')->name('viewCompany');//Admin company Profile
+Route::get('/admin/company/jobpostlist','adminController@jobpostlist')->name('postJobList');//Admin Job Post List
+Route::get('/admin/company/addjob','adminController@addjob')->name('addJob');//Admin Add New Company
 
 //Recruiter Pages
-Route::get('/admin/recruiterlist','adminController@recruiterlist')->name('recruiterList');//Recruiter List
+Route::get('/admin/recruiter/recruiterlist','adminController@recruiterlist')->name('recruiterList');//Recruiter List
+Route::get('/admin/recruiter/addrecruiter','adminController@addrecruiter')->name('addRecruiter');//Admin Add New Recruiter
+Route::get('/admin/recruiter/view/{id}','adminController@viewrecruiter')->name('viewRecruiter');//Admin Recruiter Profile
 
 //Employee Pages
-Route::get('/admin/employeelist','adminController@employeelist')->name('employeeList');//Employee List
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('/admin/employee/employeelist','adminController@employeelist')->name('employeeList');//Employee List
+Route::get('/admin/employee/addemployee','adminController@addemployee')->name('addEmployee');//Admin Add New Employee

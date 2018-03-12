@@ -11,18 +11,18 @@
                 <div class="col-md-6">
                 </div>
                 <div class="col-md-2">
-                    <a href="{{route('addRecruiter')}}"><button type="button" class="btn btn-block btn-danger">Add New Recruiter</button></a>
+                    <a href="{{route('addJob')}}"><button type="button" class="btn btn-block btn-danger">Add New Job</button></a>
                 </div>
             </div>
         </div>
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Recruiters List
+               List Of Posted Job
             </h1>
             <ol class="breadcrumb">
                 <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">list Of Recruiters</li>
+                <li class="active">List Of Posted Job</li>
             </ol>
         </section>
 
@@ -37,29 +37,29 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Gender</th>
-                                    <th>Email id</th>
-                                    <th>City</th>
-                                    <th>Country</th>
-                                    <th>Gst Register</th>
+                                    <th>Company Name</th>
+                                    <th>Job Type</th>
+                                    <th>Department</th>
+                                    <th>Term</th>
+                                    <th>Term Period</th>
+                                    <th>Experience</th>
+                                    <th>Payment</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                @foreach($rlist as $list)
+                                @foreach($joblist as $list)
                                     <tr>
                                         <td>{{$list->id}}</td>
-                                        <td>{{$list->firstname}}</td>
-                                        <td>{{$list->lastname}}</td>
-                                        <td>{{$list->gender}}</td>
-                                        <td>{{$list->emailid}}</td>
-                                        <td>{{$list->city}}</td>
-                                        <td>{{$list->country}}</td>
-                                        <td>{{$list->gstregister}}</td>
-                                        <td><a href="{{route('viewRecruiter',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
+                                        <td>{{$list->companyname}}</td>
+                                        <td>{{$list->jobtype}}</td>
+                                        <td>{{$list->department}}</td>
+                                        <td>{{$list->term}}</td>
+                                        <td>{{$list->termperiod}}</td>
+                                        <td>{{$list->experience}}</td>
+                                        <td>{{$list->payment}}</td>
+                                        <td><a href="{{route('viewCompany',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-pencil"></i></a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash"></i></a></td>
                                     </tr>

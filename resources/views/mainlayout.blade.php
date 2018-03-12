@@ -10,33 +10,33 @@
     <title>Resource On Demand</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/jasny-bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}" type="text/css">
     <!-- Material CSS -->
-    <link rel="stylesheet" href="assets/css/material-kit.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/material-kit.css')}}" type="text/css">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/fonts/themify-icons.css">
+    <link rel="stylesheet" href="{{asset('assets/fonts/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/fonts/themify-icons.css')}}">
 
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="assets/extras/animate.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/extras/animate.css')}}" type="text/css">
     <!-- Owl Carousel -->
-    <link rel="stylesheet" href="assets/extras/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="assets/extras/owl.theme.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/extras/owl.carousel.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/extras/owl.theme.css')}}" type="text/css">
     <!-- Rev Slider CSS -->
-    <link rel="stylesheet" href="assets/extras/settings.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/extras/settings.css')}}" type="text/css">
     <!-- Slicknav js -->
-    <link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/slicknav.css')}}" type="text/css">
     <!-- Main Styles -->
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" type="text/css">
     <!-- Responsive CSS Styles -->
-    <link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}" type="text/css">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/colors/red.css')}}" media="screen" />
 
 </head>
 
@@ -73,22 +73,22 @@
 </div>
 
 <!-- Main JS  -->
-<script type="text/javascript" src="assets/js/jquery-min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/material.min.js"></script>
-<script type="text/javascript" src="assets/js/material-kit.js"></script>
-<script type="text/javascript" src="assets/js/jquery.parallax.js"></script>
-<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.slicknav.js"></script>
-<script type="text/javascript" src="assets/js/main.js"></script>
-<script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-<script type="text/javascript" src="assets/js/waypoints.min.js"></script>
-<script type="text/javascript" src="assets/js/jasny-bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="assets/js/form-validator.min.js"></script>
-<script type="text/javascript" src="assets/js/contact-form-script.js"></script>
-<script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="{{asset('assets/js/jquery-min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/material.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/material-kit.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/jquery.parallax.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/jquery.slicknav.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/main.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/jquery.counterup.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/waypoints.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/jasny-bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/form-validator.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/contact-form-script.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/jquery.themepunch.revolution.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/jquery.themepunch.tools.min.js')}}"></script>
 
 </body>
 </html>
