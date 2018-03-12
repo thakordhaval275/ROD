@@ -3,6 +3,7 @@
 @section('contain')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+	<br>
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-4">
@@ -10,7 +11,7 @@
                 <div class="col-md-6">
                 </div>
                 <div class="col-md-2">
-                    <a href=""><button type="button" class="btn btn-block btn-danger">Add Employee</button></a>
+                    <a href="{{route('addEmployee')}}"><button type="button" class="btn btn-block btn-danger">Add New Employee</button></a>
                 </div>
             </div>
         </div>
@@ -20,8 +21,8 @@
                 Employees List
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">list Of Employees</a></li>
+                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">list Of Employees</li>
             </ol>
         </section>
 
