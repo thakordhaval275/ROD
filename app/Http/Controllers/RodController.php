@@ -68,7 +68,7 @@ class RodController extends Controller
 
     public function userLogin(Request $request)
     {
-       // dd($request);
+       //dd($request);
         $this->validate($request,[
              'email'=>'required',
             'password'=>'required',
@@ -77,7 +77,7 @@ class RodController extends Controller
 
         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password]))
         {
-            dd(Auth::user());
+            //dd(Auth::user());
             dd('Login Successfulluy.');
         }else
         {
