@@ -47,6 +47,8 @@ Route::get('/addmyemployee','recruiterController@addmyemployee')->name('addmyEmp
 Route::get('/myemployee','recruiterController@myemployee')->name('myEmployee');//recruiter's employee
 Route::get('/proposal','recruiterController@proposal')->name('proposal');//send a Proposal
 
+//store Data
+Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')->name('recruiterprofilestore');
 
 //=================================================================================
 //Employee Pages

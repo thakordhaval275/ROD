@@ -13,19 +13,21 @@
             <div class="main main-raised">
                 <div class="profile-content">
                     <div class="container">
+                        @foreach($ReProfile as $reprofile)
+                        @endforeach
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
                                     <img src="assets/img/employee/christian.jpg" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('recruiterEdit')}}"><i class="ti-pencil"> Edit</i></a>
                                 </div>
                                 <div class="name">
-                                    <h3 class="title">Christian Louboutin</h3>
+                                    <h3 class="title">{{$reprofile->firstname}}&nbsp;&nbsp;&nbsp; {{$reprofile->lastname}}</h3>
                                     <h6>Designer</h6>
                                 </div>
                             </div>
                         </div>
                         <div class="description text-center">
-                            <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                            <p>{{$reprofile->firstname}}</p>
                         </div>
                     </div><br>
                     </div><br>

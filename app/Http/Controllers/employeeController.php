@@ -9,7 +9,8 @@ class employeeController extends Controller
 {
     public function employeeprofile()
     {
-        return view('employee.employeeProfile');
+        $viewProfile=EmployeeProfileModel::get();
+        return view('employee.employeeProfile',['ViewProfile'=>$viewProfile]);
     }
 
     public function employeeedit()

@@ -9,7 +9,8 @@
     <div class="profile-page">
         <div class="wrapper">
             <br><br><br><br><br><br><br>
-            <form method="get" action="#">
+            <form method="post" action="{{route('recruiterprofilestore')}}">
+                {{csrf_field()}}
                 <div class="main main-raised">
                     <div class="profile-content">
                         <div class="container">
@@ -17,7 +18,7 @@
                                 <div class="profile">
                                     <div class="avatar">
                                         <img src="assets/img/employee/christian.jpg" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
-                                        <input type="file" name="profilephoto" id="profilephoto" class=" text-center  center-block  well well-sm">
+                                        <input type="file" name="profilePhoto" id="profilePhoto" class=" text-center  center-block  well well-sm">
                                     </div>
                                     <div class="name">
                                         <h3 class="title">Christian Louboutin</h3>
@@ -26,7 +27,7 @@
                                 </div>
                             </div>
                             <div class="description text-center">
-                                <textarea id="aboutme" name="aboutme" class="form-control" placeholder="About Yourself" rows="4"></textarea>
+                                <textarea id="aboutMe" name="aboutMe" class="form-control" placeholder="About Yourself" rows="4"></textarea>
                             </div>
                         </div>
                         <br>
@@ -47,7 +48,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="text" class="form-control" placeholder="Ex.:Janki" name="firstname" id="firstname">
+                                                        <input type="text" class="form-control" placeholder="Ex.:Janki" name="firstName" id="firstName">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -61,7 +62,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="text" class="form-control" placeholder="Ex.:patel" name="lastname" id="lastname">
+                                                        <input type="text" class="form-control" placeholder="Ex.:patel" name="lastName" id="lastName">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -104,7 +105,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                      <input type="tel" class="form-control" placeholder="8160626748" maxlength="15">
+                                                      <input type="tel" class="form-control" placeholder="8160626748" maxlength="15" name="contactNo">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -136,9 +137,9 @@
                                                                 <select id="city" name="city" class="form-control dropdown-product selectpicker">
                                                                     <option value="">Select</option>
                                                                     <option value="Vadodara">Vadodara</option>
-                                                                    <option value="">Bharuch</option>
-                                                                    <option value="">Rajkot</option>
-                                                                    <option value="">Mumbai</option>
+                                                                    <option value="Bharuch">Bharuch</option>
+                                                                    <option value="Rajkot">Rajkot</option>
+                                                                    <option value="Mumbai">Mumbai</option>
                                                                 </select>
                                                         </div>
                                                     </div><!--/col-7-->
@@ -157,10 +158,10 @@
                                                         <div class="search-category-container">
                                                             <select id="state" name="state" class="form-control dropdown-product selectpicker">
                                                                 <option value="">Select</option>
-                                                                <option value="Vadodara">Gujarat</option>
-                                                                <option value="">Maharastra</option>
-                                                                <option value="">Rajasthan</option>
-                                                                <option value="">Goa</option>
+                                                                <option value="Gujarat">Gujarat</option>
+                                                                <option value="Maharastra">Maharastra</option>
+                                                                <option value="Rajasthan">Rajasthan</option>
+                                                                <option value="Goa">Goa</option>
                                                             </select>
                                                         </div>
                                                     </div><!--/col-7-->
@@ -177,12 +178,12 @@
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                         <div class="search-category-container">
-                                                            <select id="state" name="state" class="form-control dropdown-product selectpicker">
+                                                            <select id="country" name="country" class="form-control dropdown-product selectpicker">
                                                                 <option value="">Select</option>
-                                                                <option value="">India</option>
-                                                                <option value="">USA</option>
-                                                                <option value="">Dubai</option>
-                                                                <option value="">Canda</option>
+                                                                <option value="India">India</option>
+                                                                <option value="USA">USA</option>
+                                                                <option value="Dubai">Dubai</option>
+                                                                <option value="Canda">Canda</option>
                                                             </select>
                                                         </div>
                                                     </div><!--/col-7-->
@@ -198,7 +199,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="email" class="ti-email form-control" name="alteremailid" id="alteremailid" placeholder="abc@gmail.com" >
+                                                        <input type="email" class="ti-email form-control" name="alterEmailid" id="alteremailid" placeholder="abc@gmail.com" >
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -235,7 +236,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyname" id="companyname">
+                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyName" id="companyname">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -249,7 +250,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyname" id="companyname">
+                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyType" id="companyname">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -264,10 +265,10 @@
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                         <div class="search-category-container">
-                                                            <select id="industrytype" name="industrytype" class="form-control dropdown-product selectpicker">
+                                                            <select id="industrytype" name="industryType" class="form-control dropdown-product selectpicker">
                                                                 <option value="">Select</option>
-                                                                <option value="">IT-Hardware & Networking</option>
-                                                                <option value="">Food Processing</option>
+                                                                <option value="IT-Hardware & Networking">IT-Hardware & Networking</option>
+                                                                <option value="Food Processing">Food Processing</option>
 
                                                             </select>
                                                         </div>
@@ -284,7 +285,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <textarea class="form-control" name="companyaddress" placeholder="Ex.: 57,hari krushna street, harni" rows="4"></textarea>
+                                                        <textarea class="form-control" name="companyAddress" placeholder="Ex.: 57,hari krushna street, harni" rows="4"></textarea>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -298,7 +299,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyname" id="companyname">
+                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="referenceName" id="companyname">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -315,8 +316,8 @@
                                                         <div class="search-category-container">
                                                             <select id="designation" name="designation" class="form-control dropdown-product selectpicker">
                                                                 <option value="">Select</option>
-                                                                <option value="">Manager</option>
-                                                                <option value="">Assi. Manager</option>
+                                                                <option value="Manager">Manager</option>
+                                                                <option value="Assi. Manager">Assi. Manager</option>
                                                             </select>
                                                         </div>
                                                     </div><!--/col-7-->
