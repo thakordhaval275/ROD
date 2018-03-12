@@ -29,7 +29,7 @@
                             <i class="fa fa-times"></i></button>
                     </div>
                 </div>
-                <form method="post" action="#">
+                <form method="post" action="{{route('jobpoststore')}}">
                     {{csrf_field()}}
                     <div class="box-body">
                         <div class="row">
@@ -118,7 +118,7 @@
                                                 <label>Experience</label>
                                                 <select  id="experiance" name="experiance" class="form-control select2" style="width: 100%;">
                                                     <option value="">Select</option>
-                                                    <option value="">Fresher</option>
+                                                    <option value="Fresher">Fresher</option>
                                                     @for($i=1;$i<=15;$i++)
                                                         <option>{{$i}} Year</option>
                                                     @endfor

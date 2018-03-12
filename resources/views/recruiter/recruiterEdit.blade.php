@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="profile">
                                     <div class="avatar">
-                                        <img src="assets/img/employee/christian.jpg" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
+                                        <img src="{{asset('assets/img/employee/christian.jpg')}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
                                         <input type="file" name="profilePhoto" id="profilePhoto" class=" text-center  center-block  well well-sm">
                                     </div>
                                     <div class="name">

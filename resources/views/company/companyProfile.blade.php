@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="assets/img/company/Mtaj.png" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('companyEdit')}}"><i class="ti-pencil"> Edit</i></a>
+                                    <img src="{{asset('assets/img/company/Mtaj.png')}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('companyEdit')}}"><i class="ti-pencil"> Edit</i></a>
                                 </div>
                                 <div class="name">
                                     <h3 class="title">{{$profiledata->companyname}}</h3>

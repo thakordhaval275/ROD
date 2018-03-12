@@ -15,7 +15,7 @@
             <div class="col-md-9 col-sm-8">
                 <div class="job-list">
                     <div class="thumb">
-                        <a href="{{route('employeeProfile')}}"><img src="assets/img/employee/christian.jpg" height="100px" width="100px" class="img-circle" alt=""></a>
+                        <a href="{{route('employeeProfile')}}"><img src="{{asset('assets/img/employee/christian.jpg')}}" height="100px" width="100px" class="img-circle" alt=""></a>
                     </div>
                     <div class="job-list-content">
                         <h4><a href="{{route('employeeProfile')}}">Christian Louboutin</a><span class="full-time">Avalible</span></h4>
@@ -36,7 +36,7 @@
 
                 <div class="job-list">
                     <div class="thumb">
-                        <a href="{{route('employeeProfile')}}"><img src="assets/img/employee/christian.jpg" height="100px" width="100px" alt=""></a>
+                        <a href="{{route('employeeProfile')}}"><img src="{{asset('assets/img/employee/christian.jpg')}}" height="100px" width="100px" alt=""></a>
                     </div>
                     <div class="job-list-content">
                         <h4><a href="{{route('employeeProfile')}}">king johns</a><span class="part-time">Not Avalible</span></h4>

@@ -119,8 +119,9 @@
         </div>
     </div>
 </div>
+
 <!-- Page Header Start -->
-<div class="page-header" style="background: url(assets/img/banner1.jpg);">
+<div class="page-header" style="background: url({{asset('assets/img/banner1.jpg')}});">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
