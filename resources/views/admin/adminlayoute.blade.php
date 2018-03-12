@@ -82,42 +82,42 @@
                     </ul>
                 </li>
 
-                <li class="treeview">
+                <li class="treeview @if(Request::is('admin/company/companyslist') || Request::is('admin/company/jobpostlist'))menu-open @endif">
                     <a href="#">
                         <i class="fa fa-industry"></i> <span>Company</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu">
+                    <ul class="treeview-menu" @if(Request::is('admin/company/companyslist') || Request::is('admin/company/jobpostlist')) style="display: block;" @endif>
 						<li><a href="{{route('companyList')}}"><i class="fa fa-list"></i> List of Compnaies</a></li>
                         <li><a href="{{route('postJobList')}}"><i class="fa fa-list"></i> List Of Posted Jobs</a></li>
                         <li><a href="#"><i class="fa fa-list"></i> List of Proposal</a></li>
                     </ul>
                 </li>
 
-                <li class="treeview">
+                <li class="treeview @if(Request::is('admin/recruiter/recruiterlist'))menu-open @endif">
                     <a href="#">
                         <i class="fa fa-users"></i> <span>Recruiter</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu">
+                    <ul class="treeview-menu" @if(Request::is('admin/recruiter/recruiterlist')) style="display: block;" @endif>
 						<li><a href="{{route('recruiterList')}}"><i class="fa fa-list"></i> List of Recruiter</a></li>
 						<li><a href="#"><i class="fa fa-list"></i> List of Employees</a></li>
                         <li><a href="#"><i class="fa fa-send-o"></i> Sent Proposals</a></li>
                     </ul>
                 </li>
 
-                <li class="treeview">
+                <li class="treeview @if(Request::is('admin/employee/employeelist'))menu-open @endif">
                     <a href="#">
                         <i class="fa fa-user"></i> <span>Employee</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu">
+                    <ul class="treeview-menu"@if(Request::is('admin/employee/employeelist')) style="display: block;" @endif>
 						<li><a href="{{route('employeeList')}}"><i class="fa fa-list"></i> List of Employee</a></li>
                         <li><a href="#"><i class="fa fa-list"></i> Schedule</a></li>
                     </ul>

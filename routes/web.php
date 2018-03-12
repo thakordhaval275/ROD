@@ -23,6 +23,8 @@ Route::get('/index','RodController@index')->name('index'); //index
 Route::get('/about','RodController@about')->name('about'); //about
 Route::get('/contact','RodController@contact')->name('contactus'); //contect
 Route::get('/signup','RodController@signup')->name('signup'); //signup
+Route::post('user/signup','RodController@userSignup')->name('userSignup'); //signup
+Route::post('user/login','RodController@userLogin')->name('userLogin'); //login
 
 //store Data
 Route::post('contactstore','RodController@contactstore')->name('contactstore');
@@ -74,8 +76,13 @@ Route::get('/admin/company/viewjob/{id}','adminController@viewjob')->name('viewJ
 //Recruiter Pages
 Route::get('/admin/recruiter/recruiterlist','adminController@recruiterlist')->name('recruiterList');//Recruiter List
 Route::get('/admin/recruiter/addrecruiter','adminController@addrecruiter')->name('addRecruiter');//Admin Add New Recruiter
-Route::get('/admin/recruiter/view/{id}','adminController@viewrecruiter')->name('viewRecruiter');//Admin Recruiter Profile
+Route::get('/admin/recruiter/viewrecruiter/{id}','adminController@viewrecruiter')->name('viewRecruiter');//Admin Recruiter Profile
 
 //Employee Pages
 Route::get('/admin/employee/employeelist','adminController@employeelist')->name('employeeList');//Employee List
 Route::get('/admin/employee/addemployee','adminController@addemployee')->name('addEmployee');//Admin Add New Employee
+
+
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -26,7 +26,7 @@
                         <div class="box-body box-profile">
                             <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
 
-                            <h3 class="profile-username text-center">{{$company->companyname}}</h3>
+                            <h3 class="profile-username text-center">{{$recruiter->firstname}}</h3>
 
                             <p class="text-muted text-center">Software Engineer</p>
 

@@ -16,6 +16,8 @@
     </section>
 
     <!-- Main content -->
+	<form method="post" action="{{route('recruiterprofilestore')}}">
+		{{csrf_field()}}
     <section class="content">
 
       <!-- Default box -->
@@ -32,151 +34,149 @@
         </div>
         <div class="box-body">
 			<div class="row">
-				<form role="form">
-					<div class="col-md-12">
-						<div class="col-md-6 box-body">
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>Profile Image</label>
-										<input type="file" name="profilephoto" id="profilephoto" >
-										<p class="help-block">Upload Recruiter Image here.</p>
-									</div>
+				<div class="col-md-12">
+					<div class="col-md-6 box-body">
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Profile Image</label>
+									<input type="file" name="profilePhoto" id="profilePhoto">
+									<p class="help-block">Upload Recruiter Image here.</p>
 								</div>
 							</div>
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>First Name</label>
-										<input type="text" class="form-control" placeholder="Ex.:Janki" name="firstname" id="firstname">
-									</div>
-								</div>
-							</div>
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>Last Name</label>
-										<input type="text" class="form-control" placeholder="Ex.:patel" name="lastname" id="lastname">
-									</div>
-								</div>
-							</div>
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>Gender</label>
-										<div class="form-group">
-											<label>
-											  <input type="radio" name="gender" value="Male" class="minimal-red" checked="true">&nbsp;&nbsp;Male
-											</label>
-											&nbsp;&nbsp;&nbsp;
-											<label>
-											  <input type="radio" name="gender" value="Female" class="minimal-red">&nbsp;&nbsp;Female
-											</label>
-										  </div>
-									 </div>
-								</div>
-							</div>
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>Email ID</label>
-										<input type="email" class="ti-email form-control" name="emailid" id="emailid" placeholder="abc@gmail.com" >
-									</div>
-								</div>
-							</div>
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>Address</label>
-										<textarea class="form-control" name="address" placeholder="Ex.: 57,hari krushna street, harni" rows="3"></textarea>
-									</div>
-								</div>
-							</div>
-							
 						</div>
-						
-						<div class="col-md-6 box-body">
-							<br>
-							<div class="row">
-								<div class="col-md-12">
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>First Name</label>
+									<input type="text" class="form-control" placeholder="Ex.:Janki" name="firstName" id="firstName">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Last Name</label>
+									<input type="text" class="form-control" placeholder="Ex.:patel" name="lastName" id="lastName">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Gender</label>
 									<div class="form-group">
-										<label>Contact Number</label>
-										<input type="tel" class="form-control" placeholder="1234567890" maxlength="15">
+										<label>
+											<input type="radio" name="gender" value="Male" class="minimal-red" checked="true">&nbsp;&nbsp;Male
+										</label>
+										&nbsp;&nbsp;&nbsp;
+										<label>
+											<input type="radio" name="gender" value="Female" class="minimal-red">&nbsp;&nbsp;Female
+										</label>
 									</div>
 								</div>
 							</div>
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>City</label>
-										<select  id="city" name="city" class="form-control select2" style="width: 100%;">
-											<option value="">Select</option>
-											<option value="Vadodara">Vadodara</option>
-											<option value="">Bharuch</option>
-											<option value="">Rajkot</option>
-											<option value="">Mumbai</option>
-										</select>
-									</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Email ID</label>
+									<input type="email" class="ti-email form-control" name="emailid" id="emailid" placeholder="abc@gmail.com" >
 								</div>
 							</div>
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>state</label>
-										<select  id="state" name="state" class="form-control select2" style="width: 100%;">
-											<option value="">Select</option>
-                                            <option value="Vadodara">Gujarat</option>
-                                            <option value="">Maharastra</option>
-                                            <option value="">Rajasthan</option>
-                                            <option value="">Goa</option>
-										</select>
-									</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Address</label>
+									<textarea class="form-control" name="address" placeholder="Ex.: 57,hari krushna street, harni" rows="3"></textarea>
 								</div>
 							</div>
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>Country</label>
-										<select  id="country" name="country" class="form-control select2" style="width: 100%;">
-											<option value="">Select</option>
-                                            <option value="">India</option>
-                                            <option value="">USA</option>
-                                            <option value="">Dubai</option>
-                                            <option value="">Canda</option>
-										</select>
-									</div>
+						</div>
+
+					</div>
+
+					<div class="col-md-6 box-body">
+						<br>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Contact Number</label>
+									<input type="tel" class="form-control" placeholder="8160626748" maxlength="15" name="contactNo">
 								</div>
 							</div>
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>Alternative Email ID</label>
-										<input type="email" class="ti-email form-control" name="alteremailid" id="alteremailid" placeholder="abc@gmail.com" >
-									</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>City</label>
+									<select  id="city" name="city" class="form-control select2" style="width: 100%;">
+										<option value="">Select</option>
+										<option value="Vadodara">Vadodara</option>
+										<option value="Bharuch">Bharuch</option>
+										<option value="Rajkot">Rajkot</option>
+										<option value="Mumbai">Mumbai</option>
+									</select>
 								</div>
 							</div>
-							
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>About Recruiter</label>
-										<textarea id="aboutme" name="aboutme" class="form-control" placeholder="About Yourself" rows="3"></textarea>
-									</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>state</label>
+									<select  id="state" name="state" class="form-control select2" style="width: 100%;">
+										<option value="">Select</option>
+										<option value="Vadodara">Gujarat</option>
+										<option value="Maharastra">Maharastra</option>
+										<option value="Rajasthan">Rajasthan</option>
+										<option value="Goa">Goa</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Country</label>
+									<select  id="country" name="country" class="form-control select2" style="width: 100%;">
+										<option value="">Select</option>
+										<option value="India">India</option>
+										<option value="USA">USA</option>
+										<option value="Dubai">Dubai</option>
+										<option value="Canda">Canda</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Alternative Email ID</label>
+									<input type="email" class="ti-email form-control" name="alterEmailid" id="alteremailid" placeholder="abc@gmail.com" >
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>About Recruiter</label>
+									<textarea id="aboutMe" name="aboutMe" class="form-control" placeholder="About Yourself" rows="3"></textarea>
 								</div>
 							</div>
 						</div>
 					</div>
-				</form>
+				</div>
 			</div>
         </div>
         <!-- /.box-body -->
@@ -188,8 +188,7 @@
         <div class="box-header with-border">
           <h3 class="box-title">Other Details</h3>
           <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fa fa-minus"></i></button>
             <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
               <i class="fa fa-times"></i></button>
@@ -204,7 +203,7 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<label>Company Name</label>
-									<input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyname" id="companyname">
+									<input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyName" id="companyname">
 								</div>
 							</div>
 						</div>
@@ -213,7 +212,7 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<label>Company Type</label>
-									<input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyname" id="companyname">
+									<input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyType" id="companyname">
 								 </div>
 							</div>
 						</div>
@@ -237,10 +236,10 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<label>Industry Type</label>
-									<select  id="industrytype" name="industrytype" class="form-control select2" style="width: 100%;">
+									<select  id="industryType" name="industryType" class="form-control select2" style="width: 100%;">
 										<option value="">Select</option>
-                                        <option value="">IT-Hardware & Networking</option>
-                                        <option value="">Food Processing</option>
+                                        <option value="IT-Hardware & Networking">IT-Hardware & Networking</option>
+                                        <option value="Food Processing">Food Processing</option>
 									</select>
 								</div>
 							</div>
@@ -250,7 +249,7 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<label>Company Address</label>
-									<textarea class="form-control" name="companyaddress" placeholder="Ex.: 57,hari krushna street, harni" rows="4"></textarea>
+									<textarea class="form-control" name="companyAddress" placeholder="Ex.: 57,hari krushna street, harni" rows="4"></textarea>
 								</div>
 							</div>
 						</div>
@@ -262,7 +261,7 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<label>Reference Name</label>
-									<input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyname" id="companyname">
+									<input type="text" class="form-control" placeholder="Ex.:abc private limited" name="referenceName" id="companyname">
 								</div>
 							</div>
 						</div>
@@ -273,8 +272,8 @@
 									<label>Reference's Designation</label>
 									<select  id="designation" name="designation" class="form-control select2" style="width: 100%;">
 										<option value="">Select</option>
-                                        <option value="">Manager</option>
-                                        <option value="">Assi. Manager</option>
+                                        <option value="Manager">Manager</option>
+                                        <option value="Assi. Manager">Assi. Manager</option>
 									</select>
 								</div>
 							</div>
@@ -293,6 +292,7 @@
       <!-- /.box -->
 
     </section>
+	</form>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
