@@ -15,7 +15,7 @@
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="assets/img/company/Mtaj.png" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
+                                    <img src="{{asset('assets/img/company/Mtaj.png')}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
                                 </div>
                                 <div class="name">
                                     <h3 class="title">MTAJ Solutions PVT LTD</h3>

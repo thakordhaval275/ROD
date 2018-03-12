@@ -22,7 +22,7 @@
                     @foreach($JobPost as $viewJob)
                         <div class="job-list" style="width: 100%;">
                             <div class="thumb">
-                                <a href="{{route('companyProfile')}}"><img src="assets/img/company/Mtaj.png" height="100px" width="100px" class="img-circle" alt=""></a>
+                                <a href="{{route('companyProfile')}}"><img src="{{asset('assets/img/company/Mtaj.png')}}" height="100px" width="100px" class="img-circle" alt=""></a>
                             </div>
                             <div class="job-list-content">
                                 <h4><a href="{{route('companyProfile')}}">{{$viewJob->companyname}}</a><span class="full-time">Full-time</span></h4>
@@ -150,5 +150,4 @@
             </div>
         </div>
     </section>
->>>>>>> a2ebf3d8a91a74729e31e5e2e6df7abe79b1c2c5
 @endsection

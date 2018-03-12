@@ -51,7 +51,7 @@
 																<div class="row">
 																	<div class="col-md-12">
 																		<div class="form-group">
-																			<img src="assets/img/company/Mtaj.png" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
+																			<img src="{{asset('assets/img/company/Mtaj.png')}}" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
 																		</div>									
 																	</div>
 																</div>

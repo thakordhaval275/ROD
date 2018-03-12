@@ -28,7 +28,7 @@ class adminController extends Controller
         return view('admin.company.addCompany');
     }
 
-	public function viewCompany($id)
+	public function viewcompany($id)
     {
         //dd($id);
         $company=CompanyProfileModel::where('id',$id)->first();
@@ -44,6 +44,13 @@ class adminController extends Controller
     public function addjob()
     {
         return view('admin.company.addjob');
+    }
+
+    public function viewjob($id)
+    {
+        //dd($id);
+        $job=jobPostModel::where('id',$id)->first();
+        return view('admin.company.viewjob',['job'=>$job]);
     }
 	
 	//============ Recruiter =============
