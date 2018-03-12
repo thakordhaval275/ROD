@@ -82,7 +82,7 @@
                    </div>
 
                    <div class="row">
-                       <div class="col-md-12">
+                       <div class="col-md-12 @if($errors->first('userType')) has-error @endif">
                            <div class="form-group">
                                <div class="search-category-container">
                                    <select id="userType" name="userType" class="form-control dropdown-product selectpicker">
@@ -93,12 +93,15 @@
                                    </select>
                                </div>
                                <span class="material-input"></span>
+                               @if($errors->first('userType'))
+                                   <p class="text-danger"> {{$errors->first('userType')}} </p>
+                               @endif
                            </div>
                        </div>
                    </div>
 
                    <div class="row">
-                       <div class="col-md-12">
+                       <div class="col-md-12  @if($errors->first('securityQue')) has-error @endif">
                            <div class="form-group">
                                <div class="search-category-container">
                                    <select id="securityQue" name="securityQue" class="form-control dropdown-product selectpicker">
@@ -110,18 +113,24 @@
                                    </select>
                                </div>
                                <span class="material-input"></span>
+                               @if($errors->first('securityQue'))
+                                   <p class="text-danger"> {{$errors->first('securityQue')}} </p>
+                               @endif
                            </div>
                        </div>
                    </div>
 
                    <div class="row">
-                       <div class="col-md-12">
+                       <div class="col-md-12  @if($errors->first('securityAns')) has-error @endif">
                            <div class="form-group">
                                <div class="input-icon">
                                    <i class="ti-user"></i>
                                    <input id="securityAns" type="text" class="form-control" name="securityAns" placeholder="Security Ans">
                                </div>
                                <span class="material-input"></span>
+                               @if($errors->first('securityAns'))
+                                   <p class="text-danger"> {{$errors->first('securityAns')}} </p>
+                               @endif
                            </div>
                        </div>
                    </div>

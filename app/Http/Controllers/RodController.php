@@ -45,6 +45,9 @@ class RodController extends Controller
            'email'=>'required',
            'password'=>'required|confirmed',
            'password_confirmation'=>'required',
+           'userType'=>'required',
+           'securityQue'=>'required',
+           'securityAns'=>'required',
         ]
 //            ,[
 //            'email.required'=>'email field is must.',
@@ -54,7 +57,10 @@ class RodController extends Controller
         User::create([
             'name'=>$request->userName,
             'email'=>$request->email,
-            'password'=>bcrypt( $request->password),
+            'password'=>bcrypt($request->password),
+            'usertype'=>$request->userType,
+            'securityque'=>$request->securityQue,
+                'securityans'=>$request->securityAns,
         ]);
 
         return redirect(route('login'));

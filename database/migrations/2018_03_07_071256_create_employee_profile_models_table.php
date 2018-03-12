@@ -24,7 +24,7 @@ class CreateEmployeeProfileModelsTable extends Migration
             $table->string('gender')->nullable();
             $table->date('bdate')->nullable();
             $table->string('contectno')->nullable();
-            $table->string('emailid');
+            $table->string('emailid')->unique();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('country')->nullable();
@@ -40,6 +40,7 @@ class CreateEmployeeProfileModelsTable extends Migration
             $table->string('expirienceyear')->nullable();
             $table->string('expiriencemonth')->nullable();
             $table->string('keyskill')->nullable();
+            $table->string('usertype')->nullable();
             $table->string('password')->nullable();
             $table->string('securityque')->nullable();
             $table->string('securityans')->nullable();

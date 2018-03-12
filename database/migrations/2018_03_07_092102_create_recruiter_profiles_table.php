@@ -20,8 +20,7 @@ class CreateRecruiterProfilesTable extends Migration
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('gender')->nullable();
-            $table->string('emailid');
-            $table->string('password')->nullable();
+            $table->string('emailid')->unique();
             $table->string('contactno')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();
@@ -35,6 +34,10 @@ class CreateRecruiterProfilesTable extends Migration
             $table->string('companyaddress')->nullable();
             $table->string('rname')->nullable();
             $table->string('rdesignation')->nullable();
+            $table->string('usertype')->nullable();
+            $table->string('password')->nullable();
+            $table->string('securityque')->nullable();
+            $table->string('securityans')->nullable();
             $table->timestamps();
         });
     }

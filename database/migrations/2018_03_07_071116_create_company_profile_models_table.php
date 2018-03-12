@@ -20,11 +20,12 @@ class CreateCompanyProfileModelsTable extends Migration
             $table->string('companyname')->nullable();
             $table->string('location')->nullable();
             $table->string('address')->nullable();
-            $table->string('emailid');
+            $table->string('emailid')->unique();
             $table->string('website')->nullable();
             $table->string('companytype')->nullable();
             $table->string('foundyear')->nullable();
             $table->string('noofemployee')->nullable();
+            $table->string('usertype')->nullable();
             $table->string('password')->nullable();
             $table->string('securityque')->nullable();
             $table->string('securityans')->nullable();
