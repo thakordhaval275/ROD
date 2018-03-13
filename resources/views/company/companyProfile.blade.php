@@ -8,7 +8,7 @@
     <br><br>
     <div class="profile-page">
         <div class="wrapper">
-            <br><br><br><br><br><br><br>
+            <br><br><br><br><br>
             <div class="main main-raised">
                 <div class="profile-content">
                     <div class="container">

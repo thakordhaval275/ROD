@@ -9,6 +9,7 @@
         <div class="wrapper">
             <br><br><br><br><br><br><br>
             <form method="post" action="{{route('employeeprofilestore')}}">
+                <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
                 {{csrf_field()}}
                 <div class="main main-raised">
                     <div class="profile-content">
@@ -150,7 +151,7 @@
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <input type="email" class="form-control" name="email" placeholder="ex. abc@gmail.com" id="email">
+                                                                <input type="email" class="form-control" name="email" placeholder="ex. abc@gmail.com" id="email" value="{{Auth::user()->email}}">
                                                             </div>
                                                         </div>
                                                     </div><br>
@@ -276,7 +277,7 @@
                                                                     <div class="col-md-12">
                                                                         <h6>Post Graduate</h6>
                                                                         <select id="postGraduate" name="postGraduate" class="form-control dropdown-product selectpicker">
-                                                                            <option value="">Select</option>
+                                                                            <option value="Not Mention">Select</option>
                                                                             <option value="MCA">MCA</option>
                                                                             <option value="MSc.IT">MSc.IT</option>
                                                                             <option value="MBA">MBA</option>
@@ -289,7 +290,7 @@
                                                                     <div class="col-md-12">
                                                                         <h6>Graduate</h6>
                                                                         <select id="graduate" name="graduate" class="form-control dropdown-product selectpicker">
-                                                                            <option value="">Select</option>
+                                                                            <option value="Not Mention">Select</option>
                                                                             <option value="BCA">BCA</option>
                                                                             <option value="BBA">BBA</option>
                                                                             <option value="B.Com">B.Com</option>
@@ -302,7 +303,7 @@
                                                                     <div class="col-md-12">
                                                                         <h6>Class XII</h6>
                                                                         <select id="classXII" name="classXII" class="form-control dropdown-product selectpicker">
-                                                                            <option value="">Select</option>
+                                                                            <option value="Not Mention">Select</option>
                                                                             <option value="GSHEB">GSHEB</option>
                                                                             <option value="CBSC">CBSC</option>
                                                                             <option value="Other">Other</option>
@@ -314,7 +315,7 @@
                                                                     <div class="col-md-12">
                                                                         <h6>Class X</h6>
                                                                         <select id="classx" name="classX" class="form-control dropdown-product selectpicker">
-                                                                            <option value="">Select</option>
+                                                                            <option value="Not Mention">Select</option>
                                                                             <option value="GSEB">GSEB</option>
                                                                             <option value="CBSC">CBSC</option>
                                                                             <option value="Other">Other</option>
