@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\CompanyProfileModel;
+use App\EmployeeProfileModel;
+use App\RecruiterProfile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -48,22 +51,18 @@ class RodController extends Controller
            'userType'=>'required',
            'securityQue'=>'required',
            'securityAns'=>'required',
-        ]
-//            ,[
-//            'email.required'=>'email field is must.',
-//        ]
-        );
+        ]);
 
-        User::create([
+        $usersign=User::create([
             'name'=>$request->userName,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
             'usertype'=>$request->userType,
             'securityque'=>$request->securityQue,
-                'securityans'=>$request->securityAns,
+            'securityans'=>$request->securityAns,
         ]);
 
-        return redirect(route('login'));
+        //return redirect(route('login'));
     }
 
     public function userLogin(Request $request)
