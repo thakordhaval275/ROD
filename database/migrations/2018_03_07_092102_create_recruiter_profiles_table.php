@@ -35,9 +35,6 @@ class CreateRecruiterProfilesTable extends Migration
             $table->string('rname')->nullable();
             $table->string('rdesignation')->nullable();
             $table->string('usertype')->nullable();
-            $table->string('password')->nullable();
-            $table->string('securityque')->nullable();
-            $table->string('securityans')->nullable();
             $table->timestamps();
         });
     }

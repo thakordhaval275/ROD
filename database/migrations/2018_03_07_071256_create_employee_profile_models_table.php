@@ -41,9 +41,6 @@ class CreateEmployeeProfileModelsTable extends Migration
             $table->string('expiriencemonth')->nullable();
             $table->string('keyskill')->nullable();
             $table->string('usertype')->nullable();
-            $table->string('password')->nullable();
-            $table->string('securityque')->nullable();
-            $table->string('securityans')->nullable();
             $table->timestamps();
         });
     }

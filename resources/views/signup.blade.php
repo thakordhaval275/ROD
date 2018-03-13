@@ -124,7 +124,7 @@
                        <div class="col-md-12  @if($errors->first('securityAns')) has-error @endif">
                            <div class="form-group">
                                <div class="input-icon">
-                                   <i class="ti-user"></i>
+                                   <i class="ti-key"></i>
                                    <input id="securityAns" type="text" class="form-control" name="securityAns" placeholder="Security Ans">
                                </div>
                                <span class="material-input"></span>
