@@ -15,18 +15,19 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/login','RodController@login')->name('login'); //Login
+
 
 //============================================================= Frontend ======================================================================
 //Home Pages
 Route::get('/index','RodController@index')->name('index'); //index
 Route::get('/about','RodController@about')->name('about'); //about
 Route::get('/contact','RodController@contact')->name('contactus'); //contect
+Route::get('/login','RodController@login')->name('login'); //Login
 Route::get('/signup','RodController@signup')->name('signup'); //signup
-Route::post('user/signup','RodController@userSignup')->name('userSignup'); //signup
-Route::post('user/login','RodController@userLogin')->name('userLogin'); //login
 
 //store Data
+Route::post('user/login','RodController@userLogin')->name('userLogin'); //login
+Route::post('user/signup','RodController@userSignup')->name('userSignup'); //signup
 Route::post('contactstore','RodController@contactstore')->name('contactstore');
 
 //=================================================================================

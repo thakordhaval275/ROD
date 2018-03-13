@@ -19,7 +19,7 @@
                                     <img src="{{asset('assets/img/employee/christian.jpg')}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('employeeEdit')}}"><i class="ti-pencil"> Edit</i></a>
                                 </div>
                                 <div class="name">
-                                    <h3 class="title">{{$viewprofile->firstname}}&nbsp;&nbsp;&nbsp;{{$viewprofile->lastname}}</h3>
+                                    <h3 class="title">{{$viewprofile->firstname}}&nbsp;{{$viewprofile->lastname}}</h3>
                                     <h6>Designer</h6>
                                 </div>
                             </div>

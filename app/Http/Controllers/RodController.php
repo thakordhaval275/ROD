@@ -85,7 +85,7 @@ class RodController extends Controller
 
             if($usertype=='1')
             {
-                return redirect(route('companyEdit'));
+                return redirect(route('companyProfile'));
             }
             else if($usertype=='2')
             {
@@ -93,7 +93,7 @@ class RodController extends Controller
             }
             else if($usertype=='3')
             {
-                return redirect(route('employeeEdit'));
+                return redirect(route('employeeProfile'));
             }
         }else
         {

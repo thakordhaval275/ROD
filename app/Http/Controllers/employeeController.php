@@ -17,6 +17,7 @@ class employeeController extends Controller
     {
         return view('employee.employeeEdit');
     }
+
     public function employeeprofilestore(Request $request)
     {
         //dd($request);
@@ -46,10 +47,9 @@ class employeeController extends Controller
             'expirienceyear'=>$request['experianceYear'],
             'expiriencemonth'=>$request['experianceMonth'],
             'keyskill'=>$request['keySkill'],
-            'password'=>$request[''],
-            'securityque'=>$request[''],
-            'securityans'=>$request['']
-
+            'usertype'=>$request['userType']
         ]);
+
+        return redirect(route('employeeProfile'));
     }
 }

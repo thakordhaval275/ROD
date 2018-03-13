@@ -9,7 +9,7 @@
         <div class="wrapper">
             <br><br><br><br><br><br><br>
             <form method="post" action="{{route('companyprofilestore')}}" enctype="multipart/form-data">
-                <input type="hidden" name="usertype" id="usertype" value="{{Auth::user()->usertype}}">
+                <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
                 {{csrf_field()}}
                 <div class="main main-raised">
                     <div class="profile-content">

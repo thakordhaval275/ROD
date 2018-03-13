@@ -15,10 +15,12 @@ class companyController extends Controller
         $profiledata=CompanyProfileModel::get();
         return view('company.companyProfile',['ProfileData'=>$profiledata]);
     }
+
     public function companyedit()
     {
         return view('company.companyEdit');
     }
+
     public function companyprofilestore(Request $request)
     {
         //dd($request);
@@ -32,8 +34,11 @@ class companyController extends Controller
             'website'=>$request['website'],
             'companytype'=>$request['companyType'],
             'foundyear'=>$request['yearOfFound'],
-            'noofemployee'=>$request['noOfEmp']
+            'noofemployee'=>$request['noOfEmp'],
+            'usertype'=>$request['userType']
         ]);
+
+        return redirect(route('companyProfile'));
     }
 
     public function jobpost()
