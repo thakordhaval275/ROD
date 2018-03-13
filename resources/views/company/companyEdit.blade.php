@@ -9,6 +9,7 @@
         <div class="wrapper">
             <br><br><br><br><br><br><br>
             <form method="post" action="{{route('companyprofilestore')}}" enctype="multipart/form-data">
+                <input type="hidden" name="usertype" id="usertype" value="{{Auth::user()->usertype}}">
                 {{csrf_field()}}
                 <div class="main main-raised">
                     <div class="profile-content">
@@ -49,7 +50,8 @@
                                                             <h4>:</h4>
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                            <input id="name" name="companyName" type="text" placeholder="Name of Company" class="form-control input-md">
+                                                            <input id="name" name="companyName" type="text" placeholder="Name of Company" class="form-control input-md" value="{{Auth::user()->name}}">
+
                                                         </div>
                                                     </div>
                                                 </div><br>
@@ -98,7 +100,7 @@
                                                             <h4>:</h4>
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                            <input type="text" name="email" id="email" placeholder="Company Email-id" class="form-control">
+                                                            <input type="text" name="email" id="email" placeholder="Company Email-id" class="form-control" value="{{Auth::user()->email}}">
                                                         </div>
                                                     </div>
                                                 </div><br>
