@@ -10,6 +10,7 @@
         <div class="wrapper">
             <br><br><br><br><br><br><br>
             <form method="post" action="{{route('recruiterprofilestore')}}">
+                <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
                 {{csrf_field()}}
                 <div class="main main-raised">
                     <div class="profile-content">
@@ -21,7 +22,7 @@
                                         <input type="file" name="profilePhoto" id="profilePhoto" class=" text-center  center-block  well well-sm">
                                     </div>
                                     <div class="name">
-                                        <h3 class="title">Christian Louboutin</h3>
+                                        <h3 class="title">{{Auth::user()->name}}</h3>
                                         <h6>Designer</h6>
                                     </div>
                                 </div>
@@ -91,7 +92,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="email" class="ti-email form-control" name="emailid" id="emailid" placeholder="abc@gmail.com" value="{{Auth::user()->emailid}}">
+                                                        <input type="email" class="ti-email form-control" name="emailid" id="emailid" placeholder="abc@gmail.com" value="{{Auth::user()->email}}">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->

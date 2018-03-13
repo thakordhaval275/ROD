@@ -89,7 +89,7 @@ class RodController extends Controller
             }
             else if($usertype=='2')
             {
-                return redirect(route('recruiterEdit'));
+                return redirect(route('recruiterProfile'));
             }
             else if($usertype=='3')
             {

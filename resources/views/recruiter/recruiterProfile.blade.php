@@ -21,7 +21,7 @@
                                     <img src="{{asset('assets/img/employee/christian.jpg')}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('recruiterEdit')}}"><i class="ti-pencil"> Edit</i></a>
                                 </div>
                                 <div class="name">
-                                    <h3 class="title">{{$reprofile->firstname}}&nbsp;&nbsp;&nbsp; {{$reprofile->lastname}}</h3>
+                                    <h3 class="title">{{$reprofile->firstname}}&nbsp;{{$reprofile->lastname}}</h3>
                                     <h6>Designer</h6>
                                 </div>
                             </div>
@@ -31,6 +31,7 @@
                         </div>
                     </div><br>
                     </div><br>
+                {{--<marquee>Update Your Profile...</marquee>--}}
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">

@@ -55,7 +55,9 @@ class recruiterController extends Controller
             'rindustrytype'=>$request['industryType'],
             'companyaddress'=>$request['companyAddress'],
             'rname'=>$request['referenceName'],
-            'rdesignation'=>$request['designation']
+            'rdesignation'=>$request['designation'],
+            'usertype'=>$request['userType']
         ]);
+        return redirect(Route('recruiterProfile'));
     }
 }
