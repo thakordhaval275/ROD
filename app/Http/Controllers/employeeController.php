@@ -45,10 +45,10 @@ class employeeController extends Controller
             'preferredlocation'=>$request['preferredLocation'],
             'expirienceyear'=>$request['experianceYear'],
             'expiriencemonth'=>$request['experianceMonth'],
-            'keyskill'=>$request['keySkill']
-//            'password'=>$request[''],
-//            'securityque'=>$request[''],
-//            'securityans'=>$request[''],
+            'keyskill'=>$request['keySkill'],
+            'password'=>$request[''],
+            'securityque'=>$request[''],
+            'securityans'=>$request['']
 
         ]);
     }

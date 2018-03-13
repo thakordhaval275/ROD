@@ -57,7 +57,7 @@
 																</div>
 																<div class="row">
 																	<div class="col-md-12">
-																		<input type="file" name="companylogo" id="companylogo">
+																		<input type="file" name="companyLogo" id="companyLogo">
 																	</div>
 																</div>
 															</div>
@@ -172,7 +172,7 @@
                                                                     <div class="search-category-container">
                                                                     <select id="experiance" name="experiance" class="form-control dropdown-product selectpicker">
                                                                         <option value="">Select</option>
-                                                                        <option value="">Fresher</option>
+                                                                        <option value="Fresher">Fresher</option>
                                                                         @for($i=1;$i<=15;$i++)
                                                                             <option>{{$i}} Year</option>
                                                                         @endfor
@@ -216,10 +216,10 @@
                                                                 <div class="col-md-12">
                                                                     <div class="search-category-container">
                                                                         <label class="styled-select">
-                                                                            <select class="form-control dropdown-product selectpicker" name="noOfPostion">
+                                                                            <select class="form-control dropdown-product selectpicker" id="noOfPostion" name="noOfPostion">
                                                                                 <option value="">No Of Positions</option>
                                                                                 @for($i=0;$i<200;$i=$i+5)
-                                                                                    <option>{{$i}}</option>
+                                                                                    <option value="{{$i}}">{{$i}}</option>
                                                                                 @endfor
                                                                             </select>
                                                                             <span class="help-block">Please select number of position</span>

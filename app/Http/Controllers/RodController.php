@@ -49,9 +49,7 @@ class RodController extends Controller
            'securityQue'=>'required',
            'securityAns'=>'required',
         ]
-//            ,[
-//            'email.required'=>'email field is must.',
-//        ]
+            //,['email.required'=>'email field is must.',] //Direct Print Msg For Required Field
         );
 
         User::create([
@@ -60,7 +58,7 @@ class RodController extends Controller
             'password'=>bcrypt($request->password),
             'usertype'=>$request->userType,
             'securityque'=>$request->securityQue,
-                'securityans'=>$request->securityAns,
+            'securityans'=>$request->securityAns,
         ]);
 
         return redirect(route('login'));
@@ -70,7 +68,7 @@ class RodController extends Controller
     {
        //dd($request);
         $this->validate($request,[
-             'email'=>'required',
+            'email'=>'required',
             'password'=>'required',
 
         ]);
@@ -78,7 +76,20 @@ class RodController extends Controller
         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password]))
         {
             //dd(Auth::user());
-            dd('Login Successfulluy.');
+            $usertype=Auth::user()->usertype;
+
+            if($usertype=='1')
+            {
+                return redirect(route('companyEdit'));
+            }
+            else if($usertype=='2')
+            {
+                return redirect(route('recruiterEdit'));
+            }
+            else if($usertype=='3')
+            {
+                return redirect(route('employeeEdit'));
+            }
         }else
         {
             dd('Email and Password invalid.');
