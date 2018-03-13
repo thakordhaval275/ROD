@@ -48,6 +48,7 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <input type="text" class="form-control" name="firstName" placeholder="ex. John" id="firstName">
+
                                                             </div>
                                                         </div>
                                                     </div>

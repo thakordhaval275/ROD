@@ -12,7 +12,7 @@ class recruiterController extends Controller
         $Reprofile=RecruiterProfile::get();
         return view('recruiter.recruiterProfile',['ReProfile'=>$Reprofile]);
     }
-    public function recruiteredit()
+    public function recruiteredit(Request $request)
     {
         return view('recruiter.recruiterEdit');
     }
