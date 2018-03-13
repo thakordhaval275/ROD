@@ -91,7 +91,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="email" class="ti-email form-control" name="emailid" id="emailid" placeholder="abc@gmail.com" >
+                                                        <input type="email" class="ti-email form-control" name="emailid" id="emailid" placeholder="abc@gmail.com" value="{{Auth::user()->emailid}}">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->

@@ -66,7 +66,7 @@ class RodController extends Controller
             'securityans'=>$request->securityAns,
         ]);
 
-        //return redirect(route('login'));
+        return redirect(route('login'));
     }
 
     public function userLogin(Request $request)
