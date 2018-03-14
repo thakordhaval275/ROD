@@ -6,7 +6,11 @@ use App\CompanyProfileModel;
 use App\EmployeeProfileModel;
 use App\RecruiterProfile;
 use App\jobPostModel;
+use App\User;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class adminController extends Controller
 {
@@ -14,9 +18,38 @@ class adminController extends Controller
     {
         return view('admin.index');
     }
-	
+
+	public function admin(Request $request)
+    {
+        return view('admin.adminlogin');
+    }
+
+    public function adminLogin(Request $request)
+    {
+
+        $this->validate($request,[
+            'email'=>'required',
+            'password'=>'required',
+        ]);
+
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password]))
+        {
+            $usertype=Auth::user()->usertype;
+
+            if($usertype==0)
+            {
+                return redirect(route('adminindex'));
+            }
+            else{
+                dd("not found");
+            }
+        }else
+        {
+            dd('invalid id pwd');
+        }
+    }
+
 	//========== Company ===============
-	
 	public function companylist(Request $request)
     {
         $clist=CompanyProfileModel::get();

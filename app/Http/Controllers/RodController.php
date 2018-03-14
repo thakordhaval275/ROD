@@ -6,6 +6,7 @@ use App\CompanyProfileModel;
 use App\EmployeeProfileModel;
 use App\RecruiterProfile;
 use App\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
