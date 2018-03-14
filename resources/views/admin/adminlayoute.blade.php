@@ -105,7 +105,7 @@
                     </a>
                     <ul class="treeview-menu" @if(Request::is('admin/recruiter/recruiterlist')) style="display: block;" @endif>
 						<li><a href="{{route('recruiterList')}}"><i class="fa fa-list"></i> List of Recruiter</a></li>
-						<li><a href="#"><i class="fa fa-list"></i> List of Employees</a></li>
+						<li><a href="{{route('myEmployeeList')}}"><i class="fa fa-list"></i> List of Recruiter's Employees</a></li>
                         <li><a href="#"><i class="fa fa-send-o"></i> Sent Proposals</a></li>
                     </ul>
                 </li>

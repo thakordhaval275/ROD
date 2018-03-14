@@ -52,6 +52,7 @@ Route::get('/recruiter/proposal','recruiterController@proposal')->name('proposal
 
 //store Data
 Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')->name('recruiterprofilestore');
+Route::post('myempstore','recruiterController@myempstore')->name('myempstore');
 
 //=================================================================================
 //Employee Pages
@@ -69,7 +70,7 @@ Route::post('/adminLogin','adminController@adminLogin')->name('adminLogin');//Ad
 
 //Company Pages
 Route::get('/admin/company/addcompany','adminController@addcompany')->name('addCompany');//Admin Add New Company
-    Route::get('/admin/company/viewcompany/{id}','adminController@viewcompany')->name('viewCompany');//Admin company Profile
+Route::get('/admin/company/viewcompany/{id}','adminController@viewcompany')->name('viewCompany');//Admin company Profile
 
 Route::get('/admin/company/companyslist','adminController@companylist')->name('companyList');//Admin company List
 Route::get('/admin/company/jobpostlist','adminController@jobpostlist')->name('postJobList');//Admin Job Post List
@@ -80,6 +81,8 @@ Route::get('/admin/company/viewjob/{id}','adminController@viewjob')->name('viewJ
 Route::get('/admin/recruiter/recruiterlist','adminController@recruiterlist')->name('recruiterList');//Recruiter List
 Route::get('/admin/recruiter/addrecruiter','adminController@addrecruiter')->name('addRecruiter');//Admin Add New Recruiter
 Route::get('/admin/recruiter/viewrecruiter/{id}','adminController@viewrecruiter')->name('viewRecruiter');//Admin Recruiter Profile
+Route::get('/admin/recruiter/myemployeelist','adminController@myEmployeeList')->name('myEmployeeList');//Admin my employee list page
+Route::get('/admin/recruiter/addMyEmp','adminController@addMyEmp')->name('addMyEmp');//Admin my employee list page
 
 //Employee Pages
 Route::get('/admin/employee/employeelist','adminController@employeelist')->name('employeeList');//Employee List
