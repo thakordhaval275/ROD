@@ -103,7 +103,7 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu" @if(Request::is('admin/recruiter/recruiterlist')) style="display: block;" @endif>
+                    <ul class="treeview-menu" @if(Request::is('admin/recruiter/recruiterlist') || Request::is('admin/recruiter/myemployeelist')) style="display: block;" @endif>
 						<li><a href="{{route('recruiterList')}}"><i class="fa fa-list"></i> List of Recruiter</a></li>
 						<li><a href="{{route('myEmployeeList')}}"><i class="fa fa-list"></i> List of Recruiter's Employees</a></li>
                         <li><a href="#"><i class="fa fa-send-o"></i> Sent Proposals</a></li>

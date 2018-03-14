@@ -128,14 +128,14 @@ class adminController extends Controller
         return view('admin.recruiter.viewRecruiter',['recruiter'=>$recruiter]);
     }
 
-<<<<<<< HEAD
     public function destroyrecruiter($id)
     {
-        $recruiter=RecruiterProfile::find($id);
+        $recruiter = RecruiterProfile::find($id);
         $recruiter->delete();
 
         return redirect(route('recruiterList'));
-=======
+    }
+
     public function myEmployeeList()
     {
         $myemplist=MyEmployee::get();
@@ -144,7 +144,6 @@ class adminController extends Controller
     public function addMyEmp()
     {
         return view('admin.recruiter.addmyemp');
->>>>>>> 16cac4067733a2a7e3d7e42c3b4b8a150640e04e
     }
 	
 	//============= Employee ===============
