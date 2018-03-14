@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-
-
 //============================================================= Frontend ======================================================================
 //Home Pages
 Route::get('/index','RodController@index')->name('index'); //index
@@ -52,6 +50,7 @@ Route::get('/recruiter/proposal','recruiterController@proposal')->name('proposal
 
 //store Data
 Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')->name('recruiterprofilestore');
+Route::post('myempstore','recruiterController@myempstore')->name('myempstore');
 
 //=================================================================================
 //Employee Pages
@@ -85,6 +84,8 @@ Route::get('/admin/recruiter/addrecruiter','adminController@addrecruiter')->name
 Route::get('/admin/recruiter/viewrecruiter/{id}','adminController@viewrecruiter')->name('viewRecruiter');//Admin Recruiter Profile
 Route::get('/admin/company/destroyrecruiter/{id}','adminController@destroyrecruiter')->name('destroyRecruiter');//Admin Recruiter Delete
 
+Route::get('/admin/recruiter/myemployeelist','adminController@myEmployeeList')->name('myEmployeeList');//Admin my employee list page
+Route::get('/admin/recruiter/addMyEmp','adminController@addMyEmp')->name('addMyEmp');//Admin my employee list page
 
 //Employee Pages
 Route::get('/admin/employee/employeelist','adminController@employeelist')->name('employeeList');//Employee List

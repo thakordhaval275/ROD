@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\CompanyProfileModel;
 use App\EmployeeProfileModel;
+use App\MyEmployee;
 use App\RecruiterProfile;
 use App\jobPostModel;
 use App\User;
@@ -127,12 +128,23 @@ class adminController extends Controller
         return view('admin.recruiter.viewRecruiter',['recruiter'=>$recruiter]);
     }
 
+<<<<<<< HEAD
     public function destroyrecruiter($id)
     {
         $recruiter=RecruiterProfile::find($id);
         $recruiter->delete();
 
         return redirect(route('recruiterList'));
+=======
+    public function myEmployeeList()
+    {
+        $myemplist=MyEmployee::get();
+        return view('admin.recruiter.myemplist',['myemplist'=>$myemplist]);
+    }
+    public function addMyEmp()
+    {
+        return view('admin.recruiter.addmyemp');
+>>>>>>> 16cac4067733a2a7e3d7e42c3b4b8a150640e04e
     }
 	
 	//============= Employee ===============
