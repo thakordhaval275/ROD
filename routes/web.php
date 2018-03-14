@@ -63,7 +63,9 @@ Route::post('employeeprofilestore','employeeController@employeeprofilestore')->n
 
 //======================================================== Admin Pages =======================================================================
 //Admin Pages
-Route::get('/admin','adminController@index')->name('admin');//Admin Index
+Route::get('/adminindex','adminController@index')->name('adminindex');//Admin Index
+Route::get('/admin','adminController@admin')->name('admin');//Admin Index
+Route::post('/adminLogin','adminController@adminLogin')->name('adminLogin');//Admin Index
 
 //Company Pages
 Route::get('/admin/company/addcompany','adminController@addcompany')->name('addCompany');//Admin Add New Company

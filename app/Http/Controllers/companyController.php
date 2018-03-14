@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\CompanyProfileModel;
 use App\JobPostModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class companyController extends Controller
 {
@@ -61,7 +62,15 @@ class companyController extends Controller
             'jobdescription'=>$request['description']
         ]);
 
-        return redirect(Route('jobDetail'));
+        $usertype=Auth::user()->usertype;
+        if($usertype==0)
+        {
+            return redirect(Route('postJobList'));
+        }
+        else if($usertype==1)
+        {
+            return redirect(Route('jobDetail'));
+        }
     }
     
     public function viewjobs(Request $request)
