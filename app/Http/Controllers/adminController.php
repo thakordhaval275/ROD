@@ -49,6 +49,12 @@ class adminController extends Controller
         }
     }
 
+    public function userLogout()
+    {
+        Auth::logout();
+        return redirect(route('admin'));
+    }
+
 	//========== Company ===============
 	public function companylist(Request $request)
     {
@@ -68,6 +74,14 @@ class adminController extends Controller
         return view('admin.company.viewcompany',['company'=>$company]);
     }
 
+    public function destroycompany($id)
+    {
+        $company=CompanyProfileModel::find($id);
+        $company->delete();
+
+        return redirect(route('companyList'));
+    }
+
 	public function jobpostlist()
     {
         $joblist=jobPostModel::get();
@@ -84,6 +98,14 @@ class adminController extends Controller
         //dd($id);
         $job=jobPostModel::where('id',$id)->first();
         return view('admin.company.viewjob',['job'=>$job]);
+    }
+
+    public function destroyjob($id)
+    {
+        $job=JobPostModel::find($id);
+        $job->delete();
+
+        return redirect(route('postJobList'));
     }
 	
 	//============ Recruiter =============
@@ -104,6 +126,14 @@ class adminController extends Controller
         $recruiter=RecruiterProfile::where('id',$id)->first();
         return view('admin.recruiter.viewRecruiter',['recruiter'=>$recruiter]);
     }
+
+    public function destroyrecruiter($id)
+    {
+        $recruiter=RecruiterProfile::find($id);
+        $recruiter->delete();
+
+        return redirect(route('recruiterList'));
+    }
 	
 	//============= Employee ===============
 
@@ -117,4 +147,12 @@ class adminController extends Controller
     {
         return view('admin.employee.addEmployee');
     }
+    public function destroyemployee($id)
+    {
+        $recruiter=EmployeeProfileModel::find($id);
+        $recruiter->delete();
+
+        return redirect(route('employeeList'));
+    }
+
 }

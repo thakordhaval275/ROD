@@ -21,7 +21,7 @@
                List Of Posted Job
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">List Of Posted Job</li>
             </ol>
         </section>
@@ -61,7 +61,7 @@
                                         <td>{{$list->payment}}</td>
                                         <td><a href="{{route('viewJob',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-pencil"></i></a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash"></i></a></td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyJob',['id'=>$list->id])}}"><i class="fa fa-trash"></i></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

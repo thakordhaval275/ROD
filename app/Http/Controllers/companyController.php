@@ -39,7 +39,16 @@ class companyController extends Controller
             'usertype'=>$request['userType']
         ]);
 
-        return redirect(route('companyProfile'));
+        $usertype=Auth::user()->usertype;
+        if($usertype==0)
+        {
+            return redirect(route('companyList'));
+        }
+        else if($usertype==1)
+        {
+            return redirect(Route('companyProfile'));
+        }
+
     }
 
     public function jobpost()

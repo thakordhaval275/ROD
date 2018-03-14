@@ -10,7 +10,7 @@
                 View Company
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li><a href="{{route('companyList')}}"><i class="fa fa-industry"></i> List Of Company</a></li>
                 <li class="active">Profile</li>
             </ol>

@@ -21,7 +21,7 @@
                 Employees List
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">list Of Employees</li>
             </ol>
         </section>
@@ -65,7 +65,7 @@
                                         <td>{{$list->keyskill}}</td>
                                         <td><a href="#"><i class="fa fa-eye"></i> </a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-pencil"></i></a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash"></i></a></td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyEmployee',['id'=>$list->id])}}"><i class="fa fa-trash"></i></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -9,7 +9,7 @@
         Add New Company
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="{{route('companyList')}}"><i class="fa fa-industry"></i> List of Company</a></li>
         <li class="active">Add New Company</li>
       </ol>
@@ -30,6 +30,7 @@
 			  </div>
 		  </div>
 		  <form method="post" action="{{route('companyprofilestore')}}">
+			  <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
 			  {{csrf_field()}}
 			  <div class="box-body">
 					<div class="row">
@@ -58,7 +59,7 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Location</label>
-											<select class="form-control select2" style="width: 100%;">
+											<select  name="location" id="location" class="form-control select2" style="width: 100%;">
 												<option value="">Select Location</option>
 												<option value="India">India</option>
 												<option value="USA">USA</option>

@@ -63,27 +63,33 @@ Route::post('employeeprofilestore','employeeController@employeeprofilestore')->n
 
 //======================================================== Admin Pages =======================================================================
 //Admin Pages
-Route::get('/adminindex','adminController@index')->name('adminindex');//Admin Index
-Route::get('/admin','adminController@admin')->name('admin');//Admin Index
-Route::post('/adminLogin','adminController@adminLogin')->name('adminLogin');//Admin Index
+Route::get('/admin/index','adminController@index')->name('adminindex');//Admin Index
+Route::get('/admin','adminController@admin')->name('admin');//Admin Login Page
+Route::post('/adminlogin','adminController@adminLogin')->name('adminLogin');//Admin login validation check
+Route::get('/userlogout','adminController@userLogout')->name('userLogout');//Admin Logout Method
 
 //Company Pages
-Route::get('/admin/company/addcompany','adminController@addcompany')->name('addCompany');//Admin Add New Company
-    Route::get('/admin/company/viewcompany/{id}','adminController@viewcompany')->name('viewCompany');//Admin company Profile
-
 Route::get('/admin/company/companyslist','adminController@companylist')->name('companyList');//Admin company List
+Route::get('/admin/company/addcompany','adminController@addcompany')->name('addCompany');//Admin Add New Company
+Route::get('/admin/company/viewcompany/{id}','adminController@viewcompany')->name('viewCompany');//Admin company Profile
+Route::get('/admin/company/destroycompany/{id}','adminController@destroycompany')->name('destroyCompany');//Admin company Profile Delete
+
 Route::get('/admin/company/jobpostlist','adminController@jobpostlist')->name('postJobList');//Admin Job Post List
 Route::get('/admin/company/addjob','adminController@addjob')->name('addJob');//Admin Add New Job
 Route::get('/admin/company/viewjob/{id}','adminController@viewjob')->name('viewJob');//Admin Posted Job Profile
+Route::get('/admin/company/destroyjob/{id}','adminController@destroyjob')->name('destroyJob');//Admin Posted Job Delete
 
 //Recruiter Pages
 Route::get('/admin/recruiter/recruiterlist','adminController@recruiterlist')->name('recruiterList');//Recruiter List
 Route::get('/admin/recruiter/addrecruiter','adminController@addrecruiter')->name('addRecruiter');//Admin Add New Recruiter
 Route::get('/admin/recruiter/viewrecruiter/{id}','adminController@viewrecruiter')->name('viewRecruiter');//Admin Recruiter Profile
+Route::get('/admin/company/destroyrecruiter/{id}','adminController@destroyrecruiter')->name('destroyRecruiter');//Admin Recruiter Delete
+
 
 //Employee Pages
 Route::get('/admin/employee/employeelist','adminController@employeelist')->name('employeeList');//Employee List
 Route::get('/admin/employee/addemployee','adminController@addemployee')->name('addEmployee');//Admin Add New Employee
+Route::get('/admin/company/destroyemployee/{id}','adminController@destroyemployee')->name('destroyEmployee');//Admin Employee Delete
 
 
 //Auth::routes();

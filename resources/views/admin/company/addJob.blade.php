@@ -9,7 +9,7 @@
                 Add New Job
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li><a href="{{route('postJobList')}}"><i class="fa fa-industry"></i> List of Posted Job</a></li>
                 <li class="active">Add New Job</li>
             </ol>

@@ -10,7 +10,7 @@
                View Recruiter
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>
 				<li><a href="{{route('recruiterList')}}"><i class="fa fa-users"></i> List Of Recruiter</a></li>
                 <li class="active">Profile</a></li>
             </ol>

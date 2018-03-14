@@ -9,7 +9,7 @@
         Add New Recruiter
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="{{route('recruiterList')}}"><i class="fa fa-users"></i> List of Recruiter</a></li>
         <li class="active">Add New Recruiter</li>
       </ol>

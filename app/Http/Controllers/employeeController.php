@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\EmployeeProfileModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class employeeController extends Controller
 {
@@ -50,6 +51,15 @@ class employeeController extends Controller
             'usertype'=>$request['userType']
         ]);
 
-        return redirect(route('employeeProfile'));
+        $usertype=Auth::user()->usertype;
+
+        if($usertype==0)
+        {
+            return redirect(route('employeeList'));
+        }
+        else if($usertype==3)
+        {
+            return redirect(route('employeeProfile'));
+        }
     }
 }

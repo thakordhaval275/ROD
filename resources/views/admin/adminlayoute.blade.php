@@ -78,7 +78,7 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-						<li><a href="{{route('admin')}}"><i class="fa fa-desktop"></i>Dashboard</a></li>
+						<li><a href="{{route('adminindex')}}"><i class="fa fa-desktop"></i>Dashboard</a></li>
                     </ul>
                 </li>
 
