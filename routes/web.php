@@ -32,7 +32,7 @@ Route::post('contactstore','RodController@contactstore')->name('contactstore');
 
 //=================================================================================
 //Company Pages
-Route::get('/company/companyjobpost','companyController@jobpost')->name('jobpost'); //jobpost
+Route::get('/company/companyjobpost','companyController@jobpost')->name('jobpost'); //jobpost new
 Route::get('/company/companyprofile','companyController@companyprofile')->name('companyProfile');//company Profile
 Route::get('/company/companyedit','companyController@companyedit')->name('companyEdit');//company Edit Profile
 Route::get('/company/viewjobs','companyController@viewjobs')->name('viewJobs');//view PostJobs

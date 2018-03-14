@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
             \App\User::create([
                 'name'=>'Admin',
                 'email'=>'admin@gmail.com',
-                'password'=>bcrypt('12345'),
+                'password'=>bcrypt('123'),
                 'usertype'=>0,
                 'securityque'=>'Test',
                 'securityans'=>'Test',
