@@ -75,6 +75,11 @@ class adminController extends Controller
         return view('admin.company.viewcompany',['company'=>$company]);
     }
 
+    public function editcompany($id)
+    {
+        dd($id);
+    }
+
     public function destroycompany($id)
     {
         $company=CompanyProfileModel::find($id);
@@ -141,9 +146,18 @@ class adminController extends Controller
         $myemplist=MyEmployee::get();
         return view('admin.recruiter.myemplist',['myemplist'=>$myemplist]);
     }
+
     public function addMyEmp()
     {
         return view('admin.recruiter.addmyemp');
+    }
+
+    public function destroymyemp($id)
+    {
+        $myemployee = MyEmployee::find($id);
+        $myemployee->delete();
+
+        return redirect(route('myEmployeeList'));
     }
 	
 	//============= Employee ===============
