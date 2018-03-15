@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\MyEmployee;
+use App\Proposal;
 use App\RecruiterProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -113,5 +114,19 @@ class recruiterController extends Controller
         {
             return redirect(Route('myEmployee'));
         }
+    }
+
+    public function proposalstore(Request $request)
+    {
+        //dd($request);
+        Proposal::create([
+            'companyname'=>$request['companyName'],
+            'noofemployee'=>$request['noOfEmp'],
+            'emailid'=>$request['emailid'],
+            'employeequalification'=>$request['equlification'],
+            'keyskill'=>$request['keySkill']
+        ]);
+
+        return redirect(route('recruiterProfile'));
     }
 }

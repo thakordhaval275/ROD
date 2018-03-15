@@ -25,6 +25,7 @@ class companyController extends Controller
     public function companyprofilestore(Request $request)
     {
         //dd($request);
+        
         CompanyProfileModel::create([
             'logo'=>$request['companyLogo'],
             'aboutcompany'=>$request['aboutCompany'],
