@@ -26,6 +26,7 @@ class companyController extends Controller
     {
         //dd($request);
 
+
         $this->validate($request, [
             'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);

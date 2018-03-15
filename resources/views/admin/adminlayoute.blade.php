@@ -51,7 +51,7 @@
                     <img src="{{asset('assets/admin/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p>{{$username=Auth::user()->name}}</p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                     <ul class="treeview-menu" @if(Request::is('admin/recruiter/recruiterlist') || Request::is('admin/recruiter/myemployeelist')) style="display: block;" @endif>
 						<li><a href="{{route('recruiterList')}}"><i class="fa fa-list"></i> List of Recruiter</a></li>
 						<li><a href="{{route('myEmployeeList')}}"><i class="fa fa-list"></i> List of Recruiter's Employees</a></li>
-                        <li><a href="#"><i class="fa fa-send-o"></i> Sent Proposals</a></li>
+                        <li><a href="{{route('sendProposalList')}}"><i class="fa fa-send-o"></i> Sent Proposals</a></li>
                     </ul>
                 </li>
 

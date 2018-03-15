@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\CompanyProfileModel;
 use App\EmployeeProfileModel;
 use App\MyEmployee;
+use App\Proposal;
 use App\RecruiterProfile;
 use App\jobPostModel;
 use App\User;
@@ -154,6 +155,13 @@ class adminController extends Controller
         return view('admin.recruiter.addmyemp');
     }
 
+
+    public function sendProposalList()
+    {
+        $proposal=Proposal::get();
+        return view('admin.recruiter.sendProposalList',['Proposal'=>$proposal]);
+    }
+
     public function destroymyemp($id)
     {
         $myemployee = MyEmployee::find($id);
@@ -162,6 +170,7 @@ class adminController extends Controller
         return redirect(route('myEmployeeList'));
     }
 	
+
 	//============= Employee ===============
 
     public function employeelist(Request $request)
