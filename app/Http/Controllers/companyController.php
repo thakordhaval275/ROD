@@ -25,9 +25,21 @@ class companyController extends Controller
     public function companyprofilestore(Request $request)
     {
         //dd($request);
-        
+
+
+        $this->validate($request, [
+
+            'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+
+        $image = $request->file('companyLogo');
+        $input = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = 'assets/img/company/';
+        $image->move($destinationPath, $input);
+
         CompanyProfileModel::create([
-            'logo'=>$request['companyLogo'],
+            'logo'=>$input,
             'aboutcompany'=>$request['aboutCompany'],
             'companyname'=>$request['companyName'],
             'location'=>$request['location'],

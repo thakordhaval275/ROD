@@ -65,7 +65,7 @@
                                         <td>{{$mylist->city}}</td>
                                         <td><a href="#"><i class="fa fa-eye"></i> </a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-pencil"></i></a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash"></i></a></td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyMyEmp',['id'=>$mylist->id])}}"><i class="fa fa-trash"></i></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

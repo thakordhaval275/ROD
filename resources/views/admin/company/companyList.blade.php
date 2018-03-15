@@ -60,7 +60,7 @@
                                         <td>{{$list->foundyear}}</td>
                                         <td>{{$list->noofemployee}}</td>
                                         <td><a href="{{route('viewCompany',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editCompany',['id'=>$list->id])}}"><i class="fa fa-pencil"></i></a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyCompany',['id'=>$list->id])}}"><i class="fa fa-trash"></i></a></td>
                                     </tr>
                                 @endforeach

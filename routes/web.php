@@ -72,6 +72,7 @@ Route::get('/userlogout','adminController@userLogout')->name('userLogout');//Adm
 Route::get('/admin/company/companyslist','adminController@companylist')->name('companyList');//Admin company List
 Route::get('/admin/company/addcompany','adminController@addcompany')->name('addCompany');//Admin Add New Company
 Route::get('/admin/company/viewcompany/{id}','adminController@viewcompany')->name('viewCompany');//Admin company Profile
+Route::get('/admin/company/editcompany/{id}','adminController@editcompany')->name('editCompany');//Admin company Profile Edit
 Route::get('/admin/company/destroycompany/{id}','adminController@destroycompany')->name('destroyCompany');//Admin company Profile Delete
 
 Route::get('/admin/company/jobpostlist','adminController@jobpostlist')->name('postJobList');//Admin Job Post List
@@ -87,7 +88,11 @@ Route::get('/admin/company/destroyrecruiter/{id}','adminController@destroyrecrui
 
 Route::get('/admin/recruiter/myemployeelist','adminController@myEmployeeList')->name('myEmployeeList');//Admin my employee list page
 Route::get('/admin/recruiter/addMyEmp','adminController@addMyEmp')->name('addMyEmp');//Admin my employee list page
+
 Route::get('/admin/recruiter/sendProposalList','adminController@sendProposalList')->name('sendProposalList');//Admin my employee list page
+
+Route::get('/admin/company/destroymyemp/{id}','adminController@destroymyemp')->name('destroyMyEmp');//Admin Employee Delete
+
 
 //Employee Pages
 Route::get('/admin/employee/employeelist','adminController@employeelist')->name('employeeList');//Employee List

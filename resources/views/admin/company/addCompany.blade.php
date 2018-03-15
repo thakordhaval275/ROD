@@ -29,7 +29,7 @@
 					  <i class="fa fa-times"></i></button>
 			  </div>
 		  </div>
-		  <form method="post" action="{{route('companyprofilestore')}}">
+		  <form method="post" action="{{route('companyprofilestore')}}" enctype="multipart/form-data">
 			  <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
 			  {{csrf_field()}}
 			  <div class="box-body">
