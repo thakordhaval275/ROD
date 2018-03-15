@@ -27,9 +27,7 @@ class companyController extends Controller
         //dd($request);
 
         $this->validate($request, [
-
             'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
         ]);
 
         $image = $request->file('companyLogo');
@@ -61,6 +59,11 @@ class companyController extends Controller
             return redirect(Route('companyProfile'));
         }
 
+    }
+
+    public function companyupdate(Request $request)
+    {
+        dd($request->id);
     }
 
     public function jobpost()

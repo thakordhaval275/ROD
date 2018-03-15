@@ -39,6 +39,7 @@ Route::get('/company/jobdetail','companyController@jobdetail')->name('jobDetail'
 //sotre Data
 Route::post('jobpoststore','companyController@jobpoststore')->name('jobpoststore');
 Route::post('companyprofilestore','companyController@companyprofilestore')->name('companyprofilestore');
+Route::post('companyupdate','companyController@companyupdate')->name('companyUpdate');// Edit Company Profile
 
 //=================================================================================
 //Recruiter Pages

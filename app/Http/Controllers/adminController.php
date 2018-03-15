@@ -77,7 +77,9 @@ class adminController extends Controller
 
     public function editcompany($id)
     {
-        dd($id);
+        //dd($id);
+        $company=CompanyProfileModel::where('id',$id)->first();
+        return view('admin.company.editCompanyPro',['company'=>$company]);
     }
 
     public function destroycompany($id)
