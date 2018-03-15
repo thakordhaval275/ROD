@@ -78,7 +78,9 @@ class adminController extends Controller
 
     public function editcompany($id)
     {
-        dd($id);
+        //dd($id);
+        $company=CompanyProfileModel::where('id',$id)->first();
+        return view('admin.company.editCompanyPro',['company'=>$company]);
     }
 
     public function destroycompany($id)
@@ -105,6 +107,13 @@ class adminController extends Controller
         //dd($id);
         $job=jobPostModel::where('id',$id)->first();
         return view('admin.company.viewjob',['job'=>$job]);
+    }
+
+    public function editpostjob($id)
+    {
+        //dd($id);
+        $job=jobPostModel::where('id',$id)->first();
+        return view('admin.company.editPostJob',['job'=>$job]);
     }
 
     public function destroyjob($id)

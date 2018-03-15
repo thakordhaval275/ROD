@@ -27,9 +27,7 @@ class companyController extends Controller
         //dd($request);
 
         $this->validate($request, [
-
             'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
         ]);
 
         $image = $request->file('companyLogo');
@@ -60,7 +58,44 @@ class companyController extends Controller
         {
             return redirect(Route('companyProfile'));
         }
+    }
 
+    public function companyupdate(Request $request)
+    {
+        //dd($request);
+
+        $this->validate($request, [
+            'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $image = $request->file('companyLogo');
+        $input = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = 'assets/img/company/';
+        $image->move($destinationPath, $input);
+
+        $company=CompanyProfileModel::find($request->id);
+        $company->logo=$input;
+        $company->aboutcompany=$request->aboutCompany;
+        $company->companyname=$request->companyName;
+        $company->location=$request->location;
+        $company->address=$request->companyAddress;
+        $company->emailid=$request->email;
+        $company->website=$request->website;
+        $company->companytype=$request->companyType;
+        $company->foundyear=$request->yearOfFound;
+        $company->noofemployee=$request->noOfEmp;
+        $company->usertype=$request->userType;
+        $company->save();
+
+        $usertype=Auth::user()->usertype;
+        if($usertype==0)
+        {
+            return redirect(route('companyList'));
+        }
+        else if($usertype==1)
+        {
+            return redirect(Route('companyProfile'));
+        }
     }
 
     public function jobpost()
@@ -72,12 +107,11 @@ class companyController extends Controller
         //dd($request);
 
         $this->validate($request, [
-
-            'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
+            'companylogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $image = $request->file('companyLogo');
+        $image = $request->file('companylogo');
+
         $input = time().'.'.$image->getClientOriginalExtension();
         $destinationPath = 'assets/img/company/';
         $image->move($destinationPath, $input);
@@ -92,7 +126,8 @@ class companyController extends Controller
             'experience'=>$request['experiance'],
             'payment'=>$request['payment'],
             'noofpositions'=>$request['noOfPostion'],
-            'jobdescription'=>$request['description']
+            'jobdescription'=>$request['description'],
+            'usertype'=>$request['userType']
         ]);
 
         $usertype=Auth::user()->usertype;
@@ -107,6 +142,44 @@ class companyController extends Controller
         }
     }
     
+    public function jobpostupdate(Request $request)
+    {
+        //dd($request);
+
+        $this->validate($request, [
+            'companylogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $image = $request->file('companylogo');
+        $input = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = 'assets/img/company/';
+        $image->move($destinationPath, $input);
+
+        $job=JobPostModel::find($request->id);
+        $job->logo=$input;
+        $job->companyname=$request->compnayName;
+        $job->jobtype=$request->jobType;
+        $job->department=$request->department;
+        $job->term=$request->term;
+        $job->termperiod=$request->termPeriod;
+        $job->experience=$request->experience;
+        $job->payment=$request->payment;
+        $job->noofpositions=$request->noOfPostion;
+        $job->jobdescription=$request->description;
+        $job->usertype=$request->userType;
+        $job->save();
+
+        $usertype=Auth::user()->usertype;
+        if($usertype==0)
+        {
+            return redirect(route('postJobList'));
+        }
+        else if($usertype==1)
+        {
+            return redirect(Route('companyProfile'));
+        }
+    }
+
     public function viewjobs(Request $request)
     {
         $viewJob=JobPostModel::get();

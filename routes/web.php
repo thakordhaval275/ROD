@@ -38,7 +38,9 @@ Route::get('/company/jobdetail','companyController@jobdetail')->name('jobDetail'
 
 //sotre Data
 Route::post('jobpoststore','companyController@jobpoststore')->name('jobpoststore');
+Route::post('jobpostupdate','companyController@jobpostupdate')->name('jobpostUpdate');
 Route::post('companyprofilestore','companyController@companyprofilestore')->name('companyprofilestore');
+Route::post('companyupdate','companyController@companyupdate')->name('companyUpdate');// Edit Company Profile
 
 //===========================================================================================================================================
 //Recruiter Pages
@@ -78,6 +80,7 @@ Route::get('/admin/company/destroycompany/{id}','adminController@destroycompany'
 Route::get('/admin/company/jobpostlist','adminController@jobpostlist')->name('postJobList');//Admin Job Post List
 Route::get('/admin/company/addjob','adminController@addjob')->name('addJob');//Admin Add New Job
 Route::get('/admin/company/viewjob/{id}','adminController@viewjob')->name('viewJob');//Admin Posted Job Profile
+Route::get('/admin/company/editpostjob/{id}','adminController@editpostjob')->name('editPostJob');//Admin company Post Job Edit
 Route::get('/admin/company/destroyjob/{id}','adminController@destroyjob')->name('destroyJob');//Admin Posted Job Delete
 
 //Recruiter Pages----------------------------------------------------------------------------------------------------------------------------
