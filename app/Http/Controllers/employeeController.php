@@ -22,8 +22,20 @@ class employeeController extends Controller
     public function employeeprofilestore(Request $request)
     {
         //dd($request);
+
+        $this->validate($request, [
+
+            'empProfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+
+        $image = $request->file('empProfile');
+        $input = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = 'assets/img/company/';
+        $image->move($destinationPath, $input);
+
         EmployeeProfileModel::create([
-            'logo'=>$request['empProfile'],
+            'logo'=>$input,
             'aboutself'=>$request['aboutMe'],
             'firstname'=>$request['firstName'],
             'lastname'=>$request['lastName'],
@@ -59,6 +71,7 @@ class employeeController extends Controller
         }
         else if($usertype==3)
         {
+            //dd($usertype);
             return redirect(route('employeeProfile'));
         }
     }

@@ -8,7 +8,7 @@
     <div class="profile-page">
         <div class="wrapper">
             <br><br><br><br><br><br><br>
-            <form method="post" action="{{route('employeeprofilestore')}}">
+            <form method="post" action="{{route('employeeprofilestore')}}" enctype="multipart/form-data">
                 <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
                 {{csrf_field()}}
                 <div class="main main-raised">
@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="profile">
                                     <div class="avatar">
-                                        <img src="{{asset('assets/img/employee/christian.jpg')}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
+                                        <img src="" style="height: 100px;" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
                                         <input type="file" class="text-center center-block well well-sm" name="empProfile">
                                     </div>
                                     <div class="name">
@@ -151,7 +151,7 @@
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <input type="email" class="form-control" name="email" placeholder="ex. abc@gmail.com" id="email" value="{{Auth::user()->email}}">
+                                                                <input type="email" class="form-control" name="email" placeholder="ex. abc@gmail.com" id="email" value="{{Auth::user()->email}}" readonly>
                                                             </div>
                                                         </div>
                                                     </div><br>

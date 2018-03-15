@@ -26,7 +26,6 @@ class companyController extends Controller
     {
         //dd($request);
 
-
         $this->validate($request, [
 
             'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -71,9 +70,21 @@ class companyController extends Controller
     public function jobpoststore(Request $request)
     {
         //dd($request);
+
+        $this->validate($request, [
+
+            'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+
+        $image = $request->file('companyLogo');
+        $input = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = 'assets/img/company/';
+        $image->move($destinationPath, $input);
+
         JobPostModel::create([
             'companyname'=>$request['compnayName'],
-            'logo'=>$request['companyLogo'],
+            'logo'=>$input,
             'jobtype'=>$request['jobType'],
             'department'=>$request['department'],
             'term'=>$request['term'],
@@ -91,6 +102,7 @@ class companyController extends Controller
         }
         else if($usertype==1)
         {
+            //dd($request->id);
             return redirect(Route('jobDetail'));
         }
     }
@@ -104,6 +116,8 @@ class companyController extends Controller
     
     public function jobdetail()
     {
+        //$getid=JobPostModel::get();
+        //dd($getid);
         return view('company.jobDetail');
     }
 }

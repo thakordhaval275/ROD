@@ -38,8 +38,20 @@ class recruiterController extends Controller
     public function recruiterprofilestore(Request $request)
     {
         //dd($request);
+
+        $this->validate($request, [
+
+            'profilePhoto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+
+        $image = $request->file('profilePhoto');
+        $input = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = 'assets/img/company/';
+        $image->move($destinationPath, $input);
+
         RecruiterProfile::create([
-            'profilephoto'=>$request['profilePhoto'],
+            'profilephoto'=>$input,
             'aboutself'=>$request['aboutMe'],
             'firstname'=>$request['firstName'],
             'lastname'=>$request['lastName'],
@@ -77,6 +89,8 @@ class recruiterController extends Controller
     public function myempstore(Request $request)
     {
         //dd($request);
+
+
         MyEmployee::create([
             'logo'=>$request['empProfile'],
             'aboutself'=>$request['aboutMe'],

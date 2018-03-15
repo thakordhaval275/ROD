@@ -28,7 +28,7 @@ Route::post('user/login','RodController@userLogin')->name('userLogin'); //login
 Route::post('user/signup','RodController@userSignup')->name('userSignup'); //signup
 Route::post('contactstore','RodController@contactstore')->name('contactstore');
 
-//=================================================================================
+//===========================================================================================================================================
 //Company Pages
 Route::get('/company/companyjobpost','companyController@jobpost')->name('jobpost'); //jobpost new
 Route::get('/company/companyprofile','companyController@companyprofile')->name('companyProfile');//company Profile
@@ -40,7 +40,7 @@ Route::get('/company/jobdetail','companyController@jobdetail')->name('jobDetail'
 Route::post('jobpoststore','companyController@jobpoststore')->name('jobpoststore');
 Route::post('companyprofilestore','companyController@companyprofilestore')->name('companyprofilestore');
 
-//=================================================================================
+//===========================================================================================================================================
 //Recruiter Pages
 Route::get('/recruiter/recruiterprofile','recruiterController@recruiterprofile')->name('recruiterProfile');//recruiter Profile
 Route::get('/recruiter/recruiterEdit','recruiterController@recruiteredit')->name('recruiterEdit');//recruiter Profile
@@ -53,7 +53,7 @@ Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')
 Route::post('myempstore','recruiterController@myempstore')->name('myempstore');
 Route::post('proposalstore','recruiterController@proposalstore')->name('proposalstore');
 
-//=================================================================================
+//===========================================================================================================================================
 //Employee Pages
 Route::get('/employee/employeeprofile','employeeController@employeeprofile')->name('employeeProfile');//Employee Profile
 Route::get('/employee/employeeedit','employeeController@employeeedit')->name('employeeEdit');//Edit Profile
@@ -68,7 +68,7 @@ Route::get('/admin','adminController@admin')->name('admin');//Admin Login Page
 Route::post('/adminlogin','adminController@adminLogin')->name('adminLogin');//Admin login validation check
 Route::get('/userlogout','adminController@userLogout')->name('userLogout');//Admin Logout Method
 
-//Company Pages
+//Company Pages------------------------------------------------------------------------------------------------------------------------------
 Route::get('/admin/company/companyslist','adminController@companylist')->name('companyList');//Admin company List
 Route::get('/admin/company/addcompany','adminController@addcompany')->name('addCompany');//Admin Add New Company
 Route::get('/admin/company/viewcompany/{id}','adminController@viewcompany')->name('viewCompany');//Admin company Profile
@@ -80,7 +80,7 @@ Route::get('/admin/company/addjob','adminController@addjob')->name('addJob');//A
 Route::get('/admin/company/viewjob/{id}','adminController@viewjob')->name('viewJob');//Admin Posted Job Profile
 Route::get('/admin/company/destroyjob/{id}','adminController@destroyjob')->name('destroyJob');//Admin Posted Job Delete
 
-//Recruiter Pages
+//Recruiter Pages----------------------------------------------------------------------------------------------------------------------------
 Route::get('/admin/recruiter/recruiterlist','adminController@recruiterlist')->name('recruiterList');//Recruiter List
 Route::get('/admin/recruiter/addrecruiter','adminController@addrecruiter')->name('addRecruiter');//Admin Add New Recruiter
 Route::get('/admin/recruiter/viewrecruiter/{id}','adminController@viewrecruiter')->name('viewRecruiter');//Admin Recruiter Profile
@@ -94,12 +94,12 @@ Route::get('/admin/recruiter/sendProposalList','adminController@sendProposalList
 Route::get('/admin/company/destroymyemp/{id}','adminController@destroymyemp')->name('destroyMyEmp');//Admin Employee Delete
 
 
-//Employee Pages
+//Employee Pages-------------------------------------------------------------------------------------------------------------------------------
 Route::get('/admin/employee/employeelist','adminController@employeelist')->name('employeeList');//Employee List
 Route::get('/admin/employee/addemployee','adminController@addemployee')->name('addEmployee');//Admin Add New Employee
 Route::get('/admin/company/destroyemployee/{id}','adminController@destroyemployee')->name('destroyEmployee');//Admin Employee Delete
 
 
-//Auth::routes();
+//Auth::routes();-------------------------------------------------------------------------------------------------------------------------------
 
 Route::get('/home', 'HomeController@index')->name('home');
