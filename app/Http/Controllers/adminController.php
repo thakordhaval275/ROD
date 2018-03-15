@@ -109,6 +109,13 @@ class adminController extends Controller
         return view('admin.company.viewjob',['job'=>$job]);
     }
 
+    public function editpostjob($id)
+    {
+        //dd($id);
+        $job=jobPostModel::where('id',$id)->first();
+        return view('admin.company.editPostJob',['job'=>$job]);
+    }
+
     public function destroyjob($id)
     {
         $job=JobPostModel::find($id);

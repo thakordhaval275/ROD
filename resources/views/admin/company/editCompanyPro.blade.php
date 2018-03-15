@@ -42,7 +42,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Company Name</label>
-                                                <input id="name" name="companyName" type="text" placeholder="Name of Company" class="form-control input-md">
+                                                <input id="name" name="companyName" type="text" placeholder="Name of Company" class="form-control input-md" value="{{$company->companyname}}">
                                             </div>
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Email Id</label>
-                                                <input type="text" name="email" id="email" placeholder="Company Email-id" class="form-control">
+                                                <input type="text" name="email" id="email" placeholder="Company Email-id" class="form-control" value="{{$company->emailid}}" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -60,11 +60,11 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Location</label>
-                                                <select  name="location" id="location" class="form-control select2" style="width: 100%;">
+                                                <select  name="location" id="location" class="form-control select2" style="width: 100%;" >
                                                     <option value="">Select Location</option>
-                                                    <option value="India">India</option>
-                                                    <option value="USA">USA</option>
-                                                    <option value="New York">New York</option>
+                                                    <option value="India" @if($company->location=='India')selected="selected"@endif>India</option>
+                                                    <option value="USA" @if($company->location=='USA')selected="selected"@endif>USA</option>
+                                                    <option value="New York" @if($company->location=='New York')selected="selected"@endif>New York</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Address</label>
-                                                <textarea  class="form-control" name="companyAddress" id="companyaddress" placeholder="Address of company"></textarea>
+                                                <textarea  class="form-control" name="companyAddress" id="companyaddress" placeholder="Address of company">{{$company->address}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Website</label>
-                                                <input type="text" name="website" id="website" placeholder="Company's Website" class="form-control">
+                                                <input type="text" name="website" id="website" placeholder="Company's Website" class="form-control" value="{{$company->website}}">
                                             </div>
                                         </div>
                                     </div>
@@ -105,7 +105,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Type</label>
-                                                <input id="companytype" name="companyType" type="text" placeholder="Ex.:PVT limited, limited...etc" class="form-control input-md">
+                                                <input id="companytype" name="companyType" type="text" placeholder="Ex.:PVT limited, limited...etc" class="form-control input-md" value="{{$company->companytype}}">
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +114,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Year of Found</label>
-                                                <input id="yearoffound" name="yearOfFound" type="text" placeholder="year of found" class="form-control input-md">
+                                                <input id="yearoffound" name="yearOfFound" type="text" placeholder="year of found" class="form-control input-md" value="{{$company->foundyear}}">
                                             </div>
                                         </div>
                                     </div>
@@ -123,7 +123,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>About Company</label>
-                                                <textarea id="aboutcompany" name="aboutCompany" class="form-control" placeholder="About Company"></textarea>
+                                                <textarea id="aboutcompany" name="aboutCompany" class="form-control" placeholder="About Company" >{{$company->aboutcompany}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>No.Of Employees</label>
-                                                <input id="noofemp" name="noOfEmp" type="text" placeholder="No Of Employees working..." class="form-control input-md">
+                                                <input id="noofemp" name="noOfEmp" type="text" placeholder="No Of Employees working..." class="form-control input-md" value="{{$company->noofemployee}}">
                                             </div>
                                         </div>
                                     </div>
