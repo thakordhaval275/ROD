@@ -91,11 +91,11 @@
                                                 <label>Term</label>
                                                 <div class="form-group">
                                                     <label>
-                                                        <input id="term" type="radio" name="term" value="long" class="minimal-red" @if($job->term=='long')checked="checked"@endif>&nbsp;&nbsp;Long Term
+                                                        <input id="term" type="radio" name="term" value="Long Term" class="minimal-red" @if($job->term=='long')checked="checked"@endif>&nbsp;&nbsp;Long Term
                                                     </label>
                                                     &nbsp;&nbsp;&nbsp;
                                                     <label>
-                                                        <input id="term" type="radio" name="term" value="short" class="minimal-red" @if($job->term=='short')checked="checked"@endif>&nbsp;&nbsp;Short Term
+                                                        <input id="term" type="radio" name="term" value="Sort Term" class="minimal-red" @if($job->term=='short')checked="checked"@endif>&nbsp;&nbsp;Short Term
                                                     </label>
                                                 </div>
                                                 @if($errors->first('term'))
@@ -111,7 +111,7 @@
                                                 <label>Company Logo</label>
                                                 <input type="file" name="companylogo" id="companylogo">
                                                 <p class="help-block">Change Company Logo here.</p>
-                                                <img src="{{ asset('assets/img/company/'.$job->logo) }}" width="100" height="100">
+                                                <img class="img-responsive img-circle" src="{{ asset('assets/img/company/'.$job->logo) }}" width="150" height="150">
                                             </div>
                                         </div>
                                     </div>

@@ -75,37 +75,52 @@
                                                 <div class="col-md-6">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h4>Email Id</h4>
-                                                            <h5>{{$job->emailid}}</h5>
+                                                            <h4>Job Type</h4>
+                                                            <h5>{{$job->jobtype}}</h5>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h4>Website</h4>
-                                                            <h5>{{$job->website}}</h5>
+                                                            <h4>Department</h4>
+                                                            <h5>{{$job->department}}</h5>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h4>Company Type</h4>
-                                                            <h5>{{$job->companytype}}</h5>
+                                                            <h4>Term</h4>
+                                                            <h5>{{$job->term}}</h5>
                                                         </div>
                                                     </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h4>No Of Positions</h4>
+                                                            <h5>{{$job->noofpositions}}</h5>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h4>Found Year</h4>
-                                                            <h5>{{$job->foundyear}}</>
+                                                            <h4>Term Period</h4>
+                                                            <h5>{{$job->termperiod}}</h5>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h4>No. of Employee</h4>
-                                                            <h5>{{$job->noofemployee}}</h5>
+                                                            <h4>Experiance</h4>
+                                                            <h5>{{$job->experience}}</h5>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h4>Payment</h4>
+                                                            <h5>{{$job->payment}}</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -120,7 +135,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <h4>About Company</h4>
-                                                <h5>{{$job->aboutcompany}}</h5>
+                                                <h5>{{$job->jobdescription}}</h5>
                                             </div>
                                         </div>
                                     </div>

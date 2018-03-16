@@ -202,6 +202,14 @@ class adminController extends Controller
     {
         return view('admin.employee.addEmployee');
     }
+
+    public function editemployee($id)
+    {
+        //dd($id);
+        $employee=EmployeeProfileModel::where('id',$id)->first();
+        return view('admin.employee.editemployee',['employee'=>$employee]);
+    }
+
     public function destroyemployee($id)
     {
         $recruiter=EmployeeProfileModel::find($id);

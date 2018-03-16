@@ -98,7 +98,7 @@
                                                 <label>Company Logo</label>
                                                 <input type="file" name="companyLogo">
                                                 <p class="help-block">Upload Company Logo here.</p>
-                                                <img src="{{ asset('assets/img/company/'.$company->logo) }}" width="100" height="100">
+                                                <img class="img-responsive img-circle" src="{{ asset('assets/img/company/'.$company->logo) }}" width="150" height="150">
                                             </div>
                                         </div>
                                     </div>

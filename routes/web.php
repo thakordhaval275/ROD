@@ -63,6 +63,7 @@ Route::get('/employee/employeeedit','employeeController@employeeedit')->name('em
 
 //store Data
 Route::post('employeeprofilestore','employeeController@employeeprofilestore')->name('employeeprofilestore');
+Route::post('employeeupdate','employeeController@employeeupdate')->name('employeeUpdate');
 
 //======================================================== Admin Pages =======================================================================
 //Admin Pages
@@ -103,6 +104,7 @@ Route::get('/admin/company/destroymyemp/{id}','adminController@destroymyemp')->n
 //Employee Pages-------------------------------------------------------------------------------------------------------------------------------
 Route::get('/admin/employee/employeelist','adminController@employeelist')->name('employeeList');//Employee List
 Route::get('/admin/employee/addemployee','adminController@addemployee')->name('addEmployee');//Admin Add New Employee
+Route::get('/admin/employee/editemployee/{id}','adminController@editemployee')->name('editEmployee');//Admin company Post Job Edit
 Route::get('/admin/company/destroyemployee/{id}','adminController@destroyemployee')->name('destroyEmployee');//Admin Employee Delete
 
 
