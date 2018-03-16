@@ -39,16 +39,19 @@
                                 <div class="col-md-6 box-body">
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12  @if($errors->first('compnayName')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Company Name</label>
                                                 <input id="name" name="compnayName" type="text" placeholder="Name of Company" class="form-control input-md" value="{{$job->companyname}}">
+                                                @if($errors->first('compnayName'))
+                                                    <p class="text-danger"> {{$errors->first('compnayName')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('department')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Department</label>
                                                 <select id="department" name="department" class="form-control select2" style="width: 100%;">
@@ -58,12 +61,15 @@
                                                     <option value="Production" @if($job->department=='Production')selected="selected"@endif>Production</option>
                                                     <option value="Accounting" @if($job->department=='Accounting')selected="selected"@endif>Accounting</option>
                                                 </select>
+                                                @if($errors->first('department'))
+                                                    <p class="text-danger"> {{$errors->first('department')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('jobType')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Job Type</label>
                                                 <select id="jobtype" name="jobType" class="form-control select2" style="width: 100%;">
@@ -71,12 +77,15 @@
                                                     <option value="Contract Base" @if($job->jobtype=='Contract Base')selected="selected"@endif>Contract Base</option>
                                                     <option value="Company Base" @if($job->jobtype=='Company Base')selected="selected"@endif>Company Base</option>
                                                 </select>
+                                                @if($errors->first('jobType'))
+                                                    <p class="text-danger"> {{$errors->first('jobType')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('term')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Term</label>
                                                 <div class="form-group">
@@ -88,16 +97,22 @@
                                                         <input id="term" type="radio" name="term" value="short" class="minimal-red" @if($job->term=='short')checked="checked"@endif>&nbsp;&nbsp;Short Term
                                                     </label>
                                                 </div>
+                                                @if($errors->first('term'))
+                                                    <p class="text-danger"> {{$errors->first('term')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('companylogo')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Company Logo</label>
                                                 <input type="file" name="companylogo" id="companylogo">
                                                 <p class="help-block">Upload Company Logo here.</p>
+                                                @if($errors->first('companylogo'))
+                                                    <p class="text-danger"> {{$errors->first('companylogo')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -106,57 +121,72 @@
                                 <div class="col-md-6 box-body">
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('termPeriod')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Term Period</label>
                                                 <input id="termPeriod" name="termPeriod" type="text" placeholder="Termperiod (Ex: No of Weeks,   No of Days..etc)" class="form-control input-md" value="{{$job->termperiod}}">
+                                                @if($errors->first('termPeriod'))
+                                                    <p class="text-danger"> {{$errors->first('termPeriod')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('experiance')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Experience</label>
-                                                <select  id="experiance" name="experiance" class="form-control select2" style="width: 100%;">
+                                                <select  id="experience" name="experience" class="form-control select2" style="width: 100%;">
                                                     <option value="">Select</option>
                                                     <option value="Fresher" @if($job->experience=='Fresher')selected="selected"@endif>Fresher</option>
                                                     @for($i=1;$i<=15;$i++)
-                                                        <option value="{{$i}}" @if($job->experiance==$i)selected="selected"@endif>{{$i}} Year</option>
+                                                        <option value="{{$i}}" @if($job->experience==$i)selected="selected"@endif>{{$i}} Year</option>
                                                     @endfor
                                                 </select>
+                                                @if($errors->first('experiance'))
+                                                    <p class="text-danger"> {{$errors->first('experiance')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('payment')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Payment</label>
                                                 <input id="payment" name="payment" type="number" placeholder="Payment" class="form-control input-md" value="{{$job->payment}}">
+                                                @if($errors->first('payment'))
+                                                    <p class="text-danger"> {{$errors->first('payment')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('noOfPostion')) has-error @endif">
                                             <div class="form-group">
                                                 <label>No. of Positions</label>
                                                 <select  id="noOfPostion"  name="noOfPostion" class="form-control select2" style="width: 100%;">
                                                     <option value="">No Of Positions</option>
                                                     @for($i=0;$i<200;$i=$i+5)
-                                                        <option value="$i" @if($job->experience=='$i')selected="selected"@endif>{{$i}}</option>
+                                                        <option value="{{$i}}" @if($job->experiance=='')selected="selected"@endif>{{$i}}</option>
                                                     @endfor
                                                 </select>
+                                                @if($errors->first('noOfPostion'))
+                                                    <p class="text-danger"> {{$errors->first('noOfPostion')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="row">
+                                    <div class="row @if($errors->first('description')) has-error @endif">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Job Description</label>
                                                 <textarea id="description" name="description" placeholder="Description" class="form-control input-md">{{$job->jobdescription}}</textarea>
+                                                @if($errors->first('description'))
+                                                    <p class="text-danger"> {{$errors->first('description')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

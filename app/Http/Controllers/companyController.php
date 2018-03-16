@@ -28,6 +28,15 @@ class companyController extends Controller
 
         $this->validate($request, [
             'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'companyName'=>'required',
+            'aboutCompany'=>'required',
+            'location'=>'required',
+            'companyAddress'=>'required',
+            'email'=>'required',
+            'website'=>'required',
+            'companyType'=>'required',
+            'yearOfFound'=>'required',
+            'noOfEmp'=>'required',
         ]);
 
         $image = $request->file('companyLogo');
@@ -66,6 +75,15 @@ class companyController extends Controller
 
         $this->validate($request, [
             'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'companyName'=>'required',
+            'aboutCompany'=>'required',
+            'location'=>'required',
+            'companyAddress'=>'required',
+            'email'=>'required',
+            'website'=>'required',
+            'companyType'=>'required',
+            'yearOfFound'=>'required',
+            'noOfEmp'=>'required',
         ]);
 
         $image = $request->file('companyLogo');
@@ -108,6 +126,15 @@ class companyController extends Controller
 
         $this->validate($request, [
             'companylogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'compnayName'=>'required',
+            'jobType'=>'required',
+            'department'=>'required',
+            'term'=>'required',
+            'termPeriod'=>'required',
+            'experiance'=>'required',
+            'payment'=>'required',
+            'noOfPostion'=>'required',
+            'description'=>'required',
         ]);
 
         $image = $request->file('companylogo');
@@ -148,6 +175,15 @@ class companyController extends Controller
 
         $this->validate($request, [
             'companylogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'compnayName'=>'required',
+            'jobType'=>'required',
+            'department'=>'required',
+            'term'=>'required',
+            'termPeriod'=>'required',
+            'experience'=>'required',
+            'payment'=>'required',
+            'noOfPostion'=>'required',
+            'description'=>'required',
         ]);
 
         $image = $request->file('companylogo');
