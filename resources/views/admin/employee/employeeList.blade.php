@@ -64,7 +64,7 @@
                                         <td>{{$list->expirienceyear}}</td>
                                         <td>{{$list->keyskill}}</td>
                                         <td><a href="#"><i class="fa fa-eye"></i> </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editEmployee',['id'=>$list->id])}}"><i class="fa fa-pencil"></i></a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyEmployee',['id'=>$list->id])}}"><i class="fa fa-trash"></i></a></td>
                                     </tr>
                                 @endforeach

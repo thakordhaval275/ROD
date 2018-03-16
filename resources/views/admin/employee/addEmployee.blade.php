@@ -16,7 +16,7 @@
     </section>
 
     <!-- Main content -->
-	  <form method="post" action="{{route('employeeprofilestore')}}">
+	  <form method="post" action="{{route('employeeprofilestore')}}" enctype="multipart/form-data">
 		  <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
 		  {{csrf_field()}}
 		  <section class="content">
@@ -73,7 +73,7 @@
 											  <label>Gender</label>
 											  <div class="form-group">
 												  <label>
-													  <input type="radio" name="gender" value="Male" class="minimal-red" checked="true">&nbsp;&nbsp;Male
+													  <input type="radio" name="gender" value="Male" class="minimal-red">&nbsp;&nbsp;Male
 												  </label>
 												  &nbsp;&nbsp;&nbsp;
 												  <label>
@@ -350,7 +350,7 @@
 												  <option value="Fresher">Fresher</option>
 												  <option value="Month">Month</option>
 												  @for($i=1;$i<=15;$i++)
-													  <option>{{$i}} Year</option>
+													  <option value="{{$i}}">{{$i}} Year</option>
 												  @endfor
 											  </select>
 										  </div>
@@ -364,7 +364,7 @@
 											  <select  id="experianceMonth" name="experianceMonth" class="form-control select2" style="width: 100%;">
 												  <option value="">Select</option>
 												  @for($i=1;$i<=12;$i++)
-													  <option>{{$i}} Month</option>
+													  <option value="{{$i}}">{{$i}} Month</option>
 												  @endfor
 											  </select>
 										  </div>

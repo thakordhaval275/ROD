@@ -100,6 +100,7 @@ Route::get('/admin/company/destroymyemp/{id}','adminController@destroymyemp')->n
 //Employee Pages-------------------------------------------------------------------------------------------------------------------------------
 Route::get('/admin/employee/employeelist','adminController@employeelist')->name('employeeList');//Employee List
 Route::get('/admin/employee/addemployee','adminController@addemployee')->name('addEmployee');//Admin Add New Employee
+Route::get('/admin/employee/editemployee/{id}','adminController@editemployee')->name('editEmployee');//Admin company Post Job Edit
 Route::get('/admin/company/destroyemployee/{id}','adminController@destroyemployee')->name('destroyEmployee');//Admin Employee Delete
 
 
