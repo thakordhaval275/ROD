@@ -54,6 +54,7 @@ Route::get('/recruiter/proposal','recruiterController@proposal')->name('proposal
 Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')->name('recruiterprofilestore');
 Route::post('myempstore','recruiterController@myempstore')->name('myempstore');
 Route::post('proposalstore','recruiterController@proposalstore')->name('proposalstore');
+Route::post('recruiterupdate','recruiterController@recruiterupdate')->name('recruiterupdate');
 
 //===========================================================================================================================================
 //Employee Pages

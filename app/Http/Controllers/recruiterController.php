@@ -86,6 +86,73 @@ class recruiterController extends Controller
 
     }
 
+    public function recruiterupdate(Request $request)
+    {
+        //dd($request);
+        $this->validate($request, [
+            'aboutMe'=>'required',
+            'firstName'=>'required',
+            'lastName'=>'required',
+            'gender'=>'required',
+            'emailid'=>'required',
+            'contactNo'=>'required',
+            'address'=>'required',
+            'city'=>'required',
+            'state'=>'required',
+            'country'=>'required',
+            'alterEmailid'=>'required',
+            'gst'=>'required',
+            'companyName'=>'required',
+            'companyType'=>'required',
+            'industryType'=>'required',
+            'companyAddress'=>'required',
+            'referenceName'=>'required',
+            'designation'=>'required',
+        ]);
+
+        if($request->file('companyLogo')!=""){
+            $image = $request->file('companyLogo');
+            $input = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = 'assets/img/company/';
+            $image->move($destinationPath, $input);
+        } else {
+            $input = $request->hiddenPhoto;
+        }
+
+        $company=RecruiterProfile::find($request->id);
+        $company->profilephoto=$input;
+        $company->aboutself=$request->aboutMe;
+        $company->firstname=$request->firstName;
+        $company->lastname=$request->lastName;
+        $company->gender=$request->gender;
+        $company->emailid=$request->emailid;
+        $company->contactno=$request->contactNo;
+        $company->address=$request->address;
+        $company->city=$request->city;
+        $company->state=$request->state;
+        $company->country=$request->country;
+        $company->otheremailid=$request->alterEmailid;
+        $company->gstregister=$request->gst;
+        $company->rcompanyname=$request->companyName;
+        $company->rcompanytype=$request->companyType;
+        $company->rindustrytype=$request->industryType;
+        $company->companyaddress=$request->companyAddress;
+        $company->rname=$request->referenceName;
+        $company->rdesignation=$request->designation;
+        $company->usertype=$request->userType;
+        $company->save();
+
+        $usertype=Auth::user()->usertype;
+        if($usertype==0)
+        {
+            return redirect(route('recruiterList'));
+        }
+        else if($usertype==2)
+        {
+            return redirect(Route('companyProfile'));
+        }
+    }
+
     public function myempstore(Request $request)
     {
         //dd($request);
