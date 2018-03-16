@@ -174,6 +174,12 @@ class adminController extends Controller
         $myemp=MyEmployee::where('id',$id)->first();
         return view('admin.recruiter.viewMyEmployee',['myemp'=>$myemp]);
     }
+    public  function editMyEmp($id)
+    {
+        //dd($id);
+        $myempedit=MyEmployee::where('id',$id)->first();
+        return view('admin.recruiter.editMyEmployee',['myempedit'=>$myempedit]);
+    }
 
     public function sendProposalList()
     {

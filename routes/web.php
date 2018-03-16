@@ -55,6 +55,7 @@ Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')
 Route::post('myempstore','recruiterController@myempstore')->name('myempstore');
 Route::post('proposalstore','recruiterController@proposalstore')->name('proposalstore');
 Route::post('recruiterupdate','recruiterController@recruiterupdate')->name('recruiterupdate');
+Route::post('myempupdate','recruiterController@myempupdate')->name('myempupdate');
 
 //===========================================================================================================================================
 //Employee Pages
@@ -95,6 +96,7 @@ Route::get('/admin/company/destroyrecruiter/{id}','adminController@destroyrecrui
 Route::get('/admin/recruiter/myemployeelist','adminController@myEmployeeList')->name('myEmployeeList');//Admin my employee list page
 Route::get('/admin/recruiter/addMyEmp','adminController@addMyEmp')->name('addMyEmp');//Admin my employee list page
 Route::get('/admin/recruiter/viewMyEmp/{id}','adminController@viewMyEmp')->name('viewMyEmp');//Admin my employee list page
+Route::get('/admin/recruiter/editMyEmp/{id}','adminController@editMyEmp')->name('editMyEmp');//Admin my employee list page
 
 Route::get('/admin/recruiter/sendProposalList','adminController@sendProposalList')->name('sendProposalList');//Admin my employee list page
 
