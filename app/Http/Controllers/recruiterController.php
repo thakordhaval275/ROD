@@ -127,8 +127,8 @@ class recruiterController extends Controller
             'designation'=>'required',
         ]);
 
-        if($request->file('companyLogo')!=""){
-            $image = $request->file('companyLogo');
+        if($request->file('profilePhoto')!=""){
+            $image = $request->file('profilePhoto');
             $input = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = 'assets/img/recruiter/';
             $image->move($destinationPath, $input);

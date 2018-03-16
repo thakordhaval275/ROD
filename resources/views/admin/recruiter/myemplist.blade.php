@@ -21,7 +21,7 @@
                 Recruiters's Employee List
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">list Of Recruiters's Employee</li>
             </ol>
         </section>

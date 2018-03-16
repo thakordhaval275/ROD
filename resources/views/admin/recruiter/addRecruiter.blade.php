@@ -17,6 +17,7 @@
 
     <!-- Main content -->
 	<form method="post" action="{{route('recruiterprofilestore')}}" enctype="multipart/form-data">
+		<input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
 		{{csrf_field()}}
     <section class="content">
 
@@ -43,6 +44,9 @@
 									<label>Profile Image</label>
 									<input type="file" name="profilePhoto" id="profilePhoto">
 									<p class="help-block">Upload Recruiter Image here.</p>
+									@if($errors->first('profilePhoto'))
+										<p class="text-danger"> {{$errors->first('profilePhoto')}} </p>
+									@endif
 								</div>
 							</div>
 						</div>
@@ -77,7 +81,7 @@
 									<label>Gender</label>
 									<div class="form-group">
 										<label>
-											<input type="radio" name="gender" value="Male" class="minimal-red" checked="true">&nbsp;&nbsp;Male
+											<input type="radio" name="gender" value="Male" class="minimal-red">&nbsp;&nbsp;Male
 										</label>
 										&nbsp;&nbsp;&nbsp;
 										<label>
@@ -155,7 +159,7 @@
 									<label>state</label>
 									<select  id="state" name="state" class="form-control select2" style="width: 100%;">
 										<option value="">Select</option>
-										<option value="Vadodara">Gujarat</option>
+										<option value="Gujarat">Gujarat</option>
 										<option value="Maharastra">Maharastra</option>
 										<option value="Rajasthan">Rajasthan</option>
 										<option value="Goa">Goa</option>
@@ -261,11 +265,11 @@
 								<label>GST Register</label>
 								<div class="form-group">
 									<label>
-										<input type="radio" name="gst" value="yes" class="minimal-red">&nbsp;&nbsp;Yes
+										<input type="radio" name="gst" value="Yes" class="minimal-red">&nbsp;&nbsp;Yes
 									</label>
 									&nbsp;&nbsp;&nbsp;
 									<label>
-										<input type="radio" name="gst" value="no" class="minimal-red" checked="true">&nbsp;&nbsp;No
+										<input type="radio" name="gst" value="No" class="minimal-red" checked="true">&nbsp;&nbsp;No
 									</label>
 								</div>
 								@if($errors->first('gst'))
