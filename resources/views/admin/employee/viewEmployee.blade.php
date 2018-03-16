@@ -7,11 +7,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-               View Recruiter
+                View Recruiter's Employee
             </h1>
             <ol class="breadcrumb">
                 <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="{{route('recruiterList')}}"><i class="fa fa-industry"></i> List Of Recruiter</a></li>
+                <li><a href="{{route('employeeList')}}"><i class="fa fa-industry"></i> List Of Employee</a></li>
                 <li class="active">Profile</li>
             </ol>
         </section>
@@ -24,9 +24,9 @@
                     <!-- Profile Image -->
                     <div class="box box-primary">
                         <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="{{ asset('assets/img/recruiter/').'/'.$recruiter->profilephoto}}" alt="User profile picture">
+                            <img class="profile-user-img img-responsive img-circle" src="{{ asset('assets/img/employee/').'/'.$employee->logo}}" alt="User profile picture">
 
-                            <h3 class="profile-username text-center">{{$recruiter->firstname}} {{$recruiter->lastname}}</h3>
+                            <h3 class="profile-username text-center">{{$employee->firstname}} {{$employee->lastname}}</h3>
 
                             <p class="text-muted text-center">Software Engineer</p>
 
@@ -46,18 +46,21 @@
 
                             <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
-                            <p class="text-muted">{{$recruiter->city}}</p>
+                            <p class="text-muted">{{$employee->city}}</p>
 
                             <hr>
 
-                            <strong><i class="fa fa-briefcase margin-r-5"></i> Reference Company</strong>
+                            </p><strong><i class="fa fa-graduation-cap margin-r-5"></i>Qulification</strong>
 
-                            <p class="text-muted">{{$recruiter->rcompanyname}}
-                                <hr>
+                            <p class="text-muted">{{$employee->postgraduate}}, {{$employee->graduate}}</p>
 
-                            </p><strong><i class="fa fa-edit margin-r-5"></i>GST Register</strong>
+                            <hr>
 
-                            <p class="text-muted">{{$recruiter->gstregister}}</p>
+                            <strong><i class="fa fa-map-marker margin-r-5"></i> Preferred Location</strong>
+
+                            <p class="text-muted">{{$employee->preferredlocation}}
+
+
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -81,57 +84,54 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <h4>Email Id</h4>
-                                                            <h5>{{$recruiter->emailid}}</h5>
+                                                            <h5>{{$employee->emailid}}</h5>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <h4>Contact Number</h4>
-                                                            <h5>{{$recruiter->contactno}}</h5>
+                                                            <h5>{{$employee->contectno}}</h5>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <h4>Address</h4>
-                                                            <h5>{{$recruiter->address}}, {{$recruiter->city}}, {{$recruiter->state}}, {{$recruiter->country}}</h5>
+                                                            <h5>{{$employee->address}}, {{$employee->city}}, {{$employee->state}}, {{$employee->country}}, {{$employee->pincode}}</h5>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h4>Alternative Email-ID</h4>
-                                                            <h5>{{$recruiter->otheremailid}}</>
+                                                            <h4>Gender</h4>
+                                                            <h5>{{$employee->gender}}</h5>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
+
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h4><strong>Reference</strong></h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <h4>company Type</h4>
-                                                            <h5>{{$recruiter->rcompanytype}}, {{$recruiter->rindustrytype}}</h5>
+                                                            <h4>BirthDate</h4>
+                                                            <h5>{{$employee->bdate}}</h5>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h4>company Address</h4>
-                                                            <h5>{{$recruiter->companyaddress}}</h5>
+                                                            <h4>HomeTown</h4>
+                                                            <h5>{{$employee->hometown}}</h5>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h4>Person Name</h4>
-                                                            <h5>{{$recruiter->rname}}, {{$recruiter->rdesignation}}</h5>
+                                                            <h4>Marital Status</h4>
+                                                            <h5>{{$employee->maritalstatus}}</h5>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -141,10 +141,84 @@
                                 <!-- /.post -->
                                 <div class="post">
                                     <div class="user-block">
+
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <h4>About Self</h4>
-                                                <h5>{{$recruiter->aboutself}}</h5>
+                                                <h4><strong>Education Detail</strong></h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+
+                                            <div class="col-md-6">
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h4>Post Graduate</h4>
+                                                        <h5>{{$employee->postgraduate}}</h5>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h4>Graduate</h4>
+                                                        <h5>{{$employee->graduate}}</h5>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h4>Other Education</h4>
+                                                        <h5>{{$employee->otherque}}</h5>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h4>Total Experiance</h4>
+                                                        <h5>{{$employee->expirienceyear}}, {{$employee->expiriencemonth}}</h5>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-6">
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h4>class XII</h4>
+                                                        <h5>{{$employee->classxii}}</h5>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h4>class X</h4>
+                                                        <h5>{{$employee->classx}}</h5>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h4>Industry</h4>
+                                                        <h5>{{$employee->industry}}</h5>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.user-block -->
+                                </div>
+
+                                <div class="post">
+                                    <div class="user-block">
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h4><strong>About Self</strong></h4>
+                                                <h5>{{$employee->aboutself}}</h5>
                                             </div>
                                         </div>
                                     </div>
