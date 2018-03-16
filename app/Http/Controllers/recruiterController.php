@@ -42,12 +42,29 @@ class recruiterController extends Controller
         $this->validate($request, [
 
             'profilePhoto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
+            'aboutMe'=>'required',
+            'firstName'=>'required',
+            'lastName'=>'required',
+            'gender'=>'required',
+            'emailid'=>'required',
+            'contactNo'=>'required',
+            'address'=>'required',
+            'city'=>'required',
+            'state'=>'required',
+            'country'=>'required',
+            'alterEmailid'=>'required',
+            'gst'=>'required',
+            'companyName'=>'required',
+            'companyType'=>'required',
+            'industryType'=>'required',
+            'companyAddress'=>'required',
+            'referenceName'=>'required',
+            'designation'=>'required',
         ]);
 
         $image = $request->file('profilePhoto');
         $input = time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = 'assets/img/company/';
+        $destinationPath = 'assets/img/recruiter/';
         $image->move($destinationPath, $input);
 
         RecruiterProfile::create([
@@ -113,7 +130,7 @@ class recruiterController extends Controller
         if($request->file('companyLogo')!=""){
             $image = $request->file('companyLogo');
             $input = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = 'assets/img/company/';
+            $destinationPath = 'assets/img/recruiter/';
             $image->move($destinationPath, $input);
         } else {
             $input = $request->hiddenPhoto;
@@ -156,10 +173,19 @@ class recruiterController extends Controller
     public function myempstore(Request $request)
     {
         //dd($request);
+        $this->validate($request, [
 
+            'empProfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+
+        $image = $request->file('empProfile');
+        $input = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = 'assets/img/recruiter/';
+        $image->move($destinationPath, $input);
 
         MyEmployee::create([
-            'logo'=>$request['empProfile'],
+            'logo'=>$input,
             'aboutself'=>$request['aboutMe'],
             'firstname'=>$request['firstName'],
             'lastname'=>$request['lastName'],

@@ -46,7 +46,7 @@
                                                 <label>Profile Image</label>
                                                 <input type="file" name="profilePhoto" id="profilePhoto">
                                                 <p class="help-block">Upload Recruiter Image here.</p>
-                                                <img  class="img-responsive img-circle" src="{{ asset('assets/img/company/'.$recruiter->profilephoto) }}" width="100" height="100">
+                                                <img  class="img-responsive img-circle" src="{{ asset('assets/img/recruiter/'.$recruiter->profilephoto) }}" width="100" height="100">
                                             </div>
                                         </div>
                                     </div>

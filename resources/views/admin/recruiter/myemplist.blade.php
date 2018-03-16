@@ -63,7 +63,7 @@
                                         <td>{{$mylist->contectno}}</td>
                                         <td>{{$mylist->expirienceyear}}</td>
                                         <td>{{$mylist->city}}</td>
-                                        <td><a href="#"><i class="fa fa-eye"></i> </a>
+                                        <td><a href="{{route('viewMyEmp',['id'=>$mylist->id])}}"><i class="fa fa-eye"></i> </a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-pencil"></i></a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyMyEmp',['id'=>$mylist->id])}}"><i class="fa fa-trash"></i></a></td>
                                     </tr>

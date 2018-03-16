@@ -16,7 +16,7 @@
         </section>
 
         <!-- Main content -->
-        <form method="post" action="{{route('myempstore')}}">
+        <form method="post" action="{{route('myempstore')}}" enctype="multipart/form-data">
             {{csrf_field()}}
             <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
         <section class="content">

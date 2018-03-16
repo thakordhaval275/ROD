@@ -168,6 +168,12 @@ class adminController extends Controller
         return view('admin.recruiter.addmyemp');
     }
 
+    public  function viewMyEmp($id)
+    {
+        //dd($id);
+        $myemp=MyEmployee::where('id',$id)->first();
+        return view('admin.recruiter.viewMyEmployee',['myemp'=>$myemp]);
+    }
 
     public function sendProposalList()
     {
