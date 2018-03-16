@@ -136,6 +136,12 @@ class adminController extends Controller
     {
         return view('admin.recruiter.addRecruiter');
     }
+
+    public function editRecruiter($id)
+    {
+        $recruiter=RecruiterProfile::where('id',$id)->first();
+        return view('admin.recruiter.editRecruiterPro',['recruiter'=>$recruiter]);
+    }
 	
 	public function viewRecruiter($id)
     {

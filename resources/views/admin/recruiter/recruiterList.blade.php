@@ -60,7 +60,7 @@
                                         <td>{{$list->country}}</td>
                                         <td>{{$list->gstregister}}</td>
                                         <td><a href="{{route('viewRecruiter',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editRecruiter',['id'=>$list->id])}}"><i class="fa fa-pencil"></i></a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyRecruiter',['id'=>$list->id])}}"><i class="fa fa-trash"></i></a></td>
                                     </tr>
                                 @endforeach

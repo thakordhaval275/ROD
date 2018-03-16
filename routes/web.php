@@ -86,6 +86,7 @@ Route::get('/admin/company/destroyjob/{id}','adminController@destroyjob')->name(
 //Recruiter Pages----------------------------------------------------------------------------------------------------------------------------
 Route::get('/admin/recruiter/recruiterlist','adminController@recruiterlist')->name('recruiterList');//Recruiter List
 Route::get('/admin/recruiter/addrecruiter','adminController@addrecruiter')->name('addRecruiter');//Admin Add New Recruiter
+Route::get('/admin/recruiter/editRecruiter/{id}','adminController@editRecruiter')->name('editRecruiter');//Admin Edit Recruiter
 Route::get('/admin/recruiter/viewrecruiter/{id}','adminController@viewrecruiter')->name('viewRecruiter');//Admin Recruiter Profile
 Route::get('/admin/company/destroyrecruiter/{id}','adminController@destroyrecruiter')->name('destroyRecruiter');//Admin Recruiter Delete
 

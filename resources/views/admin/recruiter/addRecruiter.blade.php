@@ -16,7 +16,7 @@
     </section>
 
     <!-- Main content -->
-	<form method="post" action="{{route('recruiterprofilestore')}}">
+	<form method="post" action="{{route('recruiterprofilestore')}}" enctype="multipart/form-data">
 		{{csrf_field()}}
     <section class="content">
 
