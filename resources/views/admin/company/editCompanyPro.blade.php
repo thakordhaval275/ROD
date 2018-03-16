@@ -32,6 +32,7 @@
                 <form method="post" action="{{route('companyUpdate')}}" enctype="multipart/form-data">
                     <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
                     <input type="hidden" name="id" id="id" value="{{$company->id}}">
+                    <input type="hidden" name="hiddenLogo" id="hiddenLogo" value="{{$company->logo}}">
                     {{csrf_field()}}
                     <div class="box-body">
                         <div class="row">
@@ -92,14 +93,12 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12  @if($errors->first('companyLogo')) has-error @endif">
+                                        <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Company Logo</label>
                                                 <input type="file" name="companyLogo">
                                                 <p class="help-block">Upload Company Logo here.</p>
-                                                @if($errors->first('companyLogo'))
-                                                    <p class="text-danger"> {{$errors->first('companyLogo')}} </p>
-                                                @endif
+                                                <img src="{{ asset('assets/img/company/'.$company->logo) }}" width="100" height="100">
                                             </div>
                                         </div>
                                     </div>
@@ -147,7 +146,7 @@
                                         <div class="col-md-12 @if($errors->first('aboutCompany')) has-error @endif">
                                             <div class="form-group">
                                                 <label>About Company</label>
-                                                <textarea id="aboutcompany" name="aboutCompany" class="form-control" placeholder="About Company" >{{$company->aboutcompany}}</textarea>
+                                                <textarea id="aboutcompany" name="aboutCompany" class="form-control" placeholder="About Company" rows="8">{{$company->aboutcompany}}</textarea>
                                                 @if($errors->first('aboutCompany'))
                                                     <p class="text-danger"> {{$errors->first('aboutCompany')}} </p>
                                                 @endif

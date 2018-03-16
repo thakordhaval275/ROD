@@ -32,6 +32,7 @@
                 <form method="post" action="{{route('jobpostUpdate')}}" enctype="multipart/form-data">
                     <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
                     <input type="hidden" name="id" id="id" value="{{$job->id}}">
+                    <input type="hidden" name="hiddenLogo" id="hiddenLogo" value="{{$job->logo}}">
                     {{csrf_field()}}
                     <div class="box-body">
                         <div class="row">
@@ -105,14 +106,12 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12 @if($errors->first('companylogo')) has-error @endif">
+                                        <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Company Logo</label>
                                                 <input type="file" name="companylogo" id="companylogo">
-                                                <p class="help-block">Upload Company Logo here.</p>
-                                                @if($errors->first('companylogo'))
-                                                    <p class="text-danger"> {{$errors->first('companylogo')}} </p>
-                                                @endif
+                                                <p class="help-block">Change Company Logo here.</p>
+                                                <img src="{{ asset('assets/img/company/'.$job->logo) }}" width="100" height="100">
                                             </div>
                                         </div>
                                     </div>
@@ -183,7 +182,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Job Description</label>
-                                                <textarea id="description" name="description" placeholder="Description" class="form-control input-md">{{$job->jobdescription}}</textarea>
+                                                <textarea id="description" name="description" placeholder="Description" class="form-control input-md" rows="7">{{$job->jobdescription}}</textarea>
                                                 @if($errors->first('description'))
                                                     <p class="text-danger"> {{$errors->first('description')}} </p>
                                                 @endif

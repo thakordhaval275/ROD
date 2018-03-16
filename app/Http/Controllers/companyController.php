@@ -74,7 +74,6 @@ class companyController extends Controller
         //dd($request);
 
         $this->validate($request, [
-            'companyLogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'companyName'=>'required',
             'aboutCompany'=>'required',
             'location'=>'required',
@@ -86,10 +85,14 @@ class companyController extends Controller
             'noOfEmp'=>'required',
         ]);
 
-        $image = $request->file('companyLogo');
-        $input = time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = 'assets/img/company/';
-        $image->move($destinationPath, $input);
+        if($request->file('companyLogo')!=""){
+            $image = $request->file('companyLogo');
+            $input = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = 'assets/img/company/';
+            $image->move($destinationPath, $input);
+        } else {
+            $input = $request->hiddenLogo;
+        }
 
         $company=CompanyProfileModel::find($request->id);
         $company->logo=$input;
@@ -174,7 +177,6 @@ class companyController extends Controller
         //dd($request);
 
         $this->validate($request, [
-            'companylogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'compnayName'=>'required',
             'jobType'=>'required',
             'department'=>'required',
@@ -186,10 +188,14 @@ class companyController extends Controller
             'description'=>'required',
         ]);
 
-        $image = $request->file('companylogo');
-        $input = time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = 'assets/img/company/';
-        $image->move($destinationPath, $input);
+        if($request->file('companylogo')!=""){
+            $image = $request->file('companylogo');
+            $input = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = 'assets/img/company/';
+            $image->move($destinationPath, $input);
+        } else {
+           $input = $request->hiddenLogo;
+        }
 
         $job=JobPostModel::find($request->id);
         $job->logo=$input;
