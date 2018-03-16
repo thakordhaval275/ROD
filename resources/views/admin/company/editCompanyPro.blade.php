@@ -39,25 +39,31 @@
                                 <div class="col-md-6 box-body">
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('companyName')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Company Name</label>
                                                 <input id="name" name="companyName" type="text" placeholder="Name of Company" class="form-control input-md" value="{{$company->companyname}}">
+                                                @if($errors->first('companyName'))
+                                                    <p class="text-danger"> {{$errors->first('companyName')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('email')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Email Id</label>
                                                 <input type="text" name="email" id="email" placeholder="Company Email-id" class="form-control" value="{{$company->emailid}}" readonly>
+                                                @if($errors->first('email'))
+                                                    <p class="text-danger"> {{$errors->first('email')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('location')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Location</label>
                                                 <select  name="location" id="location" class="form-control select2" style="width: 100%;" >
@@ -66,25 +72,34 @@
                                                     <option value="USA" @if($company->location=='USA')selected="selected"@endif>USA</option>
                                                     <option value="New York" @if($company->location=='New York')selected="selected"@endif>New York</option>
                                                 </select>
+                                                @if($errors->first('location'))
+                                                    <p class="text-danger"> {{$errors->first('location')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('companyAddress')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Address</label>
                                                 <textarea  class="form-control" name="companyAddress" id="companyaddress" placeholder="Address of company">{{$company->address}}</textarea>
+                                                @if($errors->first('companyAddress'))
+                                                    <p class="text-danger"> {{$errors->first('companyAddress')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12  @if($errors->first('companyLogo')) has-error @endif">
                                             <div class="form-group">
-                                                <label>Logo</label>
+                                                <label>Company Logo</label>
                                                 <input type="file" name="companyLogo">
                                                 <p class="help-block">Upload Company Logo here.</p>
+                                                @if($errors->first('companyLogo'))
+                                                    <p class="text-danger"> {{$errors->first('companyLogo')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -93,46 +108,61 @@
                                 <div class="col-md-6 box-body">
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('website')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Website</label>
                                                 <input type="text" name="website" id="website" placeholder="Company's Website" class="form-control" value="{{$company->website}}">
                                             </div>
+                                            @if($errors->first('website'))
+                                                <p class="text-danger"> {{$errors->first('website')}} </p>
+                                            @endif
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('companyType')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Type</label>
                                                 <input id="companytype" name="companyType" type="text" placeholder="Ex.:PVT limited, limited...etc" class="form-control input-md" value="{{$company->companytype}}">
                                             </div>
+                                            @if($errors->first('companyType'))
+                                                <p class="text-danger"> {{$errors->first('companyType')}} </p>
+                                            @endif
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('yearOfFound')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Year of Found</label>
                                                 <input id="yearoffound" name="yearOfFound" type="text" placeholder="year of found" class="form-control input-md" value="{{$company->foundyear}}">
+                                                @if($errors->first('yearOfFound'))
+                                                    <p class="text-danger"> {{$errors->first('yearOfFound')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('aboutCompany')) has-error @endif">
                                             <div class="form-group">
                                                 <label>About Company</label>
                                                 <textarea id="aboutcompany" name="aboutCompany" class="form-control" placeholder="About Company" >{{$company->aboutcompany}}</textarea>
+                                                @if($errors->first('aboutCompany'))
+                                                    <p class="text-danger"> {{$errors->first('aboutCompany')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 @if($errors->first('noOfEmp')) has-error @endif">
                                             <div class="form-group">
                                                 <label>No.Of Employees</label>
                                                 <input id="noofemp" name="noOfEmp" type="text" placeholder="No Of Employees working..." class="form-control input-md" value="{{$company->noofemployee}}">
+                                                @if($errors->first('noOfEmp'))
+                                                    <p class="text-danger"> {{$errors->first('noOfEmp')}} </p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
