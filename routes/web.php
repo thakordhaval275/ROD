@@ -62,6 +62,7 @@ Route::get('/employee/employeeedit','employeeController@employeeedit')->name('em
 
 //store Data
 Route::post('employeeprofilestore','employeeController@employeeprofilestore')->name('employeeprofilestore');
+Route::post('employeeupdate','employeeController@employeeupdate')->name('employeeUpdate');
 
 //======================================================== Admin Pages =======================================================================
 //Admin Pages

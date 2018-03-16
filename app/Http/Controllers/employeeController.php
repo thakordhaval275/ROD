@@ -24,8 +24,32 @@ class employeeController extends Controller
         //dd($request);
 
         $this->validate($request, [
-
             'empProfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'aboutMe'=>'required',
+            'firstName'=>'required',
+            'lastName'=>'required',
+            'address'=>'required',
+            'pincode'=>'required',
+            'gender'=>'required',
+            'birthdate'=>'required',
+            'contectNo'=>'required',
+            'email'=>'required',
+            'city'=>'required',
+            'state'=>'required',
+            'country'=>'required',
+            'homeTown'=>'required',
+            'meritalStatus'=>'required',
+            'homeTown'=>'required',
+            'postGraduate'=>'required',
+            'graduate'=>'required',
+            'classXII'=>'required',
+            'classX'=>'required',
+            'otherquli'=>'required',
+            'industry'=>'required',
+            'preferredLocation'=>'required',
+            'experianceYear'=>'required',
+            'experianceMonth'=>'required',
+            'keySkill'=>'required',
 
         ]);
 
@@ -62,6 +86,89 @@ class employeeController extends Controller
             'keyskill'=>$request['keySkill'],
             'usertype'=>$request['userType']
         ]);
+
+        $usertype=Auth::user()->usertype;
+
+        if($usertype==0)
+        {
+            return redirect(route('employeeList'));
+        }
+        else if($usertype==3)
+        {
+            //dd($usertype);
+            return redirect(route('employeeProfile'));
+        }
+    }
+
+    public function employeeupdate(Request $request)
+    {
+        //dd($request);
+
+        $this->validate($request, [
+            'aboutMe'=>'required',
+            'firstName'=>'required',
+            'lastName'=>'required',
+            'address'=>'required',
+            'pincode'=>'required',
+            'gender'=>'required',
+            'birthdate'=>'required',
+            'contectNo'=>'required',
+            'email'=>'required',
+            'city'=>'required',
+            'state'=>'required',
+            'country'=>'required',
+            'homeTown'=>'required',
+            'meritalStatus'=>'required',
+            'homeTown'=>'required',
+            'postGraduate'=>'required',
+            'graduate'=>'required',
+            'classXII'=>'required',
+            'classX'=>'required',
+            'otherquli'=>'required',
+            'industry'=>'required',
+            'preferredLocation'=>'required',
+            'experianceYear'=>'required',
+            'experianceMonth'=>'required',
+            'keySkill'=>'required',
+        ]);
+
+        if($request->file('companyLogo')!=""){
+            $image = $request->file('companyLogo');
+            $input = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = 'assets/img/employee/';
+            $image->move($destinationPath, $input);
+        } else {
+            $input = $request->hiddenLogo;
+        }
+
+        $employe=EmployeeProfileModel::find($request->id);
+        $employe->logo=$input;
+        $employe->aboutself=$request->aboutMe;
+        $employe->firstname=$request->firstName;
+        $employe->lastname=$request->lastName;
+        $employe->address=$request->address;
+        $employe->pincode=$request->pincode;
+        $employe->gender=$request->gender;
+        $employe->bdate=$request->birthdate;
+        $employe->contectno=$request->contectNo;
+        $employe->emailid=$request->email;
+        $employe->city=$request->city;
+        $employe->state=$request->state;
+        $employe->country=$request->country;
+        $employe->hometown=$request->homeTown;
+        $employe->maritalstatus=$request->meritalStatus;
+        $employe->postgraduate=$request->postGraduate;
+        $employe->graduate=$request->graduate;
+        $employe->classxii=$request->classXII;
+        $employe->classx=$request->classX;
+        $employe->otherque=$request->otherquli;
+        $employe->industry=$request->industry;
+        $employe->preferredlocation=$request->preferredLocation;
+        $employe->expirienceyear=$request->experianceYear;
+        $employe->expiriencemonth=$request->experianceMonth;
+        $employe->keyskill=$request->keySkill;
+        $employe->usertype=$request->userType;
+        $employe->save();
 
         $usertype=Auth::user()->usertype;
 

@@ -195,7 +195,7 @@ class adminController extends Controller
     {
         //dd($id);
         $employee=EmployeeProfileModel::where('id',$id)->first();
-        return view('admin.company.editPostJob',['employee'=>$employee]);
+        return view('admin.employee.editemployee',['employee'=>$employee]);
     }
 
     public function destroyemployee($id)
