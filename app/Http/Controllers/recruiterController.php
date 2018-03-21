@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\EmployeeProfileModel;
 use App\MyEmployee;
 use App\Proposal;
 use App\RecruiterProfile;
@@ -21,7 +22,8 @@ class recruiterController extends Controller
     }
     public function addmyemployee()
     {
-        return view('recruiter.addmyEmployee');
+        $myemp=EmployeeProfileModel::get();
+        return view('recruiter.addmyEmployee',['myemp'=>$myemp]);
     }
     public function myemployee()
     {

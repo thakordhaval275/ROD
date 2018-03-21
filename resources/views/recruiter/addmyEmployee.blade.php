@@ -14,24 +14,27 @@
                         <div class="thumb">
                             <a href="{{route('employeeProfile')}}"><img src="{{asset('assets/img/employee/christian.jpg')}}" height="100px" width="100px" class="img-circle" alt=""></a>
                         </div>
-                        <div class="job-list-content">
-                            <h4><a href="{{route('employeeProfile')}}">Christian Louboutin</a><span class="full-time">Avalible</span></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit, officiis, praesentium?</p>
-                            <div class="job-tag">
-                                <div class="pull-left">
-                                    <div class="meta-tag">
-                                        <span><a href="browse-categories.html"><i class="ti-desktop"></i>PHP developer</a></span>
-                                        <span><i class="ti-location-pin"></i>Vadodara, Gujarat, India</span>
+                        @foreach($myemp as $addemp)
+                            <div class="job-list-content">
+                                <h4><a href="{{route('employeeProfile')}}">{{$addemp->firstname}}&nbsp;&nbsp;{{$addemp->lastname}}</a><span class="full-time">Avalible</span></h4>
+                                <p>{{$addemp->aboutself}}</p>
+                                <div class="job-tag">
+                                    <div class="pull-left">
+                                        <div class="meta-tag">
+                                            <span><a href="browse-categories.html"><i class="ti-desktop"></i>{{$addemp->keyskill}}</a></span>
+                                            <span><i class="ti-location-pin"></i>{{$addemp->city}},{{$addemp->state}},{{$addemp->country}}</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="pull-right">
-                                    <div class="icon">
-                                        <i class="ti-plus"></i>
+                                    <div class="pull-right">
+                                        <div class="icon">
+                                            <i class="ti-plus"></i>
+                                        </div>
+                                        <a href="{{route('employeeProfile')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                     </div>
-                                    <a href="{{route('employeeProfile')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
+
                     </div>
 
                     <div class="job-list">
