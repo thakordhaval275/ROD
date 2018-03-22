@@ -123,6 +123,12 @@ class adminController extends Controller
 
         return redirect(route('postJobList'));
     }
+
+    public function proposallist()
+    {
+        $proposal=Proposal::get();
+        return view('admin.company.proposallist',['proposal'=>$proposal]);
+    }
 	
 	//============ Recruiter =============
 	

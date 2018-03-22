@@ -15,7 +15,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-               Sent Proposal List
+                Proposal List
             </h1>
             <ol class="breadcrumb">
                 <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -43,7 +43,7 @@
                                 </thead>
 
                                 <tbody>
-                                @foreach($Proposal as $proposal)
+                                @foreach($proposal as $proposal)
                                     <tr>
                                         <td>{{$proposal->id}}</td>
                                         <td>{{$proposal->companyname}}</td>

@@ -75,6 +75,8 @@ Route::get('/userlogout','adminController@userLogout')->name('userLogout');//Adm
 
 //Company Pages------------------------------------------------------------------------------------------------------------------------------
 Route::get('/admin/company/companyslist','adminController@companylist')->name('companyList');//Admin company List
+Route::get('/admin/company/proposallist','adminController@proposallist')->name('proposalList');//Admin company List
+
 Route::get('/admin/company/addcompany','adminController@addcompany')->name('addCompany');//Admin Add New Company
 Route::get('/admin/company/viewcompany/{id}','adminController@viewcompany')->name('viewCompany');//Admin company Profile
 Route::get('/admin/company/editcompany/{id}','adminController@editcompany')->name('editCompany');//Admin company Profile Edit

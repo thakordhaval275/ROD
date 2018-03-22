@@ -92,7 +92,7 @@
                     <ul class="treeview-menu" @if(Request::is('admin/company/companyslist') || Request::is('admin/company/jobpostlist')) style="display: block;" @endif>
 						<li><a href="{{route('companyList')}}"><i class="fa fa-list"></i> List of Compnaies</a></li>
                         <li><a href="{{route('postJobList')}}"><i class="fa fa-list"></i> List Of Posted Jobs</a></li>
-                        <li><a href="#"><i class="fa fa-list"></i> List of Proposal</a></li>
+                        <li><a href="{{route('proposalList')}}"><i class="fa fa-list"></i> List of Proposal</a></li>
                     </ul>
                 </li>
 
@@ -120,6 +120,18 @@
                     <ul class="treeview-menu"@if(Request::is('admin/employee/employeelist')) style="display: block;" @endif>
 						<li><a href="{{route('employeeList')}}"><i class="fa fa-list"></i> List of Employee</a></li>
                         <li><a href="#"><i class="fa fa-list"></i> Schedule</a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview @if(Request::is('admin/employee/employeelist'))menu-open @endif">
+                    <a href="#">
+                        <i class="fa fa-volume-control-phone"></i> <span>Contact</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu"@if(Request::is('admin/employee/employeelist')) style="display: block;" @endif>
+                        <li><a href="#"><i class="fa fa-list"></i> List of Contact</a></li>
                     </ul>
                 </li>
             </ul>

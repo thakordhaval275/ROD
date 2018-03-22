@@ -47,7 +47,7 @@
                                                 <label>Profile Image</label>
                                                 <input type="file" name="empProfile">
                                                 <p class="help-block">Upload Employee Image here.</p>
-                                                <img class="img-responsive img-circle" src="{{ asset('assets/img/employee/'.$myempedit->logo) }}" width="100" height="100">
+                                                <img class="img-responsive img-circle" src="{{ asset('assets/img/recruiter/'.$myempedit->logo) }}" width="100" height="100">
                                             </div>
                                         </div>
                                     </div>
