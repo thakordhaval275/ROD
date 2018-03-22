@@ -55,7 +55,7 @@ class employeeController extends Controller
 
         $image = $request->file('empProfile');
         $input = time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = 'assets/img/company/';
+        $destinationPath = 'assets/img/employee/';
         $image->move($destinationPath, $input);
 
         EmployeeProfileModel::create([
@@ -132,8 +132,8 @@ class employeeController extends Controller
             'keySkill'=>'required',
         ]);
 
-        if($request->file('companyLogo')!=""){
-            $image = $request->file('companyLogo');
+        if($request->file('empProfile')!=""){
+            $image = $request->file('empProfile');
             $input = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = 'assets/img/employee/';
             $image->move($destinationPath, $input);

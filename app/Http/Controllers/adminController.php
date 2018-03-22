@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CompanyProfileModel;
+use App\ContactUs;
 use App\EmployeeProfileModel;
 use App\MyEmployee;
 use App\Proposal;
@@ -20,6 +21,14 @@ class adminController extends Controller
     {
         return view('admin.index');
     }
+
+    public function contactuslist()
+    {
+        $contact=ContactUs::get();
+        dd($contact);
+        return view('admin.contactusList',['contact'=>$contact]);
+    }
+
 
 	public function admin(Request $request)
     {
@@ -224,7 +233,6 @@ class adminController extends Controller
 
     public function viewEmployee($id)
     {
-        //dd($id);
         $employee=EmployeeProfileModel::where('id',$id)->first();
         return view('admin.employee.viewEmployee',['employee'=>$employee]);
     }

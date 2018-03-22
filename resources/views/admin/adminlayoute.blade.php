@@ -123,15 +123,15 @@
                     </ul>
                 </li>
 
-                <li class="treeview @if(Request::is('admin/employee/employeelist'))menu-open @endif">
+                <li class="treeview @if(Request::is('admin/contactuslist'))menu-open @endif">
                     <a href="#">
                         <i class="fa fa-volume-control-phone"></i> <span>Contact</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu"@if(Request::is('admin/employee/employeelist')) style="display: block;" @endif>
-                        <li><a href="#"><i class="fa fa-list"></i> List of Contact</a></li>
+                    <ul class="treeview-menu"@if(Request::is('admin/contactuslist')) style="display: block;" @endif>
+                        <li><a href="{{route('contactUsList')}}"><i class="fa fa-list"></i> List of Contact</a></li>
                     </ul>
                 </li>
             </ul>

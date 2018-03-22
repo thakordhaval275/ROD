@@ -69,6 +69,7 @@ Route::post('employeeupdate','employeeController@employeeupdate')->name('employe
 //======================================================== Admin Pages =======================================================================
 //Admin Pages
 Route::get('/admin/index','adminController@index')->name('adminindex');//Admin Index
+Route::get('/admin/contactuslist','adminController@contactuslist')->name('contactUsList');//Admin contact Us List
 Route::get('/admin','adminController@admin')->name('admin');//Admin Login Page
 Route::post('/adminlogin','adminController@adminLogin')->name('adminLogin');//Admin login validation check
 Route::get('/userlogout','adminController@userLogout')->name('userLogout');//Admin Logout Method
