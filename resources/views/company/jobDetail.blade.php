@@ -12,12 +12,12 @@
             <div class="main main-raised">
                 <div class="profile-content">
                     <div class="container">
-                        @foreach($jobdetaildata as $jobdetail)
-                        @endforeach
+                        {{--@foreach($jobdetaildata as $jobdetail)--}}
+                        {{--@endforeach--}}
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    {{--<img src="{{ asset('assets/img/company/').'/'.$jobdetaildata->logo}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>--}}
+                                    <img src="{{ asset('assets/img/company/1521176340.png')}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
                                 </div>
                                 <div class="name">
                                     <h3 class="title">MTAJ Solutions PVT LTD</h3>
