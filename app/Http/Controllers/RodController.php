@@ -67,6 +67,13 @@ class RodController extends Controller
             'securityans'=>$request->securityAns,
         ]);
 
+        if($request->userType == 1)
+        {
+            CompanyProfileModel::create([
+               'emailid'=>$request->email,
+            ]);
+        }
+
         return redirect(route('login'));
     }
 

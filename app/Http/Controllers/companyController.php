@@ -17,9 +17,10 @@ class companyController extends Controller
         return view('company.companyProfile',['ProfileData'=>$profiledata]);
     }
 
-    public function companyedit()
+    public function companyedit(Request $request)
     {
-        return view('company.companyEdit');
+        $requestid=$request->id;
+        return view('company.companyEdit',['requestid',$requestid]);
     }
 
     public function companyprofilestore(Request $request)
@@ -71,7 +72,7 @@ class companyController extends Controller
 
     public function companyupdate(Request $request)
     {
-        //dd($request);
+       //dd($request);
 
         $this->validate($request, [
             'companyName'=>'required',
@@ -100,7 +101,7 @@ class companyController extends Controller
         $company->companyname=$request->companyName;
         $company->location=$request->location;
         $company->address=$request->companyAddress;
-        $company->emailid=$request->email;
+//        $company->emailid=$request->email;
         $company->website=$request->website;
         $company->companytype=$request->companyType;
         $company->foundyear=$request->yearOfFound;
