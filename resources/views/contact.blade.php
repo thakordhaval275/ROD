@@ -54,7 +54,7 @@
             </div>
             <div class="col-md-8 box box-primary">
                 <!-- Form -->
-                <form method="post" action="{{route('contactstore')}}" id="contactForm" class="contact-form" data-toggle="validator">
+                <form method="post" action="{{route('contactstore')}}">
                     {{csrf_field()}}
                     <div class="row">
                         <div class="col-md-12">
@@ -62,7 +62,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required data-error="Please enter your First Name">
+                                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required data-error="Please enter your Last Name">
+                                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="emailid" name="emailid" placeholder="E-mail Address" required data-error="Please enter your E-mail Address">
+                                        <input type="text" class="form-control" id="emailid" name="emailid" placeholder="E-mail Address">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -106,7 +106,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="companyname" name="companyname" placeholder="Company/Organization" required data-error="Please enter your Company/Organization">
+                                        <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company/Organization">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="other" name="other" placeholder="If Other, please specify" required data-error="Please enter your If Other, please specify">
+                                        <input type="text" class="form-control" id="other" name="other" placeholder="If Other, please specify">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="country" name="country" placeholder="Country/Region" required data-error="Please enter your Country/Region">
+                                        <input type="text" class="form-control" id="country" name="country" placeholder="Country/Region">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -133,7 +133,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="contactno" name="contactno" placeholder="Contact No" required data-error="Please enter your Contact No">
+                                        <input type="text" class="form-control" id="contactno" name="contactNo" placeholder="Contact No">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -142,7 +142,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="How can we help you ?" rows="11" data-error="Write How can we help you?"></textarea>
+                                        <textarea class="form-control" placeholder="How can we help you ?" rows="11" name="howCanIHelp"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -152,7 +152,7 @@
                                 <div class="col-md-12">
                                     <button type="submit" id="submit" class="btn btn-common">Send Us</button>
                                     <div id="msgSubmit" class="h3 text-center"></div>
-                                    <div class="clearfix"></div>
+                                    {{--<div class="clearfix"></div>--}}
                                 </div>
                             </div>
                         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CompanyProfileModel;
+use App\ContactUs;
 use App\EmployeeProfileModel;
 use App\RecruiterProfile;
 use App\User;
@@ -38,7 +39,19 @@ class RodController extends Controller
     }
     public function contactstore(Request $request)
     {
-        dd($request);
+        //dd($request);
+        ContactUs::create([
+            'firstname'=>$request->firstName,
+            'lastname'=>$request->lastName,
+            'emailid'=>$request->emailid,
+            'relationtorod'=>$request->relationship,
+            'company'=>$request->companyName,
+            'other'=>$request->other,
+            'country'=>$request->country,
+            'contactno'=>$request->contactNo,
+            'howcanwehelp'=>$request->howCanIHelp
+
+        ]);
     }
 
     public function userSignup(Request $request)
