@@ -19,8 +19,10 @@ class companyController extends Controller
 
     public function companyedit(Request $request)
     {
+
         $requestid=$request->id;
-        return view('company.companyEdit',['requestid',$requestid]);
+        $companydetail=CompanyProfileModel::where('id',$request->id)->first();
+        return view('company.companyEdit',['companydetail'=>$companydetail]);
     }
 
     public function companyprofilestore(Request $request)
@@ -95,13 +97,13 @@ class companyController extends Controller
             $input = $request->hiddenLogo;
         }
 
-        $company=CompanyProfileModel::find($request->id);
+        $company=CompanyProfileModel::find($request->company_id);
         $company->logo=$input;
         $company->aboutcompany=$request->aboutCompany;
         $company->companyname=$request->companyName;
         $company->location=$request->location;
         $company->address=$request->companyAddress;
-//        $company->emailid=$request->email;
+        $company->emailid=$request->email;
         $company->website=$request->website;
         $company->companytype=$request->companyType;
         $company->foundyear=$request->yearOfFound;
