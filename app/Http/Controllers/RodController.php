@@ -53,6 +53,7 @@ class RodController extends Controller
             'howcanwehelp'=>$request->howCanIHelp
 
         ]);
+        return redirect(route('index'));
     }
 
     public function userSignup(Request $request)
@@ -85,6 +86,12 @@ class RodController extends Controller
         {
             CompanyProfileModel::create([
                'emailid'=>$request->email,
+            ]);
+        }
+        else if($request->userType==2)
+        {
+            RecruiterProfile::create([
+                'emailid'=>$request->email,
             ]);
         }
 

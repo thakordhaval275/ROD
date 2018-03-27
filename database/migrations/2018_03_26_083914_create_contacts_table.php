@@ -22,7 +22,7 @@ class CreateContactsTable extends Migration
             $table->string('company');
             $table->string('other');
             $table->string('country');
-            $table->integer('contactno');
+            $table->string('contactno');
             $table->string('howcanwehelp');
             $table->timestamps();
         });
