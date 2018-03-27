@@ -57,7 +57,7 @@
                                                                             @if(isset($jobpostedit))
 																			<img src="{{ asset('assets/img/company/').'/'.$jobpostedit->logo}}" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
 																		    @else
-                                                                                <img src="{{ asset('assets/img/company/').'/'}}" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
+                                                                                <img src="{{ asset('assets/img/company/default.png').'/'}}" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
 
                                                                             @endif
                                                                         </div>
