@@ -127,7 +127,7 @@ class RodController extends Controller
     public function userLogout()
     {
         Auth::logout();
-        return redirect(route('login'));
-
+       return redirect(route('login'));
     }
+
 }

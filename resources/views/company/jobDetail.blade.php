@@ -17,16 +17,16 @@
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="{{ asset('assets/img/company/1521176340.png')}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
+                                    <img src="{{ asset('assets/img/company/').'/'.$jobdetail->logo}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
                                 </div>
                                 <div class="name">
-                                    <h3 class="title">MTAJ Solutions PVT LTD</h3>
+                                    <h3 class="title">{{$jobdetail->companyname}}</h3>
                                     <h6>Software Company</h6>
                                 </div>
                             </div>
                         </div>
                         <div class="description text-center">
-                            <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                            <p>{{$jobdetail->jobdescription}}</p>
                         </div>
                     </div>
 					
@@ -49,7 +49,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <h5>MTAJ Solution</h5>
+                                                                    <h5>{{$jobdetail->companyname}}</h5>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -67,7 +67,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <h5>Company Base</h5>
+                                                                    <h5>{{$jobdetail->jobtype}}</h5>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -85,7 +85,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <h5>IT solution</h5>
+                                                                    <h5>{{$jobdetail->department}}</h5>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -103,7 +103,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <h5>Short Term</h5>
+                                                                    <h5>{{$jobdetail->term}}</h5>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -121,7 +121,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <h5>3 Week</h5>
+                                                                    <h5>{{$jobdetail->termperiod}}</h5>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -139,7 +139,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-																	<h5>Fresher</h5>
+																	<h5>{{$jobdetail->experience}}</h5>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -157,7 +157,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <h5>10000</h5>
+                                                                    <h5>{{$jobdetail->payment}}</h5>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -175,7 +175,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-																	<h5>50</h5>
+																	<h5>{{$jobdetail->noofpositions}}</h5>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -194,7 +194,7 @@
                                                             <!-- description input-->
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <p><h5>An artist of considerable range, Chet Faker the name taken by Melbourne-raised, Brooklyn-based Nick Murphy writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure.</h5></p>
+                                                                    <p><h5>{{$jobdetail->jobdescription}}</h5></p>
 																</div>
                                                             </div>
                                                         </div>
@@ -203,7 +203,7 @@
 
                                                 <div class="form-group">
                                                     <div class="col-md-12 text-center">
-                                                        <a id="cancel" name="cancel" class="btn btn-common" href="{{route('viewJobs')}}">Back</a>
+                                                        <a id="cancel" name="cancel" class="btn btn-common" href="{{route('viewJobs')}}">Back to List</a>
                                                         <a id="cancel" name="cancel" class="btn btn-common" href="{{route('proposal')}}">Send proposal</a>
                                                     </div>
                                                 </div><br><br>

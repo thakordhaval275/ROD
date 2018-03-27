@@ -22,6 +22,8 @@ Route::get('/about','RodController@about')->name('about'); //about
 Route::get('/contact','RodController@contact')->name('contactus'); //contect
 Route::get('/login','RodController@login')->name('login'); //Login
 Route::get('/signup','RodController@signup')->name('signup'); //signup
+Route::get('/userlogout','RodController@userLogout')->name('userLogout');//User Logout Method
+
 
 //store Data
 Route::post('user/login','RodController@userLogin')->name('userLogin'); //login
@@ -31,10 +33,11 @@ Route::post('contactstore','RodController@contactstore')->name('contactstore');
 //===========================================================================================================================================
 //Company Pages
 Route::get('/company/companyjobpost','companyController@jobpost')->name('jobpost'); //jobpost new
+Route::get('/company/companyjobpostedit/{id}','companyController@jobpostedit')->name('jobpostEdit'); //jobpost new
 Route::get('/company/companyprofile','companyController@companyprofile')->name('companyProfile');//company Profile
 Route::get('/company/companyedit','companyController@companyedit')->name('companyEdit');//company Edit Profile
 Route::get('/company/viewjobs','companyController@viewjobs')->name('viewJobs');//view PostJobs
-Route::get('/company/jobdetail','companyController@jobdetail')->name('jobDetail');//Job Detail
+Route::get('/company/jobdetail/{id}','companyController@jobdetail')->name('jobDetail');//Job Detail
 
 //sotre Data
 Route::post('jobpoststore','companyController@jobpoststore')->name('jobpoststore');
@@ -72,7 +75,7 @@ Route::get('/admin/index','adminController@index')->name('adminindex');//Admin I
 Route::get('/admin/contactuslist','adminController@contactuslist')->name('contactUsList');//Admin contact Us List
 Route::get('/admin','adminController@admin')->name('admin');//Admin Login Page
 Route::post('/adminlogin','adminController@adminLogin')->name('adminLogin');//Admin login validation check
-Route::get('/userlogout','adminController@userLogout')->name('userLogout');//Admin Logout Method
+Route::get('/adminlogout','adminController@adminLogout')->name('adminLogout');//Admin Logout Method
 
 //Company Pages------------------------------------------------------------------------------------------------------------------------------
 Route::get('/admin/company/companyslist','adminController@companylist')->name('companyList');//Admin company List
@@ -88,6 +91,8 @@ Route::get('/admin/company/addjob','adminController@addjob')->name('addJob');//A
 Route::get('/admin/company/viewjob/{id}','adminController@viewjob')->name('viewJob');//Admin Posted Job Profile
 Route::get('/admin/company/editpostjob/{id}','adminController@editpostjob')->name('editPostJob');//Admin company Post Job Edit
 Route::get('/admin/company/destroyjob/{id}','adminController@destroyjob')->name('destroyJob');//Admin Posted Job Delete
+
+Route::post('updatecompany','adminController@updatecompany')->name('updateCompany');// Edit Company Profile
 
 //Recruiter Pages----------------------------------------------------------------------------------------------------------------------------
 Route::get('/admin/recruiter/recruiterlist','adminController@recruiterlist')->name('recruiterList');//Recruiter List

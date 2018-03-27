@@ -81,7 +81,6 @@ class companyController extends Controller
             'aboutCompany'=>'required',
             'location'=>'required',
             'companyAddress'=>'required',
-            'email'=>'required',
             'website'=>'required',
             'companyType'=>'required',
             'yearOfFound'=>'required',
@@ -98,12 +97,12 @@ class companyController extends Controller
         }
 
         $company=CompanyProfileModel::find($request->company_id);
+//        dd($company);
         $company->logo=$input;
         $company->aboutcompany=$request->aboutCompany;
         $company->companyname=$request->companyName;
         $company->location=$request->location;
         $company->address=$request->companyAddress;
-        $company->emailid=$request->email;
         $company->website=$request->website;
         $company->companytype=$request->companyType;
         $company->foundyear=$request->yearOfFound;
@@ -126,9 +125,18 @@ class companyController extends Controller
     {
         return view('company.jobPost');
     }
+
+    public function jobpostedit(Request $request)
+    {
+
+        $jobpostedit=JobPostModel::where('id',$request->id)->first();
+        //dd($jobpostedit);
+        return view('company.jobPost',['jobpostedit'=>$jobpostedit]);
+    }
+
     public function jobpoststore(Request $request)
     {
-        //dd($request);
+       // dd($request);
 
         $this->validate($request, [
             'companylogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -170,8 +178,7 @@ class companyController extends Controller
         }
         else if($usertype==1)
         {
-            //dd($request->id);
-            return redirect(Route('jobDetail'));
+            return redirect(Route('viewJobs'));
         }
     }
     
@@ -221,21 +228,19 @@ class companyController extends Controller
         }
         else if($usertype==1)
         {
-            return redirect(Route('companyProfile'));
+            return redirect(Route('viewJobs'));
         }
     }
 
     public function viewjobs(Request $request)
     {
-        $viewJob=JobPostModel::get();
-        //dd($request);
+        $viewJob=JobPostModel::orderByDesc('id')->get();
         return view('company.viewPostJobs',['JobPost'=>$viewJob]);
     }
     
-    public function jobdetail()
+    public function jobdetail($id)
     {
-        //$getid=JobPostModel::get();
-        //dd($getid);
-        return view('company.jobDetail');
+        $jobdetail=JobPostModel::find($id);
+        return view('company.jobDetail',['jobdetail'=>$jobdetail]);
     }
 }

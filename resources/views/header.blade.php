@@ -58,9 +58,16 @@
                             </a>
                         </li>
                     </ul>
+
                     <ul class="nav navbar-nav navbar-right float-right">
+                        @if(Auth::user())
                         <li class="left"><a href="{{route('jobpost')}}"><i class="ti-pencil-alt"></i> Post A Job</a></li>
-                        <li class="right"><a href="{{route('login')}}"><i class="ti-lock"></i>  Log In</a></li>
+                        @endif
+                        @if(!Auth::user())
+                              <li class="right"><a href="{{route('login')}}"><i class="ti-lock"></i>  Log In</a></li>
+                            @else
+                                <li class="right"><a href="{{route('userLogout')}}"><i class="ti-lock"></i> Log out</a></li>
+                            @endif
                         <li class="btn-m"><a href="{{route('signup')}}"><i class="ti-user"></i>  Sign Up</a></li>
                     </ul>
                 </div>

@@ -8,7 +8,10 @@
     <br>
     <div class="profile-page">
         <div class="wrapper">
-            <form method="post" action="{{route('jobpoststore')}}" enctype="multipart/form-data">
+            <form method="post" action="@if(isset($jobpostedit)){{route('jobpostUpdate')}}@else{{route('jobpoststore')}}@endif" enctype="multipart/form-data">
+                <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
+                <input type="hidden" name="hiddenLogo" id="hiddenLogo" @if(isset($jobpostedit)) value="{{$jobpostedit->logo}}" @endif>
+                <input type="hidden" name="id" id="id" @if(isset($jobpostedit)) value="{{$jobpostedit->id}}" @endif>
                 {{csrf_field()}}
 				<div class="container-fluid">
                             <br>
@@ -30,7 +33,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <input id="name" name="compnayName" type="text" placeholder="Name of Company" class="form-control input-md">
+                                                                    <input id="name" name="compnayName" type="text" placeholder="Name of Company" class="form-control input-md" @if(isset($jobpostedit)) value="{{$jobpostedit->companyname}}" @endif>
                                                                     <span class="help-block">Please type in your full name</span>
                                                                 </div>
                                                             </div>
@@ -51,13 +54,18 @@
 																<div class="row">
 																	<div class="col-md-12">
 																		<div class="form-group">
-																			<img src="{{asset('assets/img/company/Mtaj.png')}}" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
-																		</div>									
+                                                                            @if(isset($jobpostedit))
+																			<img src="{{ asset('assets/img/company/').'/'.$jobpostedit->logo}}" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
+																		    @else
+                                                                                <img src="{{ asset('assets/img/company/').'/'}}" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
+
+                                                                            @endif
+                                                                        </div>
 																	</div>
 																</div>
 																<div class="row">
 																	<div class="col-md-12">
-																		<input type="file" name="companyLogo" id="companyLogo">
+																		<input type="file" name="companylogo" id="companylogo">
 																	</div>
 																</div>
 															</div>
@@ -80,8 +88,8 @@
                                                                         <label class="styled-select">
                                                                             <select id="jobtype" name="jobType" class="form-control dropdown-product selectpicker">
                                                                                 <option value="">Select Job Type</option>
-                                                                                <option value="Contract Base">Contract Base</option>
-                                                                                <option value="Company Base">Company Base</option>
+                                                                                <option value="Contract Base" @if(isset($jobpostedit)) value="Contract Base" @if($jobpostedit->jobtype=='Contract Base')selected="selected" @endif @endif>Contract Base</option>
+                                                                                <option value="Company Base" @if(isset($jobpostedit)) value="Company Base" @if($jobpostedit->jobtype=='Company Base')selected="selected" @endif @endif>Company Base</option>
                                                                             </select>
                                                                         </label>
                                                                     </div>
@@ -106,10 +114,10 @@
                                                                         <label class="styled-select">
                                                                             <select id="department" name="department" class="form-control dropdown-product selectpicker">
                                                                                 <option value="">Select Department</option>
-                                                                                <option value="IT solution">IT solution</option>
-                                                                                <option value="Finance">Finance</option>
-                                                                                <option value="Production">Production</option>
-                                                                                <option value="Accounting">Accounting</option>
+                                                                                <option value="IT solution" @if(isset($jobpostedit)) value="IT solution" @if($jobpostedit->department=='IT solution')selected="selected" @endif @endif>IT solution</option>
+                                                                                <option value="Finance" @if(isset($jobpostedit)) value="Finance" @if($jobpostedit->department=='Finance')selected="selected" @endif @endif>Finance</option>
+                                                                                <option value="Production" @if(isset($jobpostedit)) value="Production" @if($jobpostedit->department=='Production')selected="selected" @endif @endif>Production</option>
+                                                                                <option value="Accounting" @if(isset($jobpostedit)) value="Accounting" @if($jobpostedit->department=='Accounting')selected="selected" @endif @endif>Accounting</option>
                                                                             </select>
                                                                         </label>
                                                                     </div>
@@ -130,9 +138,9 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <input id="term" type="radio" name="term" value="long">&nbsp;<strong>Long Term</strong>
+                                                                    <input id="term" type="radio" name="term" value="Long Term" @if(isset($jobpostedit)) value="Long Term" @if($jobpostedit->term=='Long Term')checked="checked" @endif @endif>&nbsp;<strong>Long Term</strong>
                                                                     &nbsp;&nbsp;
-                                                                    <input id="term" type="radio" name="term" value="short">&nbsp;<strong>Short Term</strong>
+                                                                    <input id="term" type="radio" name="term" value="Short Term" @if(isset($jobpostedit)) value="Short Term" @if($jobpostedit->term=='Short Term')checked="checked" @endif @endif>&nbsp;<strong>Short Term</strong>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -150,7 +158,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <input id="termPeriod" name="termPeriod" type="text" placeholder="Termperiod (Ex: No of Weeks,   No of Days..etc)" class="form-control input-md">
+                                                                    <input id="termPeriod" name="termPeriod" type="text" placeholder="Termperiod (Ex: No of Weeks,No of Days..etc)" class="form-control input-md" @if(isset($jobpostedit)) value="{{$jobpostedit->termperiod}}" @endif>
                                                                     <span class="help-block">Please type in term period</span>
                                                                 </div>
                                                             </div>
@@ -170,11 +178,11 @@
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
                                                                     <div class="search-category-container">
-                                                                    <select id="experiance" name="experiance" class="form-control dropdown-product selectpicker">
+                                                                    <select id="experiance" name="experience" class="form-control dropdown-product selectpicker">
                                                                         <option value="">Select</option>
-                                                                        <option value="Fresher">Fresher</option>
+                                                                        <option value="Fresher" @if(isset($jobpostedit)) value="Fresher" @if($jobpostedit->experiance=='Fresher')selected="selected" @endif @endif>Fresher</option>
                                                                         @for($i=1;$i<=15;$i++)
-                                                                            <option>{{$i}} Year</option>
+                                                                            <option value="{{$i}}">{{$i}} Year</option>
                                                                         @endfor
                                                                     </select>
                                                                 </div>
@@ -195,7 +203,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <input id="payment" name="payment" type="number" placeholder="Payment" class="form-control input-md">
+                                                                    <input id="payment" name="payment" type="number" placeholder="Payment" class="form-control input-md" @if(isset($jobpostedit)) value="{{$jobpostedit->payment}}" @endif>
                                                                     <span class="help-block">Please type in your Payment that you Give</span>
                                                                 </div>
                                                             </div>
@@ -243,7 +251,7 @@
                                                             <!-- description input-->
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <textarea id="description" name="description" placeholder="Description" class="form-control input-md"></textarea>
+                                                                    <textarea id="description" name="description" placeholder="Description" class="form-control input-md">@if(isset($jobpostedit)) {{$jobpostedit->jobdescription}} @endif</textarea>
                                                                     <span class="help-block">Please provide brief job Description</span>
 																</div>
                                                             </div>

@@ -22,7 +22,7 @@
                     @foreach($JobPost as $viewJob)
                         <div class="job-list" style="width: 100%;">
                             <div class="thumb">
-                                <a href="{{route('companyProfile')}}"><img src="{{asset('assets/img/company/Mtaj.png')}}" height="100px" width="100px" class="img-circle" alt=""></a>
+                                <a href="{{route('companyProfile')}}"><img src="{{ asset('assets/img/company/').'/'.$viewJob->logo}}" height="100px" width="100px" class="img-circle" alt=""></a>
                             </div>
                             <div class="job-list-content">
                                 <h4><a href="{{route('companyProfile')}}">{{$viewJob->companyname}}</a><span class="full-time">Full-time</span></h4>
@@ -47,12 +47,12 @@
                                     </div>
                                     <div class="pull-right">
                                         <div class="icon">
-                                            <i class="ti-pencil"></i>
+                                            <a href="{{route('jobpostEdit',['id'=>$viewJob->id])}}"><i class="ti-pencil"></i></a>
                                         </div>
                                         <div class="icon">
-                                            <i class="ti-trash"></i>
+                                            <a href="{{route('destroyJob',['id'=>$viewJob->id])}}"><i class="ti-trash"></i></a>
                                         </div>
-                                        <a href="{{route('jobDetail')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
+                                        <a href="{{route('jobDetail',['id'=>$viewJob->id])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                     </div>
                                 </div>
                             </div>

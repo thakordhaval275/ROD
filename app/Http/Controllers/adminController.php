@@ -60,7 +60,7 @@ class adminController extends Controller
         }
     }
 
-    public function userLogout()
+    public function adminLogout()
     {
         Auth::logout();
         return redirect(route('admin'));
@@ -90,6 +90,54 @@ class adminController extends Controller
         //dd($id);
         $company=CompanyProfileModel::where('id',$id)->first();
         return view('admin.company.editCompanyPro',['company'=>$company]);
+    }
+
+    public function updatecompany(Request $request)
+    {
+        //dd($request);
+
+        $this->validate($request, [
+            'companyName'=>'required',
+            'aboutCompany'=>'required',
+            'location'=>'required',
+            'companyAddress'=>'required',
+            'website'=>'required',
+            'companyType'=>'required',
+            'yearOfFound'=>'required',
+            'noOfEmp'=>'required',
+        ]);
+
+        if($request->file('companyLogo')!=""){
+            $image = $request->file('companyLogo');
+            $input = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = 'assets/img/company/';
+            $image->move($destinationPath, $input);
+        } else {
+            $input = $request->hiddenLogo;
+        }
+
+        $company=CompanyProfileModel::find($request->id);
+        $company->logo=$input;
+        $company->aboutcompany=$request->aboutCompany;
+        $company->companyname=$request->companyName;
+        $company->location=$request->location;
+        $company->address=$request->companyAddress;
+        $company->website=$request->website;
+        $company->companytype=$request->companyType;
+        $company->foundyear=$request->yearOfFound;
+        $company->noofemployee=$request->noOfEmp;
+        $company->usertype=$request->userType;
+        $company->save();
+
+        $usertype=Auth::user()->usertype;
+        if($usertype==0)
+        {
+            return redirect(route('companyList'));
+        }
+        else if($usertype==1)
+        {
+            return redirect(Route('companyProfile'));
+        }
     }
 
     public function destroycompany($id)
@@ -130,7 +178,15 @@ class adminController extends Controller
         $job=JobPostModel::find($id);
         $job->delete();
 
-        return redirect(route('postJobList'));
+        $usertype=Auth::user()->usertype;
+        if($usertype==0)
+        {
+            return redirect(route('postJobList'));
+        }
+        else if($usertype==1)
+        {
+            return redirect(route('viewJobs'));
+        }
     }
 
     public function proposallist()
