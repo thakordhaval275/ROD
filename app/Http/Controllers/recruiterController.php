@@ -18,7 +18,9 @@ class recruiterController extends Controller
     }
     public function recruiteredit(Request $request)
     {
-        return view('recruiter.recruiterEdit');
+        $requestid=$request->id;
+        $recruiterdetail=RecruiterProfile::where('id',$request->id)->first();
+        return view('recruiter.recruiterEdit',['recruiterdetail'=>$recruiterdetail]);
     }
     public function addmyemployee()
     {
@@ -113,7 +115,6 @@ class recruiterController extends Controller
             'firstName'=>'required',
             'lastName'=>'required',
             'gender'=>'required',
-            'emailid'=>'required',
             'contactNo'=>'required',
             'address'=>'required',
             'city'=>'required',
@@ -138,13 +139,12 @@ class recruiterController extends Controller
             $input = $request->hiddenPhoto;
         }
 
-        $company=RecruiterProfile::find($request->id);
+        $company=RecruiterProfile::find($request->recruiter_id);
         $company->profilephoto=$input;
         $company->aboutself=$request->aboutMe;
         $company->firstname=$request->firstName;
         $company->lastname=$request->lastName;
         $company->gender=$request->gender;
-        $company->emailid=$request->emailid;
         $company->contactno=$request->contactNo;
         $company->address=$request->address;
         $company->city=$request->city;
@@ -168,7 +168,7 @@ class recruiterController extends Controller
         }
         else if($usertype==2)
         {
-            return redirect(Route('companyProfile'));
+            return redirect(Route('recruiterProfile'));
         }
     }
 

@@ -9,8 +9,10 @@
     <div class="profile-page">
         <div class="wrapper">
             <br><br><br><br><br><br><br>
-            <form method="post" action="{{route('recruiterprofilestore')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('recruiterupdate')}}" enctype="multipart/form-data">
                 <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
+                <input type="hidden" name="recruiter_id" id="recruiter_id" value="{{$recruiterdetail->id}}">
+                <input type="hidden" name="profilePhoto" id="profilePhoto" value="{{$recruiterdetail->profilephoto}}">
                 {{csrf_field()}}
                 <div class="main main-raised">
                     <div class="profile-content">
@@ -18,7 +20,7 @@
                             <div class="row">
                                 <div class="profile">
                                     <div class="avatar">
-                                        <img src="" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
+                                        <img src="{{asset('assets/img/recruiter/'.$recruiterdetail->profilephoto)}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
                                         <input type="file" name="profilePhoto" id="profilePhoto" class=" text-center  center-block  well well-sm">
                                     </div>
                                     <div class="name">
@@ -28,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="description text-center">
-                                <textarea id="aboutMe" name="aboutMe" class="form-control" placeholder="About Yourself" rows="4"></textarea>
+                                <textarea id="aboutMe" name="aboutMe" class="form-control" placeholder="About Yourself" rows="4">{{$recruiterdetail->aboutself}}</textarea>
                             </div>
                         </div>
                         <br>
@@ -49,7 +51,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="text" class="form-control" placeholder="Ex.:Janki" name="firstName" id="firstName">
+                                                        <input type="text" class="form-control" placeholder="Ex.:Janki" name="firstName" id="firstName" value="{{$recruiterdetail->firstname}}">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -63,7 +65,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="text" class="form-control" placeholder="Ex.:patel" name="lastName" id="lastName">
+                                                        <input type="text" class="form-control" placeholder="Ex.:patel" name="lastName" id="lastName" value="{{$recruiterdetail->lastname}}">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -77,8 +79,8 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="radio"  name="gender" value="Male"><strong> Male</strong>&nbsp;&nbsp;
-                                                        <input type="radio"  name="gender" value="Female"><strong> Female</strong>
+                                                        <input type="radio"  name="gender" value="Male"@if($recruiterdetail->gender=='Male') checked="checked"@endif><strong> Male</strong>&nbsp;&nbsp;
+                                                        <input type="radio"  name="gender" value="Female"@if($recruiterdetail->gender=='Female') checked="checked"@endif><strong> Female</strong>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -106,7 +108,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                      <input type="tel" class="form-control" placeholder="8160626748" maxlength="15" name="contactNo">
+                                                      <input type="tel" class="form-control" placeholder="8160626748" maxlength="15" name="contactNo" value="{{$recruiterdetail->contactno}}">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -120,7 +122,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <textarea class="form-control" name="address" placeholder="Ex.: 57,hari krushna street, harni" rows="4"></textarea>
+                                                        <textarea class="form-control" name="address" placeholder="Ex.: 57,hari krushna street, harni" rows="4">{{$recruiterdetail->address}}</textarea>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -137,10 +139,10 @@
                                                         <div class="search-category-container">
                                                                 <select id="city" name="city" class="form-control dropdown-product selectpicker">
                                                                     <option value="">Select</option>
-                                                                    <option value="Vadodara">Vadodara</option>
-                                                                    <option value="Bharuch">Bharuch</option>
-                                                                    <option value="Rajkot">Rajkot</option>
-                                                                    <option value="Mumbai">Mumbai</option>
+                                                                    <option value="Vadodara"@if($recruiterdetail->city=='Vadodara') selected="selected"@endif>Vadodara</option>
+                                                                    <option value="Bharuch" @if($recruiterdetail->city=='Bharuch') selected="selected"@endif>Bharuch</option>
+                                                                    <option value="Rajkot" @if($recruiterdetail->city=='Rajkot') selected="selected"@endif>Rajkot</option>
+                                                                    <option value="Mumbai" @if($recruiterdetail->city=='Mumbai') selected="selected"@endif>Mumbai</option>
                                                                 </select>
                                                         </div>
                                                     </div><!--/col-7-->
@@ -159,10 +161,10 @@
                                                         <div class="search-category-container">
                                                             <select id="state" name="state" class="form-control dropdown-product selectpicker">
                                                                 <option value="">Select</option>
-                                                                <option value="Gujarat">Gujarat</option>
-                                                                <option value="Maharastra">Maharastra</option>
-                                                                <option value="Rajasthan">Rajasthan</option>
-                                                                <option value="Goa">Goa</option>
+                                                                <option value="Gujarat" @if($recruiterdetail->state=='Gujarat') selected="selected"@endif>Gujarat</option>
+                                                                <option value="Maharastra" @if($recruiterdetail->state=='Maharastra') selected="selected"@endif>Maharastra</option>
+                                                                <option value="Rajasthan" @if($recruiterdetail->state=='Rajasthan') selected="selected"@endif>Rajasthan</option>
+                                                                <option value="Goa" @if($recruiterdetail->state=='Goa') selected="selected"@endif>Goa</option>
                                                             </select>
                                                         </div>
                                                     </div><!--/col-7-->
@@ -181,10 +183,10 @@
                                                         <div class="search-category-container">
                                                             <select id="country" name="country" class="form-control dropdown-product selectpicker">
                                                                 <option value="">Select</option>
-                                                                <option value="India">India</option>
-                                                                <option value="USA">USA</option>
-                                                                <option value="Dubai">Dubai</option>
-                                                                <option value="Canda">Canda</option>
+                                                                <option value="India" @if($recruiterdetail->country=='India') selected="selected"@endif>India</option>
+                                                                <option value="USA" @if($recruiterdetail->country=='USA') selected="selected"@endif>USA</option>
+                                                                <option value="Dubai" @if($recruiterdetail->country=='Dubai') selected="selected"@endif>Dubai</option>
+                                                                <option value="Canda" @if($recruiterdetail->country=='Canda') selected="selected"@endif>Canda</option>
                                                             </select>
                                                         </div>
                                                     </div><!--/col-7-->
@@ -200,7 +202,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="email" class="ti-email form-control" name="alterEmailid" id="alteremailid" placeholder="abc@gmail.com" >
+                                                        <input type="email" class="ti-email form-control" name="alterEmailid" id="alteremailid" placeholder="abc@gmail.com" value="{{$recruiterdetail->otheremailid}}">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -222,8 +224,8 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="radio"  name="gst" value="Yes"><strong> Yes</strong>&nbsp;&nbsp;
-                                                        <input type="radio"  name="gst" value="No"><strong> No</strong>
+                                                        <input type="radio"  name="gst" value="Yes" @if($recruiterdetail->gstregister=='Yes') checked="checked"@endif><strong> Yes</strong>&nbsp;&nbsp;
+                                                        <input type="radio"  name="gst" value="No" @if($recruiterdetail->gstregister=='No') checked="checked"@endif><strong> No</strong>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row--><br>
@@ -237,7 +239,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyName" id="companyname">
+                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyName" id="companyname" value="{{$recruiterdetail->rcompanyname}}">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -251,7 +253,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyType" id="companyname">
+                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="companyType" id="companyname" value="{{$recruiterdetail->rcompanytype}}">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -268,8 +270,8 @@
                                                         <div class="search-category-container">
                                                             <select id="industrytype" name="industryType" class="form-control dropdown-product selectpicker">
                                                                 <option value="">Select</option>
-                                                                <option value="IT-Hardware & Networking">IT-Hardware & Networking</option>
-                                                                <option value="Food Processing">Food Processing</option>
+                                                                <option value="IT-Hardware & Networking" @if($recruiterdetail->rindustrytype=='IT-Hardware & Networking') selected="selected"@endif>IT-Hardware & Networking</option>
+                                                                <option value="Food Processing" @if($recruiterdetail->rindustrytype=='Food Processing') selected="selected"@endif>Food Processing</option>
 
                                                             </select>
                                                         </div>
@@ -286,7 +288,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <textarea class="form-control" name="companyAddress" placeholder="Ex.: 57,hari krushna street, harni" rows="4"></textarea>
+                                                        <textarea class="form-control" name="companyAddress" placeholder="Ex.: 57,hari krushna street, harni" rows="4">{{$recruiterdetail->companyaddress}}</textarea>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -300,7 +302,7 @@
                                                         <h4>:</h4>
                                                     </div> <!--/col-1-->
                                                     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="referenceName" id="companyname">
+                                                        <input type="text" class="form-control" placeholder="Ex.:abc private limited" name="referenceName" id="companyname" value="{{$recruiterdetail->rname}}">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
                                             </div><!--/row-->
@@ -317,8 +319,8 @@
                                                         <div class="search-category-container">
                                                             <select id="designation" name="designation" class="form-control dropdown-product selectpicker">
                                                                 <option value="">Select</option>
-                                                                <option value="Manager">Manager</option>
-                                                                <option value="Assi. Manager">Assi. Manager</option>
+                                                                <option value="Manager" @if($recruiterdetail->rdesignation=='Manager') selected="selected"@endif>Manager</option>
+                                                                <option value="Assi. Manager" @if($recruiterdetail->rdesignation=='Assi. Manager') selected="selected"@endif>Assi. Manager</option>
                                                             </select>
                                                         </div>
                                                     </div><!--/col-7-->
