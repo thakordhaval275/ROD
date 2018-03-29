@@ -54,12 +54,7 @@
 																<div class="row">
 																	<div class="col-md-12">
 																		<div class="form-group">
-                                                                            @if(isset($jobpostedit))
-																			<img src="{{ asset('assets/img/company/').'/'.$jobpostedit->logo}}" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
-																		    @else
-                                                                                <img src="{{ asset('assets/img/company/default.png').'/'}}" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
-
-                                                                            @endif
+                                                                            <img src="@if(isset($jobpostedit) && $jobpostedit->logo!="") {{ asset('assets/img/company/').'/'.$jobpostedit->logo}} @else {{ asset('assets/img/company/default.png').'/'}} @endif" alt="Circle Image" width="100" height="100" class="img-circle img-responsive img-raised" name="Logo">
                                                                         </div>
 																	</div>
 																</div>
@@ -178,11 +173,11 @@
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
                                                                     <div class="search-category-container">
-                                                                    <select id="experiance" name="experience" class="form-control dropdown-product selectpicker">
+                                                                    <select id="experiance" name="experiance" class="form-control dropdown-product selectpicker">
                                                                         <option value="">Select</option>
-                                                                        <option value="Fresher" @if(isset($jobpostedit)) value="Fresher" @if($jobpostedit->experiance=='Fresher')selected="selected" @endif @endif>Fresher</option>
+                                                                        <option value="Fresher" @if(isset($jobpostedit)) value="Fresher" @if($jobpostedit->experience=='Fresher')selected="selected" @endif @endif>Fresher</option>
                                                                         @for($i=1;$i<=15;$i++)
-                                                                            <option value="{{$i}}">{{$i}} Year</option>
+                                                                            <option value="{{$i}}" @if(isset($jobpostedit)) value="{{$i}}" @if($jobpostedit->experience==$i)selected="selected" @endif @endif>{{$i}} Year</option>
                                                                         @endfor
                                                                     </select>
                                                                 </div>
@@ -227,7 +222,7 @@
                                                                             <select class="form-control dropdown-product selectpicker" id="noOfPostion" name="noOfPostion">
                                                                                 <option value="">No Of Positions</option>
                                                                                 @for($i=0;$i<200;$i=$i+5)
-                                                                                    <option value="{{$i}}">{{$i}}</option>
+                                                                                    <option value="{{$i}}" @if(isset($jobpostedit)) value="{{$i}}" @if($jobpostedit->noofpositions==$i)selected="selected" @endif @endif>{{$i}}</option>
                                                                                 @endfor
                                                                             </select>
                                                                             <span class="help-block">Please select number of position</span>
@@ -261,7 +256,7 @@
                                                 <div class="form-group">
                                                     <div class="col-md-12 text-center">
                                                         <button type="submit" class="btn btn-common">Save</button>
-                                                        <a id="cancel" name="cancel" class="btn btn-common" href="{{route('companyProfile')}}">Cancel</a>
+                                                        <a id="cancel" name="cancel" class="btn btn-common" href="{{route('viewJobs')}}">Cancel</a>
                                                     </div>
                                                 </div><br><br>
                                         </div>
