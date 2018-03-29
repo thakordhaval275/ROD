@@ -23,7 +23,7 @@
                                         <input type="file" class="text-center center-block well well-sm" name="companyLogo">
                                     </div>
                                     <div class="name">
-                                        <h3 class="title">@if($companydetail->companyname){{Auth::user()->email}}@else {{$companydetail->companyname}} @endif</h3>
+                                        <h3 class="title">@if($companydetail->companyname==""){{Auth::user()->email}}@else {{$companydetail->companyname}} @endif</h3>
                                         <h6>{{$companydetail->companytype}}</h6>
                                     </div>
                                 </div>

@@ -389,10 +389,10 @@
                                                                 <div class="search-category-container">
                                                                     <select id="experianceYear" name="experianceYear" class="form-control dropdown-product selectpicker">
                                                                         <option value="">Select</option>
-                                                                        <option value="Fresher" @if($editemp->expirienceyear='Fresher')selected="selected"@endif>Fresher</option>
-                                                                        <option value="Month" @if($editemp->expirienceyear='Month')selected="selected"@endif>Month</option>
+                                                                        <option value="Fresher" @if($editemp->expirienceyear=='Fresher')selected="selected"@endif>Fresher</option>
+                                                                        <option value="Month" @if($editemp->expirienceyear=='Month')selected="selected"@endif>Month</option>
                                                                         @for($i=1;$i<=15;$i++)
-                                                                            <option>{{$i}} Year</option>
+                                                                            <option value="{{$i}}" @if($editemp->expirienceyear==$i) selected="selected" @endif>{{$i}} Year</option>
                                                                         @endfor
                                                                     </select>
                                                                 </div>
@@ -401,7 +401,7 @@
                                                                     <select id="experianceMonth" name="experianceMonth" class="form-control dropdown-product selectpicker">
                                                                         <option value="">Select</option>
                                                                         @for($i=1;$i<=12;$i++)
-                                                                            <option>{{$i}} Month</option>
+                                                                            <option value="{{$i}}" @if($editemp->expiriencemonth==$i) selected="selected" @endif>{{$i}} Month</option>
                                                                         @endfor
                                                                     </select>
                                                                 </div>
