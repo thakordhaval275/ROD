@@ -8,17 +8,18 @@
     <div class="profile-page">
         <div class="wrapper">
             <br><br><br><br><br><br><br>
-            <form method="post" action="{{route('employeeprofilestore')}}" enctype="multipart/form-data">
+            @foreach($editemp as $editemp)@endforeach
+            <form method="post" action="{{route('employeeUpdate')}}" enctype="multipart/form-data">
                 <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
+                <input type="hidden" name="id" id="id" value="{{$editemp->id}}">
                 {{csrf_field()}}
                 <div class="main main-raised">
                     <div class="profile-content">
                         <div class="container">
-                            @foreach($editemp as $editemp)@endforeach
                             <div class="row">
                                 <div class="profile">
                                     <div class="avatar">
-                                        <img src="" style="height: 100px;" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
+                                        <img src="@if($editemp->logo==""){{ asset('assets/img/recruiter/default.png').'/'.$editemp->logo}} @else {{ asset('assets/img/recruiter/').'/'.$editemp->logo}} @endif"  alt="Circle Image" class="img-circle img-responsive img-raised"><br>
                                         <input type="file" class="text-center center-block well well-sm" name="empProfile">
                                     </div>
                                     <div class="name">

@@ -13,11 +13,11 @@
                     <div class="container">
                         @foreach($ViewProfile as $viewprofile)
                         @endforeach
-                        {{--<input type="hidden" name="id" id="id" value="{{$viewprofile->id}}">--}}
+                        {{--<input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">--}}
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="{{ asset('assets/img/recruiter/').'/'.$viewprofile->logo}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('employeeEdit')}}"><i class="ti-pencil"> Edit</i></a>
+                                    <img src="{{ asset('assets/img/employee/').'/'.$viewprofile->logo}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>@if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit')}}"><i class="ti-pencil"> Edit</i></a>@endif
                                 </div>
                                 <div class="name">
                                     <h3 class="title">{{$viewprofile->firstname}}&nbsp;{{$viewprofile->lastname}}</h3>
@@ -36,7 +36,7 @@
                                 <form method="get" action="#">
                                     <div class="col-md-6">
                                         <div class="panel panel-danger">
-                                            <div class="panel-heading">Personal Details<a href="{{route('employeeEdit')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
+                                            <div class="panel-heading">Personal Details @if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a> @endif</div>
                                             <div class="panel-body">
                                                 <br>
                                                 <div class="row">
@@ -226,7 +226,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="panel panel-danger">
-                                            <div class="panel-heading">Education Details<a href="{{route('employeeEdit')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
+                                            <div class="panel-heading">Education Details @if(Auth::user()->usertype=="3") <a href="{{route('employeeEdit')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a> @endif</div>
                                             <div class="panel-body">
                                                 <br>
                                                 <div class="row">
@@ -305,13 +305,17 @@
                                                         </div>
                                                     </div>
                                                 </div><br>
-
                                             </div>
                                         </div><br>
                                     </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-center">
+                                         @if($viewprofile->usertype=="2")  <a id="Back" name="Back" class="btn btn-common" href="{{route('myEmployee')}}">Back</a> @endif
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
-                        </div>
+                        </div><br><br>
                     </div>
                 </div>
             </div>

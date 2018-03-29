@@ -237,7 +237,6 @@ class recruiterController extends Controller
             'gender'=>'required',
             'birthdate'=>'required',
             'contectNo'=>'required',
-            'email'=>'required',
             'city'=>'required',
             'state'=>'required',
             'country'=>'required',
@@ -275,7 +274,6 @@ class recruiterController extends Controller
         $employe->gender=$request->gender;
         $employe->bdate=$request->birthdate;
         $employe->contectno=$request->contectNo;
-        $employe->emailid=$request->email;
         $employe->city=$request->city;
         $employe->state=$request->state;
         $employe->country=$request->country;
@@ -300,7 +298,7 @@ class recruiterController extends Controller
         {
             return redirect(route('myEmployeeList'));
         }
-        else if($usertype==3)
+        else if($usertype==2)
         {
             //dd($usertype);
             return redirect(route('myEmployee'));
