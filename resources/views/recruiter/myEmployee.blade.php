@@ -13,47 +13,29 @@
                 <a href="{{route('employeeEdit')}}"><div class="btn btn-common btn-rm">Add New Employee</div></a>
             </div><br><br><br>
             <div class="col-md-9 col-sm-8">
-                <div class="job-list">
-                    <div class="thumb">
-                        <a href="{{route('employeeProfile')}}"><img src="{{asset('assets/img/employee/christian.jpg')}}" height="100px" width="100px" class="img-circle" alt=""></a>
-                    </div>
-                    <div class="job-list-content">
-                        <h4><a href="{{route('employeeProfile')}}">Christian Louboutin</a><span class="full-time">Avalible</span></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit, officiis, praesentium?</p>
-                        <div class="job-tag">
-                            <div class="pull-left">
-                                <div class="meta-tag">
-                                    <span><a href="browse-categories.html"><i class="ti-desktop"></i>PHP developer</a></span>
-                                    <span><i class="ti-location-pin"></i>Vadodara, Gujarat, India</span>
+                @foreach($myemp as $myemp)
+                    <div class="job-list" style="width: 100%;">
+                        <div class="thumb">
+                            <a href="{{route('employeeProfile')}}"><img src="{{asset('assets/img/employee/christian.jpg')}}" height="100px" width="100px" class="img-circle" alt=""></a>
+                        </div>
+                        <div class="job-list-content">
+                            <h4><a href="{{route('employeeProfile')}}">{{$myemp->firstname}}&nbsp;&nbsp;{{$myemp->lastname}}</a><span class="full-time">Avalible</span></h4>
+                            <p>{{$myemp->aboutself}}</p>
+                            <div class="job-tag">
+                                <div class="pull-left">
+                                    <div class="meta-tag">
+                                        <span><a href="browse-categories.html"><i class="ti-desktop"></i>{{$myemp->keyskill}}</a></span>
+                                        <span><i class="ti-location-pin"></i>{{$myemp->city}},{{$myemp->state}},{{$myemp->country}}</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="pull-right">
-                                <a href="{{route('employeeProfile')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
+                                <div class="pull-right">
+                                    <a href="{{route('employeeProfile',['id'=>$myemp->id])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="job-list">
-                    <div class="thumb">
-                        <a href="{{route('employeeProfile')}}"><img src="{{asset('assets/img/employee/christian.jpg')}}" height="100px" width="100px" alt=""></a>
-                    </div>
-                    <div class="job-list-content">
-                        <h4><a href="{{route('employeeProfile')}}">king johns</a><span class="part-time">Not Avalible</span></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit, officiis, praesentium?</p>
-                        <div class="job-tag">
-                            <div class="pull-left">
-                                <div class="meta-tag">
-                                    <span><a href="browse-categories.html"><i class="ti-server"></i>DBA</a></span>
-                                    <span><i class="ti-location-pin"></i>Cupertino, CA, USA</span>
-                                </div>
-                            </div>
-                            <div class="pull-right">
-                                <a href="{{route('employeeProfile')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                 @endforeach
 
                 <!-- Start Pagination -->
                 <ul class="pagination">

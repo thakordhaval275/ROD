@@ -29,7 +29,8 @@ class recruiterController extends Controller
     }
     public function myemployee()
     {
-        return view('recruiter.myEmployee');
+        $myemp=MyEmployee::get();
+        return view('recruiter.myEmployee',['myemp'=>$myemp]);
     }
     public  function joblist()
     {

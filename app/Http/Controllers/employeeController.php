@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\EmployeeProfileModel;
+use App\MyEmployee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,13 +11,34 @@ class employeeController extends Controller
 {
     public function employeeprofile()
     {
-        $viewProfile=EmployeeProfileModel::get();
-        return view('employee.employeeProfile',['ViewProfile'=>$viewProfile]);
+        $usertype=Auth::user()->usertype;
+        if($usertype==3)
+        {
+            $viewProfile=EmployeeProfileModel::get();
+            return view('employee.employeeProfile',['ViewProfile'=>$viewProfile]);
+        }
+        else if($usertype==2)
+        {
+            $viewProfile=MyEmployee::get();
+            return view('employee.employeeProfile',['ViewProfile'=>$viewProfile]);
+        }
+
     }
 
     public function employeeedit()
     {
-        return view('employee.employeeEdit');
+        $usertype=Auth::user()->usertype;
+        if($usertype==3)
+        {
+            $editemp=EmployeeProfileModel::get();
+            return view('employee.employeeEdit',['editemp'=>$editemp]);
+        }
+        else if($usertype==2)
+        {
+            $editemp=MyEmployee::get();
+            return view('employee.employeeEdit',['editemp'=>$editemp]);
+        }
+
     }
 
     public function employeeprofilestore(Request $request)

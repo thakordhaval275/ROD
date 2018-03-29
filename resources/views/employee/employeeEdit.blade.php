@@ -14,6 +14,7 @@
                 <div class="main main-raised">
                     <div class="profile-content">
                         <div class="container">
+                            @foreach($editemp as $editemp)@endforeach
                             <div class="row">
                                 <div class="profile">
                                     <div class="avatar">
@@ -21,13 +22,13 @@
                                         <input type="file" class="text-center center-block well well-sm" name="empProfile">
                                     </div>
                                     <div class="name">
-                                        <h3 class="title">Christian Louboutin</h3>
+                                        <h3 class="title">{{$editemp->firstname}}&nbsp;&nbsp; {{$editemp->lastname}}</h3>
                                         <h6>Designer</h6>
                                     </div>
                                 </div>
                             </div>
                             <div class="description text-center">
-                                <textarea id="aboutMe" name="aboutMe" class="form-control" placeholder="About Yourself" rows="4"></textarea>
+                                <textarea id="aboutMe" name="aboutMe" class="form-control" placeholder="About Yourself" rows="4">{{$editemp->aboutself}}</textarea>
                             </div>
                         </div>
                         <div class="container-fluid">
@@ -48,7 +49,7 @@
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <input type="text" class="form-control" name="firstName" placeholder="ex. John" id="firstName">
+                                                                <input type="text" class="form-control" name="firstName" placeholder="ex. John" id="firstName" value="{{$editemp->firstname}}">
 
                                                             </div>
                                                         </div>
@@ -63,7 +64,7 @@
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <input type="text" class="form-control" name="lastName" placeholder="ex. Christian" id="lastName">
+                                                                <input type="text" class="form-control" name="lastName" placeholder="ex. Christian" id="lastName" value="{{$editemp->lastname}}">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -77,7 +78,7 @@
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <textarea type="text" class="form-control" name="address" placeholder="ex. B/20 Shivam Tenament, Nr. Air Force" id="address"></textarea>
+                                                                <textarea type="text" class="form-control" name="address" placeholder="ex. B/20 Shivam Tenament, Nr. Air Force" id="address">{{$editemp->address}}</textarea>
                                                             </div>
                                                         </div>
                                                     </div><br>
@@ -91,7 +92,7 @@
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <input type="text" class="form-control" name="pincode" placeholder="ex. 390010" id="pincode">
+                                                                <input type="text" class="form-control" name="pincode" placeholder="ex. 390010" id="pincode" value="{{$editemp->pincode}}">
                                                             </div>
                                                         </div>
                                                     </div><br>
@@ -106,9 +107,9 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <div class="form-group">
-                                                                    <input type="radio" name="gender" value="Male">&nbsp;<strong>Male</strong>
+                                                                    <input type="radio" name="gender" value="Male" @if($editemp->gender=='Male')checked="checked"@endif>&nbsp;<strong>Male</strong>
                                                                     &nbsp;&nbsp;
-                                                                    <input type="radio" name="gender" value="Female">&nbsp;<strong>Female</strong>
+                                                                    <input type="radio" name="gender" value="Female" @if($editemp->gender=='Female')checked="checked"@endif>&nbsp;<strong>Female</strong>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -123,7 +124,7 @@
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <input type="date" class="form-control" name="birthdate" id="birthdate">
+                                                                <input type="date" class="form-control" name="birthdate" id="birthdate" value="{{$editemp->bdate}}">
                                                             </div>
                                                         </div>
                                                     </div><br>
@@ -137,7 +138,7 @@
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <input type="tel" class="form-control" name="contectNo" placeholder="ex. +912345248951" id="contectno" maxlength="15">
+                                                                <input type="tel" class="form-control" name="contectNo" placeholder="ex. +912345248951" id="contectno" maxlength="15" value="{{$editemp->contectno}}">
                                                             </div>
                                                         </div>
                                                     </div><br>
@@ -168,12 +169,12 @@
                                                                 <div class="search-category-container">
                                                                     <select id="city" name="city" class="form-control dropdown-product selectpicker">
                                                                         <option value="">Select</option>
-                                                                        <option value="Vadodara">Vadodara</option>
-                                                                        <option value="Anand">Anand</option>
-                                                                        <option value="Ahemdabad">Ahemdabad</option>
-                                                                        <option value="Surat">Surat</option>
-                                                                        <option value="Bharuch">Bharuch</option>
-                                                                        <option value="other">other</option>
+                                                                        <option value="Vadodara" @if($editemp->city=='Vadodara')selected="selected"@endif>Vadodara</option>
+                                                                        <option value="Anand" @if($editemp->city=='Anand')selected="selected"@endif>Anand</option>
+                                                                        <option value="Ahemdabad" @if($editemp->city=='Ahemdabad')selected="selected"@endif>Ahemdabad</option>
+                                                                        <option value="Surat" @if($editemp->city=='Surat')selected="selected"@endif>Surat</option>
+                                                                        <option value="Bharuch" @if($editemp->city=='Bharuch')selected="selected"@endif>Bharuch</option>
+                                                                        <option value="other" @if($editemp->city=='other')selected="selected"@endif>other</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -191,11 +192,11 @@
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <select id="state" name="state" class="form-control dropdown-product selectpicker">
                                                                     <option value="">Select</option>
-                                                                    <option value="Gujarat">Gujarat</option>
-                                                                    <option value="Karnantaka">Karnantaka</option>
-                                                                    <option value="Tamilnadu">Tamilnadu</option>
-                                                                    <option value="Maharastra">Maharastra</option>
-                                                                    <option value="other">other</option>
+                                                                    <option value="Gujarat" @if($editemp->state=='Gujarat')selected="selected"@endif>Gujarat</option>
+                                                                    <option value="Karnantaka" @if($editemp->state=='Karnantaka')selected="selected"@endif>Karnantaka</option>
+                                                                    <option value="Tamilnadu" @if($editemp->state=='Tamilnadu')selected="selected"@endif>Tamilnadu</option>
+                                                                    <option value="Maharastra" @if($editemp->state=='Maharastra')selected="selected"@endif>Maharastra</option>
+                                                                    <option value="other" @if($editemp->state=='other')selected="selected"@endif>other</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -212,10 +213,10 @@
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <select id="country" name="country" class="form-control dropdown-product selectpicker">
                                                                     <option value="">Select</option>
-                                                                    <option value="India">India</option>
-                                                                    <option value="Dubai">Dubai</option>
-                                                                    <option value="USA">USA</option>
-                                                                    <option value="other">other</option>
+                                                                    <option value="India" @if($editemp->country=='India')selected="selected"@endif>India</option>
+                                                                    <option value="Dubai" @if($editemp->country=='Dubai')selected="selected"@endif>Dubai</option>
+                                                                    <option value="USA" @if($editemp->country=='USA')selected="selected"@endif>USA</option>
+                                                                    <option value="other" @if($editemp->country=='other')selected="selected"@endif>other</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -230,7 +231,7 @@
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <input type="text" class="form-control" name="homeTown" placeholder="ex. Vadodara" id="homeTown">
+                                                                <input type="text" class="form-control" name="homeTown" placeholder="ex. Vadodara" id="homeTown" value="{{$editemp->hometown}}">
                                                             </div>
                                                         </div>
                                                     </div><br>
@@ -246,12 +247,12 @@
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <select id="meritalStatus" name="meritalStatus" class="form-control dropdown-product selectpicker">
                                                                     <option value="">Select</option>
-                                                                    <option value="Single/Unmarrid">Single/Unmarrid</option>
-                                                                    <option value="Married">Married</option>
-                                                                    <option value="Widowed">Widowed</option>
-                                                                    <option value="Divorced">Divorced</option>
-                                                                    <option value="Separated">Separated</option>
-                                                                    <option value="other">other</option>
+                                                                    <option value="Single/Unmarrid" @if($editemp->maritalstatus=='Single/Unmarrid')selected="selected"@endif>Single/Unmarrid</option>
+                                                                    <option value="Married" @if($editemp->maritalstatus=='Married')selected="selected"@endif>Married</option>
+                                                                    <option value="Widowed" @if($editemp->maritalstatus=='Widowed')selected="selected"@endif>Widowed</option>
+                                                                    <option value="Divorced" @if($editemp->maritalstatus=='Divorced')selected="selected"@endif>Divorced</option>
+                                                                    <option value="Separated" @if($editemp->maritalstatus=='Separated')selected="selected"@endif>Separated</option>
+                                                                    <option value="other" @if($editemp->maritalstatus=='other')selected="selected"@endif>other</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -277,11 +278,11 @@
                                                                     <div class="col-md-12">
                                                                         <h6>Post Graduate</h6>
                                                                         <select id="postGraduate" name="postGraduate" class="form-control dropdown-product selectpicker">
-                                                                            <option value="Not Mention">Select</option>
-                                                                            <option value="MCA">MCA</option>
-                                                                            <option value="MSc.IT">MSc.IT</option>
-                                                                            <option value="MBA">MBA</option>
-                                                                            <option value="Other">Other</option>
+                                                                            <option value="Not Mention" @if($editemp->postgraduate=='Not Mention')selected="selected"@endif>Select</option>
+                                                                            <option value="MCA" @if($editemp->postgraduate=='MCA')selected="selected"@endif>MCA</option>
+                                                                            <option value="MSc.IT" @if($editemp->postgraduate=='MSc.IT')selected="selected"@endif>MSc.IT</option>
+                                                                            <option value="MBA" @if($editemp->postgraduate=='MBA')selected="selected"@endif>MBA</option>
+                                                                            <option value="Other" @if($editemp->postgraduate=='Other')selected="selected"@endif>Other</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -290,11 +291,11 @@
                                                                     <div class="col-md-12">
                                                                         <h6>Graduate</h6>
                                                                         <select id="graduate" name="graduate" class="form-control dropdown-product selectpicker">
-                                                                            <option value="Not Mention">Select</option>
-                                                                            <option value="BCA">BCA</option>
-                                                                            <option value="BBA">BBA</option>
-                                                                            <option value="B.Com">B.Com</option>
-                                                                            <option value="Other">Other</option>
+                                                                            <option value="Not Mention" @if($editemp->graduate=='Not Mention')selected="selected"@endif>Select</option>
+                                                                            <option value="BCA" @if($editemp->graduate=='BCA')selected="selected"@endif>BCA</option>
+                                                                            <option value="BBA" @if($editemp->graduate=='BBA')selected="selected"@endif>BBA</option>
+                                                                            <option value="B.Com" @if($editemp->graduate=='B.Com')selected="selected"@endif>B.Com</option>
+                                                                            <option value="Other" @if($editemp->graduate=='Other')selected="selected"@endif>Other</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -303,10 +304,10 @@
                                                                     <div class="col-md-12">
                                                                         <h6>Class XII</h6>
                                                                         <select id="classXII" name="classXII" class="form-control dropdown-product selectpicker">
-                                                                            <option value="Not Mention">Select</option>
-                                                                            <option value="GSHEB">GSHEB</option>
-                                                                            <option value="CBSC">CBSC</option>
-                                                                            <option value="Other">Other</option>
+                                                                            <option value="Not Mention" @if($editemp->classxii=='Not Mention')selected="selected"@endif>Select</option>
+                                                                            <option value="GSHEB" @if($editemp->classxii=='GSHEB')selected="selected"@endif>GSHEB</option>
+                                                                            <option value="CBSC" @if($editemp->classxii=='CBSC')selected="selected"@endif>CBSC</option>
+                                                                            <option value="Other" @if($editemp->classxii=='Other')selected="selected"@endif>Other</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -315,10 +316,10 @@
                                                                     <div class="col-md-12">
                                                                         <h6>Class X</h6>
                                                                         <select id="classx" name="classX" class="form-control dropdown-product selectpicker">
-                                                                            <option value="Not Mention">Select</option>
-                                                                            <option value="GSEB">GSEB</option>
-                                                                            <option value="CBSC">CBSC</option>
-                                                                            <option value="Other">Other</option>
+                                                                            <option value="Not Mention" @if($editemp->classx=='Not Mention')selected="selected"@endif>Select</option>
+                                                                            <option value="GSEB" @if($editemp->classx=='GSEB')selected="selected"@endif>GSEB</option>
+                                                                            <option value="CBSC" @if($editemp->classx=='CBSC')selected="selected"@endif>CBSC</option>
+                                                                            <option value="Other" @if($editemp->classx=='Other')selected="selected"@endif>Other</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -326,7 +327,7 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <h6>Other Qualification</h6>
-                                                                        <input type="text" id="otherquli" name="otherquli" class="form-control" placeholder="ex. additional Course">
+                                                                        <input type="text" id="otherquli" name="otherquli" class="form-control" placeholder="ex. additional Course" value="{{$editemp->otherque}}">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -344,8 +345,8 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <select id="industry" name="industry" class="form-control dropdown-product selectpicker">
-                                                                    <option value="">Select</option>
-                                                                    <option value="IT-Hardware & Networking">IT-Hardware & Networking</option>
+                                                                    <option value="Not Mention" @if($editemp->otherque=='Not Mention')selected="selected"@endif>Select</option>
+                                                                    <option value="IT-Hardware & Networking" @if($editemp->otherque=='IT-Hardware & Networking')selected="selected"@endif>IT-Hardware & Networking</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -363,12 +364,12 @@
                                                                 <div class="search-category-container">
                                                                     <select id="preferredLocation" name="preferredLocation" class="form-control dropdown-product selectpicker">
                                                                         <option value="">Select</option>
-                                                                        <option value="Vadodara">Vadodara</option>
-                                                                        <option value="Anand">Anand</option>
-                                                                        <option value="Ahemdabad">Ahemdabad</option>
-                                                                        <option value="Surat">Surat</option>
-                                                                        <option value="Bharuch">Bharuch</option>
-                                                                        <option value="other">other</option>
+                                                                        <option value="Vadodara" @if($editemp->preferredlocation=='Vadodara')selected="selected"@endif>Vadodara</option>
+                                                                        <option value="Anand" @if($editemp->preferredlocation=='Anand')selected="selected"@endif>Anand</option>
+                                                                        <option value="Ahemdabad" @if($editemp->preferredlocation=='Ahemdabad')selected="selected"@endif>Ahemdabad</option>
+                                                                        <option value="Surat" @if($editemp->preferredlocation=='Surat')selected="selected"@endif>Surat</option>
+                                                                        <option value="Bharuch" @if($editemp->preferredlocation=='Bharuch')selected="selected"@endif>Bharuch</option>
+                                                                        <option value="other" @if($editemp->preferredlocation=='other')selected="selected"@endif>other</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -388,8 +389,8 @@
                                                                 <div class="search-category-container">
                                                                     <select id="experianceYear" name="experianceYear" class="form-control dropdown-product selectpicker">
                                                                         <option value="">Select</option>
-                                                                        <option value="Fresher">Fresher</option>
-                                                                        <option value="Month">Month</option>
+                                                                        <option value="Fresher" @if($editemp->expirienceyear='Fresher')selected="selected"@endif>Fresher</option>
+                                                                        <option value="Month" @if($editemp->expirienceyear='Month')selected="selected"@endif>Month</option>
                                                                         @for($i=1;$i<=15;$i++)
                                                                             <option>{{$i}} Year</option>
                                                                         @endfor
@@ -417,7 +418,7 @@
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <input type="text" class="form-control" name="keySkill" placeholder="ex. Android, .NET, PHP" id="keySkill">
+                                                                <input type="text" class="form-control" name="keySkill" placeholder="ex. Android, .NET, PHP" id="keySkill" value="{{$editemp->keyskill}}">
                                                             </div>
                                                         </div>
                                                     </div><br>

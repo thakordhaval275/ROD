@@ -94,6 +94,12 @@ class RodController extends Controller
                 'emailid'=>$request->email,
             ]);
         }
+        else if($request->userType==3)
+        {
+            EmployeeProfileModel::create([
+                'emailid'=>$request->email,
+            ]);
+        }
 
         return redirect(route('login'));
     }

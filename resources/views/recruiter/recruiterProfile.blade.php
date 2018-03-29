@@ -37,7 +37,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
                                 <div class="col-md-6">
                                     <div class="panel panel-danger">
-                                        <div class="panel-heading">Personal Details<a href="{{route('recruiterEdit')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
+                                        <div class="panel-heading">Personal Details<a href="{{route('recruiterEdit',['id'=>$reprofile->id])}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-12">
@@ -184,7 +184,7 @@
                                 </div><!--/col-6-->
                                 <div class="col-md-6">
                                     <div class="panel panel-danger">
-                                        <div class="panel-heading">Other Details<a href="{{route('recruiterEdit')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
+                                        <div class="panel-heading">Other Details<a href="{{route('recruiterEdit',['id'=>$reprofile->id])}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
                                         <div class="panel-body">
 
                                             <div class="row">

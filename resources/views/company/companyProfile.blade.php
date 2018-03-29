@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="panel panel-danger">
-                                        <div class="panel-heading">Company Details<a href="{{route('companyEdit')}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
+                                        <div class="panel-heading">Company Details<a href="{{route('companyEdit',['id'=>$profiledata->id])}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
                                         <div class="panel-body">
                                             <br>
                                             <div class="row">

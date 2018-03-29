@@ -13,10 +13,11 @@
                     <div class="container">
                         @foreach($ViewProfile as $viewprofile)
                         @endforeach
+                        {{--<input type="hidden" name="id" id="id" value="{{$viewprofile->id}}">--}}
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="{{ asset('assets/img/company/').'/'.$viewprofile->logo}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('employeeEdit')}}"><i class="ti-pencil"> Edit</i></a>
+                                    <img src="{{ asset('assets/img/recruiter/').'/'.$viewprofile->logo}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('employeeEdit')}}"><i class="ti-pencil"> Edit</i></a>
                                 </div>
                                 <div class="name">
                                     <h3 class="title">{{$viewprofile->firstname}}&nbsp;{{$viewprofile->lastname}}</h3>
