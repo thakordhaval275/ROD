@@ -19,12 +19,12 @@
                             <div class="row">
                                 <div class="profile">
                                     <div class="avatar">
-                                        <img src="{{asset('assets/img/company/'.$companydetail->logo)}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
+                                        <img src="@if($companydetail->logo==""){{ asset('assets/img/company/default.png').'/'.$companydetail->logo}} @else {{ asset('assets/img/company/').'/'.$companydetail->logo}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
                                         <input type="file" class="text-center center-block well well-sm" name="companyLogo">
                                     </div>
                                     <div class="name">
-                                        <h3 class="title">MTAJ Solutions PVT LTD</h3>
-                                        <h6>Software Company</h6>
+                                        <h3 class="title">@if($companydetail->companyname){{Auth::user()->email}}@else {{$companydetail->companyname}} @endif</h3>
+                                        <h6>{{$companydetail->companytype}}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                                                             <h4>:</h4>
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                            <input id="name" name="companyName" type="text" placeholder="Name of Company" class="form-control input-md" value="{{Auth::user()->name}}">
+                                                            <input id="name" name="companyName" type="text" placeholder="Name of Company" class="form-control input-md" value="{{$companydetail->companyname}}">
 
                                                         </div>
                                                     </div>

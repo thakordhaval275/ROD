@@ -22,7 +22,7 @@
                     @foreach($JobPost as $viewJob)
                         <div class="job-list" style="width: 100%;">
                             <div class="thumb">
-                                <a href="{{route('companyProfile')}}"><img src="{{ asset('assets/img/company/').'/'.$viewJob->logo}}" height="100px" width="100px" class="img-circle" alt=""></a>
+                                <a href="{{route('companyProfile')}}"><img src="@if($viewJob->logo=="") {{ asset('assets/img/company/default.png').'/'.$viewJob->logo}} @else {{ asset('assets/img/company/').'/'.$viewJob->logo}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
                             </div>
                             <div class="job-list-content">
                                 <h4><a href="{{route('companyProfile')}}">{{$viewJob->companyname}}</a><span class="full-time">Full-time</span></h4>

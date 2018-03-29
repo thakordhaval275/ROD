@@ -97,7 +97,6 @@ class companyController extends Controller
         }
 
         $company=CompanyProfileModel::find($request->company_id);
-//        dd($company);
         $company->logo=$input;
         $company->aboutcompany=$request->aboutCompany;
         $company->companyname=$request->companyName;
@@ -136,7 +135,7 @@ class companyController extends Controller
 
     public function jobpoststore(Request $request)
     {
-       // dd($request);
+       //dd($request);
 
         $this->validate($request, [
             'companylogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -192,7 +191,7 @@ class companyController extends Controller
             'department'=>'required',
             'term'=>'required',
             'termPeriod'=>'required',
-            'experience'=>'required',
+            'experiance'=>'required',
             'payment'=>'required',
             'noOfPostion'=>'required',
             'description'=>'required',
@@ -214,7 +213,7 @@ class companyController extends Controller
         $job->department=$request->department;
         $job->term=$request->term;
         $job->termperiod=$request->termPeriod;
-        $job->experience=$request->experience;
+        $job->experience=$request->experiance;
         $job->payment=$request->payment;
         $job->noofpositions=$request->noOfPostion;
         $job->jobdescription=$request->description;

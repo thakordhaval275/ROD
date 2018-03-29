@@ -139,7 +139,7 @@
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-																	<h5>{{$jobdetail->experience}}</h5>
+																	<h5>{{$jobdetail->experience}} Year</h5>
                                                                 </div>
                                                             </div>
                                                         </div>

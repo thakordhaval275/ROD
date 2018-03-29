@@ -17,11 +17,11 @@
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="{{ asset('assets/img/company/').'/'.$profiledata->logo}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('companyEdit',['id'=>$profiledata->id])}}"><i class="ti-pencil"> Edit</i></a>
+                                    <img src="@if($profiledata->logo==""){{ asset('assets/img/company/default.png').'/'.$profiledata->logo}} @else {{ asset('assets/img/company/').'/'.$profiledata->logo}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('companyEdit',['id'=>$profiledata->id])}}"><i class="ti-pencil"> Edit</i></a>
                                 </div>
                                 <div class="name">
-                                    <h3 class="title">{{$profiledata->companyname}}</h3>
-                                    <h6>Software Company</h6>
+                                    <h3 class="title">@if($profiledata->companyname==""){{Auth::user()->email}}@else {{$profiledata->companyname}} @endif</h3>
+                                    <h6>{{$profiledata->companytype}}</h6>
                                 </div>
                             </div>
                         </div>
