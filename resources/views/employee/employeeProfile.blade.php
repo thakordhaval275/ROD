@@ -21,8 +21,8 @@
                                     <img src="@if($viewprofile->logo!="") {{ asset('assets/img/employee/').'/'.$viewprofile->logo}} @else {{ asset('assets/img/employee/default.png')}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br>@if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit')}}"><i class="ti-pencil"> Edit</i></a>@endif
                                 </div>
                                 <div class="name">
-                                    <h3 class="title">{{$viewprofile->firstname}}&nbsp;{{$viewprofile->lastname}}</h3>
-                                    <h6>Designer</h6>
+                                    <h3 class="title">@if($viewprofile->firstname!="" && $viewprofile->lastname!="") {{$viewprofile->firstname}} {{$viewprofile->lastname}} @else {{$viewprofile->emailid}} @endif</h3>
+                                    <h6>{{$viewprofile->keyskill}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -290,7 +290,7 @@
                                                             <h4>:</h4>
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                            <h5>@if($viewprofile->expirienceyear=="Fresher") {{$viewprofile->expirienceyear}} @else {{$viewprofile->expirienceyear}} Year @if($viewprofile->expiriencemonth!=""){{$viewprofile->expiriencemonth}} Month @endif  @endif</h5>
+                                                            <h5>@if($viewprofile->expirienceyear=="") @elseif($viewprofile->expirienceyear=="Freser"){{$viewprofile->expirienceyear}} @else {{$viewprofile->expirienceyear}} Year @if($viewprofile->expiriencemonth!=""){{$viewprofile->expiriencemonth}} Month @endif  @endif</h5>
                                                         </div>
                                                     </div>
                                                 </div><br>
@@ -307,13 +307,19 @@
                                                             <h5>{{$viewprofile->keyskill}}</h5>
                                                         </div>
                                                     </div>
-                                                </div><br>
+                                                </div><br><br><br><br><br>
                                             </div>
                                         </div><br>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12 text-center">
-                                            <a id="Back" name="Back" class="btn btn-common" href="{{route('addmyEmployee')}}">Back</a>
+                                            @if(Auth::user()->usertype=="2")
+                                                @if($viewprofile->usertype==2)
+                                                    <a id="Back" name="Back" class="btn btn-common" href="{{route('myEmployee')}}">Back</a>
+                                                @elseif($viewprofile->usertype==3)
+                                                    <a id="Back" name="Back" class="btn btn-common" href="{{route('addmyEmployee')}}">Back</a>
+                                                @endif
+                                            @endif
                                         </div>
                                     </div>
                                 </form>

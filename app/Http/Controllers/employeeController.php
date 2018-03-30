@@ -22,17 +22,16 @@ class employeeController extends Controller
         }
         else if($usertype==2)
         {
-           if($request->id)
+           if($request->usertype==2)
+           {
+               $viewProfile=MyEmployee::where('id',$request->id)->get();
+               return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
+           }
+           else
            {
                 $viewProfile=EmployeeProfileModel::where('id',$request->id)->get();
                 return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
-            }
-            else
-            {
-                $viewProfile=MyEmployee::where('id',$request->id)->get();
-                dd($viewProfile);
-                return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
-            }
+           }
         }
     }
 
@@ -134,7 +133,7 @@ class employeeController extends Controller
 
     public function employeeupdate(Request $request)
     {
-        dd($request);
+        //dd($request);
 
         $this->validate($request, [
             'aboutMe'=>'required',

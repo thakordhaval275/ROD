@@ -31,7 +31,9 @@ class recruiterController extends Controller
     }
     public function myemployee()
     {
-        $myemp=MyEmployee::get();
+        $useremail=Auth::user()->email;
+
+        $myemp=MyEmployee::where('useremail',$useremail)->get();
         return view('recruiter.myEmployee',['myemp'=>$myemp]);
     }
     public  function joblist()
@@ -180,8 +182,11 @@ class recruiterController extends Controller
 
         $usertype=Auth::user()->usertype;
 
+
         if($usertype==0)
         {
+            $useremail=Auth::user()->email;
+
             $this->validate($request, [
                 'empProfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
@@ -217,7 +222,8 @@ class recruiterController extends Controller
                 'expirienceyear'=>$request['experianceYear'],
                 'expiriencemonth'=>$request['experianceMonth'],
                 'keyskill'=>$request['keySkill'],
-                'usertype'=>$request['userType']
+                'usertype'=>$request['userType'],
+                'useremail'=>$useremail
             ]);
 
             return redirect(Route('myEmployeeList'));
@@ -225,6 +231,8 @@ class recruiterController extends Controller
         else if($usertype==2)
         {
             $usertype=Auth::user()->usertype;
+            $useremail=Auth::user()->email;
+
             $myemp=EmployeeProfileModel::find($request->id);
 
             MyEmployee::create([
@@ -253,7 +261,8 @@ class recruiterController extends Controller
                 'expirienceyear'=>$myemp['expirienceyear'],
                 'expiriencemonth'=>$myemp['expiriencemonth'],
                 'keyskill'=>$myemp['keyskill'],
-                'usertype'=>$usertype
+                'usertype'=>$usertype,
+                'useremail'=>$useremail
             ]);
 
             return redirect(Route('myEmployee'));

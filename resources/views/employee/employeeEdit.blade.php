@@ -25,8 +25,8 @@
                                         <input type="file" class="text-center center-block well well-sm" name="empProfile">
                                     </div>
                                     <div class="name">
-                                        <h3 class="title"></h3>
-                                        <h6>Designer</h6>
+                                        <h3 class="title">@if($editemp->firstname!="" && $editemp->lastname!="") {{$editemp->firstname}} {{$editemp->lastname}} @else {{$editemp->emailid}} @endif</h3>
+                                        <h6>{{$editemp->keyskill}}</h6>
                                     </div>
                                 </div>
                             </div>

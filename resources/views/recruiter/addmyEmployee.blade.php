@@ -33,9 +33,8 @@
                                     </div><br>
                                 </div>
                             </div>
-                        @endforeach
-
                     </div>
+                @endforeach
 
                     <!-- Start Pagination -->
                     <ul class="pagination">

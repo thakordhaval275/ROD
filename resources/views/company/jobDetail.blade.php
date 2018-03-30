@@ -204,7 +204,7 @@
                                                 <div class="form-group">
                                                     <div class="col-md-12 text-center">
                                                         <a id="cancel" name="cancel" class="btn btn-common" href="{{route('viewJobs')}}">Back to List</a>
-                                                        @if($jobdetail->usertype=="2")
+                                                        @if(Auth::user()->usertype=="2")
                                                             <a id="cancel" name="cancel" class="btn btn-common" href="{{route('proposal')}}">Send proposal</a>
                                                         @endif
                                                     </div>

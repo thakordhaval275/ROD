@@ -34,10 +34,10 @@
                                     <a href="">Services <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown">
                                         <li>
-                                            <a href="{{route('jobpost')}}"><i class="fa fa-paper-plane-o"></i> Post New Job</a>
+                                            <a href="#"><i class="ti-list"></i> Proposal List</a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="ti-list"></i> Proposal List</a>
+                                            <a href="{{route('jobpost')}}"><i class="fa fa-paper-plane-o"></i> Post New Job</a>
                                         </li>
                                         <li>
                                             <a href="{{route('viewJobs')}}"><i class="fa fa-briefcase"></i>View Jobs</a>
@@ -49,10 +49,10 @@
                                     <a href="">Services <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown">
                                         <li>
-                                            <a href="{{route('myEmployee')}}"><i class="ti-list"></i> My Employee</a>
+                                            <a href="{{route('myEmployee')}}"><i class="ti-list"></i> My Employees</a>
                                         </li>
                                         <li>
-                                            <a href="{{route('addmyEmployee')}}"><i class="fa fa-users"></i>Employees</a>
+                                            <a href="{{route('addmyEmployee')}}"><i class="fa fa-users"></i>View Employees</a>
                                         </li>
                                         <li>
                                             <a href="{{route('viewJobs')}}"><i class="fa fa-briefcase"></i>View Jobs</a>

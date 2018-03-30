@@ -282,7 +282,7 @@
                                                         <h5>{{$reprofile->rdesignation}}</h5>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
-                                            </div><!--/row--><br>
+                                            </div><!--/row--><br><br><br><br><br>
                                         </div><!--/panel-body-->
                                     </div>
                                 </div><!--/col-6-->

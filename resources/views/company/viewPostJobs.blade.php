@@ -12,7 +12,9 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12 text-right">
-                            <a href="{{route('jobpost')}}"><div class="btn btn-common btn-rm">Add New Job</div></a>
+                            @if(Auth::user()->usertype==1)
+                                <a href="{{route('jobpost')}}"><div class="btn btn-common btn-rm">Add New Job</div></a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -30,7 +32,7 @@
                                     <div class="col-md-12">
                                         <div class="col-md-6">
                                             <strong>{{$viewJob->jobtype}}</strong><br>
-                                            <strong>Minimum {{$viewJob->experience}} years of experience</strong>
+                                            <strong> @if($viewJob->experience=="Fresher"){{$viewJob->experience}} @else Minimum {{$viewJob->experience}} Years of experience @endif</strong>
                                         </div><!--/col-6-->
                                         <div class="col-md-6">
                                             <strong>{{$viewJob->department}}</strong><br>
@@ -46,12 +48,18 @@
                                         </div>
                                     </div>
                                     <div class="pull-right">
-                                        <div class="icon">
-                                            <a href="{{route('jobpostEdit',['id'=>$viewJob->id])}}"><i class="ti-pencil"></i></a>
-                                        </div>
-                                        <div class="icon">
-                                            <a href="{{route('destroyJob',['id'=>$viewJob->id])}}"><i class="ti-trash"></i></a>
-                                        </div>
+                                        @if(Auth::user()->usertype==1)
+                                            <div class="icon">
+                                                <a href="{{route('jobpostEdit',['id'=>$viewJob->id])}}"><i class="ti-pencil"></i></a>
+                                            </div>
+                                            <div class="icon">
+                                                <a href="{{route('destroyJob',['id'=>$viewJob->id])}}"><i class="ti-trash"></i></a>
+                                            </div>
+                                        @elseif(Auth::user()->usertype==2)
+                                            <div class="icon">
+                                                <a href="{{route('proposal')}}"><i class="fa fa-paper-plane"></i></a>
+                                            </div>
+                                        @endif
                                         <a href="{{route('jobDetail',['id'=>$viewJob->id])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                     </div>
                                 </div>

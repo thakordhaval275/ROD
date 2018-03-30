@@ -263,7 +263,15 @@ class adminController extends Controller
         $myemployee = MyEmployee::find($id);
         $myemployee->delete();
 
-        return redirect(route('myEmployeeList'));
+        $usertype=Auth::user()->usertype;
+        if($usertype==0)
+        {
+            return redirect(route('myEmployeeList'));
+        }
+        else if($usertype==2)
+        {
+            return redirect(Route('myEmployee'));
+        }
     }
 	
 

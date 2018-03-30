@@ -41,6 +41,7 @@ class CreateMyEmployeesTable extends Migration
             $table->string('expiriencemonth')->nullable();
             $table->string('keyskill')->nullable();
             $table->string('usertype')->nullable();
+            $table->string('useremail')->nullable();
             $table->timestamps();
         });
     }

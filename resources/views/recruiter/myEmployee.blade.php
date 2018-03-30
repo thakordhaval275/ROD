@@ -29,7 +29,10 @@
                                     </div>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{route('employeeProfile',['id'=>$myemp->id])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
+                                    <div class="icon">
+                                        <a href="{{route('destroyMyEmp',['id'=>$myemp->id])}}"><i class="ti-trash"></i></a>
+                                    </div>
+                                    <a href="{{route('employeeProfile',['id'=>$myemp->id,'usertype'=>$myemp->usertype])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                 </div>
                             </div>
                         </div>

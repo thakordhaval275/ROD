@@ -13,7 +13,9 @@ class companyController extends Controller
 
     public function companyProfile()
     {
-        $profiledata=CompanyProfileModel::get();
+        $emali=Auth::user()->email;
+
+        $profiledata=CompanyProfileModel::where('emailid',$emali)->get();
         return view('company.companyProfile',['ProfileData'=>$profiledata]);
     }
 
@@ -129,13 +131,13 @@ class companyController extends Controller
     {
 
         $jobpostedit=JobPostModel::where('id',$request->id)->first();
-        //dd($jobpostedit);
         return view('company.jobPost',['jobpostedit'=>$jobpostedit]);
     }
 
     public function jobpoststore(Request $request)
     {
        //dd($request);
+        $useremail=Auth::user()->email;
 
         $this->validate($request, [
             'companylogo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -167,7 +169,8 @@ class companyController extends Controller
             'payment'=>$request['payment'],
             'noofpositions'=>$request['noOfPostion'],
             'jobdescription'=>$request['description'],
-            'usertype'=>$request['userType']
+            'usertype'=>$request['userType'],
+            'useremail'=>$useremail
         ]);
 
         $usertype=Auth::user()->usertype;
@@ -233,8 +236,16 @@ class companyController extends Controller
 
     public function viewjobs(Request $request)
     {
-        $viewJob=JobPostModel::orderByDesc('id')->get();
-        return view('company.viewPostJobs',['JobPost'=>$viewJob]);
+        $useremail=Auth::user()->email;
+
+        if(Auth::user()->usertype==1) {
+            $viewJob=JobPostModel::where('useremail',$useremail)->get();
+            return view('company.viewPostJobs',['JobPost'=>$viewJob]);
+        }
+        else{
+            $viewJob=JobPostModel::get();
+            return view('company.viewPostJobs',['JobPost'=>$viewJob]);
+        }
     }
     
     public function jobdetail($id)

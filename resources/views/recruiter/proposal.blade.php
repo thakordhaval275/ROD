@@ -45,7 +45,7 @@
                             <div class="form-group">
                                 <div class="col-md-12 text-center">
                                     <button type="submit" class="btn btn-common">Send</button>
-                                    <a id="cancel" name="cancel" class="btn btn-common" href="{{route('companyProfile')}}">Cancel</a>
+                                    <a id="cancel" name="cancel" class="btn btn-common" href="{{route('viewJobs')}}">Cancel</a>
                                 </div>
                             </div>
 

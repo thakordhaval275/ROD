@@ -24,8 +24,7 @@
                                         <input type="file" name="profilePhoto" id="profilePhoto" class=" text-center  center-block  well well-sm">
                                     </div>
                                     <div class="name">
-                                        <h3 class="title">{{Auth::user()->name}}</h3>
-                                        <h6>Designer</h6>
+                                        <h3 class="title">@if($recruiterdetail->firstname!="" && $recruiterdetail->lastname!="") {{$recruiterdetail->firstname}} {{$recruiterdetail->lastname}} @else {{$recruiterdetail->emailid}} @endif</h3>
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +204,7 @@
                                                         <input type="email" class="ti-email form-control" name="alterEmailid" id="alteremailid" placeholder="abc@gmail.com" value="{{$recruiterdetail->otheremailid}}">
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
-                                            </div><!--/row--><br>
+                                            </div><!--/row-->
 
                                         </div><!--/panel-body-->
                                     </div><!--/panel-->
@@ -325,7 +324,7 @@
                                                         </div>
                                                     </div><!--/col-7-->
                                                 </div><!--/col-12-->
-                                            </div><!--/row--><br>
+                                            </div><!--/row--><br><br><br><br><br><br><br><br><br><br>
                                         </div><!--/panel-body-->
                                     </div>
                                 </div><!--/col-6-->
