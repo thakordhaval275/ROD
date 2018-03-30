@@ -6,23 +6,34 @@ use App\EmployeeProfileModel;
 use App\MyEmployee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Mockery\Exception;
 
 class employeeController extends Controller
 {
-    public function employeeprofile()
+    public function employeeprofile(Request $request)
     {
         $usertype=Auth::user()->usertype;
+        $emali=Auth::user()->email;
+
         if($usertype==3)
         {
-            $viewProfile=EmployeeProfileModel::get();
-            return view('employee.employeeProfile',['ViewProfile'=>$viewProfile]);
+            $viewProfile=EmployeeProfileModel::where('emailid',$emali)->get();
+            return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
         }
         else if($usertype==2)
         {
-            $viewProfile=MyEmployee::get();
-            return view('employee.employeeProfile',['ViewProfile'=>$viewProfile]);
+           if($request->id)
+           {
+                $viewProfile=EmployeeProfileModel::where('id',$request->id)->get();
+                return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
+            }
+            else
+            {
+                $viewProfile=MyEmployee::where('id',$request->id)->get();
+                dd($viewProfile);
+                return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
+            }
         }
-
     }
 
     public function employeeedit()

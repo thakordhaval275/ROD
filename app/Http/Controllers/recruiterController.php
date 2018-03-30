@@ -175,6 +175,7 @@ class recruiterController extends Controller
 
     public function myempstore(Request $request)
     {
+
         $usertype=Auth::user()->usertype;
 
         if($usertype==0)
@@ -221,19 +222,11 @@ class recruiterController extends Controller
         }
         else if($usertype==2)
         {
+            $usertype=Auth::user()->usertype;
             $myemp=EmployeeProfileModel::find($request->id);
 
-            $this->validate($request, [
-                //'empProfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-
-            //$image = $request->file('empProfile');
-            //$input = time().'.'.$image->getClientOriginalExtension();
-            //$destinationPath = 'assets/img/recruiter/';
-            //$image->move($destinationPath, $input);
-
             MyEmployee::create([
-                //'logo'=>$input,
+                'logo'=>$myemp['logo'],
                 'aboutself'=>$myemp['aboutself'],
                 'firstname'=>$myemp['firstname'],
                 'lastname'=>$myemp['lastname'],
@@ -258,7 +251,7 @@ class recruiterController extends Controller
                 'expirienceyear'=>$myemp['expirienceyear'],
                 'expiriencemonth'=>$myemp['expiriencemonth'],
                 'keyskill'=>$myemp['keyskill'],
-                'usertype'=>$myemp['usertype']
+                'usertype'=>$usertype
             ]);
 
             return redirect(Route('myEmployee'));
