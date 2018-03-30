@@ -18,11 +18,10 @@
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="{{ asset('assets/img/recruiter/').'/'.$reprofile->profilephoto}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('recruiterEdit',['id'=>$reprofile->id])}}"><i class="ti-pencil"> Edit</i></a>
+                                    <img src="@if($reprofile->profilephoto==""){{ asset('assets/img/recruiter/default.png').'/'.$reprofile->profilephoto}} @else {{ asset('assets/img/recruiter/').'/'.$reprofile->profilephoto}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('recruiterEdit',['id'=>$reprofile->id])}}"><i class="ti-pencil"> Edit</i></a>
                                 </div>
                                 <div class="name">
-                                    <h3 class="title">{{$reprofile->firstname}}&nbsp;{{$reprofile->lastname}}</h3>
-                                    <h6>Designer</h6>
+                                    <h3 class="title">@if($reprofile->firstname=="" && $reprofile->lastname==""){{Auth::user()->email}}@else {{$reprofile->firstname}}&nbsp;{{$reprofile->lastname}} @endif</h3>
                                 </div>
                             </div>
                         </div>

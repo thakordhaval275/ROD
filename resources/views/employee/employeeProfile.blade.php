@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="{{ asset('assets/img/employee/').'/'.$viewprofile->logo}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>@if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit')}}"><i class="ti-pencil"> Edit</i></a>@endif
+                                    <img src="@if($viewprofile->logo==""){{ asset('assets/img/employee/default.png').'/'.$viewprofile->logo}} @else {{ asset('assets/img/employee/').'/'.$viewprofile->logo}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br>@if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit')}}"><i class="ti-pencil"> Edit</i></a>@endif
                                 </div>
                                 <div class="name">
                                     <h3 class="title">{{$viewprofile->firstname}}&nbsp;{{$viewprofile->lastname}}</h3>
@@ -287,7 +287,7 @@
                                                             <h4>:</h4>
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                            <h5>{{$viewprofile->expirienceyear}}&nbsp;&nbsp;&nbsp;{{$viewprofile->expiriencemonth}}</h5>
+                                                            <h5>@if($viewprofile->expirienceyear=="Fresher") {{$viewprofile->expirienceyear}} @else {{$viewprofile->expirienceyear}} Year @if($viewprofile->expiriencemonth!=""){{$viewprofile->expiriencemonth}} Month @endif  @endif</h5>
                                                         </div>
                                                     </div>
                                                 </div><br>
@@ -310,7 +310,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12 text-center">
-                                         @if($viewprofile->usertype=="2")  <a id="Back" name="Back" class="btn btn-common" href="{{route('myEmployee')}}">Back</a> @endif
+                                            <a id="Back" name="Back" class="btn btn-common" href="{{route('addmyEmployee')}}">Back</a>
                                         </div>
                                     </div>
                                 </form>

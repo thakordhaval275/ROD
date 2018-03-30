@@ -110,7 +110,7 @@ class recruiterController extends Controller
 
     public function recruiterupdate(Request $request)
     {
-        //dd($request);
+
         $this->validate($request, [
             'aboutMe'=>'required',
             'firstName'=>'required',
@@ -175,53 +175,92 @@ class recruiterController extends Controller
 
     public function myempstore(Request $request)
     {
-        //dd($request);
-        $this->validate($request, [
-
-            'empProfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
-        ]);
-
-        $image = $request->file('empProfile');
-        $input = time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = 'assets/img/recruiter/';
-        $image->move($destinationPath, $input);
-
-        MyEmployee::create([
-            'logo'=>$input,
-            'aboutself'=>$request['aboutMe'],
-            'firstname'=>$request['firstName'],
-            'lastname'=>$request['lastName'],
-            'address'=>$request['address'],
-            'pincode'=>$request['pincode'],
-            'gender'=>$request['gender'],
-            'bdate'=>$request['birthdate'],
-            'contectno'=>$request['contectNo'],
-            'emailid'=>$request['emailid'],
-            'city'=>$request['city'],
-            'state'=>$request['state'],
-            'country'=>$request['country'],
-            'hometown'=>$request['homeTown'],
-            'maritalstatus'=>$request['meritalStatus'],
-            'postgraduate'=>$request['postGraduate'],
-            'graduate'=>$request['graduate'],
-            'classxii'=>$request['classXII'],
-            'classx'=>$request['classX'],
-            'otherque'=>$request['otherquli'],
-            'industry'=>$request['industry'],
-            'preferredlocation'=>$request['preferredLocation'],
-            'expirienceyear'=>$request['experianceYear'],
-            'expiriencemonth'=>$request['experianceMonth'],
-            'keyskill'=>$request['keySkill'],
-            'usertype'=>$request['userType']
-        ]);
         $usertype=Auth::user()->usertype;
+
         if($usertype==0)
         {
+            $this->validate($request, [
+                'empProfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            $image = $request->file('empProfile');
+            $input = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = 'assets/img/recruiter/';
+            $image->move($destinationPath, $input);
+
+            MyEmployee::create([
+                'logo'=>$input,
+                'aboutself'=>$request['aboutMe'],
+                'firstname'=>$request['firstName'],
+                'lastname'=>$request['lastName'],
+                'address'=>$request['address'],
+                'pincode'=>$request['pincode'],
+                'gender'=>$request['gender'],
+                'bdate'=>$request['birthdate'],
+                'contectno'=>$request['contectNo'],
+                'emailid'=>$request['emailid'],
+                'city'=>$request['city'],
+                'state'=>$request['state'],
+                'country'=>$request['country'],
+                'hometown'=>$request['homeTown'],
+                'maritalstatus'=>$request['meritalStatus'],
+                'postgraduate'=>$request['postGraduate'],
+                'graduate'=>$request['graduate'],
+                'classxii'=>$request['classXII'],
+                'classx'=>$request['classX'],
+                'otherque'=>$request['otherquli'],
+                'industry'=>$request['industry'],
+                'preferredlocation'=>$request['preferredLocation'],
+                'expirienceyear'=>$request['experianceYear'],
+                'expiriencemonth'=>$request['experianceMonth'],
+                'keyskill'=>$request['keySkill'],
+                'usertype'=>$request['userType']
+            ]);
+
             return redirect(Route('myEmployeeList'));
         }
         else if($usertype==2)
         {
+            $myemp=EmployeeProfileModel::find($request->id);
+
+            $this->validate($request, [
+                //'empProfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            //$image = $request->file('empProfile');
+            //$input = time().'.'.$image->getClientOriginalExtension();
+            //$destinationPath = 'assets/img/recruiter/';
+            //$image->move($destinationPath, $input);
+
+            MyEmployee::create([
+                //'logo'=>$input,
+                'aboutself'=>$myemp['aboutself'],
+                'firstname'=>$myemp['firstname'],
+                'lastname'=>$myemp['lastname'],
+                'address'=>$myemp['address'],
+                'pincode'=>$myemp['pincode'],
+                'gender'=>$myemp['gender'],
+                'bdate'=>$myemp['bdate'],
+                'contectno'=>$myemp['contectno'],
+                'emailid'=>$myemp['emailid'],
+                'city'=>$myemp['city'],
+                'state'=>$myemp['state'],
+                'country'=>$myemp['country'],
+                'hometown'=>$myemp['hometown'],
+                'maritalstatus'=>$myemp['maritalstatus'],
+                'postgraduate'=>$myemp['postgraduate'],
+                'graduate'=>$myemp['graduate'],
+                'classxii'=>$myemp['classxii'],
+                'classx'=>$myemp['classx'],
+                'otherque'=>$myemp['otherque'],
+                'industry'=>$myemp['industry'],
+                'preferredlocation'=>$myemp['preferredlocation'],
+                'expirienceyear'=>$myemp['expirienceyear'],
+                'expiriencemonth'=>$myemp['expiriencemonth'],
+                'keyskill'=>$myemp['keyskill'],
+                'usertype'=>$myemp['usertype']
+            ]);
+
             return redirect(Route('myEmployee'));
         }
     }

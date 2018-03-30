@@ -26,20 +26,43 @@
                         <li>
                             <a href="{{route('contactus')}}">Contact Us</a>
                         </li>
-                        <li>
-                            <a href="#">Services <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown">
+                        @if(!Auth::user())
+
+                        @else
+                            @if(Auth::user()->usertype=="1")
                                 <li>
-                                    <a href="">My Employee</a>
+                                    <a href="">Services <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{{route('jobpost')}}"><i class="fa fa-paper-plane-o"></i> Post New Job</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="ti-list"></i> Proposal List</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('viewJobs')}}"><i class="fa fa-briefcase"></i>View Jobs</a>
+                                        </li>
+                                    </ul>
                                 </li>
+                            @elseif(Auth::user()->usertype=="2")
                                 <li>
-                                    <a href="">Employees</a>
+                                    <a href="">Services <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{{route('myEmployee')}}"><i class="ti-list"></i> My Employee</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('addmyEmployee')}}"><i class="fa fa-users"></i>Employees</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('viewJobs')}}"><i class="fa fa-briefcase"></i>View Jobs</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="">View Jobs</a>
-                                </li>
-                            </ul>
-                        </li>
+                            @elseif(Auth::user()->usertype=="3")
+
+                            @endif
+                        @endif
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right float-right">
@@ -47,17 +70,13 @@
                             <li class="right"><a href="{{route('login')}}"><i class="ti-lock"></i>Log In</a></li>
                             <li class="btn-m"><a href="{{route('signup')}}"><i class="ti-user"></i>Sign Up</a></li>
                         @else
+                            <li class="right"><a href="{{route('userLogout')}}"><i class="ti-unlock"></i>Log out</a></li>
                             @if(Auth::user()->usertype=="1")
                                 <li class="left"><a href="{{route('companyProfile')}}"><i class="ti-user"></i>Profile</a></li>
-                                <li class="left"><a href="{{route('jobpost')}}"><i class="ti-pencil-alt"></i>Post Job</a></li>
-                                <li class="left"><a href="#"><i class="ti-list"></i>Proposal</a></li>
                             @elseif(Auth::user()->usertype=="2")
-                                <li class="left"><a href="{{route('recruiterProfile')}}"><i class="ti-user"></i>Profile</a></li>
-                                <li class="left"><a href="{{route('myEmployee')}}"><i class="fa fa-users"></i>Employee</a></li>
-                                <li class="left"><a href="{{route('viewJobs')}}"><i class="fa ti-list"></i>Jobs</a></li>
+                                <li class="left"><a href="{{route('recruiterProfile')}}"><i class="ti-user"></i>My Profile</a></li>
                             @elseif(Auth::user()->usertype=="3")
                             @endif
-                            <li class="right"><a href="{{route('userLogout')}}"><i class="ti-lock"></i>Log out</a></li>
                         @endif
                     </ul>
                 </div>

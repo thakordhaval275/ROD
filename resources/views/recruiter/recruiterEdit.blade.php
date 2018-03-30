@@ -12,7 +12,7 @@
             <form method="post" action="{{route('recruiterupdate')}}" enctype="multipart/form-data">
                 <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
                 <input type="hidden" name="recruiter_id" id="recruiter_id" value="{{$recruiterdetail->id}}">
-                <input type="hidden" name="profilePhoto" id="profilePhoto" value="{{$recruiterdetail->profilephoto}}">
+                <input type="hidden" name="hiddenPhoto" id="hiddenPhoto" value="{{$recruiterdetail->profilephoto}}">
                 {{csrf_field()}}
                 <div class="main main-raised">
                     <div class="profile-content">
@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="profile">
                                     <div class="avatar">
-                                        <img src="{{asset('assets/img/recruiter/'.$recruiterdetail->profilephoto)}}" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
+                                        <img src="@if($recruiterdetail->profilephoto==""){{ asset('assets/img/recruiter/default.png').'/'.$recruiterdetail->profilephoto}} @else {{ asset('assets/img/recruiter/').'/'.$recruiterdetail->profilephoto}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br>
                                         <input type="file" name="profilePhoto" id="profilePhoto" class=" text-center  center-block  well well-sm">
                                     </div>
                                     <div class="name">
