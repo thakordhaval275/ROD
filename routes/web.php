@@ -55,7 +55,7 @@ Route::get('/recruiter/proposal','recruiterController@proposal')->name('proposal
 
 //store Data
 Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')->name('recruiterprofilestore');
-Route::post('myempstore','recruiterController@myempstore')->name('myempstore');
+Route::get('myempstore/{id}','recruiterController@myempstore')->name('myempstore');
 Route::post('proposalstore','recruiterController@proposalstore')->name('proposalstore');
 Route::post('recruiterupdate','recruiterController@recruiterupdate')->name('recruiterupdate');
 Route::post('myempupdate','recruiterController@myempupdate')->name('myempupdate');

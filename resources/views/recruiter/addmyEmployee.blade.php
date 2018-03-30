@@ -11,10 +11,10 @@
             <div class="row">
                 <div class="col-md-9 col-sm-8">
                     <div class="job-list">
-                        <div class="thumb">
-                            <a href="{{route('employeeProfile')}}"><img src="{{asset('assets/img/employee/christian.jpg')}}" height="100px" width="100px" class="img-circle" alt=""></a>
-                        </div>
                         @foreach($myemp as $addemp)
+                        <div class="thumb">
+                            <a href="{{route('employeeProfile')}}"><img src="@if($addemp->logo!="") {{asset('assets/img/employee/christian.jpg')}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
+                        </div>
                             <div class="job-list-content">
                                 <h4><a href="{{route('employeeProfile')}}">{{$addemp->firstname}}&nbsp;&nbsp;{{$addemp->lastname}}</a><span class="full-time">Avalible</span></h4>
                                 <p>{{$addemp->aboutself}}</p>
@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="pull-right">
                                         <div class="icon">
-                                            <i class="ti-plus"></i>
+                                            <a href="{{route('myempstore',['id'=>$addemp->id])}}"><i class="ti-plus"></i></a>
                                         </div>
                                         <a href="{{route('employeeProfile')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                     </div>
@@ -35,30 +35,6 @@
                             </div>
                         @endforeach
 
-                    </div>
-
-                    <div class="job-list">
-                        <div class="thumb">
-                            <a href="{{route('employeeProfile')}}"><img src="{{asset('assets/img/employee/christian.jpg')}}" height="100px" width="100px" alt=""></a>
-                        </div>
-                        <div class="job-list-content">
-                            <h4><a href="{{route('employeeProfile')}}">king johns</a><span class="part-time">Not Avalible</span></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit, officiis, praesentium?</p>
-                            <div class="job-tag">
-                                <div class="pull-left">
-                                    <div class="meta-tag">
-                                        <span><a href="browse-categories.html"><i class="ti-server"></i>DBA</a></span>
-                                        <span><i class="ti-location-pin"></i>Cupertino, CA, USA</span>
-                                    </div>
-                                </div>
-                                <div class="pull-right">
-                                    <div class="icon">
-                                        <i class="ti-plus"></i>
-                                    </div>
-                                    <a href="{{route('employeeProfile')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Start Pagination -->
