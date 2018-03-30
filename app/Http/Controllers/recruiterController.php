@@ -13,7 +13,9 @@ class recruiterController extends Controller
 {
     public function recruiterProfile()
     {
-        $Reprofile=RecruiterProfile::get();
+        $email=Auth::user()->email;
+
+        $Reprofile=RecruiterProfile::where('emailid',$email)->get();
         return view('recruiter.recruiterProfile',['ReProfile'=>$Reprofile]);
     }
     public function recruiteredit(Request $request)

@@ -123,7 +123,7 @@ class employeeController extends Controller
 
     public function employeeupdate(Request $request)
     {
-        //dd($request);
+        dd($request);
 
         $this->validate($request, [
             'aboutMe'=>'required',
