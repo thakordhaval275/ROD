@@ -22,15 +22,16 @@ class employeeController extends Controller
         }
         else if($usertype==2)
         {
-           if($request->id)
+            //Baki Work
+            dd($request->id);
+           if($request->usertype==2)
            {
-                $viewProfile=EmployeeProfileModel::where('id',$request->id)->get();
-                return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
+               $viewProfile=MyEmployee::where('id',$request->id)->get();
+               return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
             }
             else
             {
-                $viewProfile=MyEmployee::where('id',$request->id)->get();
-                dd($viewProfile);
+                $viewProfile=EmployeeProfileModel::where('id',$request->id)->get();
                 return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
             }
         }
