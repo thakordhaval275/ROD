@@ -10,10 +10,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-sm-8">
-                    <div class="job-list">
-                        @foreach($myemp as $addemp)
+                    @foreach($myemp as $addemp)
+                    <div class="job-list" style="width: 100%;">
                         <div class="thumb">
-                            <a href="{{route('employeeProfile')}}"><img src="@if($addemp->logo!="") {{asset('assets/img/employee/christian.jpg')}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
+                            <a href="{{route('employeeProfile')}}"><img src="@if($addemp->logo!="") {{asset('assets/img/employee/').'/'.$addemp->logo}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
                         </div>
                             <div class="job-list-content">
                                 <h4><a href="{{route('employeeProfile')}}">{{$addemp->firstname}}&nbsp;&nbsp;{{$addemp->lastname}}</a><span class="full-time">Avalible</span></h4>
@@ -29,8 +29,8 @@
                                         <div class="icon">
                                             <a href="{{route('myempstore',['id'=>$addemp->id])}}"><i class="ti-plus"></i></a>
                                         </div>
-                                        <a href="{{route('employeeProfile')}}"><div class="btn btn-common btn-rm">More Detail</div></a>
-                                    </div>
+                                        <a href="{{route('employeeProfile',['id'=>$addemp->id])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
+                                    </div><br>
                                 </div>
                             </div>
                         @endforeach

@@ -10,14 +10,15 @@
             <br><br><br><br><br><br><br>
             <div class="main main-raised">
                 <div class="profile-content">
+
+                    @foreach($viewprofile as $viewprofile)
                     <div class="container">
-                        @foreach($ViewProfile as $viewprofile)
-                        @endforeach
+
                         {{--<input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">--}}
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="@if($viewprofile->logo==""){{ asset('assets/img/employee/default.png').'/'.$viewprofile->logo}} @else {{ asset('assets/img/employee/').'/'.$viewprofile->logo}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br>@if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit')}}"><i class="ti-pencil"> Edit</i></a>@endif
+                                    <img src="@if($viewprofile->logo!="") {{ asset('assets/img/employee/').'/'.$viewprofile->logo}} @else {{ asset('assets/img/employee/default.png')}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br>@if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit')}}"><i class="ti-pencil"> Edit</i></a>@endif
                                 </div>
                                 <div class="name">
                                     <h3 class="title">{{$viewprofile->firstname}}&nbsp;{{$viewprofile->lastname}}</h3>
@@ -29,6 +30,8 @@
                             <p>{{$viewprofile->aboutself}}</p>
                         </div>
                     </div>
+
+
                     <div class="container-fluid">
                         <br><br>
                         <div class="row">
@@ -317,6 +320,7 @@
                             </div>
                         </div><br><br>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

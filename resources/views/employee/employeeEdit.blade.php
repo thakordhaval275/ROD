@@ -21,7 +21,7 @@
                             <div class="row">
                                 <div class="profile">
                                     <div class="avatar">
-                                        <img src="@if(Auth::user()->usertype==3)@if($editemp->logo==""){{ asset('assets/img/recruiter/default.png').'/'.$editemp->logo}} @else {{ asset('assets/img/recruiter/').'/'.$editemp->logo}} @endif @endif"  alt="Circle Image" class="img-circle img-responsive img-raised"><br>
+                                        <img src="@if(Auth::user()->usertype==3)@if($editemp->logo==""){{ asset('assets/img/employee/default.png').'/'.$editemp->logo}} @else {{ asset('assets/img/employee/').'/'.$editemp->logo}} @endif @endif"  alt="Circle Image" class="img-circle img-responsive img-raised"><br>
                                         <input type="file" class="text-center center-block well well-sm" name="empProfile">
                                     </div>
                                     <div class="name">
@@ -196,7 +196,7 @@
                                                                 <select id="state" name="state" class="form-control dropdown-product selectpicker">
                                                                     <option value="">Select</option>
                                                                     <option value="Gujarat" @if(Auth::user()->usertype==3) value="Gujarat" @if($editemp->state=='Gujarat')selected="selected" @endif @endif>Gujarat</option>
-                                                                    <option value="Karnantaka" @if(Auth::user()->usertype==3) value="Karnantaka" @if($editemp->state=='Karnantaka')selected="selected" @endif @endif></option>
+                                                                    <option value="Karnantaka" @if(Auth::user()->usertype==3) value="Karnantaka" @if($editemp->state=='Karnantaka')selected="selected" @endif @endif>Karnantaka</option>
                                                                     <option value="Tamilnadu" @if(Auth::user()->usertype==3) value="Tamilnadu" @if($editemp->state=='Tamilnadu')selected="selected" @endif @endif>Tamilnadu</option>
                                                                     <option value="Maharastra" @if(Auth::user()->usertype==3) value="Maharastra" @if($editemp->state=='Maharastra')selected="selected" @endif @endif>Maharastra</option>
                                                                     <option value="other" @if(Auth::user()->usertype==3) value="other" @if($editemp->state=='other')selected="selected" @endif @endif>other</option>
@@ -433,7 +433,7 @@
                             <div class="form-group">
                                 <div class="col-md-12 text-center">
                                     <button type="submit" class="btn btn-common">Save</button>
-                                    <a id="cancel" name="cancel" class="btn btn-common" href="#">Cancel</a>
+                                    <a id="cancel" name="cancel" class="btn btn-common" href="{{route('employeeProfile')}}">Back</a>
                                 </div>
                             </div>
                         </div><br><br><br>

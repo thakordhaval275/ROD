@@ -16,7 +16,7 @@
                 @foreach($myemp as $myemp)
                     <div class="job-list" style="width: 100%;">
                         <div class="thumb">
-                            <a href="{{route('employeeProfile')}}"><img src="@if($myemp->logo!="") {{asset('assets/img/employee/christian.jpg')}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
+                            <a href="{{route('employeeProfile')}}"><img src="@if($myemp->logo!="") {{asset('assets/img/employee/').'/'.$myemp->logo}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
                         </div>
                         <div class="job-list-content">
                             <h4><a href="{{route('employeeProfile')}}">{{$myemp->firstname}}&nbsp;&nbsp;{{$myemp->lastname}}</a><span class="full-time">Avalible</span></h4>
