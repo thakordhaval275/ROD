@@ -27,8 +27,17 @@ class employeeController extends Controller
 
     public function employeeedit()
     {
-            $editemp=EmployeeProfileModel::get();
-            return view('employee.employeeEdit',['editemp'=>$editemp]);
+            $usertype=Auth::user()->usertype;
+            if($usertype==2)
+            {
+                return view('employee.employeeEdit');
+            }
+            else
+            {
+                $editemp=EmployeeProfileModel::get();
+                return view('employee.employeeEdit',['editemp'=>$editemp]);
+            }
+
     }
 
     public function employeeprofilestore(Request $request)
