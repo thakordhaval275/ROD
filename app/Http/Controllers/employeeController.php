@@ -35,7 +35,7 @@ class employeeController extends Controller
         }
     }
 
-    public function employeeedit()
+    public function employeeedit(Request $request)
     {
             $usertype=Auth::user()->usertype;
             if($usertype==2)
@@ -44,7 +44,7 @@ class employeeController extends Controller
             }
             else
             {
-                $editemp=EmployeeProfileModel::get();
+                $editemp=EmployeeProfileModel::where('id',$request->id)->get();
                 return view('employee.employeeEdit',['editemp'=>$editemp]);
             }
 
@@ -158,7 +158,6 @@ class employeeController extends Controller
             'industry'=>'required',
             'preferredLocation'=>'required',
             'experianceYear'=>'required',
-            'experianceMonth'=>'required',
             'keySkill'=>'required',
         ]);
 

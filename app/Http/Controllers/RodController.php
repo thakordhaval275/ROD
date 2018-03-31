@@ -40,6 +40,18 @@ class RodController extends Controller
     }
     public function contactstore(Request $request)
     {
+        $this->validate($request,[
+                'firstName'=>'required',
+                'lastName'=>'required',
+                'emailid'=>'required|confirmed',
+                'relationship'=>'required',
+                'companyName'=>'required',
+                'other'=>'required',
+                'country'=>'required',
+                'contactNo'=>'required',
+                'howCanIHelp'=>'required',
+            ]);
+
         //dd($request);
         Contact::create([
             'firstname'=>$request->firstName,
@@ -51,7 +63,6 @@ class RodController extends Controller
             'country'=>$request->country,
             'contactno'=>$request->contactNo,
             'howcanwehelp'=>$request->howCanIHelp
-
         ]);
         return redirect(route('index'));
     }

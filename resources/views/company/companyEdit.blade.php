@@ -28,8 +28,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="description text-center">
+                            <div class="description text-center @if($errors->first('aboutCompany')) has-error @endif">
                                 <textarea id="aboutcompany" name="aboutCompany" class="form-control" placeholder="About Company" rows="4">{{$companydetail->aboutcompany}}</textarea>
+                                @if($errors->first('aboutCompany'))
+                                    <p class="text-danger"> {{$errors->first('aboutCompany')}} </p>
+                                @endif
                             </div>
                         </div>
                         <div class="container-fluid">
@@ -44,7 +47,7 @@
                                             <div class="panel-body">
                                                 <br>
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('companyName')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Company Name</h4>
                                                         </div>
@@ -53,13 +56,15 @@
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <input id="name" name="companyName" type="text" placeholder="Name of Company" class="form-control input-md" value="{{$companydetail->companyname}}">
-
+                                                            @if($errors->first('companyName'))
+                                                                <p class="text-danger"> {{$errors->first('companyName')}} </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('location')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Location</h4>
                                                         </div>
@@ -75,12 +80,15 @@
                                                                     <option value="New York" @if($companydetail->location=='New York')selected="selected"@endif>New York</option>
                                                                 </select>
                                                             </div>
+                                                            @if($errors->first('location'))
+                                                                <p class="text-danger"> {{$errors->first('location')}} </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('companyAddress')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Address</h4>
                                                         </div>
@@ -89,12 +97,15 @@
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <textarea  class="form-control" name="companyAddress" id="companyaddress" placeholder="Address of company">{{$companydetail->address}}</textarea>
+                                                            @if($errors->first('companyAddress'))
+                                                                <p class="text-danger"> {{$errors->first('companyAddress')}} </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('email')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Email Id</h4>
                                                         </div>
@@ -103,12 +114,15 @@
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <input type="text" name="email" id="email" placeholder="Company Email-id" class="form-control" value="{{Auth::user()->email}}" readonly>
+                                                            @if($errors->first('email'))
+                                                                <p class="text-danger"> {{$errors->first('email')}} </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('website')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Website</h4>
                                                         </div>
@@ -117,12 +131,15 @@
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <input type="text" name="website" id="website" placeholder="Company's Website" class="form-control" value="{{$companydetail->website}}">
+                                                            @if($errors->first('website'))
+                                                                <p class="text-danger"> {{$errors->first('website')}} </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('companyType')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Type</h4>
                                                         </div>
@@ -131,12 +148,15 @@
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <input id="companytype" name="companyType" type="text" placeholder="Ex.:PVT limited, limited...etc" class="form-control input-md" value="{{$companydetail->companytype}}">
+                                                            @if($errors->first('companyType'))
+                                                                <p class="text-danger"> {{$errors->first('companyType')}} </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('yearOfFound')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Year of Found</h4>
                                                         </div>
@@ -145,12 +165,15 @@
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <input id="yearoffound" name="yearOfFound" type="text" placeholder="year of found" class="form-control input-md" value="{{$companydetail->foundyear}}">
+                                                            @if($errors->first('yearOfFound'))
+                                                                <p class="text-danger"> {{$errors->first('yearOfFound')}} </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('noOfEmp')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>No. Of Employees</h4>
                                                         </div>
@@ -159,6 +182,9 @@
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                             <input id="noofemp" name="noOfEmp" type="text" placeholder="No Of Employees working..." class="form-control input-md" value="{{$companydetail->noofemployee}}">
+                                                            @if($errors->first('noOfEmp'))
+                                                                <p class="text-danger"> {{$errors->first('noOfEmp')}} </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div><br>

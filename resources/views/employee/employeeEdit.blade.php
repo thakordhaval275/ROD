@@ -13,7 +13,8 @@
             @endif
             <form method="post" action="{{route('employeeUpdate')}}" enctype="multipart/form-data">
                 <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
-                    <input type="hidden" name="id" id="id"  @if(Auth::user()->usertype==3) value="{{$editemp->id}}" @endif>
+                <input type="hidden" name="id" id="id"  @if(Auth::user()->usertype==3) value="{{$editemp->id}}" @endif>
+                <input type="hidden" name="hiddenLogo" id="hiddenLogo" value="{{$editemp->logo}}">
                 {{csrf_field()}}
                 <div class="main main-raised">
                     <div class="profile-content">
@@ -30,8 +31,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="description text-center">
+                            <div class="description text-center @if($errors->first('aboutMe')) has-error @endif">
                                 <textarea id="aboutMe" name="aboutMe" class="form-control" placeholder="About Yourself" rows="4">@if(Auth::user()->usertype==3) {{$editemp->aboutself}} @endif</textarea>
+                                @if($errors->first('aboutMe'))
+                                    <p class="text-danger"> {{$errors->first('aboutMe')}} </p>
+                                @endif
                             </div>
                         </div>
                         <div class="container-fluid">
@@ -44,7 +48,7 @@
                                                 <div class="panel-body">
                                                     <br>
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('firstName')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>First Name</h4>
                                                             </div>
@@ -53,13 +57,15 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <input type="text" class="form-control" name="firstName" placeholder="ex. John" id="firstName" @if(Auth::user()->usertype==3) value="{{$editemp->firstname}}" @endif>
-
+                                                                @if($errors->first('firstName'))
+                                                                    <p class="text-danger"> {{$errors->first('firstName')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('lastName')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Last Name</h4>
                                                             </div>
@@ -68,12 +74,15 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <input type="text" class="form-control" name="lastName" placeholder="ex. Christian" id="lastName"  @if(Auth::user()->usertype==3) value="{{$editemp->lastname}}"@endif>
+                                                                @if($errors->first('lastName'))
+                                                                    <p class="text-danger"> {{$errors->first('lastName')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('address')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Address</h4>
                                                             </div>
@@ -82,12 +91,15 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <textarea type="text" class="form-control" name="address" placeholder="ex. B/20 Shivam Tenament, Nr. Air Force" id="address">@if(Auth::user()->usertype==3){{$editemp->address}}@endif</textarea>
+                                                                @if($errors->first('address'))
+                                                                    <p class="text-danger"> {{$errors->first('address')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('pincode')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Pincode</h4>
                                                             </div>
@@ -96,12 +108,15 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <input type="text" class="form-control" name="pincode" placeholder="ex. 390010" id="pincode" @if(Auth::user()->usertype==3)  value="{{$editemp->pincode}}"@endif>
+                                                                @if($errors->first('pincode'))
+                                                                    <p class="text-danger"> {{$errors->first('pincode')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('gender')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Gender</h4>
                                                             </div>
@@ -114,12 +129,15 @@
                                                                     &nbsp;&nbsp;
                                                                     <input type="radio" name="gender" value="Female" @if(Auth::user()->usertype==3) value="Female" @if($editemp->gender=='Female')checked="checked" @endif @endif>&nbsp;<strong>Female</strong>
                                                                 </div>
+                                                                @if($errors->first('gender'))
+                                                                    <p class="text-danger"> {{$errors->first('gender')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('birthdate')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Birthdate</h4>
                                                             </div>
@@ -128,12 +146,15 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <input type="date" class="form-control" name="birthdate" id="birthdate" @if(Auth::user()->usertype==3) value="{{$editemp->bdate}}"@endif>
+                                                                @if($errors->first('birthdate'))
+                                                                    <p class="text-danger"> {{$errors->first('birthdate')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('contectNo')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Contect No.</h4>
                                                             </div>
@@ -142,12 +163,15 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <input type="tel" class="form-control" name="contectNo" placeholder="ex. +912345248951" id="contectno" maxlength="15"  @if(Auth::user()->usertype==3) value="{{$editemp->contectno}}"@endif>
+                                                                @if($errors->first('contectNo'))
+                                                                    <p class="text-danger"> {{$errors->first('contectNo')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('email')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Email Id</h4>
                                                             </div>
@@ -156,12 +180,15 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <input type="email" class="form-control" name="email" placeholder="ex. abc@gmail.com" id="email" value="{{Auth::user()->email}}" readonly>
+                                                                @if($errors->first('email'))
+                                                                    <p class="text-danger"> {{$errors->first('email')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('city')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>City</h4>
                                                             </div>
@@ -180,12 +207,15 @@
                                                                         <option value="other" @if(Auth::user()->usertype==3) value="other" @if($editemp->city=='other')selected="selected" @endif @endif>other</option>
                                                                     </select>
                                                                 </div>
+                                                                @if($errors->first('city'))
+                                                                    <p class="text-danger"> {{$errors->first('city')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('state')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>State</h4>
                                                             </div>
@@ -201,12 +231,15 @@
                                                                     <option value="Maharastra" @if(Auth::user()->usertype==3) value="Maharastra" @if($editemp->state=='Maharastra')selected="selected" @endif @endif>Maharastra</option>
                                                                     <option value="other" @if(Auth::user()->usertype==3) value="other" @if($editemp->state=='other')selected="selected" @endif @endif>other</option>
                                                                 </select>
+                                                                @if($errors->first('state'))
+                                                                    <p class="text-danger"> {{$errors->first('state')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('country')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Country</h4>
                                                             </div>
@@ -221,12 +254,15 @@
                                                                     <option value="USA" @if(Auth::user()->usertype==3) value="USA" @if($editemp->country=='USA')selected="selected" @endif @endif>USA</option>
                                                                     <option value="other" @if(Auth::user()->usertype==3) value="other" @if($editemp->country=='other')selected="selected" @endif @endif>other</option>
                                                                 </select>
+                                                                @if($errors->first('country'))
+                                                                    <p class="text-danger"> {{$errors->first('country')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('homeTown')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Home Town</h4>
                                                             </div>
@@ -235,12 +271,15 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <input type="text" class="form-control" name="homeTown" placeholder="ex. Vadodara" id="homeTown" @if(Auth::user()->usertype==3)value="{{$editemp->hometown}}" @endif>
+                                                                @if($errors->first('homeTown'))
+                                                                    <p class="text-danger"> {{$errors->first('homeTown')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('meritalStatus')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Merital Status</h4>
                                                             </div>
@@ -257,6 +296,9 @@
                                                                     <option value="Separated" @if(Auth::user()->usertype==3) value="Separated" @if($editemp->maritalstatus=='Separated')selected="selected" @endif @endif>Separated</option>
                                                                     <option value="other" @if(Auth::user()->usertype==3) value="other" @if($editemp->maritalstatus=='other')selected="selected" @endif @endif>other</option>
                                                                 </select>
+                                                                @if($errors->first('meritalStatus'))
+                                                                    <p class="text-danger"> {{$errors->first('meritalStatus')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
@@ -269,7 +311,7 @@
                                                 <div class="panel-body">
                                                     <br>
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 ">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Qualification</h4>
                                                             </div>
@@ -278,52 +320,64 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <div class="row">
-                                                                    <div class="col-md-12">
+                                                                    <div class="col-md-12 @if($errors->first('postGraduate')) has-error @endif">
                                                                         <h6>Post Graduate</h6>
                                                                         <select id="postGraduate" name="postGraduate" class="form-control dropdown-product selectpicker">
-                                                                            <option value="Not Mention" @if(Auth::user()->usertype==3)value="Not Mention" @if($editemp->postgraduate=='Not Mention')selected="selected" @endif @endif>Select</option>
+                                                                            <option value="">Select</option>
                                                                             <option value="MCA" @if(Auth::user()->usertype==3) value="MCA" @if($editemp->postgraduate=='MCA')selected="selected" @endif @endif>MCA</option>
                                                                             <option value="MSc.IT" @if(Auth::user()->usertype==3) value="MSc.IT" @if($editemp->postgraduate=='MSc.IT')selected="selected" @endif @endif>MSc.IT</option>
                                                                             <option value="MBA" @if(Auth::user()->usertype==3) value="MBA" @if($editemp->postgraduate=='MBA')selected="selected" @endif @endif>MBA</option>
                                                                             <option value="Other"@if(Auth::user()->usertype==3) value="Other" @if($editemp->postgraduate=='Other')selected="selected" @endif @endif>Other</option>
                                                                         </select>
+                                                                        @if($errors->first('postGraduate'))
+                                                                            <p class="text-danger"> {{$errors->first('postGraduate')}} </p>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="row">
-                                                                    <div class="col-md-12">
+                                                                    <div class="col-md-12 @if($errors->first('graduate')) has-error @endif">
                                                                         <h6>Graduate</h6>
                                                                         <select id="graduate" name="graduate" class="form-control dropdown-product selectpicker">
-                                                                            <option value="Not Mention"@if(Auth::user()->usertype==3) value="Not Mention" @if($editemp->graduate=='Not Mention')selected="selected" @endif @endif>Select</option>
+                                                                            <option value="">Select</option>
                                                                             <option value="BCA"@if(Auth::user()->usertype==3) value="BCA" @if($editemp->graduate=='BCA')selected="selected" @endif @endif>BCA</option>
                                                                             <option value="BBA" @if(Auth::user()->usertype==3) value="BBA" @if($editemp->graduate=='BBA')selected="selected" @endif @endif>BBA</option>
                                                                             <option value="B.Com" @if(Auth::user()->usertype==3) value="B.Com" @if($editemp->graduate=='B.Com')selected="selected" @endif @endif>B.Com</option>
                                                                             <option value="Other" @if(Auth::user()->usertype==3) value="Other" @if($editemp->graduate=='Other')selected="selected" @endif @endif>Other</option>
                                                                         </select>
+                                                                        @if($errors->first('graduate'))
+                                                                            <p class="text-danger"> {{$errors->first('graduate')}} </p>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="row">
-                                                                    <div class="col-md-12">
+                                                                    <div class="col-md-12 @if($errors->first('classXII')) has-error @endif">
                                                                         <h6>Class XII</h6>
                                                                         <select id="classXII" name="classXII" class="form-control dropdown-product selectpicker">
-                                                                            <option value="Not Mention" @if(Auth::user()->usertype==3) value="Not Mention" @if($editemp->classxii=='Not Mention')selected="selected" @endif @endif>Select</option>
+                                                                            <option value="">Select</option>
                                                                             <option value="GSHEB" @if(Auth::user()->usertype==3) value="GSHEB" @if($editemp->classxii=='GSHEB')selected="selected" @endif @endif>GSHEB</option>
                                                                             <option value="CBSC" @if(Auth::user()->usertype==3) value="CBSC" @if($editemp->classxii=='CBSC')selected="selected" @endif @endif>CBSC</option>
                                                                             <option value="Other" @if(Auth::user()->usertype==3) value="Other" @if($editemp->classxii=='Other')selected="selected" @endif @endif>Other</option>
                                                                         </select>
+                                                                        @if($errors->first('classXII'))
+                                                                            <p class="text-danger"> {{$errors->first('classXII')}} </p>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="row">
-                                                                    <div class="col-md-12">
+                                                                    <div class="col-md-12 @if($errors->first('classX')) has-error @endif">
                                                                         <h6>Class X</h6>
                                                                         <select id="classx" name="classX" class="form-control dropdown-product selectpicker">
-                                                                            <option value="Not Mention" @if(Auth::user()->usertype==3) value="Not Mention" @if($editemp->classx=='Not Mention')selected="selected" @endif @endif>Select</option>
+                                                                            <option value="">Select</option>
                                                                             <option value="GSEB" @if(Auth::user()->usertype==3)value="GSEB" @if($editemp->classx=='GSEB')selected="selected" @endif @endif>GSEB</option>
                                                                             <option value="CBSC" @if(Auth::user()->usertype==3) value="CBSC" @if($editemp->classx=='CBSC')selected="selected" @endif @endif>CBSC</option>
                                                                             <option value="Other" @if(Auth::user()->usertype==3) value="Other" @if($editemp->classx=='Other')selected="selected" @endif @endif>Other</option>
                                                                         </select>
+                                                                        @if($errors->first('classX'))
+                                                                            <p class="text-danger"> {{$errors->first('classX')}} </p>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
 
@@ -339,7 +393,7 @@
                                                 </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('industry')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Industry</h4>
                                                             </div>
@@ -348,15 +402,18 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <select id="industry" name="industry" class="form-control dropdown-product selectpicker">
-                                                                    <option value="Not Mention" @if(Auth::user()->usertype==3) value="Not Mention" @if($editemp->industry=='Not Mention')selected="selected" @endif @endif>Select</option>
+                                                                    <option value="">Select</option>
                                                                     <option value="IT-Hardware & Networking" @if(Auth::user()->usertype==3)value="IT-Hardware & Networking" @if($editemp->industry=='IT-Hardware & Networking')selected="selected" @endif @endif>IT-Hardware & Networking</option>
                                                                 </select>
+                                                                @if($errors->first('industry'))
+                                                                    <p class="text-danger"> {{$errors->first('industry')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('preferredLocation')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Preferred Location</h4>
                                                             </div>
@@ -374,6 +431,9 @@
                                                                         <option value="Bharuch" @if(Auth::user()->usertype==3) value="Bharuch" @if($editemp->preferredlocation=='Bharuch')selected="selected" @endif @endif>Bharuch</option>
                                                                         <option value="other" @if(Auth::user()->usertype==3) value="other" @if($editemp->preferredlocation=='other')selected="selected" @endif @endif>other</option>
                                                                     </select>
+                                                                    @if($errors->first('preferredLocation'))
+                                                                        <p class="text-danger"> {{$errors->first('preferredLocation')}} </p>
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -381,7 +441,7 @@
 
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('experianceYear')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Total Expirience</h4>
                                                             </div>
@@ -399,6 +459,9 @@
                                                                         @endfor
                                                                     </select>
                                                                 </div>
+                                                                @if($errors->first('experianceYear'))
+                                                                    <p class="text-danger"> {{$errors->first('experianceYear')}} </p>
+                                                                @endif
 
                                                                 <div class="search-category-container">
                                                                     <select id="experianceMonth" name="experianceMonth" class="form-control dropdown-product selectpicker">
@@ -413,7 +476,7 @@
                                                     </div><br>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12 @if($errors->first('keySkill')) has-error @endif">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                                 <h4>Key-Skill</h4>
                                                             </div>
@@ -422,6 +485,9 @@
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
                                                                 <input type="text" class="form-control" name="keySkill" placeholder="ex. Android, .NET, PHP" id="keySkill"  @if(Auth::user()->usertype==3) value="{{$editemp->keyskill}}"@endif>
+                                                                @if($errors->first('keySkill'))
+                                                                    <p class="text-danger"> {{$errors->first('keySkill')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div><br>

@@ -373,17 +373,27 @@ class recruiterController extends Controller
         //dd($request);
             $status="";
 
-            Proposal::create([
-                'companyname'=>$request['companyName'],
-                'companyemail'=>$request['companyEmail'],
-                'noofemployee'=>$request['noOfEmp'],
-                'emailid'=>$request['emailid'],
-                'employeequalification'=>$request['equlification'],
-                'keyskill'=>$request['keySkill'],
-                'otherdetail'=>$request['otherdetail'],
-                'status'=>$status
-            ]);
+        $this->validate($request, [
+            'companyName'=>'required',
+            'companyEmail'=>'required',
+            'emailid'=>'required',
+            'noOfEmp'=>'required',
+            'equlification'=>'required',
+            'keySkill'=>'required',
+            'otherdetail'=>'required',
+        ]);
 
-            return redirect(route('myProposal'));
+        Proposal::create([
+            'companyname'=>$request['companyName'],
+            'companyemail'=>$request['companyEmail'],
+            'noofemployee'=>$request['noOfEmp'],
+            'emailid'=>$request['emailid'],
+            'employeequalification'=>$request['equlification'],
+            'keyskill'=>$request['keySkill'],
+            'otherdetail'=>$request['otherdetail'],
+            'status'=>$status
+        ]);
+
+        return redirect(route('myProposal'));
     }
 }
