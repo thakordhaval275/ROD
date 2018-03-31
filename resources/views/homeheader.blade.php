@@ -20,50 +20,81 @@
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav">
                             <li>
-                                <a class="active" href="{{route('index')}}">
-                                    Home
-                                </a>
+                                <a class="active" href="{{route('index')}}">Home</a>
                             </li>
                             <li>
-                                <a href="{{route('about')}}">
-                                    About Us
-                                </a>
+                                <a href="{{route('about')}}">About Us</a>
                             </li>
                             <li>
-                                <a href="#">Services <i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown">
-                                    <li>
-                                        <a href="#">
-                                            Add Job
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Manage Jobs
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Manage Applications
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Browse Resumes
-                                        </a>
-                                    </li>
-                                </ul>
+                                <a href="{{route('contactus')}}">Contact Us</a>
                             </li>
-                            <li>
-                                <a href="{{route('contactus')}}">
-                                    Contact Us
-                                </a>
-                            </li>
+                            @if(!Auth::user())
+                                <li>
+                                    <a href="">Services <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{{route('login')}}"><i class="fa fa-briefcase"></i> Company</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('login')}}"><i class="fa fa-users"></i> Recruiter</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('login')}}"><i class="ti-user"></i> Employee</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @else
+                                @if(Auth::user()->usertype=="1")
+                                    <li>
+                                        <a href="">Services <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="{{route('myProposal')}}"><i class="ti-list"></i> Proposal List</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('jobpost')}}"><i class="fa fa-paper-plane-o"></i> Post New Job</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('viewJobs')}}"><i class="fa fa-briefcase"></i>View My Posted Job</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @elseif(Auth::user()->usertype=="2")
+                                    <li>
+                                        <a href="">Services <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="{{route('myProposal')}}"><i class="ti-list"></i>My Proposal List</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('myEmployee')}}"><i class="ti-list"></i> My Employees</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('addmyEmployee')}}"><i class="fa fa-users"></i>View Employees</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('viewJobs')}}"><i class="fa fa-briefcase"></i>View Jobs</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @elseif(Auth::user()->usertype=="3")
+
+                                @endif
+                            @endif
                         </ul>
                         <ul class="nav navbar-nav navbar-right float-right">
-                            <li class="left"><a href="{{route('jobpost')}}"><i class="ti-pencil-alt"></i> Post A Job</a></li>
-                            <li class="right"><a href="{{route('login')}}"><i class="ti-lock"></i>  Log In</a></li>
-                            <li class="btn-m"><a href="{{route('signup')}}"><i class="ti-user"></i>  Sign Up</a></li>
+                            @if(!Auth::user())
+                                <li class="right"><a href="{{route('login')}}"><i class="ti-lock"></i>Log In</a></li>
+                                <li class="btn-m"><a href="{{route('signup')}}"><i class="ti-user"></i>Sign Up</a></li>
+                            @else
+                                <li class="right"><a href="{{route('userLogout')}}"><i class="ti-unlock"></i>Log out</a></li>
+                                @if(Auth::user()->usertype=="1")
+                                    <li class="left"><a href="{{route('companyProfile')}}"><i class="ti-user"></i>Profile</a></li>
+                                @elseif(Auth::user()->usertype=="2")
+                                    <li class="left"><a href="{{route('recruiterProfile')}}"><i class="ti-user"></i>My Profile</a></li>
+                                @elseif(Auth::user()->usertype=="3")
+                                @endif
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -79,24 +110,16 @@
                         <a href="#">Services</a>
                         <ul class="dropdown">
                             <li>
-                                <a href="#">
-                                    Add Job
-                                </a>
+                                <a href="#">Add Job</a>
                             </li>
                             <li>
-                                <a href="#">
-                                    Manage Jobs
-                                </a>
+                                <a href="#">Manage Jobs</a>
                             </li>
                             <li>
-                                <a href="#">
-                                    Manage Applications
-                                </a>
+                                <a href="#">Manage Applications</a>
                             </li>
                             <li>
-                                <a href="#">
-                                    Browse Resumes
-                                </a>
+                                <a href="#">Browse Resumes</a>
                             </li>
                         </ul>
                     </li>

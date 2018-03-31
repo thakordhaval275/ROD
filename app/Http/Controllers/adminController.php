@@ -258,6 +258,21 @@ class adminController extends Controller
         return view('admin.recruiter.sendProposalList',['Proposal'=>$proposal]);
     }
 
+    public function destroyProposal($id)
+    {
+        $proposal = Proposal::find($id);
+        $proposal->delete();
+
+        if(Auth::user()->usertype==0)
+        {
+            return redirect(route('sendProposalList'));
+        }
+        else
+        {
+            return redirect(route('myProposal'));
+        }
+    }
+
     public function destroymyemp($id)
     {
         $myemployee = MyEmployee::find($id);

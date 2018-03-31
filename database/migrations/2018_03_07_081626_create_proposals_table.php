@@ -16,10 +16,13 @@ class CreateProposalsTable extends Migration
         Schema::create('proposals', function (Blueprint $table) {
             $table->increments('id');
             $table->string('companyname')->nullable();
-            $table->string('noofemployee')->nullable();
+            $table->string('companyemail')->nullable();
             $table->string('emailid')->nullable();
+            $table->string('noofemployee')->nullable();
             $table->string('employeequalification')->nullable();
             $table->string('keyskill')->nullable();
+            $table->string('otherdetail',1000)->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

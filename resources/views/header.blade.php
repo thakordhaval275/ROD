@@ -27,20 +27,33 @@
                             <a href="{{route('contactus')}}">Contact Us</a>
                         </li>
                         @if(!Auth::user())
-
+                            <li>
+                                <a href="">Services <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown">
+                                    <li>
+                                        <a href="{{route('login')}}"><i class="fa fa-briefcase"></i> Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('login')}}"><i class="fa fa-users"></i> Recruiter</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('login')}}"><i class="ti-user"></i> Employee</a>
+                                    </li>
+                                </ul>
+                            </li>
                         @else
                             @if(Auth::user()->usertype=="1")
                                 <li>
                                     <a href="">Services <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown">
                                         <li>
-                                            <a href="#"><i class="ti-list"></i> Proposal List</a>
+                                            <a href="{{route('myProposal')}}"><i class="ti-list"></i> Proposal List</a>
                                         </li>
                                         <li>
                                             <a href="{{route('jobpost')}}"><i class="fa fa-paper-plane-o"></i> Post New Job</a>
                                         </li>
                                         <li>
-                                            <a href="{{route('viewJobs')}}"><i class="fa fa-briefcase"></i>View Jobs</a>
+                                            <a href="{{route('viewJobs')}}"><i class="fa fa-briefcase"></i>View My Posted Job</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -48,6 +61,9 @@
                                 <li>
                                     <a href="">Services <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown">
+                                        <li>
+                                            <a href="{{route('myProposal')}}"><i class="ti-list"></i>My Proposal List</a>
+                                        </li>
                                         <li>
                                             <a href="{{route('myEmployee')}}"><i class="ti-list"></i> My Employees</a>
                                         </li>

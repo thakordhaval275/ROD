@@ -57,7 +57,7 @@
                                             </div>
                                         @elseif(Auth::user()->usertype==2)
                                             <div class="icon">
-                                                <a href="{{route('proposal')}}"><i class="fa fa-paper-plane"></i></a>
+                                                <a href="{{route('proposal',['id'=>$viewJob->id])}}"><i class="fa fa-paper-plane"></i></a>
                                             </div>
                                         @endif
                                         <a href="{{route('jobDetail',['id'=>$viewJob->id])}}"><div class="btn btn-common btn-rm">More Detail</div></a>

@@ -52,6 +52,7 @@ Route::get('/recruiter/recruiterEdit','recruiterController@recruiteredit')->name
 Route::get('/recruiter/addmyemployee','recruiterController@addmyemployee')->name('addmyEmployee');//add new employee from list
 Route::get('/recruiter/myemployee','recruiterController@myemployee')->name('myEmployee');//recruiter's employee
 Route::get('/recruiter/proposal','recruiterController@proposal')->name('proposal');//send a Proposal
+Route::get('/recruiter/myproposal','recruiterController@myproposal')->name('myProposal');//Proposal List
 
 //store Data
 Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')->name('recruiterprofilestore');
@@ -107,7 +108,7 @@ Route::get('/admin/recruiter/viewMyEmp/{id}','adminController@viewMyEmp')->name(
 Route::get('/admin/recruiter/editMyEmp/{id}','adminController@editMyEmp')->name('editMyEmp');//Admin my employee list page
 
 Route::get('/admin/recruiter/sendProposalList','adminController@sendProposalList')->name('sendProposalList');//Admin my employee list page
-
+Route::get('/admin/recruiter/destroyProposal/{id}','adminController@destroyProposal')->name('destroyProposal');//Admin my employee list page
 Route::get('/admin/company/destroymyemp/{id}','adminController@destroymyemp')->name('destroyMyEmp');//Admin Employee Delete
 
 

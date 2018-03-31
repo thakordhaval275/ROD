@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\EmployeeProfileModel;
+use App\JobPostModel;
 use App\MyEmployee;
 use App\Proposal;
 use App\RecruiterProfile;
@@ -40,9 +41,10 @@ class recruiterController extends Controller
     {
         return view('recruiter.jobList');
     }
-    public function proposal()
+    public function proposal(Request $request)
     {
-        return view('recruiter.proposal');
+        $proposal=JobPostModel::where('id',$request->id)->get();
+        return view('recruiter.proposal',['proposal'=>$proposal]);
     }
     public function recruiterprofilestore(Request $request)
     {
@@ -348,17 +350,40 @@ class recruiterController extends Controller
         }
     }
 
+    public function myproposal()
+    {
+        if(Auth::user()->usertype==1)
+        {
+            $useremail=Auth::user()->email;
+
+            $recruiter=Proposal::where('companyemail',$useremail)->get();
+            return view('recruiter.proposalList',['recruiter'=>$recruiter]);
+        }
+        elseif(Auth::user()->usertype==2)
+        {
+            $useremail=Auth::user()->email;
+
+            $recruiter=Proposal::where('emailid',$useremail)->get();
+            return view('recruiter.proposalList',['recruiter'=>$recruiter]);
+        }
+    }
+
     public function proposalstore(Request $request)
     {
         //dd($request);
-        Proposal::create([
-            'companyname'=>$request['companyName'],
-            'noofemployee'=>$request['noOfEmp'],
-            'emailid'=>$request['emailid'],
-            'employeequalification'=>$request['equlification'],
-            'keyskill'=>$request['keySkill']
-        ]);
+            $status="";
 
-        return redirect(route('recruiterProfile'));
+            Proposal::create([
+                'companyname'=>$request['companyName'],
+                'companyemail'=>$request['companyEmail'],
+                'noofemployee'=>$request['noOfEmp'],
+                'emailid'=>$request['emailid'],
+                'employeequalification'=>$request['equlification'],
+                'keyskill'=>$request['keySkill'],
+                'otherdetail'=>$request['otherdetail'],
+                'status'=>$status
+            ]);
+
+            return redirect(route('myProposal'));
     }
 }

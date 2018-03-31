@@ -15,21 +15,27 @@
                 <div class="col-md-8">
                     <div class="box box-primary">
                         <br>
+                        @foreach($proposal as $list)
                         <form method="post" action="{{route('proposalstore')}}">
                             {{csrf_field()}}
+                            {{--{{dd($proposal)}}--}}
                             <div class="form-group">
-                                <input class="form-control" type="text" name="companyName" placeholder="Name of The Company">
+                                <input class="form-control" type="text" name="companyName" placeholder="Name of The Company" value="{{$list->companyname}}" readonly>
                             </div>
 
                             <div class="form-group">
-                                <input type="email" class="form-control" name="emailid" id="emailid" placeholder=" Recruiter's Email ID">
+                                <input class="form-control" type="text" name="companyEmail" placeholder="Company Email Id" value="{{$list->useremail}}" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="emailid" id="emailid" placeholder="Recruiter's Email ID" value="{{Auth::user()->email}}">
                             </div>
 
                             <div class="form-group">
                                 <select id="noOfEmp" name="noOfEmp" class="form-control dropdown-product selectpicker">
                                     <option value="">Select no. of employees</option>
                                     @for($i=1;$i<=500;$i++)
-                                        <option>{{$i}} </option>
+                                        <option value="{{$i}}">{{$i}} </option>
                                     @endfor
                                 </select>
                             </div>
@@ -43,6 +49,10 @@
                             </div>
 
                             <div class="form-group">
+                                <textarea class="form-control" name="otherdetail" id="otherdetail" placeholder=" More Details" rows="5"></textarea>
+                            </div>
+
+                            <div class="form-group">
                                 <div class="col-md-12 text-center">
                                     <button type="submit" class="btn btn-common">Send</button>
                                     <a id="cancel" name="cancel" class="btn btn-common" href="{{route('viewJobs')}}">Cancel</a>
@@ -50,6 +60,7 @@
                             </div>
 
                         </form>
+                        @endforeach
                         <br><br>
                     </div><!--/box-->
                 </div><!--/col-8-->
