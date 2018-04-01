@@ -343,7 +343,7 @@
         <!-- /.box-body -->
         <div class="box-footer text-center">
 			<button type="submit" class="btn btn-primary">Submit</button>
-			<a href="{{route('recruiterList')}}"><button type="submit" class="btn btn-primary">Cancel</button></a>
+			<a href="{{route('recruiterList')}}" class="btn btn-primary">Cancel</a>
         </div>
         <!-- /.box-footer-->
       </div>

@@ -43,7 +43,7 @@ class RodController extends Controller
         $this->validate($request,[
                 'firstName'=>'required',
                 'lastName'=>'required',
-                'emailid'=>'required|confirmed',
+                'emailid'=>'required',
                 'relationship'=>'required',
                 'companyName'=>'required',
                 'other'=>'required',

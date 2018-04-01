@@ -28,34 +28,34 @@
 
                             <h3 class="profile-username text-center">{{$job->companyname}}</h3>
 
-                            <p class="text-muted text-center">Software Engineer</p>
+                            <p class="text-muted text-center">{{$job->department}}</p>
 
-                            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                            {{--<a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>--}}
                         </div>
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
 
-                    <!-- About Me Box -->
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">About</h3>
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body">
+                    {{--<!-- About Me Box -->--}}
+                    {{--<div class="box box-primary">--}}
+                        {{--<div class="box-header with-border">--}}
+                            {{--<h3 class="box-title">About</h3>--}}
+                        {{--</div>--}}
+                        {{--<!-- /.box-header -->--}}
+                        {{--<div class="box-body">--}}
 
-                            <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+                            {{--<strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>--}}
 
-                            <p class="text-muted">{{$job->location}}</p>
+                            {{--<p class="text-muted">{{$job->location}}</p>--}}
 
-                            <hr>
+                            {{--<hr>--}}
 
-                            <strong><i class="fa fa-file-text-o margin-r-5"></i> Address</strong>
+                            {{--<strong><i class="fa fa-file-text-o margin-r-5"></i> Address</strong>--}}
 
-                            <p class="text-muted">{{$job->address}}</p>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
+                            {{--<p class="text-muted">{{$job->address}}</p>--}}
+                        {{--</div>--}}
+                        {{--<!-- /.box-body -->--}}
+                    {{--</div>--}}
                     <!-- /.box -->
                 </div>
                 <!-- /.col -->
@@ -134,7 +134,7 @@
                                     <div class="user-block">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <h4>About Company</h4>
+                                                <h4>Job Details</h4>
                                                 <h5>{{$job->jobdescription}}</h5>
                                             </div>
                                         </div>

@@ -34,11 +34,13 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Company Name</th>
                                     <th> Recruiter's Email id</th>
-                                    <th>No. Of Employees</th>
+                                    <th> Company Email id</th>
+                                    <th>Company Name</th>
+                                    <th>No.Of Employees</th>
                                     <th>Employee Qulification</th>
                                     <th> KeySkill</th>
+                                    <th> Status</th>
                                 </tr>
                                 </thead>
 
@@ -46,11 +48,13 @@
                                 @foreach($Proposal as $proposal)
                                     <tr>
                                         <td>{{$proposal->id}}</td>
-                                        <td>{{$proposal->companyname}}</td>
                                         <td>{{$proposal->emailid}}</td>
+                                        <td>{{$proposal->companyemail}}</td>
+                                        <td>{{$proposal->companyname}}</td>
                                         <td>{{$proposal->noofemployee}}</td>
                                         <td>{{$proposal->employeequalification}}</td>
                                         <td>{{$proposal->keyskill}}</td>
+                                        <td>@if($proposal->status!=""){{$proposal->status}}@else Pending @endif</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

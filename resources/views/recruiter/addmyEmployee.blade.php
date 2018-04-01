@@ -13,10 +13,10 @@
                     @foreach($myemp as $addemp)
                     <div class="job-list" style="width: 100%;">
                         <div class="thumb">
-                            <a href="{{route('employeeProfile')}}"><img src="@if($addemp->logo!="") {{asset('assets/img/employee/').'/'.$addemp->logo}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
+                            <a href="{{route('employeeProfile',['id'=>$addemp->id])}}"><img src="@if($addemp->logo!="") {{asset('assets/img/employee/').'/'.$addemp->logo}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
                         </div>
                             <div class="job-list-content">
-                                <h4><a href="{{route('employeeProfile')}}">{{$addemp->firstname}}&nbsp;&nbsp;{{$addemp->lastname}}</a><span class="full-time">Avalible</span></h4>
+                                <h4><a href="{{route('employeeProfile',['id'=>$addemp->id])}}">{{$addemp->firstname}}&nbsp;&nbsp;{{$addemp->lastname}}</a><span class="full-time">Avalible</span></h4>
                                 <p>{{$addemp->aboutself}}</p>
                                 <div class="job-tag">
                                     <div class="pull-left">
@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="pull-right">
                                         <div class="icon">
-                                            <a href="{{route('myempstore',['id'=>$addemp->id])}}"><i class="ti-plus"></i></a>
+                                            <a href="{{route('myempstore',['id'=>$addemp->id])}}"><i class="ti-plus" data-toggle="tooltip" data-placement="top" title="Add List"></i></a>
                                         </div>
                                         <a href="{{route('employeeProfile',['id'=>$addemp->id])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                     </div><br>

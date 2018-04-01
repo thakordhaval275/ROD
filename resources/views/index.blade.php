@@ -81,18 +81,18 @@
                     <div class="featured-wrap">
                         <div class="featured-inner">
                             <figure class="item-thumb">
-                                <a class="hover-effect" href="#">
+                                <a class="hover-effect" href="{{route('login')}}">
                                     <img src="assets/img/features/img-1.jpg" alt="">
                                 </a>
                             </figure>
                             <div class="item-body">
-                                <h3 class="job-title"><a href="#">Company</a></h3>
+                                <h3 class="job-title"><a href="{{route('login')}}">Company</a></h3>
                             </div>
                         </div>
                     </div>
                     <div class="item-foot">
                         <div class="view-iocn">
-                            <a href="#"><i class="ti-arrow-right"></i></a>
+                            <a href="{{route('login')}}"><i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -102,18 +102,18 @@
                     <div class="featured-wrap">
                         <div class="featured-inner">
                             <figure class="item-thumb">
-                                <a class="hover-effect" href="#">
+                                <a class="hover-effect" href="{{route('login')}}">
                                     <img src="assets/img/features/img-2.jpg" alt="">
                                 </a>
                             </figure>
                             <div class="item-body">
-                                <h3 class="job-title"><a href="#">Recruiter</a></h3>
+                                <h3 class="job-title"><a href="{{route('login')}}">Recruiter</a></h3>
                             </div>
                         </div>
                     </div>
                     <div class="item-foot">
                         <div class="view-iocn">
-                            <a href="#"><i class="ti-arrow-right"></i></a>
+                            <a href="{{route('login')}}"><i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -123,18 +123,18 @@
                     <div class="featured-wrap">
                         <div class="featured-inner">
                             <figure class="item-thumb">
-                                <a class="hover-effect" href="#">
+                                <a class="hover-effect" href="{{route('login')}}">
                                     <img src="assets/img/features/img-3.jpg" alt="">
                                 </a>
                             </figure>
                             <div class="item-body">
-                                <h3 class="job-title"><a href="#">Employee</a></h3>
+                                <h3 class="job-title"><a href="{{route('login')}}">Employee</a></h3>
                             </div>
                         </div>
                     </div>
                     <div class="item-foot">
                         <div class="view-iocn">
-                            <a href="#"><i class="ti-arrow-right"></i></a>
+                            <a href="{{route('login')}}"><i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

@@ -133,18 +133,38 @@
             </div>
             <h3 class="title-menu">All Pages</h3>
             <ul class="nav navmenu-nav">
-                <li><a href="{{route('index')}}">Home</a></li>
-                <li><a href="{{route('companyProfile')}}">Compnay Profile</a></li>
-                <li><a href="{{route('recruiterProfile')}}">Recruiter Profile</a></li>
-                <li><a href="{{route('employeeProfile')}}">Employee Profile</a></li>
-                <li><a href="{{route('about')}}">About us</a></li>
-                <li><a href="{{route('jobpost')}}">Job post</a></li>
-                <li><a href="manage-jobs.html">Manage Jobs</a></li>
-                <li><a href="manage-applications.html">Manage Applications</a></li>
-                <li><a href="browse-resumes.html">Browse Resumes</a></li>
-                <li><a href="{{route('contactus')}}">Contact</a></li>
-                <li><a href="{{route('login')}}">Login</a></li>
-                <li><a href="{{route('signup')}}">Sign Up</a></li>
+                @if(!Auth::user())
+                    <li><a href="{{route('index')}}">index</a></li>
+                    <li><a href="{{route('about')}}">About Us</a></li>
+                    <li><a href="{{route('contactus')}}">Contact Us</a></li>
+                    <li><a href="{{route('signup')}}">Sign Up</a></li>
+                    <li><a href="{{route('login')}}">Login</a></li>
+                @elseif(Auth::user()->usertype==1)
+                    <li><a href="{{route('index')}}">index</a></li>
+                    <li><a href="{{route('about')}}">About Us</a></li>
+                    <li><a href="{{route('contactus')}}">Contact Us</a></li>
+                    <li><a href="{{route('companyProfile')}}">My Profile</a></li>
+                    <li><a href="{{route('jobpost')}}">Post New Job</a></li>
+                    <li><a href="{{route('viewJobs')}}">View My Post Job</a></li>
+                    <li><a href="{{route('myProposal')}}">Resive Proposal List</a></li>
+                    <li><a href="{{route('userLogout')}}">Logout</a></li>
+                @elseif(Auth::user()->usertype==2)
+                    <li><a href="{{route('index')}}">index</a></li>
+                    <li><a href="{{route('about')}}">About Us</a></li>
+                    <li><a href="{{route('contactus')}}">Contact Us</a></li>
+                    <li><a href="{{route('recruiterProfile')}}">My Profile</a></li>
+                    <li><a href="{{route('myProposal')}}">Sent Proposal List</a></li>
+                    <li><a href="{{route('myEmployee')}}">My Employee</a></li>
+                    <li><a href="{{route('viewJobs')}}">View Jobs</a></li>
+                    <li><a href="{{route('addmyEmployee')}}">View Employee</a></li>
+                    <li><a href="{{route('userLogout')}}">Logout</a></li>
+                @elseif(Auth::user()->usertype==3)
+                    <li><a href="{{route('index')}}">index</a></li>
+                    <li><a href="{{route('about')}}">About Us</a></li>
+                    <li><a href="{{route('contactus')}}">Contact Us</a></li>
+                    <li><a href="{{route('employeeProfile')}}">My Profile</a></li>
+                    <li><a href="{{route('userLogout')}}">Logout</a></li>
+                @endif
             </ul><!--- End Menu -->
         </div> <!--- End Off Canvas Side Menu -->
         <div class="tbtn wow pulse" id="menu" data-wow-iteration="infinite" data-wow-duration="500ms" data-toggle="offcanvas" data-target=".navmenu">

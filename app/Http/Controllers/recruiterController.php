@@ -146,7 +146,12 @@ class recruiterController extends Controller
             $input = $request->hiddenPhoto;
         }
 
-        $company=RecruiterProfile::find($request->recruiter_id);
+        if(Auth::user()->usertype==0) {
+            $company=RecruiterProfile::find($request->id);
+        }
+        else{
+            $company=RecruiterProfile::find($request->recruiter_id);
+        }
         $company->profilephoto=$input;
         $company->aboutself=$request->aboutMe;
         $company->firstname=$request->firstName;
@@ -273,6 +278,8 @@ class recruiterController extends Controller
 
     public function myempupdate(Request $request)
     {
+        //dd($request);
+
         $this->validate($request, [
             'aboutMe'=>'required',
             'firstName'=>'required',

@@ -18,7 +18,7 @@
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="@if($reprofile->profilephoto==""){{ asset('assets/img/recruiter/default.png').'/'.$reprofile->profilephoto}} @else {{ asset('assets/img/recruiter/').'/'.$reprofile->profilephoto}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('recruiterEdit',['id'=>$reprofile->id])}}"><i class="ti-pencil"> Edit</i></a>
+                                    <img src="@if($reprofile->profilephoto==""){{ asset('assets/img/recruiter/default.png').'/'.$reprofile->profilephoto}} @else {{ asset('assets/img/recruiter/').'/'.$reprofile->profilephoto}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('recruiterEdit',['id'=>$reprofile->id])}}"><i class="ti-pencil" data-toggle="tooltip" data-placement="top" title="Edit"> Edit</i></a>
                                 </div>
                                 <div class="name">
                                     <h3 class="title">@if($reprofile->firstname=="" && $reprofile->lastname==""){{Auth::user()->email}}@else {{$reprofile->firstname}}&nbsp;{{$reprofile->lastname}} @endif</h3>
@@ -36,7 +36,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
                                 <div class="col-md-6">
                                     <div class="panel panel-danger">
-                                        <div class="panel-heading">Personal Details<a href="{{route('recruiterEdit',['id'=>$reprofile->id])}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
+                                        <div class="panel-heading">Personal Details<a href="{{route('recruiterEdit',['id'=>$reprofile->id])}}" style="float: right;color: white;"><i class="ti-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a></div>
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-12">
@@ -183,7 +183,7 @@
                                 </div><!--/col-6-->
                                 <div class="col-md-6">
                                     <div class="panel panel-danger">
-                                        <div class="panel-heading">Other Details<a href="{{route('recruiterEdit',['id'=>$reprofile->id])}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
+                                        <div class="panel-heading">Other Details<a href="{{route('recruiterEdit',['id'=>$reprofile->id])}}" style="float: right;color: white;"><i class="ti-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a></div>
                                         <div class="panel-body">
 
                                             <div class="row">

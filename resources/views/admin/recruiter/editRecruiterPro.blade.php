@@ -17,7 +17,7 @@
 
         <!-- Main content -->
         <form method="post" action="{{route('recruiterupdate')}}" enctype="multipart/form-data">
-            <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
+            <input type="hidden" name="userType" id="userType" value="{{$recruiter->usertype}}">
             <input type="hidden" name="id" id="id" value="{{$recruiter->id}}">
             <input type="hidden" name="hiddenPhoto" id="hiddenPhoto" value="{{$recruiter->profilephoto}}">
             {{csrf_field()}}
@@ -265,11 +265,11 @@
                                             <label>GST Register</label>
                                             <div class="form-group">
                                                 <label>
-                                                    <input type="radio" name="gst" value="yes" class="minimal-red">&nbsp;&nbsp;Yes
+                                                    <input type="radio" name="gst" value="Yes" class="minimal-red">&nbsp;&nbsp;Yes
                                                 </label>
                                                 &nbsp;&nbsp;&nbsp;
                                                 <label>
-                                                    <input type="radio" name="gst" value="no" class="minimal-red" checked="true">&nbsp;&nbsp;No
+                                                    <input type="radio" name="gst" value="No" class="minimal-red" checked="true">&nbsp;&nbsp;No
                                                 </label>
                                             </div>
                                             @if($errors->first('gst'))
@@ -343,7 +343,7 @@
                     <!-- /.box-body -->
                     <div class="box-footer text-center">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="{{route('recruiterList')}}"><button type="submit" class="btn btn-primary">Cancel</button></a>
+                        <a class="btn btn-primary" href="{{route('recruiterList')}}">Cancel</a>
                     </div>
                     <!-- /.box-footer-->
                 </div>

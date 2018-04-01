@@ -223,7 +223,7 @@
                                                     <div class="col-md-12 text-center">
                                                         <a id="cancel" name="cancel" class="btn btn-common" href="{{route('viewJobs')}}">Back to List</a>
                                                         @if(Auth::user()->usertype=="2")
-                                                            <a id="cancel" name="cancel" class="btn btn-common" href="{{route('proposal')}}">Send proposal</a>
+                                                            <a id="cancel" name="cancel" class="btn btn-common" href="{{route('proposal',['id'=>$jobdetail->id])}}">Send proposal</a>
                                                         @endif
                                                     </div>
                                                 </div><br><br>

@@ -44,6 +44,7 @@
                                     <th>Term Period</th>
                                     <th>Experience</th>
                                     <th>Payment</th>
+                                    <th>noofpositions</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -59,9 +60,12 @@
                                         <td>{{$list->termperiod}}</td>
                                         <td>{{$list->experience}}</td>
                                         <td>{{$list->payment}}</td>
-                                        <td><a href="{{route('viewJob',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editPostJob',['id'=>$list->id])}}"><i class="fa fa-pencil"></i></a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyJob',['id'=>$list->id])}}"><i class="fa fa-trash"></i></a></td>
+                                        <td>{{$list->noofpositions}}</td>
+                                        <td class="text-center"><a href="{{route('viewJob',['id'=>$list->id])}}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="View"></i> </a>
+                                            @if($list->usertype=="0")
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editPostJob',['id'=>$list->id])}}"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyJob',['id'=>$list->id])}}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>
+                                            @endif
                                     </tr>
                                 @endforeach
                                 </tbody>

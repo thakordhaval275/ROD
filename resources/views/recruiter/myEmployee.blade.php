@@ -10,16 +10,16 @@
     <div class="container">
         <div class="row">
             <div class="pull-right">
-                <a href="{{route('employeeEdit')}}"><div class="btn btn-common btn-rm">Add New Employee</div></a>
+                <a href="{{route('addmyEmployee')}}"><div class="btn btn-common btn-rm">More Employee</div></a>
             </div><br><br><br>
             <div class="col-md-9 col-sm-8">
                 @foreach($myemp as $myemp)
                     <div class="job-list" style="width: 100%;">
                         <div class="thumb">
-                            <a href="{{route('employeeProfile')}}"><img src="@if($myemp->logo!="") {{asset('assets/img/employee/').'/'.$myemp->logo}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
+                            <a href="{{route('employeeProfile',['id'=>$myemp->id,'usertype'=>$myemp->usertype])}}"><img src="@if($myemp->logo!="") {{asset('assets/img/employee/').'/'.$myemp->logo}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
                         </div>
                         <div class="job-list-content">
-                            <h4><a href="{{route('employeeProfile')}}">{{$myemp->firstname}}&nbsp;&nbsp;{{$myemp->lastname}}</a><span class="full-time">Avalible</span></h4>
+                            <h4><a href="{{route('employeeProfile',['id'=>$myemp->id,'usertype'=>$myemp->usertype])}}">{{$myemp->firstname}}&nbsp;&nbsp;{{$myemp->lastname}}</a><span class="full-time">Avalible</span></h4>
                             <p>{{$myemp->aboutself}}</p>
                             <div class="job-tag">
                                 <div class="pull-left">
@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="pull-right">
                                     <div class="icon">
-                                        <a href="{{route('destroyMyEmp',['id'=>$myemp->id])}}"><i class="ti-trash"></i></a>
+                                        <a href="{{route('destroyMyEmp',['id'=>$myemp->id])}}"><i class="ti-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a>
                                     </div>
                                     <a href="{{route('employeeProfile',['id'=>$myemp->id,'usertype'=>$myemp->usertype])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                 </div>

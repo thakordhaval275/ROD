@@ -4,17 +4,6 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <br>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="col-md-4">
-                </div>
-                <div class="col-md-6">
-                </div>
-                <div class="col-md-2">
-                    <a href="{{route('addMyEmp')}}"><button type="button" class="btn btn-block btn-danger">Add New Employee</button></a>
-                </div>
-            </div>
-        </div>
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
@@ -37,11 +26,10 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email id</th>
-                                    <th>PG</th>
-                                    <th>UG</th>
+                                    <th>Recruiter Email</th>
+                                    <th>Employee Email</th>
+                                    <th>Gender</th>
+                                    <th>Birthdate</th>
                                     <th>Skill</th>
                                     <th>Contact No.</th>
                                     <th>Experience</th>
@@ -54,18 +42,19 @@
                                 @foreach($myemplist as $mylist)
                                     <tr>
                                         <td>{{$mylist->id}}</td>
-                                        <td>{{$mylist->firstname}}</td>
-                                        <td>{{$mylist->lastname}}</td>
+                                        <td>{{$mylist->useremail}}</td>
                                         <td>{{$mylist->emailid}}</td>
-                                        <td>{{$mylist->postgraduate}}</td>
-                                        <td>{{$mylist->graduate}}</td>
+                                        <td>{{$mylist->gender}}</td>
+                                        <td>{{$mylist->bdate}}</td>
                                         <td>{{$mylist->keyskill}}</td>
                                         <td>{{$mylist->contectno}}</td>
                                         <td>{{$mylist->expirienceyear}}</td>
                                         <td>{{$mylist->city}}</td>
-                                        <td><a href="{{route('viewMyEmp',['id'=>$mylist->id])}}"><i class="fa fa-eye"></i> </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editMyEmp',['id'=>$mylist->id])}}"><i class="fa fa-pencil"></i></a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyMyEmp',['id'=>$mylist->id])}}"><i class="fa fa-trash"></i></a></td>
+                                        <td class="text-center"><a href="{{route('viewMyEmp',['id'=>$mylist->id])}}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="View"></i> </a>
+                                            @if($mylist->usertype=="0")
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editMyEmp',['id'=>$mylist->id])}}"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyMyEmp',['id'=>$mylist->id])}}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>
+                                            @endif
                                     </tr>
                                 @endforeach
                                 </tbody>

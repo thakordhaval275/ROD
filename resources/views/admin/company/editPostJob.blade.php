@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <form method="post" action="{{route('jobpostUpdate')}}" enctype="multipart/form-data">
-                    <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
+                    <input type="hidden" name="userType" id="userType" value="{{$job->usertype}}">
                     <input type="hidden" name="id" id="id" value="{{$job->id}}">
                     <input type="hidden" name="hiddenLogo" id="hiddenLogo" value="{{$job->logo}}">
                     {{csrf_field()}}
@@ -91,11 +91,11 @@
                                                 <label>Term</label>
                                                 <div class="form-group">
                                                     <label>
-                                                        <input id="term" type="radio" name="term" value="Long Term" class="minimal-red" @if($job->term=='long')checked="checked"@endif>&nbsp;&nbsp;Long Term
+                                                        <input id="term" type="radio" name="term" value="Long Term" class="minimal-red" @if($job->term=='Long Term')checked="checked"@endif>&nbsp;&nbsp;Long Term
                                                     </label>
                                                     &nbsp;&nbsp;&nbsp;
                                                     <label>
-                                                        <input id="term" type="radio" name="term" value="Sort Term" class="minimal-red" @if($job->term=='short')checked="checked"@endif>&nbsp;&nbsp;Short Term
+                                                        <input id="term" type="radio" name="term" value="Sort Term" class="minimal-red" @if($job->term=='Sort Term')checked="checked"@endif>&nbsp;&nbsp;Short Term
                                                     </label>
                                                 </div>
                                                 @if($errors->first('term'))
@@ -132,7 +132,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12 @if($errors->first('experiance')) has-error @endif">
+                                        <div class="col-md-12 @if($errors->first('experience')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Experience</label>
                                                 <select  id="experience" name="experience" class="form-control select2" style="width: 100%;">
@@ -142,8 +142,8 @@
                                                         <option value="{{$i}}" @if($job->experience==$i)selected="selected"@endif>{{$i}} Year</option>
                                                     @endfor
                                                 </select>
-                                                @if($errors->first('experiance'))
-                                                    <p class="text-danger"> {{$errors->first('experiance')}} </p>
+                                                @if($errors->first('experience'))
+                                                    <p class="text-danger"> {{$errors->first('experience')}} </p>
                                                 @endif
                                             </div>
                                         </div>

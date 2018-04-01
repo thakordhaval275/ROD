@@ -18,7 +18,7 @@
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="@if($viewprofile->logo!="") {{ asset('assets/img/employee/').'/'.$viewprofile->logo}} @else {{ asset('assets/img/employee/default.png')}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br>@if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit',['id'=>$viewprofile->id])}}"><i class="ti-pencil"> Edit</i></a>@endif
+                                    <img src="@if($viewprofile->logo!="") {{ asset('assets/img/employee/').'/'.$viewprofile->logo}} @else {{ asset('assets/img/employee/default.png')}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br>@if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit',['id'=>$viewprofile->id])}}"><i class="ti-pencil" data-toggle="tooltip" data-placement="top" title="Edit"> Edit</i></a>@endif
                                 </div>
                                 <div class="name">
                                     <h3 class="title">@if($viewprofile->firstname!="" && $viewprofile->lastname!="") {{$viewprofile->firstname}} {{$viewprofile->lastname}} @else {{$viewprofile->emailid}} @endif</h3>
@@ -39,7 +39,7 @@
                                 <form method="get" action="#">
                                     <div class="col-md-6">
                                         <div class="panel panel-danger">
-                                            <div class="panel-heading">Personal Details @if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit',['id'=>$viewprofile->id])}}" style="float: right;color: white;"><i class="ti-pencil"></i></a> @endif</div>
+                                            <div class="panel-heading">Personal Details @if(Auth::user()->usertype=="3")<a href="{{route('employeeEdit',['id'=>$viewprofile->id])}}" style="float: right;color: white;"><i class="ti-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a> @endif</div>
                                             <div class="panel-body">
                                                 <br>
                                                 <div class="row">
@@ -229,7 +229,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="panel panel-danger">
-                                            <div class="panel-heading">Education Details @if(Auth::user()->usertype=="3") <a href="{{route('employeeEdit',['id'=>$viewprofile->id])}}" style="float: right;color: white;"><i class="ti-pencil"></i></a> @endif</div>
+                                            <div class="panel-heading">Education Details @if(Auth::user()->usertype=="3") <a href="{{route('employeeEdit',['id'=>$viewprofile->id])}}" style="float: right;color: white;"><i class="ti-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a> @endif</div>
                                             <div class="panel-body">
                                                 <br>
                                                 <div class="row">

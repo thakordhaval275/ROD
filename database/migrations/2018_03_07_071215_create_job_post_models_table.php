@@ -24,7 +24,7 @@ class CreateJobPostModelsTable extends Migration
             $table->string('experience')->nullable();
             $table->string('payment')->nullable();
             $table->string('noofpositions')->nullable();
-            $table->string('jobdescription')->nullable();
+            $table->string('jobdescription',500)->nullable();
             $table->string('useremail')->nullable();
             $table->string('usertype')->nullable();
             $table->timestamps();

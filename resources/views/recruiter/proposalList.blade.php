@@ -50,7 +50,7 @@
                                         <a href=""><div class="btn btn-common btn-rm"> Reject</div></a>
                                     @else
                                         <div class="icon">
-                                            <a href="{{route('destroyProposal',['id'=>$data->id])}}"><i class="ti-trash"></i></a>
+                                            <a href="{{route('destroyProposal',['id'=>$data->id])}}"><i class="ti-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a>
                                         </div>
                                         <div class="btn btn-common btn-rm">@if($data->status!="") Send Email @else Pending @endif</div>
                                     @endif

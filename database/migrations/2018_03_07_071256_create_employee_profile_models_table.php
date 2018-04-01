@@ -16,7 +16,7 @@ class CreateEmployeeProfileModelsTable extends Migration
         Schema::create('employee_profile_models', function (Blueprint $table) {
             $table->increments('id');
             $table->string('logo')->nullable();
-            $table->string('aboutself')->nullable();
+            $table->string('aboutself',1000)->nullable();
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('address')->nullable();

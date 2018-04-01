@@ -180,7 +180,7 @@
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12 @if($errors->first('experiance')) has-error @endif">
+                                                    <div class="col-md-12 @if($errors->first('experience')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Experience</h4>
                                                         </div>
@@ -191,7 +191,7 @@
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
                                                                     <div class="search-category-container">
-                                                                    <select id="experiance" name="experiance" class="form-control dropdown-product selectpicker">
+                                                                    <select id="experience" name="experience" class="form-control dropdown-product selectpicker">
                                                                         <option value="">Select</option>
                                                                         <option value="Fresher" @if(isset($jobpostedit)) value="Fresher" @if($jobpostedit->experience=='Fresher')selected="selected" @endif @endif>Fresher</option>
                                                                         @for($i=1;$i<=15;$i++)
@@ -199,8 +199,8 @@
                                                                         @endfor
                                                                     </select>
                                                                     </div>
-                                                                    @if($errors->first('experiance'))
-                                                                        <p class="text-danger"> {{$errors->first('experiance')}} </p>
+                                                                    @if($errors->first('experience'))
+                                                                        <p class="text-danger"> {{$errors->first('experience')}} </p>
                                                                     @endif
                                                                 </div>
                                                             </div>

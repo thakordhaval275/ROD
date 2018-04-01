@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CompanyProfileModel;
+use App\Contact;
 use App\ContactUs;
 use App\EmployeeProfileModel;
 use App\MyEmployee;
@@ -24,8 +25,7 @@ class adminController extends Controller
 
     public function contactuslist()
     {
-        $contact=ContactUs::get();
-        dd($contact);
+        $contact=Contact::get();
         return view('admin.contactusList',['contact'=>$contact]);
     }
 

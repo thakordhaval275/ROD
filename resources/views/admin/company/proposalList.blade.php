@@ -35,10 +35,13 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Company Name</th>
+                                    <th> Company Email id</th>
                                     <th> Recruiter's Email id</th>
-                                    <th>No. Of Employees</th>
+                                    <th>No.Of Emp</th>
                                     <th>Employee Qulification</th>
                                     <th> KeySkill</th>
+                                    <th> Details</th>
+                                    <th> Status</th>
                                 </tr>
                                 </thead>
 
@@ -47,10 +50,13 @@
                                     <tr>
                                         <td>{{$proposal->id}}</td>
                                         <td>{{$proposal->companyname}}</td>
+                                        <td>{{$proposal->companyemail}}</td>
                                         <td>{{$proposal->emailid}}</td>
                                         <td>{{$proposal->noofemployee}}</td>
                                         <td>{{$proposal->employeequalification}}</td>
                                         <td>{{$proposal->keyskill}}</td>
+                                        <td>{{$proposal->otherdetail}}</td>
+                                        <td>@if($proposal->status!="") {{$proposal->status}} @else Pending @endif</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

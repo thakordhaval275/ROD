@@ -16,7 +16,7 @@ class CreateCompanyProfileModelsTable extends Migration
         Schema::create('company_profile_models', function (Blueprint $table) {
             $table->increments('id');
             $table->string('logo')->nullable();
-            $table->string('aboutcompany')->nullable();
+            $table->string('aboutcompany',1000)->nullable();
             $table->string('companyname')->nullable();
             $table->string('location')->nullable();
             $table->string('address')->nullable();

@@ -76,7 +76,6 @@ class companyController extends Controller
 
     public function companyupdate(Request $request)
     {
-       //dd($request);
 
         $this->validate($request, [
             'companyName'=>'required',
@@ -146,7 +145,7 @@ class companyController extends Controller
             'department'=>'required',
             'term'=>'required',
             'termPeriod'=>'required',
-            'experiance'=>'required',
+            'experience'=>'required',
             'payment'=>'required',
             'noOfPostion'=>'required',
             'description'=>'required',
@@ -165,7 +164,7 @@ class companyController extends Controller
             'department'=>$request['department'],
             'term'=>$request['term'],
             'termperiod'=>$request['termPeriod'],
-            'experience'=>$request['experiance'],
+            'experience'=>$request['experience'],
             'payment'=>$request['payment'],
             'noofpositions'=>$request['noOfPostion'],
             'jobdescription'=>$request['description'],
@@ -194,7 +193,7 @@ class companyController extends Controller
             'department'=>'required',
             'term'=>'required',
             'termPeriod'=>'required',
-            'experiance'=>'required',
+            'experience'=>'required',
             'payment'=>'required',
             'noOfPostion'=>'required',
             'description'=>'required',
@@ -216,7 +215,7 @@ class companyController extends Controller
         $job->department=$request->department;
         $job->term=$request->term;
         $job->termperiod=$request->termPeriod;
-        $job->experience=$request->experiance;
+        $job->experience=$request->experience;
         $job->payment=$request->payment;
         $job->noofpositions=$request->noOfPostion;
         $job->jobdescription=$request->description;
