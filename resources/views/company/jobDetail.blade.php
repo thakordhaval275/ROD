@@ -25,9 +25,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="description text-center">
-                            <p>{{$jobdetail->jobdescription}}</p>
-                        </div>
                     </div>
 					
                     <div class="container-fluid">

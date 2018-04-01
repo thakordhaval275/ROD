@@ -11,29 +11,31 @@
             <div class="row">
                 <div class="col-md-9 col-sm-8">
                     @foreach($myemp as $addemp)
-                    <div class="job-list" style="width: 100%;">
-                        <div class="thumb">
-                            <a href="{{route('employeeProfile',['id'=>$addemp->id])}}"><img src="@if($addemp->logo!="") {{asset('assets/img/employee/').'/'.$addemp->logo}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
-                        </div>
-                            <div class="job-list-content">
-                                <h4><a href="{{route('employeeProfile',['id'=>$addemp->id])}}">{{$addemp->firstname}}&nbsp;&nbsp;{{$addemp->lastname}}</a><span class="full-time">Avalible</span></h4>
-                                <p>{{$addemp->aboutself}}</p>
-                                <div class="job-tag">
-                                    <div class="pull-left">
-                                        <div class="meta-tag">
-                                            <span><a href="browse-categories.html"><i class="ti-desktop"></i>{{$addemp->keyskill}}</a></span>
-                                            <span><i class="ti-location-pin"></i>{{$addemp->city}},{{$addemp->state}},{{$addemp->country}}</span>
+                        @if($addemp->firstname!="")
+                            <div class="job-list" style="width: 100%;">
+                                <div class="thumb">
+                                    <a href="{{route('employeeProfile',['id'=>$addemp->id])}}"><img src="@if($addemp->logo!="") {{asset('assets/img/employee/').'/'.$addemp->logo}} @else {{asset('assets/img/employee/default.png')}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
+                                </div>
+                                    <div class="job-list-content">
+                                        <h4><a href="{{route('employeeProfile',['id'=>$addemp->id])}}">{{$addemp->firstname}}&nbsp;{{$addemp->lastname}}</a><span class="full-time">Avalible</span></h4>
+                                        <p>{{$addemp->aboutself}}</p>
+                                        <div class="job-tag">
+                                            <div class="pull-left">
+                                                <div class="meta-tag">
+                                                    <span><a href="browse-categories.html"><i class="ti-desktop"></i>{{$addemp->keyskill}}</a></span>
+                                                    <span><i class="ti-location-pin"></i>{{$addemp->city}},{{$addemp->state}},{{$addemp->country}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right">
+                                                <div class="icon">
+                                                    <a href="{{route('myempstore',['id'=>$addemp->id])}}"><i class="ti-plus" data-toggle="tooltip" data-placement="top" title="Add List"></i></a>
+                                                </div>
+                                                <a href="{{route('employeeProfile',['id'=>$addemp->id])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
+                                            </div><br>
                                         </div>
                                     </div>
-                                    <div class="pull-right">
-                                        <div class="icon">
-                                            <a href="{{route('myempstore',['id'=>$addemp->id])}}"><i class="ti-plus" data-toggle="tooltip" data-placement="top" title="Add List"></i></a>
-                                        </div>
-                                        <a href="{{route('employeeProfile',['id'=>$addemp->id])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
-                                    </div><br>
-                                </div>
                             </div>
-                    </div>
+                        @endif
                 @endforeach
 
                     <!-- Start Pagination -->

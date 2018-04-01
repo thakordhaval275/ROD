@@ -37,8 +37,7 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Name</th>
                                     <th>Gender</th>
                                     <th>Email id</th>
                                     <th>City</th>
@@ -52,8 +51,7 @@
                                 @foreach($rlist as $list)
                                     <tr>
                                         <td>{{$list->id}}</td>
-                                        <td>{{$list->firstname}}</td>
-                                        <td>{{$list->lastname}}</td>
+                                        <td>{{$list->firstname}} {{$list->lastname}}</td>
                                         <td>{{$list->gender}}</td>
                                         <td>{{$list->emailid}}</td>
                                         <td>{{$list->city}}</td>

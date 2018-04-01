@@ -34,9 +34,9 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
+                                    <th> Recruiter's Email id</th>
                                     <th>Company Name</th>
                                     <th> Company Email id</th>
-                                    <th> Recruiter's Email id</th>
                                     <th>No.Of Emp</th>
                                     <th>Employee Qulification</th>
                                     <th> KeySkill</th>
@@ -49,9 +49,9 @@
                                 @foreach($proposal as $proposal)
                                     <tr>
                                         <td>{{$proposal->id}}</td>
+                                        <td>{{$proposal->emailid}}</td>
                                         <td>{{$proposal->companyname}}</td>
                                         <td>{{$proposal->companyemail}}</td>
-                                        <td>{{$proposal->emailid}}</td>
                                         <td>{{$proposal->noofemployee}}</td>
                                         <td>{{$proposal->employeequalification}}</td>
                                         <td>{{$proposal->keyskill}}</td>
