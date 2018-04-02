@@ -38,6 +38,9 @@ Route::get('/company/companyprofile','companyController@companyprofile')->name('
 Route::get('/company/companyedit','companyController@companyedit')->name('companyEdit');//company Edit Profile
 Route::get('/company/viewjobs','companyController@viewjobs')->name('viewJobs');//view PostJobs
 Route::get('/company/jobdetail/{id}','companyController@jobdetail')->name('jobDetail');//Job Detail
+Route::get('/company/accept/proposal','recruiterController@acceptProposal')->name('acceptProposal');//Proposal List
+Route::get('/company/reject/proposal','recruiterController@rejectProposal')->name('rejectProposal');//Proposal List
+
 
 //sotre Data
 Route::post('jobpoststore','companyController@jobpoststore')->name('jobpoststore');
@@ -53,6 +56,11 @@ Route::get('/recruiter/addmyemployee','recruiterController@addmyemployee')->name
 Route::get('/recruiter/myemployee','recruiterController@myemployee')->name('myEmployee');//recruiter's employee
 Route::get('/recruiter/proposal','recruiterController@proposal')->name('proposal');//send a Proposal
 Route::get('/recruiter/myproposal','recruiterController@myproposal')->name('myProposal');//Proposal List
+
+
+
+
+
 
 //store Data
 Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')->name('recruiterprofilestore');

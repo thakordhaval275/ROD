@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\EmployeeProfileModel;
 use App\JobPostModel;
+use App\Jobs\SendPraposalAcceptEmail;
 use App\MyEmployee;
 use App\Proposal;
 use App\RecruiterProfile;
@@ -377,9 +378,6 @@ class recruiterController extends Controller
 
     public function proposalstore(Request $request)
     {
-        //dd($request);
-            $status="";
-
         $this->validate($request, [
             'companyName'=>'required',
             'companyEmail'=>'required',
@@ -398,9 +396,35 @@ class recruiterController extends Controller
             'employeequalification'=>$request['equlification'],
             'keyskill'=>$request['keySkill'],
             'otherdetail'=>$request['otherdetail'],
-            'status'=>$status
+
         ]);
 
         return redirect(route('myProposal'));
     }
+
+
+    public function acceptProposal(Request $request)
+    {
+
+        $proposal=Proposal::find($request->id);
+//
+//        $proposal->status=Proposal::Accepted;
+//        $proposal->save();
+
+        $this->dispatch(new SendPraposalAcceptEmail($proposal->emailid,$proposal->companyemail));
+
+        return redirect(route('myProposal'));
+    }
+
+    public function rejectProposal(Request $request)
+    {
+
+        $proposal=Proposal::find($request->id);
+
+        $proposal->status=Proposal::Rejected;
+        $proposal->save();
+
+        return redirect(route('myProposal'));
+    }
+
 }

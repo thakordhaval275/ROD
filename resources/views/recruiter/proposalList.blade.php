@@ -46,8 +46,15 @@
                                 </div>
                                 <div class="pull-right">
                                     @if(Auth::user()->usertype==1)
-                                        <a href=""><div class="btn btn-common btn-rm"> Accept</div></a>
-                                        <a href=""><div class="btn btn-common btn-rm"> Reject</div></a>
+                                        @if($data->status==\App\Proposal::Pending)
+                                        <a href="{{ route('acceptProposal',['id'=>$data->id]) }}"><div class="btn btn-common btn-rm"> Accept</div></a>
+                                            <a href="{{ route('rejectProposal',['id'=>$data->id]) }}"><div class="btn btn-common btn-rm"> Reject</div></a>
+                                        @elseif($data->status==\App\Proposal::Accepted)
+                                            <a href="javascript:void(0)"><div class="btn btn-common btn-rm"> Already Accepted</div></a>
+                                            @else
+                                            <a href="javascript:void(0)"><div class="btn btn-common btn-rm"> Rejected</div></a>
+                                            @endif
+
                                     @else
                                         <div class="icon">
                                             <a href="{{route('destroyProposal',['id'=>$data->id])}}"><i class="ti-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a>

@@ -22,7 +22,7 @@ class CreateProposalsTable extends Migration
             $table->string('employeequalification')->nullable();
             $table->string('keyskill')->nullable();
             $table->string('otherdetail',1000)->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('1')->comment('1: Pending, 2: Accepted');
             $table->timestamps();
         });
     }
