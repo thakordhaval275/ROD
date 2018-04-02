@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proposal extends Model
 {
-    protected $fillable=['companyname','noofemployee','emailid','employeequalification','keyskill'];
+    protected $fillable=['companyname','companyemail','noofemployee','emailid','employeequalification','keyskill','otherdetail','status'];
 }

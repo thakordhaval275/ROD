@@ -12,7 +12,9 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12 text-right">
-                            <a href="{{route('jobpost')}}"><div class="btn btn-common btn-rm">Add New Job</div></a>
+                            @if(Auth::user()->usertype==1)
+                                <a href="{{route('jobpost')}}"><div class="btn btn-common btn-rm">Add New Job</div></a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -22,15 +24,15 @@
                     @foreach($JobPost as $viewJob)
                         <div class="job-list" style="width: 100%;">
                             <div class="thumb">
-                                <a href="{{route('companyProfile')}}"><img src="@if($viewJob->logo=="") {{ asset('assets/img/company/default.png').'/'.$viewJob->logo}} @else {{ asset('assets/img/company/').'/'.$viewJob->logo}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
+                                <a href="{{route('jobDetail',['id'=>$viewJob->id])}}"><img src="@if($viewJob->logo=="") {{ asset('assets/img/company/default.png').'/'.$viewJob->logo}} @else {{ asset('assets/img/company/').'/'.$viewJob->logo}} @endif" height="100px" width="100px" class="img-circle" alt=""></a>
                             </div>
                             <div class="job-list-content">
-                                <h4><a href="{{route('companyProfile')}}">{{$viewJob->companyname}}</a><span class="full-time">Full-time</span></h4>
+                                <h4><a href="{{route('jobDetail',['id'=>$viewJob->id])}}">{{$viewJob->companyname}}</a><span class="full-time">Full-time</span></h4>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="col-md-6">
                                             <strong>{{$viewJob->jobtype}}</strong><br>
-                                            <strong>Minimum {{$viewJob->experience}} years of experience</strong>
+                                            <strong> @if($viewJob->experience=="Fresher"){{$viewJob->experience}} @else Minimum {{$viewJob->experience}} Years of experience @endif</strong>
                                         </div><!--/col-6-->
                                         <div class="col-md-6">
                                             <strong>{{$viewJob->department}}</strong><br>
@@ -46,12 +48,18 @@
                                         </div>
                                     </div>
                                     <div class="pull-right">
-                                        <div class="icon">
-                                            <a href="{{route('jobpostEdit',['id'=>$viewJob->id])}}"><i class="ti-pencil"></i></a>
-                                        </div>
-                                        <div class="icon">
-                                            <a href="{{route('destroyJob',['id'=>$viewJob->id])}}"><i class="ti-trash"></i></a>
-                                        </div>
+                                        @if(Auth::user()->usertype==1)
+                                            <div class="icon">
+                                                <a href="{{route('jobpostEdit',['id'=>$viewJob->id])}}"><i class="ti-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
+                                            </div>
+                                            <div class="icon">
+                                                <a href="{{route('destroyJob',['id'=>$viewJob->id])}}"><i class="ti-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a>
+                                            </div>
+                                        @elseif(Auth::user()->usertype==2)
+                                            <div class="icon">
+                                                <a href="{{route('proposal',['id'=>$viewJob->id])}}"><i class="fa fa-paper-plane" data-toggle="tooltip" data-placement="top" title="Send Proposal"></i></a>
+                                            </div>
+                                        @endif
                                         <a href="{{route('jobDetail',['id'=>$viewJob->id])}}"><div class="btn btn-common btn-rm">More Detail</div></a>
                                     </div>
                                 </div>

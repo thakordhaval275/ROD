@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <form method="post" action="{{route('updateCompany')}}" enctype="multipart/form-data">
-                    <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
+                    <input type="hidden" name="userType" id="userType" value="{{$company->usertype}}">
                     <input type="hidden" name="id" id="id" value="{{$company->id}}">
                     <input type="hidden" name="hiddenLogo" id="hiddenLogo" value="{{$company->logo}}">
                     {{csrf_field()}}

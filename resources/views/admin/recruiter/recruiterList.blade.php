@@ -37,8 +37,7 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Name</th>
                                     <th>Gender</th>
                                     <th>Email id</th>
                                     <th>City</th>
@@ -52,16 +51,17 @@
                                 @foreach($rlist as $list)
                                     <tr>
                                         <td>{{$list->id}}</td>
-                                        <td>{{$list->firstname}}</td>
-                                        <td>{{$list->lastname}}</td>
+                                        <td>{{$list->firstname}} {{$list->lastname}}</td>
                                         <td>{{$list->gender}}</td>
                                         <td>{{$list->emailid}}</td>
                                         <td>{{$list->city}}</td>
                                         <td>{{$list->country}}</td>
                                         <td>{{$list->gstregister}}</td>
-                                        <td><a href="{{route('viewRecruiter',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editRecruiter',['id'=>$list->id])}}"><i class="fa fa-pencil"></i></a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyRecruiter',['id'=>$list->id])}}"><i class="fa fa-trash"></i></a></td>
+                                        <td class="text-center"><a href="{{route('viewRecruiter',['id'=>$list->id])}}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="View"></i> </a>
+                                            @if($list->usertype=="0")
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editRecruiter',['id'=>$list->id])}}"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyRecruiter',['id'=>$list->id])}}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>
+                                            @endif
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -16,7 +16,7 @@ class CreateRecruiterProfilesTable extends Migration
         Schema::create('recruiter_profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('profilephoto')->nullable();
-            $table->string('aboutself')->nullable();
+            $table->string('aboutself',1000)->nullable();
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('gender')->nullable();

@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="profile">
                                 <div class="avatar">
-                                    <img src="@if($profiledata->logo==""){{ asset('assets/img/company/default.png').'/'.$profiledata->logo}} @else {{ asset('assets/img/company/').'/'.$profiledata->logo}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('companyEdit',['id'=>$profiledata->id])}}"><i class="ti-pencil"> Edit</i></a>
+                                    <img src="@if($profiledata->logo==""){{ asset('assets/img/company/default.png').'/'.$profiledata->logo}} @else {{ asset('assets/img/company/').'/'.$profiledata->logo}} @endif" alt="Circle Image" class="img-circle img-responsive img-raised"><br><a href="{{route('companyEdit',['id'=>$profiledata->id])}}"><i class="ti-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit"> Edit</i></a>
                                 </div>
                                 <div class="name">
                                     <h3 class="title">@if($profiledata->companyname==""){{Auth::user()->email}}@else {{$profiledata->companyname}} @endif</h3>
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="panel panel-danger">
-                                        <div class="panel-heading">Company Details<a href="{{route('companyEdit',['id'=>$profiledata->id])}}" style="float: right;color: white;"><i class="ti-pencil"></i></a></div>
+                                        <div class="panel-heading">Company Details<a href="{{route('companyEdit',['id'=>$profiledata->id])}}" style="float: right;color: white;"><i class="ti-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a></div>
                                         <div class="panel-body">
                                             <br>
                                             <div class="row">

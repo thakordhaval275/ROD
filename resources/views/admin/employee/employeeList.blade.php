@@ -63,9 +63,11 @@
                                         <td>{{$list->graduate}}</td>
                                         <td>{{$list->expirienceyear}}</td>
                                         <td>{{$list->keyskill}}</td>
-                                        <td><a href="{{route('viewEmployee',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editEmployee',['id'=>$list->id])}}"><i class="fa fa-pencil"></i></a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyEmployee',['id'=>$list->id])}}"><i class="fa fa-trash"></i></a></td>
+                                        <td class="text-center"><a href="{{route('viewEmployee',['id'=>$list->id])}}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="View"></i> </a>
+                                            @if($list->usertype=="0")
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editEmployee',['id'=>$list->id])}}"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyEmployee',['id'=>$list->id])}}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>
+                                            @endif
                                     </tr>
                                 @endforeach
                                 </tbody>

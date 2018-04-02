@@ -461,7 +461,7 @@
 				  <!-- /.box-body -->
 				  <div class="box-footer text-center">
 					  <button type="submit" class="btn btn-primary">Submit</button>
-					  <a href="{{route('employeeList')}}"><button type="submit" class="btn btn-primary">Cancel</button></a>
+					  <a href="{{route('employeeList')}}" class="btn btn-primary">Cancel</a>
 				  </div>
 				  <!-- /.box-footer-->
 			  </div>

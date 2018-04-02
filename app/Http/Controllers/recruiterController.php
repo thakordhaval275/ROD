@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\EmployeeProfileModel;
+use App\JobPostModel;
 use App\MyEmployee;
 use App\Proposal;
 use App\RecruiterProfile;
@@ -31,16 +32,19 @@ class recruiterController extends Controller
     }
     public function myemployee()
     {
-        $myemp=MyEmployee::get();
+        $useremail=Auth::user()->email;
+
+        $myemp=MyEmployee::where('useremail',$useremail)->get();
         return view('recruiter.myEmployee',['myemp'=>$myemp]);
     }
     public  function joblist()
     {
         return view('recruiter.jobList');
     }
-    public function proposal()
+    public function proposal(Request $request)
     {
-        return view('recruiter.proposal');
+        $proposal=JobPostModel::where('id',$request->id)->get();
+        return view('recruiter.proposal',['proposal'=>$proposal]);
     }
     public function recruiterprofilestore(Request $request)
     {
@@ -142,7 +146,12 @@ class recruiterController extends Controller
             $input = $request->hiddenPhoto;
         }
 
-        $company=RecruiterProfile::find($request->recruiter_id);
+        if(Auth::user()->usertype==0) {
+            $company=RecruiterProfile::find($request->id);
+        }
+        else{
+            $company=RecruiterProfile::find($request->recruiter_id);
+        }
         $company->profilephoto=$input;
         $company->aboutself=$request->aboutMe;
         $company->firstname=$request->firstName;
@@ -180,8 +189,11 @@ class recruiterController extends Controller
 
         $usertype=Auth::user()->usertype;
 
+
         if($usertype==0)
         {
+            $useremail=Auth::user()->email;
+
             $this->validate($request, [
                 'empProfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
@@ -217,7 +229,8 @@ class recruiterController extends Controller
                 'expirienceyear'=>$request['experianceYear'],
                 'expiriencemonth'=>$request['experianceMonth'],
                 'keyskill'=>$request['keySkill'],
-                'usertype'=>$request['userType']
+                'usertype'=>$request['userType'],
+                'useremail'=>$useremail
             ]);
 
             return redirect(Route('myEmployeeList'));
@@ -225,6 +238,8 @@ class recruiterController extends Controller
         else if($usertype==2)
         {
             $usertype=Auth::user()->usertype;
+            $useremail=Auth::user()->email;
+
             $myemp=EmployeeProfileModel::find($request->id);
 
             MyEmployee::create([
@@ -253,7 +268,8 @@ class recruiterController extends Controller
                 'expirienceyear'=>$myemp['expirienceyear'],
                 'expiriencemonth'=>$myemp['expiriencemonth'],
                 'keyskill'=>$myemp['keyskill'],
-                'usertype'=>$usertype
+                'usertype'=>$usertype,
+                'useremail'=>$useremail
             ]);
 
             return redirect(Route('myEmployee'));
@@ -262,6 +278,8 @@ class recruiterController extends Controller
 
     public function myempupdate(Request $request)
     {
+        //dd($request);
+
         $this->validate($request, [
             'aboutMe'=>'required',
             'firstName'=>'required',
@@ -339,17 +357,50 @@ class recruiterController extends Controller
         }
     }
 
+    public function myproposal()
+    {
+        if(Auth::user()->usertype==1)
+        {
+            $useremail=Auth::user()->email;
+
+            $recruiter=Proposal::where('companyemail',$useremail)->get();
+            return view('recruiter.proposalList',['recruiter'=>$recruiter]);
+        }
+        elseif(Auth::user()->usertype==2)
+        {
+            $useremail=Auth::user()->email;
+
+            $recruiter=Proposal::where('emailid',$useremail)->get();
+            return view('recruiter.proposalList',['recruiter'=>$recruiter]);
+        }
+    }
+
     public function proposalstore(Request $request)
     {
         //dd($request);
+            $status="";
+
+        $this->validate($request, [
+            'companyName'=>'required',
+            'companyEmail'=>'required',
+            'emailid'=>'required',
+            'noOfEmp'=>'required',
+            'equlification'=>'required',
+            'keySkill'=>'required',
+            'otherdetail'=>'required',
+        ]);
+
         Proposal::create([
             'companyname'=>$request['companyName'],
+            'companyemail'=>$request['companyEmail'],
             'noofemployee'=>$request['noOfEmp'],
             'emailid'=>$request['emailid'],
             'employeequalification'=>$request['equlification'],
-            'keyskill'=>$request['keySkill']
+            'keyskill'=>$request['keySkill'],
+            'otherdetail'=>$request['otherdetail'],
+            'status'=>$status
         ]);
 
-        return redirect(route('recruiterProfile'));
+        return redirect(route('myProposal'));
     }
 }

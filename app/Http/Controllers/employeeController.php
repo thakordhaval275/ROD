@@ -22,22 +22,20 @@ class employeeController extends Controller
         }
         else if($usertype==2)
         {
-            //Baki Work
-            dd($request->id);
            if($request->usertype==2)
            {
                $viewProfile=MyEmployee::where('id',$request->id)->get();
                return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
-            }
-            else
-            {
+           }
+           else
+           {
                 $viewProfile=EmployeeProfileModel::where('id',$request->id)->get();
                 return view('employee.employeeProfile',['viewprofile'=>$viewProfile]);
-            }
+           }
         }
     }
 
-    public function employeeedit()
+    public function employeeedit(Request $request)
     {
             $usertype=Auth::user()->usertype;
             if($usertype==2)
@@ -46,7 +44,7 @@ class employeeController extends Controller
             }
             else
             {
-                $editemp=EmployeeProfileModel::get();
+                $editemp=EmployeeProfileModel::where('id',$request->id)->get();
                 return view('employee.employeeEdit',['editemp'=>$editemp]);
             }
 
@@ -135,7 +133,7 @@ class employeeController extends Controller
 
     public function employeeupdate(Request $request)
     {
-        dd($request);
+        //dd($request);
 
         $this->validate($request, [
             'aboutMe'=>'required',
@@ -160,7 +158,6 @@ class employeeController extends Controller
             'industry'=>'required',
             'preferredLocation'=>'required',
             'experianceYear'=>'required',
-            'experianceMonth'=>'required',
             'keySkill'=>'required',
         ]);
 

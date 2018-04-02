@@ -39,7 +39,6 @@
                                     <th>Id</th>
                                     <th>Company Name</th>
                                     <th>Location</th>
-                                    <th>Address</th>
                                     <th>Email id</th>
                                     <th>Website</th>
                                     <th>Found Year</th>
@@ -54,14 +53,15 @@
                                         <td>{{$list->id}}</td>
                                         <td>{{$list->companyname}}</td>
                                         <td>{{$list->location}}</td>
-                                        <td>{{$list->address}}</td>
                                         <td>{{$list->emailid}}</td>
                                         <td>{{$list->website}}</td>
                                         <td>{{$list->foundyear}}</td>
                                         <td>{{$list->noofemployee}}</td>
-                                        <td><a href="{{route('viewCompany',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editCompany',['id'=>$list->id])}}"><i class="fa fa-pencil"></i></a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyCompany',['id'=>$list->id])}}"><i class="fa fa-trash"></i></a></td>
+                                        <td class="text-center"><a href="{{route('viewCompany',['id'=>$list->id])}}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="View"></i> </a>
+                                            @if($list->usertype=="0")
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editCompany',['id'=>$list->id])}}"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyCompany',['id'=>$list->id])}}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>
+                                            @endif
                                     </tr>
                                 @endforeach
                                 </tbody>

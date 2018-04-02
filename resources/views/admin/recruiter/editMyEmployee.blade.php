@@ -10,14 +10,14 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="{{route('employeeList')}}">List of Employee</a></li>
+                <li><a href="{{route('myEmployeeList')}}">list Of Recruiters's Employee</a></li>
                 <li class="active">Edit Employee</li>
             </ol>
         </section>
 
         <!-- Main content -->
         <form method="post" action="{{route('myempupdate')}}" enctype="multipart/form-data">
-            <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
+            <input type="hidden" name="userType" id="userType" value="{{$myempedit->usertype}}">
             <input type="hidden" name="id" id="id" value="{{$myempedit->id}}">
             <input type="hidden" name="hiddenLogo" id="hiddenLogo" value="{{$myempedit->logo}}">
             {{csrf_field()}}
@@ -37,7 +37,6 @@
                     </div>
                     <div class="box-body">
                         <div class="row">
-                            <input type="hidden" name="userType" id="userType" value="{{Auth::user()->usertype}}">
                             <div class="col-md-12">
                                 <div class="col-md-6 box-body">
 
@@ -47,7 +46,7 @@
                                                 <label>Profile Image</label>
                                                 <input type="file" name="empProfile">
                                                 <p class="help-block">Upload Employee Image here.</p>
-                                                <img class="img-responsive img-circle" src="{{ asset('assets/img/recruiter/'.$myempedit->logo) }}" width="100" height="100">
+                                                <img class="img-responsive img-circle" src="{{ asset('assets/img/employee/'.$myempedit->logo) }}" width="100" height="100">
                                             </div>
                                         </div>
                                     </div>

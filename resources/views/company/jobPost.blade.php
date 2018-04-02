@@ -23,7 +23,7 @@
                                         <div class="box box-primary">
                                                 <br>
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('compnayName')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Company Name</h4>
                                                         </div>
@@ -35,6 +35,9 @@
                                                                 <div class="col-md-12">
                                                                     <input id="name" name="compnayName" type="text" placeholder="Name of Company" class="form-control input-md" @if(isset($jobpostedit)) value="{{$jobpostedit->companyname}}" @endif>
                                                                     <span class="help-block">Please type in your full name</span>
+                                                                    @if($errors->first('compnayName'))
+                                                                        <p class="text-danger"> {{$errors->first('compnayName')}} </p>
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -42,7 +45,7 @@
                                                 </div><br>
 												
 												<div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('companylogo')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Company logo</h4>
                                                         </div>
@@ -61,6 +64,9 @@
 																<div class="row">
 																	<div class="col-md-12">
 																		<input type="file" name="companylogo" id="companylogo">
+                                                                        @if($errors->first('companylogo'))
+                                                                            <p class="text-danger"> {{$errors->first('companylogo')}} </p>
+                                                                        @endif
 																	</div>
 																</div>
 															</div>
@@ -69,7 +75,7 @@
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('jobType')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Job Type</h4>
                                                         </div>
@@ -87,6 +93,9 @@
                                                                                 <option value="Company Base" @if(isset($jobpostedit)) value="Company Base" @if($jobpostedit->jobtype=='Company Base')selected="selected" @endif @endif>Company Base</option>
                                                                             </select>
                                                                         </label>
+                                                                        @if($errors->first('jobType'))
+                                                                            <p class="text-danger"> {{$errors->first('jobType')}} </p>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -95,7 +104,7 @@
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('department')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Department</h4>
                                                         </div>
@@ -115,6 +124,9 @@
                                                                                 <option value="Accounting" @if(isset($jobpostedit)) value="Accounting" @if($jobpostedit->department=='Accounting')selected="selected" @endif @endif>Accounting</option>
                                                                             </select>
                                                                         </label>
+                                                                        @if($errors->first('department'))
+                                                                            <p class="text-danger"> {{$errors->first('department')}} </p>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -123,7 +135,7 @@
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('term')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Term</h4>
                                                         </div>
@@ -137,13 +149,16 @@
                                                                     &nbsp;&nbsp;
                                                                     <input id="term" type="radio" name="term" value="Short Term" @if(isset($jobpostedit)) value="Short Term" @if($jobpostedit->term=='Short Term')checked="checked" @endif @endif>&nbsp;<strong>Short Term</strong>
                                                                 </div>
+                                                                @if($errors->first('term'))
+                                                                    <p class="text-danger"> {{$errors->first('term')}} </p>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('termPeriod')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Term Period</h4>
                                                         </div>
@@ -155,6 +170,9 @@
                                                                 <div class="col-md-12">
                                                                     <input id="termPeriod" name="termPeriod" type="text" placeholder="Termperiod (Ex: No of Weeks,No of Days..etc)" class="form-control input-md" @if(isset($jobpostedit)) value="{{$jobpostedit->termperiod}}" @endif>
                                                                     <span class="help-block">Please type in term period</span>
+                                                                    @if($errors->first('termPeriod'))
+                                                                        <p class="text-danger"> {{$errors->first('termPeriod')}} </p>
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -162,7 +180,7 @@
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('experience')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Experience</h4>
                                                         </div>
@@ -173,14 +191,17 @@
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
                                                                     <div class="search-category-container">
-                                                                    <select id="experiance" name="experiance" class="form-control dropdown-product selectpicker">
+                                                                    <select id="experience" name="experience" class="form-control dropdown-product selectpicker">
                                                                         <option value="">Select</option>
                                                                         <option value="Fresher" @if(isset($jobpostedit)) value="Fresher" @if($jobpostedit->experience=='Fresher')selected="selected" @endif @endif>Fresher</option>
                                                                         @for($i=1;$i<=15;$i++)
                                                                             <option value="{{$i}}" @if(isset($jobpostedit)) value="{{$i}}" @if($jobpostedit->experience==$i)selected="selected" @endif @endif>{{$i}} Year</option>
                                                                         @endfor
                                                                     </select>
-                                                                </div>
+                                                                    </div>
+                                                                    @if($errors->first('experience'))
+                                                                        <p class="text-danger"> {{$errors->first('experience')}} </p>
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -188,7 +209,7 @@
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('payment')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Payment</h4>
                                                         </div>
@@ -200,6 +221,9 @@
                                                                 <div class="col-md-12">
                                                                     <input id="payment" name="payment" type="number" placeholder="Payment" class="form-control input-md" @if(isset($jobpostedit)) value="{{$jobpostedit->payment}}" @endif>
                                                                     <span class="help-block">Please type in your Payment that you Give</span>
+                                                                    @if($errors->first('payment'))
+                                                                        <p class="text-danger"> {{$errors->first('payment')}} </p>
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -207,7 +231,7 @@
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('noOfPostion')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>No. of Positions</h4>
                                                         </div>
@@ -227,6 +251,9 @@
                                                                             </select>
                                                                             <span class="help-block">Please select number of position</span>
                                                                         </label>
+                                                                        @if($errors->first('noOfPostion'))
+                                                                            <p class="text-danger"> {{$errors->first('noOfPostion')}} </p>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -235,7 +262,7 @@
                                                 </div><br>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 @if($errors->first('description')) has-error @endif">
                                                         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                                                             <h4>Job Description</h4>
                                                         </div>
@@ -248,6 +275,9 @@
                                                                 <div class="col-md-12">
                                                                     <textarea id="description" name="description" placeholder="Description" class="form-control input-md">@if(isset($jobpostedit)) {{$jobpostedit->jobdescription}} @endif</textarea>
                                                                     <span class="help-block">Please provide brief job Description</span>
+                                                                    @if($errors->first('description'))
+                                                                        <p class="text-danger"> {{$errors->first('description')}} </p>
+                                                                    @endif
 																</div>
                                                             </div>
                                                         </div>

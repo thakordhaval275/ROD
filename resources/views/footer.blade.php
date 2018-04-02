@@ -16,11 +16,8 @@
                     <div class="widget">
                         <h3 class="block-title">Quick Links</h3>
                         <ul class="menu">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">License</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{route('about')}}">About Us</a></li>
+                            <li><a href="{{route('contactus')}}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -28,11 +25,11 @@
                     <div class="widget">
                         <h3 class="block-title">Trending Jobs</h3>
                         <ul class="menu">
-                            <li><a href="#">Android Developer</a></li>
-                            <li><a href="#">Senior Accountant</a></li>
-                            <li><a href="#">Frontend Developer</a></li>
-                            <li><a href="#">Junior Tester</a></li>
-                            <li><a href="#">Project Manager</a></li>
+                            <li><a href="{{route('login')}}">Android Developer</a></li>
+                            <li><a href="{{route('login')}}">Senior Accountant</a></li>
+                            <li><a href="{{route('login')}}">Frontend Developer</a></li>
+                            <li><a href="{{route('login')}}">Junior Tester</a></li>
+                            <li><a href="{{route('login')}}">Project Manager</a></li>
                         </ul>
                     </div>
                 </div>
@@ -47,10 +44,6 @@
                             <a class="linkedin" href="#"><i class="ti-linkedin"></i></a>
                         </div>
                         <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
-                        <form class="subscribe-box">
-                            <input type="text" placeholder="Your email">
-                            <input type="submit" class="btn-system" value="Send">
-                        </form>
                     </div>
                 </div>
             </div>

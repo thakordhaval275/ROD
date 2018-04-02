@@ -16,7 +16,7 @@ class CreateMyEmployeesTable extends Migration
         Schema::create('my_employees', function (Blueprint $table) {
             $table->increments('id');
             $table->string('logo')->nullable();
-            $table->string('aboutself')->nullable();
+            $table->string('aboutself',1000)->nullable();
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('address')->nullable();
@@ -24,7 +24,7 @@ class CreateMyEmployeesTable extends Migration
             $table->string('gender')->nullable();
             $table->date('bdate')->nullable();
             $table->string('contectno')->nullable();
-            $table->string('emailid')->unique();
+            $table->string('emailid')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('country')->nullable();
@@ -41,6 +41,7 @@ class CreateMyEmployeesTable extends Migration
             $table->string('expiriencemonth')->nullable();
             $table->string('keyskill')->nullable();
             $table->string('usertype')->nullable();
+            $table->string('useremail')->nullable();
             $table->timestamps();
         });
     }

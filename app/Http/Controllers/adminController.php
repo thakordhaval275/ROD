@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CompanyProfileModel;
+use App\Contact;
 use App\ContactUs;
 use App\EmployeeProfileModel;
 use App\MyEmployee;
@@ -24,8 +25,7 @@ class adminController extends Controller
 
     public function contactuslist()
     {
-        $contact=ContactUs::get();
-        dd($contact);
+        $contact=Contact::get();
         return view('admin.contactusList',['contact'=>$contact]);
     }
 
@@ -258,12 +258,35 @@ class adminController extends Controller
         return view('admin.recruiter.sendProposalList',['Proposal'=>$proposal]);
     }
 
+    public function destroyProposal($id)
+    {
+        $proposal = Proposal::find($id);
+        $proposal->delete();
+
+        if(Auth::user()->usertype==0)
+        {
+            return redirect(route('sendProposalList'));
+        }
+        else
+        {
+            return redirect(route('myProposal'));
+        }
+    }
+
     public function destroymyemp($id)
     {
         $myemployee = MyEmployee::find($id);
         $myemployee->delete();
 
-        return redirect(route('myEmployeeList'));
+        $usertype=Auth::user()->usertype;
+        if($usertype==0)
+        {
+            return redirect(route('myEmployeeList'));
+        }
+        else if($usertype==2)
+        {
+            return redirect(Route('myEmployee'));
+        }
     }
 	
 

@@ -28,9 +28,9 @@
 
                             <h3 class="profile-username text-center">{{$employee->firstname}} {{$employee->lastname}}</h3>
 
-                            <p class="text-muted text-center">Software Engineer</p>
+                            <p class="text-muted text-center"></p>
 
-                            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                            {{--<a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>--}}
                         </div>
                         <!-- /.box-body -->
                     </div>

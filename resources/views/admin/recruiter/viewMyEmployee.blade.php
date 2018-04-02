@@ -24,13 +24,13 @@
                     <!-- Profile Image -->
                     <div class="box box-primary">
                         <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="{{ asset('assets/img/recruiter/').'/'.$myemp->logo}}" alt="User profile picture">
+                            <img class="profile-user-img img-responsive img-circle" src="{{ asset('assets/img/employee/').'/'.$myemp->logo}}" alt="User profile picture">
 
                             <h3 class="profile-username text-center">{{$myemp->firstname}} {{$myemp->lastname}}</h3>
 
-                            <p class="text-muted text-center">Software Engineer</p>
+                            <p class="text-muted text-center"> {{$myemp->keyskill}} </p>
 
-                            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                            {{--<a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>--}}
                         </div>
                         <!-- /.box-body -->
                     </div>

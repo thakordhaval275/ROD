@@ -24,8 +24,8 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>id</th>
+                                    <th>Name</th>
                                     <th>Email id</th>
                                     <th>Relation to Rod</th>
                                     <th>Company</th>
@@ -33,6 +33,7 @@
                                     <th>Country</th>
                                     <th>Contact No</th>
                                     <th>How can we help</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
 
@@ -40,18 +41,15 @@
                                 @foreach($contact as $list)
                                     <tr>
                                         <td>{{$list->id}}</td>
-                                        <td>{{$list->firstname}}</td>
-                                        <td>{{$list->lastname}}</td>
-                                        <td>{{$list->city}}</td>
-                                        <td>{{$list->gender}}</td>
+                                        <td>{{$list->firstname}} {{$list->lastname}}</td>
                                         <td>{{$list->emailid}}</td>
-                                        <td>{{$list->postgraduate}}</td>
-                                        <td>{{$list->graduate}}</td>
-                                        <td>{{$list->expirienceyear}}</td>
-                                        <td>{{$list->keyskill}}</td>
-                                        <td><a href="{{route('viewEmployee',['id'=>$list->id])}}"><i class="fa fa-eye"></i> </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('editEmployee',['id'=>$list->id])}}"><i class="fa fa-pencil"></i></a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('destroyEmployee',['id'=>$list->id])}}"><i class="fa fa-trash"></i></a></td>
+                                        <td>{{$list->relationtorod}}</td>
+                                        <td>{{$list->company}}</td>
+                                        <td>{{$list->other}}</td>
+                                        <td>{{$list->country}}</td>
+                                        <td>{{$list->contactno}}</td>
+                                        <td>{{$list->howcanwehelp}}</td>
+                                        <td class="text-center"><a href="{{route('destroyEmployee',['id'=>$list->id])}}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

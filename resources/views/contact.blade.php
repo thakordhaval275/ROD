@@ -60,33 +60,40 @@
                         <div class="col-md-12">
 
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 @if($errors->first('firstName')) has-error @endif">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+                                        @if($errors->first('firstName'))
+                                            <p class="text-danger"> {{$errors->first('firstName')}} </p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 @if($errors->first('lastName')) has-error @endif">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
-                                        <div class="help-block with-errors"></div>
+                                        @if($errors->first('lastName'))
+                                            <p class="text-danger"> {{$errors->first('lastName')}} </p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 @if($errors->first('emailid')) has-error @endif">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="emailid" name="emailid" placeholder="E-mail Address">
-                                        <div class="help-block with-errors"></div>
+                                        @if($errors->first('emailid'))
+                                            <p class="text-danger"> {{$errors->first('emailid')}} </p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 @if($errors->first('relationship')) has-error @endif">
                                     <div class="form-group">
                                         <div class="search-category-container">
                                             <label class="styled-select">
@@ -98,52 +105,65 @@
                                                     <option value="Other">Other</option>
                                                 </select>
                                             </label>
+                                            @if($errors->first('relationship'))
+                                                <p class="text-danger"> {{$errors->first('relationship')}} </p>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 @if($errors->first('companyName')) has-error @endif">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company/Organization">
-                                        <div class="help-block with-errors"></div>
+                                        @if($errors->first('companyName'))
+                                            <p class="text-danger"> {{$errors->first('companyName')}} </p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 @if($errors->first('other')) has-error @endif">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="other" name="other" placeholder="If Other, please specify">
-                                        <div class="help-block with-errors"></div>
+                                        @if($errors->first('other'))
+                                            <p class="text-danger"> {{$errors->first('other')}} </p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 @if($errors->first('country')) has-error @endif">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="country" name="country" placeholder="Country/Region">
-                                        <div class="help-block with-errors"></div>
+                                        @if($errors->first('country'))
+                                            <p class="text-danger"> {{$errors->first('country')}} </p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 @if($errors->first('contactNo')) has-error @endif">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="contactno" name="contactNo" placeholder="Contact No">
-                                        <div class="help-block with-errors"></div>
+                                        @if($errors->first('contactNo'))
+                                            <p class="text-danger"> {{$errors->first('contactNo')}} </p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 @if($errors->first('howCanIHelp')) has-error @endif">
                                     <div class="form-group">
                                         <textarea class="form-control" placeholder="How can we help you ?" rows="11" name="howCanIHelp"></textarea>
-                                        <div class="help-block with-errors"></div>
+                                        @if($errors->first('howCanIHelp'))
+                                            <p class="text-danger"> {{$errors->first('howCanIHelp')}} </p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

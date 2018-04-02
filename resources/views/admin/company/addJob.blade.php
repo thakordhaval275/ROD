@@ -132,18 +132,18 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12 @if($errors->first('experiance')) has-error @endif">
+                                        <div class="col-md-12 @if($errors->first('experience')) has-error @endif">
                                             <div class="form-group">
                                                 <label>Experience</label>
-                                                <select  id="experiance" name="experiance" class="form-control select2" style="width: 100%;">
+                                                <select  id="experiance" name="experience" class="form-control select2" style="width: 100%;">
                                                     <option value="">Select</option>
                                                     <option value="Fresher">Fresher</option>
                                                     @for($i=1;$i<=15;$i++)
                                                         <option>{{$i}} Year</option>
                                                     @endfor
                                                 </select>
-                                                @if($errors->first('experiance'))
-                                                    <p class="text-danger"> {{$errors->first('experiance')}} </p>
+                                                @if($errors->first('experience'))
+                                                    <p class="text-danger"> {{$errors->first('experience')}} </p>
                                                 @endif
                                             </div>
                                         </div>
