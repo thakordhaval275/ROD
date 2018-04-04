@@ -28,7 +28,7 @@
                         </li>
                         @if(!Auth::user())
                             <li>
-                                <a href="">Services <i class="fa fa-angle-down"></i></a>
+                                <a>Services <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown">
                                     <li>
                                         <a href="{{route('login')}}"><i class="fa fa-briefcase"></i> Company</a>
@@ -44,7 +44,7 @@
                         @else
                             @if(Auth::user()->usertype=="1")
                                 <li>
-                                    <a href="">Services <i class="fa fa-angle-down"></i></a>
+                                    <a>Services <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown">
                                         <li>
                                             <a href="{{route('myProposal')}}"><i class="ti-list"></i> Proposal List</a>
@@ -59,7 +59,7 @@
                                 </li>
                             @elseif(Auth::user()->usertype=="2")
                                 <li>
-                                    <a href="">Services <i class="fa fa-angle-down"></i></a>
+                                    <a>Services <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown">
                                         <li>
                                             <a href="{{route('myProposal')}}"><i class="ti-list"></i>My Proposal List</a>
