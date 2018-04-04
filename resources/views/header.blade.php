@@ -88,11 +88,11 @@
                         @else
                             <li class="right"><a href="{{route('userLogout')}}"><i class="ti-unlock"></i>Log out</a></li>
                             @if(Auth::user()->usertype=="1")
-                                <li class="left"><a href="{{route('companyProfile')}}"><i class="ti-user"></i>Profile</a></li>
+                                <li class="left"><a href="{{route('companyProfile')}}"><i class="ti-user"></i>Company Profile</a></li>
                             @elseif(Auth::user()->usertype=="2")
-                                <li class="left"><a href="{{route('recruiterProfile')}}"><i class="ti-user"></i>My Profile</a></li>
+                                <li class="left"><a href="{{route('recruiterProfile')}}"><i class="ti-user"></i>Recruiter Profile</a></li>
                             @elseif(Auth::user()->usertype=="3")
-                                <li class="left"><a href="{{route('employeeProfile')}}"><i class="ti-user"></i>My Profile</a></li>
+                                <li class="left"><a href="{{route('employeeProfile')}}"><i class="ti-user"></i>Employee Profile</a></li>
                             @endif
                         @endif
                     </ul>

@@ -1,7 +1,7 @@
 @extends('mainlayout')
 
 @section('pageheader')
-    Profile
+    Recruiter Profile
 @endsection
 
 @section('contain')

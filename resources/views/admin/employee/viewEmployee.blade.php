@@ -7,7 +7,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                View Recruiter's Employee
+                View Employee
             </h1>
             <ol class="breadcrumb">
                 <li><a href="{{route('adminindex')}}"><i class="fa fa-dashboard"></i> Home</a></li>

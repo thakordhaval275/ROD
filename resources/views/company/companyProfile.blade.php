@@ -1,7 +1,7 @@
 @extends('mainlayout')
 
 @section('pageheader')
-    Profile
+    Company Profile
 @endsection
 
 @section('contain')
