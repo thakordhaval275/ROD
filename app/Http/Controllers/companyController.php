@@ -245,7 +245,7 @@ class companyController extends Controller
         }
         else{
             $viewJob=JobPostModel::get();
-            return view('company.viewPostJobs',['JobPost'=>$viewJob]);
+            return view('company.viewPostJobs',['JobPost'=>$viewJob,'categories'=>$categories]);
         }
     }
     
