@@ -191,8 +191,8 @@
     <!-- Google Maps JS Only for Contact Pages -->
     <script type="text/javascript">
         var map;
-        var defult = new google.maps.LatLng(23.749574, 90.396594,15);
-        var mapCoordinates = new google.maps.LatLng(23.749574, 90.396594,15);
+        var defult = new google.maps.LatLng(22.310696,73.192635,30);
+        var mapCoordinates = new google.maps.LatLng(22.310696,73.192635,30);
 
         var markers = [];
         var image = new google.maps.MarkerImage(

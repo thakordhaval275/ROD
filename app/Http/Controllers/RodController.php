@@ -26,7 +26,8 @@ class RodController extends Controller
 
     public function index()
     {
-        return view('index');
+        $compnay=CompanyProfileModel::get();
+        return view('index',['company'=>$compnay]);
     }
 
     public function about()

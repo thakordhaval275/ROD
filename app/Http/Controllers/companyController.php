@@ -237,13 +237,15 @@ class companyController extends Controller
     {
         $useremail=Auth::user()->email;
 
+        $categories=JobPostModel::distinct()->select('department')->get();
+       //dd($categories);
         if(Auth::user()->usertype==1) {
             $viewJob=JobPostModel::where('useremail',$useremail)->get();
-            return view('company.viewPostJobs',['JobPost'=>$viewJob]);
+            return view('company.viewPostJobs',['JobPost'=>$viewJob,'categories'=>$categories]);
         }
         else{
             $viewJob=JobPostModel::get();
-            return view('company.viewPostJobs',['JobPost'=>$viewJob]);
+            return view('company.viewPostJobs',['JobPost'=>$viewJob,'categories'=>$categories]);
         }
     }
     

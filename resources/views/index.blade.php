@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-1 col-sm-6">
-                                        <button type="button" class="btn btn-search-icon"><i class="ti-search"></i></button>
+                                        <button type="button" class="btn btn-search-icon" id=""><i class="ti-search"></i></button>
                                     </div>
                             </div>
                         </form>
@@ -195,7 +195,41 @@
         <h2 class="section-title">Our Top Companies</h2>
         <div class="row">
             <div class="col-md-12">
-                <h4 class="text-center">Our Top Companies Add Text here</h4>
+                <div class="row">
+                    @foreach($company as $company)
+                        @if(count($company)<=3)
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 blog-item">
+                                <!-- Blog Item Starts -->
+                                <div class="blog-item-wrapper">
+                                    <div class="blog-item-img">
+                                        <a href="single-post.html">
+                                            <img src="{{ asset('assets/img/company').'/'.$company->logo}}" width="70%" height="70%">
+                                        </a>
+                                    </div>
+                                    <div class="blog-item-text">
+                                        <div class="meta-tags">
+                                            <span class="date"><i class="ti-calendar"></i> 22-1-18</span>
+                                            <span class="comments"><a href="#"><i class="ti-comment-alt"></i> 5 Comments</a></span>
+                                        </div>
+                                        <a href="#">
+                                            <h3>
+                                                {{$company->companyname}}
+                                            </h3>
+                                        </a>
+                                        <h6>Location:
+                                            {{$company->address}},&nbsp;{{$company->location}}
+                                        </h6>
+                                        <h6>
+                                            Website:{{$company->website}}
+                                        </h6>
+                                        <a href="#" class="btn btn-common btn-rm">Read More</a>
+                                    </div>
+                                </div>
+                            @endif
+                    </div>
+
+                        @endforeach
+                </div>
             </div>
         </div>
     </div>
