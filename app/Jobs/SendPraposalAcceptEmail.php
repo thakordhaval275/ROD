@@ -41,7 +41,7 @@ class SendPraposalAcceptEmail implements ShouldQueue
 
         Mail::send($template_path, $data, function($message)  {
             // Set the receiver and subject of the mail.
-            $message->to('shikhasshukla@yahoo.com', 'fvds')->subject('Praposal Accepted');
+            $message->to('machhijanki282@gmail.com', 'fvds')->subject('Praposal Accepted');
             // Set the sender
             $message->from(env('MAIL_USERNAME'),'fds');
         });

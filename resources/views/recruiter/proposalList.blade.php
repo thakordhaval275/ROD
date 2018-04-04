@@ -30,7 +30,7 @@
                                     <div class="col-md-6">
                                         <h5>Key Skill :</h5>{{$data->keyskill}}
                                         <br><br>
-                                        <h5>Proposal Status :</h5>@if($data->status=="") Pending @else {{$data->status}} @endif
+                                        <h5>Proposal Status :</h5>@if($data->status=="1") Pending @elseif($data->status=="2")) Accepted @endif
                                     </div><!--/col-6--><br><br><br>
                                     <div class="col-md-12">
                                         <br>
@@ -59,7 +59,7 @@
                                         <div class="icon">
                                             <a href="{{route('destroyProposal',['id'=>$data->id])}}"><i class="ti-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a>
                                         </div>
-                                        <div class="btn btn-common btn-rm">@if($data->status!="") Send Email @else Pending @endif</div>
+                                        <div class="btn btn-common btn-rm">@if($data->status=="2") Send Email @else Pending @endif</div>
                                     @endif
                                 </div>
                             </div>

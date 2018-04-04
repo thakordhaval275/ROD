@@ -407,9 +407,9 @@ class recruiterController extends Controller
     {
 
         $proposal=Proposal::find($request->id);
-//
-//        $proposal->status=Proposal::Accepted;
-//        $proposal->save();
+
+        $proposal->status=Proposal::Accepted;
+        $proposal->save();
 
         $this->dispatch(new SendPraposalAcceptEmail($proposal->emailid,$proposal->companyemail));
 
