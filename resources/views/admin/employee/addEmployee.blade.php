@@ -260,6 +260,19 @@
                                               @endif
 										  </div>
 									  </div>
+								  </div><br>
+
+								  <div class="row">
+									  <div class="col-md-12" @if($errors->first('resume')) has-error @endif>
+										  <div class="form-group">
+											  <label>Resume</label>
+											  <input type="file" name="resume" id="resume">
+											  <p class="help-block">Upload Employee Resume here.</p>
+											  @if($errors->first('resume'))
+												  <p class="text-danger"> {{$errors->first('resume')}} </p>
+											  @endif
+										  </div>
+									  </div>
 								  </div>
 
 							  </div>

@@ -81,6 +81,7 @@ class employeeController extends Controller
             'experianceYear'=>'required',
             'experianceMonth'=>'required',
             'keySkill'=>'required',
+            'resume'=>'required',
 
         ]);
 
@@ -89,6 +90,11 @@ class employeeController extends Controller
         $destinationPath = 'assets/img/employee/';
         $image->move($destinationPath, $input);
 
+        $pdf=$request->file('resume');
+        $pdfinput=time().'.'.$pdf->getClientOriginalExtension();
+        $destinationPath='assets/pdf/resume/';
+        $pdf->move($destinationPath,$pdfinput);
+        
         EmployeeProfileModel::create([
             'logo'=>$input,
             'aboutself'=>$request['aboutMe'],
@@ -115,6 +121,7 @@ class employeeController extends Controller
             'expirienceyear'=>$request['experianceYear'],
             'expiriencemonth'=>$request['experianceMonth'],
             'keyskill'=>$request['keySkill'],
+            'resume'=>$pdfinput,
             'usertype'=>$request['userType']
         ]);
 
@@ -170,6 +177,16 @@ class employeeController extends Controller
             $input = $request->hiddenLogo;
         }
 
+        if($request->file('resume')!=""){
+
+            $pdf=$request->file('resume');
+            $pdfinput=time().'.'.$pdf->getClientOriginalExtension();
+            $destinationPath='assets/pdf/resume/';
+            $pdf->move($destinationPath,$pdfinput);
+        } else {
+            $pdfinput = $request->hiddenpdf;
+        }
+
         $employe=EmployeeProfileModel::find($request->id);
         $employe->logo=$input;
         $employe->aboutself=$request->aboutMe;
@@ -195,6 +212,7 @@ class employeeController extends Controller
         $employe->expirienceyear=$request->experianceYear;
         $employe->expiriencemonth=$request->experianceMonth;
         $employe->keyskill=$request->keySkill;
+        $employe->resume=$pdfinput;
         $employe->usertype=$request->userType;
         $employe->save();
 

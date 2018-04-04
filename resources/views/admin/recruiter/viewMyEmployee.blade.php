@@ -44,6 +44,10 @@
                         <!-- /.box-header -->
                         <div class="box-body">
 
+                            <strong><i class="fa fa-file-pdf-o margin-r-5"></i><a href="{{asset('assets/pdf/resume').'/'.$myemp->resume}}" target="_blank"> Click to View Resume</a></strong>
+
+                            <hr>
+
                             <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
                             <p class="text-muted">{{$myemp->city}}</p>

@@ -269,6 +269,7 @@ class recruiterController extends Controller
                 'expirienceyear'=>$myemp['expirienceyear'],
                 'expiriencemonth'=>$myemp['expiriencemonth'],
                 'keyskill'=>$myemp['keyskill'],
+                'resume'=>$myemp['resume'],
                 'usertype'=>$usertype,
                 'useremail'=>$useremail
             ]);
@@ -342,6 +343,7 @@ class recruiterController extends Controller
         $employe->expirienceyear=$request->experianceYear;
         $employe->expiriencemonth=$request->experianceMonth;
         $employe->keyskill=$request->keySkill;
+
         $employe->usertype=$request->userType;
         $employe->save();
 
