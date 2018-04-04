@@ -30,7 +30,7 @@
                                     <div class="col-md-6">
                                         <h5>Key Skill :</h5>{{$data->keyskill}}
                                         <br><br>
-                                        <h5>Proposal Status :</h5>@if($data->status=="1") Pending @elseif($data->status=="2")) Accepted @endif
+                                        <h5>Proposal Status :</h5>@if($data->status=="1") Pending @elseif($data->status=="2") Accepted @endif
                                     </div><!--/col-6--><br><br><br>
                                     <div class="col-md-12">
                                         <br>
