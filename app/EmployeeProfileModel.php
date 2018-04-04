@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class EmployeeProfileModel extends Model
 {
-    protected $fillable=['logo','aboutself','firstname','lastname','address','pincode','gender','bdate','contectno','emailid','city','state','country','hometown','maritalstatus','postgraduate','graduate','classxii','classx','otherque','industry','preferredlocation','expirienceyear','expiriencemonth','keyskill','usertype'];
+    protected $fillable=['logo','aboutself','firstname','lastname','address','pincode','gender','bdate','contectno','emailid','city','state','country','hometown','maritalstatus','postgraduate','graduate','classxii','classx','otherque','industry','preferredlocation','expirienceyear','expiriencemonth','keyskill','resume','usertype'];
 }

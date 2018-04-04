@@ -20,6 +20,7 @@
             <input type="hidden" name="userType" id="userType" value="{{$employee->usertype}}">
             <input type="hidden" name="id" id="id" value="{{$employee->id}}">
             <input type="hidden" name="hiddenLogo" id="hiddenLogo" value="{{$employee->logo}}">
+            <input type="hidden" name="hiddenpdf" id="hiddenpdf" value="{{$employee->resume}}">
             {{csrf_field()}}
             <section class="content">
 
@@ -41,12 +42,21 @@
                                 <div class="col-md-6 box-body">
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Profile Image</label>
                                                 <input type="file" name="empProfile">
                                                 <p class="help-block">Upload Employee Image here.</p>
                                                 <img class="img-responsive img-circle" src="{{ asset('assets/img/employee/'.$employee->logo) }}" width="100" height="100">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Upload Resume</label>
+                                                <input type="file" name="resume">
+                                                <p class="help-block">Upload Employee Resume here.</p>
+                                                <h5><a href="{{asset('assets/pdf/resume').'/'.$employee->resume}}" target="_blank"><u>Click to show Resume</u></a></h5>
                                             </div>
                                         </div>
                                     </div>
