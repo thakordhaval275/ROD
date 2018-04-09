@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\EmployeeProfileModel;
 use App\JobPostModel;
 use App\Jobs\SendPraposalAcceptEmail;
+use App\Jobs\SendPraposalRejectEmail;
 use App\MyEmployee;
 use App\Proposal;
 use App\RecruiterProfile;
@@ -29,14 +30,19 @@ class recruiterController extends Controller
     public function addmyemployee()
     {
         $myemp=EmployeeProfileModel::get();
-        return view('recruiter.addmyEmployee',['myemp'=>$myemp]);
+
+        $categories=JobPostModel::distinct()->select('department')->get();
+        //dd($categories);
+        return view('recruiter.addmyEmployee',['myemp'=>$myemp,'categories'=>$categories]);
     }
     public function myemployee()
     {
         $useremail=Auth::user()->email;
 
+        $categories=JobPostModel::distinct()->select('department')->get();
+        //dd($categories);
         $myemp=MyEmployee::where('useremail',$useremail)->get();
-        return view('recruiter.myEmployee',['myemp'=>$myemp]);
+        return view('recruiter.myEmployee',['myemp'=>$myemp,'categories'=>$categories]);
     }
     public  function joblist()
     {
@@ -425,6 +431,8 @@ class recruiterController extends Controller
 
         $proposal->status=Proposal::Rejected;
         $proposal->save();
+
+        $this->dispatch(new SendPraposalRejectEmail($proposal->emailid,$proposal->companyemail));
 
         return redirect(route('myProposal'));
     }

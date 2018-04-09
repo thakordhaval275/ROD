@@ -122,6 +122,7 @@
                                                                                 <option value="Finance" @if(isset($jobpostedit)) value="Finance" @if($jobpostedit->department=='Finance')selected="selected" @endif @endif>Finance</option>
                                                                                 <option value="Production" @if(isset($jobpostedit)) value="Production" @if($jobpostedit->department=='Production')selected="selected" @endif @endif>Production</option>
                                                                                 <option value="Accounting" @if(isset($jobpostedit)) value="Accounting" @if($jobpostedit->department=='Accounting')selected="selected" @endif @endif>Accounting</option>
+                                                                                <option value="Bank" @if(isset($jobpostedit)) value="Bank" @if($jobpostedit->department=='Bank')selected="selected" @endif @endif>Bank</option>
                                                                             </select>
                                                                         </label>
                                                                         @if($errors->first('department'))

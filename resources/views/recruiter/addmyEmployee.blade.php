@@ -56,27 +56,11 @@
                             <div class="inner-box">
                                 <h3>Categories</h3>
                                 <ul class="cat-list">
-                                    <li>
-                                        <a href="#">Finance <span class="num-posts">4,287 Jobs</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Techonologies <span class="num-posts">4,256 Jobs</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Art/Design<span class="num-posts">3,245 Jobs</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Science <span class="num-posts">4,256 Jobs</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Education Training <span class="num-posts">4,560 Jobs</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Logistics <span class="num-posts">3,256 Jobs</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Food Services <span class="num-posts">1,256 Jobs</span></a>
-                                    </li>
+                                    @foreach($categories as $category)
+                                        <li>
+                                            <a href="javascript:void(0)">{{$category->department}} </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <div class="inner-box">
