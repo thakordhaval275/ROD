@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\EmployeeProfileModel;
 use App\JobPostModel;
+use App\Jobs\SendAddEmployeeEmail;
 use App\Jobs\SendPraposalAcceptEmail;
 use App\Jobs\SendPraposalRejectEmail;
 use App\MyEmployee;
@@ -280,6 +281,9 @@ class recruiterController extends Controller
                 'useremail'=>$useremail
             ]);
 
+            $myempmail=EmployeeProfileModel::find($myemp->id);
+            $this->dispatch(new SendAddEmployeeEmail($myempmail->emailid,$useremail));
+
             return redirect(Route('myEmployee'));
         }
     }
@@ -415,7 +419,7 @@ class recruiterController extends Controller
     {
 
         $proposal=Proposal::find($request->id);
-
+        $rdata=RecruiterProfile::where('emailid',$proposal->emailid)->get();
         $proposal->status=Proposal::Accepted;
         $proposal->save();
 
