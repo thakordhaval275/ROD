@@ -40,7 +40,7 @@ class SendAddEmployeeEmail implements ShouldQueue
 
         Mail::send($template_path, $data, function($message)  {
             // Set the receiver and subject of the mail.
-            $message->to($this->emailid, 'Welcome to Resource on Demand.')->subject('You Are added Recruiter List');
+            $message->to($this->emailid, 'Welcome to Resource on Demand.')->subject('You Are added in Recruiter List');
             // Set the sender
             $message->from(env('MAIL_USERNAME'),'Resource On Demand');
         });

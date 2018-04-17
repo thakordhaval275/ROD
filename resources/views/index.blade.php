@@ -263,6 +263,7 @@
                     <div class="desc">
                         <h2>Jobs</h2>
                         <h1 class="counter">{{$count}}</h1>
+
                     </div>
                 </div>
             </div>
@@ -274,6 +275,7 @@
                     <div class="desc">
                         <h2>Rrecruiter</h2>
                         <h1 class="counter">{{$recruiter}}</h1>
+
                     </div>
                 </div>
             </div>
@@ -284,7 +286,8 @@
                     </div>
                     <div class="desc">
                         <h2>Resume</h2>
-                        <h1 class="counter">{{$employee}}</h1>
+                             <h1 class="counter">{{$employee}}</h1>
+
                     </div>
                 </div>
             </div>
