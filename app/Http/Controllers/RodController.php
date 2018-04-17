@@ -132,7 +132,7 @@ class RodController extends Controller
 
             if($usertype=='1')
             {
-                return redirect(route('companyProfile'));
+                return redirect(route('companyProfile'))->with('success', 'You are successfully logged in');
             }
             else if($usertype=='2')
             {
