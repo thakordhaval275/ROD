@@ -26,8 +26,12 @@ class RodController extends Controller
 
     public function index()
     {
-        $compnay=CompanyProfileModel::get();
-        return view('index',['company'=>$compnay]);
+        $count=\App\JobPostModel::count();
+        $recruiter=\App\RecruiterProfile::count();
+        $company=\App\CompanyProfileModel::count();
+        $employee=\App\EmployeeProfileModel::count();
+
+        return view('index',['count'=>$count,'recruiter'=>$recruiter,'company'=>$company,'employee'=>$employee]);
     }
 
     public function about()
@@ -132,7 +136,7 @@ class RodController extends Controller
 
             if($usertype=='1')
             {
-                return redirect(route('companyProfile'));
+                return redirect(route('companyProfile'))->with('success', 'You are successfully logged in');
             }
             else if($usertype=='2')
             {

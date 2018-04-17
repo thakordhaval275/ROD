@@ -64,7 +64,7 @@
         <h2 class="section-title">Who We are ?</h2>
         <div class="row">
             <div class="col-md-12">
-                <h4 class="text-center">Who We are ? Add Text here</h4>
+                <h4 class="text-left">Many industries like marketing, constructions, interior designers don't want to hire the employees for long term due to limited budget and short term work. They have to waste lot of time to hire resource without any contacts. They are losing their client due to not able to get reliable resource on time and experts in skills. Our online site is solution for that industries where they can easily got skilled and reliable resources from large number of recruiters who already have lot of skill contacts with their dictionary. This system beneficial for all industries, as well the skilled employees who are looking for side short term job due to their additional skills. This help recruiters maintain lot of contacts give much better reputation in market. </h4>
             </div>
         </div>
     </div>
@@ -190,14 +190,14 @@
 <!-- Our Top Team Section End -->
 
 <!-- Our Top Companies Section Start -->
-<section class="find-job section">
-    <div class="container">
-        <h2 class="section-title">Our Top Companies</h2>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    @if(!Auth::user())
-                    @endif
+{{--<section class="find-job section">--}}
+    {{--<div class="container">--}}
+        {{--<h2 class="section-title">Our Top Companies</h2>--}}
+        {{--<div class="row">--}}
+            {{--<div class="col-md-12">--}}
+                {{--<div class="row">--}}
+                    {{--@if(!Auth::user())--}}
+                    {{--@endif--}}
                     {{--@foreach($company as $company)--}}
                         {{--@if(count($company)<=3)--}}
                             {{--<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 blog-item">--}}
@@ -231,11 +231,11 @@
                     {{--</div>--}}
 
                         {{--@endforeach--}}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</section>--}}
 <!-- Our Top Companies Section End -->
 
 <!-- Our Happy Employees Section Start -->
@@ -262,7 +262,7 @@
                     </div>
                     <div class="desc">
                         <h2>Jobs</h2>
-                        <h1 class="counter">12050</h1>
+                        <h1 class="counter">{{$count}}</h1>
                     </div>
                 </div>
             </div>
@@ -273,7 +273,7 @@
                     </div>
                     <div class="desc">
                         <h2>Rrecruiter</h2>
-                        <h1 class="counter">10890</h1>
+                        <h1 class="counter">{{$recruiter}}</h1>
                     </div>
                 </div>
             </div>
@@ -284,7 +284,7 @@
                     </div>
                     <div class="desc">
                         <h2>Resume</h2>
-                        <h1 class="counter">700</h1>
+                        <h1 class="counter">{{$employee}}</h1>
                     </div>
                 </div>
             </div>
@@ -295,7 +295,7 @@
                     </div>
                     <div class="desc">
                         <h2>Company</h2>
-                        <h1 class="counter">9050</h1>
+                        <h1 class="counter">{{$company}}</h1>
                     </div>
                 </div>
             </div>
@@ -309,17 +309,13 @@
     <div class="container">
         <h2 class="section-title">Our Top Companies</h2>
         <div class="row">
+            @foreach($topcmp as $cmplist)
             <div class="touch-slider" class="owl-carousel owl-theme">
                 <div class="item active text-center">
-                    <img class="img-member" src="assets/img/clients/img1.png" alt="">
-                </div>
-                <div class="item text-center">
-                    <img class="img-member" src="assets/img/clients/img3.png" alt="">
-                </div>
-                <div class="item text-center">
-                    <img class="img-member" src="assets/img/clients/img5.png" alt="">
+                    <img class="img-member" src="{{ asset('assets/img/company').'/'.$cmplist->logo}}" width="400" height="250" alt="">
                 </div>
             </div>
+                @endforeach
         </div>
     </div>
 </section>
