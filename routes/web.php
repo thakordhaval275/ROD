@@ -12,7 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    $count=\App\JobPostModel::count();
+    $recruiter=\App\RecruiterProfile::count();
+    $company=\App\CompanyProfileModel::count();
+    $employee=\App\EmployeeProfileModel::count();
+
+    $topcmp=\App\CompanyProfileModel::get();
+    return view('index',['count'=>$count,'recruiter'=>$recruiter,'company'=>$company,'employee'=>$employee,'topcmp'=>$topcmp]);
 });
 
 //============================================================= Frontend ======================================================================

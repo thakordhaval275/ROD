@@ -262,7 +262,8 @@
                     </div>
                     <div class="desc">
                         <h2>Jobs</h2>
-                        <h1 class="counter">10</h1>
+                        <h1 class="counter">{{$count}}</h1>
+
                     </div>
                 </div>
             </div>
@@ -273,7 +274,8 @@
                     </div>
                     <div class="desc">
                         <h2>Rrecruiter</h2>
-                        <h1 class="counter">10</h1>
+                        <h1 class="counter">{{$recruiter}}</h1>
+
                     </div>
                 </div>
             </div>
@@ -284,7 +286,8 @@
                     </div>
                     <div class="desc">
                         <h2>Resume</h2>
-                        <h1 class="counter">7</h1>
+                             <h1 class="counter">{{$employee}}</h1>
+
                     </div>
                 </div>
             </div>
@@ -295,7 +298,7 @@
                     </div>
                     <div class="desc">
                         <h2>Company</h2>
-                        <h1 class="counter">10</h1>
+                        <h1 class="counter">{{$company}}</h1>
                     </div>
                 </div>
             </div>
@@ -309,17 +312,13 @@
     <div class="container">
         <h2 class="section-title">Our Top Companies</h2>
         <div class="row">
+            @foreach($topcmp as $cmplist)
             <div class="touch-slider" class="owl-carousel owl-theme">
                 <div class="item active text-center">
-                    <img class="img-member" src="assets/img/clients/img1.png" alt="">
-                </div>
-                <div class="item text-center">
-                    <img class="img-member" src="assets/img/clients/img3.png" alt="">
-                </div>
-                <div class="item text-center">
-                    <img class="img-member" src="assets/img/clients/img5.png" alt="">
+                    <img class="img-member" src="{{ asset('assets/img/company').'/'.$cmplist->logo}}" width="400" height="250" alt="">
                 </div>
             </div>
+                @endforeach
         </div>
     </div>
 </section>
