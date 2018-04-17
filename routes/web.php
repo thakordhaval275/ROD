@@ -38,52 +38,49 @@ Route::post('contactstore','RodController@contactstore')->name('contactstore');
 
 //===========================================================================================================================================
 //Company Pages
-Route::get('/company/companyjobpost','companyController@jobpost')->name('jobpost'); //jobpost new
-Route::get('/company/companyjobpostedit/{id}','companyController@jobpostedit')->name('jobpostEdit'); //jobpost new
-Route::get('/company/companyprofile','companyController@companyprofile')->name('companyProfile');//company Profile
-Route::get('/company/companyedit','companyController@companyedit')->name('companyEdit');//company Edit Profile
-Route::get('/company/viewjobs','companyController@viewjobs')->name('viewJobs');//view PostJobs
-Route::get('/company/jobdetail/{id}','companyController@jobdetail')->name('jobDetail');//Job Detail
-Route::get('/company/accept/proposal','recruiterController@acceptProposal')->name('acceptProposal');//Proposal List
-Route::get('/company/reject/proposal','recruiterController@rejectProposal')->name('rejectProposal');//Proposal List
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/company/companyjobpost','companyController@jobpost')->name('jobpost'); //jobpost new
+    Route::get('/company/companyjobpostedit/{id}','companyController@jobpostedit')->name('jobpostEdit'); //jobpost new
+    Route::get('/company/companyprofile', 'companyController@companyprofile')->name('companyProfile');//company Profile
+    Route::get('/company/companyedit', 'companyController@companyedit')->name('companyEdit');//company Edit Profile
+    Route::get('/company/viewjobs', 'companyController@viewjobs')->name('viewJobs');//view PostJobs
+    Route::get('/company/jobdetail/{id}', 'companyController@jobdetail')->name('jobDetail');//Job Detail
+    Route::get('/company/accept/proposal', 'recruiterController@acceptProposal')->name('acceptProposal');//Proposal List
+    Route::get('/company/reject/proposal', 'recruiterController@rejectProposal')->name('rejectProposal');//Proposal List
 
-
-//sotre Data
-Route::post('jobpoststore','companyController@jobpoststore')->name('jobpoststore');
-Route::post('jobpostupdate','companyController@jobpostupdate')->name('jobpostUpdate');
-Route::post('companyprofilestore','companyController@companyprofilestore')->name('companyprofilestore');
-Route::post('companyupdate','companyController@companyupdate')->name('companyUpdate');// Edit Company Profile
-
+    //sotre Data
+    Route::post('jobpoststore','companyController@jobpoststore')->name('jobpoststore');
+    Route::post('jobpostupdate','companyController@jobpostupdate')->name('jobpostUpdate');
+    Route::post('companyprofilestore','companyController@companyprofilestore')->name('companyprofilestore');
+    Route::post('companyupdate','companyController@companyupdate')->name('companyUpdate');// Edit Company Profile
+});
 //===========================================================================================================================================
 //Recruiter Pages
-Route::get('/recruiter/recruiterprofile','recruiterController@recruiterprofile')->name('recruiterProfile');//recruiter Profile
-Route::get('/recruiter/recruiterEdit','recruiterController@recruiteredit')->name('recruiterEdit');//recruiter Profile
-Route::get('/recruiter/addmyemployee','recruiterController@addmyemployee')->name('addmyEmployee');//add new employee from list
-Route::get('/recruiter/myemployee','recruiterController@myemployee')->name('myEmployee');//recruiter's employee
-Route::get('/recruiter/proposal','recruiterController@proposal')->name('proposal');//send a Proposal
-Route::get('/recruiter/myproposal','recruiterController@myproposal')->name('myProposal');//Proposal List
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/recruiter/recruiterprofile','recruiterController@recruiterprofile')->name('recruiterProfile');//recruiter Profile
+    Route::get('/recruiter/recruiterEdit','recruiterController@recruiteredit')->name('recruiterEdit');//recruiter Profile
+    Route::get('/recruiter/addmyemployee','recruiterController@addmyemployee')->name('addmyEmployee');//add new employee from list
+    Route::get('/recruiter/myemployee','recruiterController@myemployee')->name('myEmployee');//recruiter's employee
+    Route::get('/recruiter/proposal','recruiterController@proposal')->name('proposal');//send a Proposal
+    Route::get('/recruiter/myproposal','recruiterController@myproposal')->name('myProposal');//Proposal List
 
-
-
-
-
-
-//store Data
-Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')->name('recruiterprofilestore');
-Route::get('myempstore/{id}','recruiterController@myempstore')->name('myempstore');
-Route::post('proposalstore','recruiterController@proposalstore')->name('proposalstore');
-Route::post('recruiterupdate','recruiterController@recruiterupdate')->name('recruiterupdate');
-Route::post('myempupdate','recruiterController@myempupdate')->name('myempupdate');
-
+    //store Data
+    Route::post('recruiterprofilestore','recruiterController@recruiterprofilestore')->name('recruiterprofilestore');
+    Route::get('myempstore/{id}','recruiterController@myempstore')->name('myempstore');
+    Route::post('proposalstore','recruiterController@proposalstore')->name('proposalstore');
+    Route::post('recruiterupdate','recruiterController@recruiterupdate')->name('recruiterupdate');
+    Route::post('myempupdate','recruiterController@myempupdate')->name('myempupdate');
+});
 //===========================================================================================================================================
 //Employee Pages
-Route::get('/employee/employeeprofile','employeeController@employeeprofile')->name('employeeProfile');//Employee Profile
-Route::get('/employee/employeeedit','employeeController@employeeedit')->name('employeeEdit');//Edit Profile
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/employee/employeeprofile','employeeController@employeeprofile')->name('employeeProfile');//Employee Profile
+    Route::get('/employee/employeeedit','employeeController@employeeedit')->name('employeeEdit');//Edit Profile
 
-//store Data
-Route::post('employeeprofilestore','employeeController@employeeprofilestore')->name('employeeprofilestore');
-Route::post('employeeupdate','employeeController@employeeupdate')->name('employeeUpdate');
-
+    //store Data
+    Route::post('employeeprofilestore','employeeController@employeeprofilestore')->name('employeeprofilestore');
+    Route::post('employeeupdate','employeeController@employeeupdate')->name('employeeUpdate');
+});
 //======================================================== Admin Pages =======================================================================
 //Admin Pages
 Route::get('/admin/index','adminController@index')->name('adminindex');//Admin Index

@@ -103,21 +103,43 @@ class RodController extends Controller
             CompanyProfileModel::create([
                'emailid'=>$request->email,
             ]);
+
+            $result=Auth::attempt(['email'=>$request->email,'password'=>$request->password]);
+            if($result) {
+                return redirect(route('companyProfile'));
+            }
+            else{
+                return redirect(route('login'));
+            }
         }
         else if($request->userType==2)
         {
             RecruiterProfile::create([
                 'emailid'=>$request->email,
             ]);
+
+            $result=Auth::attempt(['email'=>$request->email,'password'=>$request->password]);
+            if($result) {
+                return redirect(route('recruiterProfile'));
+            }
+            else{
+                return redirect(route('login'));
+            }
         }
         else if($request->userType==3)
         {
             EmployeeProfileModel::create([
                 'emailid'=>$request->email,
             ]);
-        }
 
-        return redirect(route('login'));
+            $result=Auth::attempt(['email'=>$request->email,'password'=>$request->password]);
+            if($result) {
+                return redirect(route('employeeProfile'));
+            }
+            else{
+                return redirect(route('login'));
+            }
+        }
     }
 
     public function userLogin(Request $request)
@@ -136,7 +158,7 @@ class RodController extends Controller
 
             if($usertype=='1')
             {
-                return redirect(route('companyProfile'))->with('success', 'You are successfully logged in');
+                return redirect(route('companyProfile'));
             }
             else if($usertype=='2')
             {
