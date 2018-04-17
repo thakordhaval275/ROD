@@ -39,7 +39,7 @@ class SendPraposalRejectEmail implements ShouldQueue
 
         Mail::send($template_path, $data, function($message)  {
             // Set the receiver and subject of the mail.
-            $message->to($this->emailid, 'Welcome to Resource on Demand.')->subject('Praposal Accepted');
+            $message->to($this->emailid, 'Welcome to Resource on Demand.')->subject('Praposal Rejected');
             // Set the sender
             $message->from(env('MAIL_USERNAME'),'ROD');
         });
