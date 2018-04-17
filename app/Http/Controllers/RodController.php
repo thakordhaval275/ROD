@@ -31,7 +31,8 @@ class RodController extends Controller
         $company=\App\CompanyProfileModel::count();
         $employee=\App\EmployeeProfileModel::count();
 
-        return view('index',['count'=>$count,'recruiter'=>$recruiter,'company'=>$company,'employee'=>$employee]);
+        $topcmp=\App\CompanyProfileModel::get();
+        return view('index',['count'=>$count,'recruiter'=>$recruiter,'company'=>$company,'employee'=>$employee,'topcmp'=>$topcmp]);
     }
 
     public function about()

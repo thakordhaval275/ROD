@@ -496,15 +496,21 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
-                                                                <h4>Resume</h4><br>
+                                                                @if($editemp->resume!="")
+                                                                    <h4>Resume</h4><br>
+                                                                @endif
                                                                 <h4>Upload Resume</h4>
                                                             </div>
                                                             <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
-                                                                <h4>:</h4><br>
+                                                                @if($editemp->resume!="")
+                                                                    <h4>:</h4><br>
+                                                                @endif
                                                                 <h4>:</h4>
                                                             </div>
                                                             <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-                                                                <a href="{{asset('assets/pdf/resume').'/'.$editemp->resume}}" target="_blank"><u> Open File!</u></a><br><br>
+                                                                @if($editemp->resume!="")
+                                                                    <a href="{{asset('assets/pdf/resume').'/'.$editemp->resume}}" target="_blank"><u> Open File!</u></a><br><br>
+                                                                @endif
                                                                 <input type="file" class="text-left well well-sm" name="resume" @if(Auth::user()->usertype==3) value="{{$editemp->resume}}"@endif>
                                                             </div>
                                                         </div>

@@ -126,7 +126,6 @@ class recruiterController extends Controller
     {
 
         $this->validate($request, [
-            'aboutMe'=>'required',
             'firstName'=>'required',
             'lastName'=>'required',
             'gender'=>'required',
@@ -135,14 +134,7 @@ class recruiterController extends Controller
             'city'=>'required',
             'state'=>'required',
             'country'=>'required',
-            'alterEmailid'=>'required',
-            'gst'=>'required',
-            'companyName'=>'required',
-            'companyType'=>'required',
-            'industryType'=>'required',
-            'companyAddress'=>'required',
-            'referenceName'=>'required',
-            'designation'=>'required',
+            'gst'=>'required'
         ]);
 
         if($request->file('profilePhoto')!=""){

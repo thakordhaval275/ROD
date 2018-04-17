@@ -62,6 +62,16 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="col-nd-12">
+                                    <div class="form-group text-center">
+                                        <a class="btn btn-link" href="#">
+                                            Forgot Your Password?
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
                     <div class="col-md-4">

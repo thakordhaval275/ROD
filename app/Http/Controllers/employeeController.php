@@ -137,7 +137,6 @@ class employeeController extends Controller
         //dd($request);
 
         $this->validate($request, [
-            'aboutMe'=>'required',
             'firstName'=>'required',
             'lastName'=>'required',
             'address'=>'required',
