@@ -6,6 +6,7 @@ use App\CompanyProfileModel;
 use App\Contact;
 use App\ContactUs;
 use App\EmployeeProfileModel;
+use App\Jobs\SendEmailResetPassword;
 use App\RecruiterProfile;
 use App\User;
 
@@ -17,6 +18,25 @@ class RodController extends Controller
     public function login()
     {
         return view('login');
+    }
+
+    public function forgotpwd()
+    {
+        return view('resetpwd');
+    }
+
+    public function resetlink(Request $request)
+    {
+        $email=$request->email;
+
+        $this->dispatch(new SendEmailResetPassword($email));
+
+        return(redirect(route('login')));
+    }
+
+    public function changepassword()
+    {
+        return view('changepassword');
     }
 
     public function signup()
