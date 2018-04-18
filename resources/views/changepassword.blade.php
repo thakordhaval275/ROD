@@ -15,6 +15,7 @@
                     <div class="page-login-form is-selected" id="cd-reset-password">
                         <form class="cd-form" method="post" action="#">
                             {{csrf_field()}}
+                            <input type="hidden" name="useremail" value="{{$useremail}}">
                             <div class="form-group is-empty">
                                 <div class="input-icon">
                                     <i class="ti-lock"></i>

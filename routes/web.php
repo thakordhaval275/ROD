@@ -31,7 +31,8 @@ Route::get('/signup','RodController@signup')->name('signup'); //signup
 Route::get('/userlogout','RodController@userLogout')->name('userLogout');//User Logout Method
 Route::get('/forgotpwd','RodController@forgotpwd')->name('forgotPwd');//Forgot Page
 Route::post('/resetlink','RodController@resetlink')->name('resetLink');//Send Reset Link
-Route::get('/changepassword','RodController@changepassword')->name('changePassword');//Send Reset Link
+Route::get('/changepassword/{email}','RodController@changepassword')->name('changePassword');//Send Reset Link
+
 
 
 //store Data

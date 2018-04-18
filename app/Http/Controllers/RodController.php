@@ -34,9 +34,11 @@ class RodController extends Controller
         return(redirect(route('login')));
     }
 
-    public function changepassword()
+    public function changepassword($email)
     {
-        return view('changepassword');
+
+
+        return view('changepassword',['useremail'=> decrypt($email)]);
     }
 
     public function signup()
