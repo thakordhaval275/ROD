@@ -36,9 +36,21 @@ class RodController extends Controller
 
     public function changepassword($email)
     {
-
-
         return view('changepassword',['useremail'=> decrypt($email)]);
+    }
+
+    public function updatepassword(Request $request)
+    {
+        $this->validate($request,[
+            'password'=>'required|confirmed',
+            'password_confirmation'=>'required',
+        ]);
+
+        $resetpwd=User::where('email',$request->useremail)->first();
+        $resetpwd->password=bcrypt($request->password);
+        $resetpwd->save();
+
+        return(redirect(route('login')));
     }
 
     public function signup()

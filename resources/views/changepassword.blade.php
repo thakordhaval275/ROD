@@ -13,18 +13,24 @@
                 </div>
                 <div class="col-md-4 box box-primary">
                     <div class="page-login-form is-selected" id="cd-reset-password">
-                        <form class="cd-form" method="post" action="#">
+                        <form class="cd-form" method="post" action="{{route('updatePassword')}}">
                             {{csrf_field()}}
                             <input type="hidden" name="useremail" value="{{$useremail}}">
                             <div class="form-group is-empty">
-                                <div class="input-icon">
+                                <div class="input-icon  @if($errors->first('password')) has-error @endif">
                                     <i class="ti-lock"></i>
-                                    <input type="text" id="password" class="form-control" name="password" placeholder="Enter Password">
+                                    <input type="password" id="password" class="form-control" name="password" placeholder="Enter Password">
+                                    @if($errors->first('password'))
+                                        <p class="text-danger"> {{$errors->first('password')}} </p>
+                                    @endif
                                 </div>
                                 <br>
-                                <div class="input-icon">
+                                <div class="input-icon  @if($errors->first('password_confirmation')) has-error @endif">
                                     <i class="ti-lock"></i>
-                                    <input type="text" id="conf_password" class="form-control" name="conf_password" placeholder=" Enter Confirm Password">
+                                    <input type="password" id="conf_password" class="form-control" name="password_confirmation" placeholder=" Enter Confirm Password">
+                                    @if($errors->first('password_confirmation'))
+                                        <p class="text-danger"> {{$errors->first('password_confirmation')}} </p>
+                                    @endif
                                 </div>
                                 <span class="material-input"></span></div>
                             <p class="fieldset">
