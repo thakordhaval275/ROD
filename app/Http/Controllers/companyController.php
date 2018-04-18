@@ -66,11 +66,7 @@ class companyController extends Controller
         $usertype=Auth::user()->usertype;
         if($usertype==0)
         {
-            return redirect(route('companyList'));
-        }
-        else if($usertype==1)
-        {
-            return redirect(Route('companyProfile'));
+            return redirect(route('companyList'))->with('added_message','Company has been added Successfully!!');
         }
     }
 
@@ -116,7 +112,7 @@ class companyController extends Controller
         }
         else if($usertype==1)
         {
-            return redirect(Route('companyProfile'));
+            return redirect(Route('companyProfile'))->with('update_message','Your Record has been updated Successfully!!');
         }
     }
 
@@ -174,11 +170,11 @@ class companyController extends Controller
         $usertype=Auth::user()->usertype;
         if($usertype==0)
         {
-            return redirect(Route('postJobList'));
+            return redirect(Route('postJobList'))->with('success_message','Job has been Posted Successfully!!');
         }
         else if($usertype==1)
         {
-            return redirect(Route('viewJobs'));
+            return redirect(Route('viewJobs'))->with('success_message','Job has been Posted Successfully!!');
         }
     }
     
@@ -224,11 +220,11 @@ class companyController extends Controller
         $usertype=Auth::user()->usertype;
         if($usertype==0)
         {
-            return redirect(route('postJobList'));
+            return redirect(route('postJobList'))->with('update_message','Job has been updated Successfully!!');
         }
         else if($usertype==1)
         {
-            return redirect(Route('viewJobs'));
+            return redirect(Route('viewJobs'))->with('update_message','Job has been updated Successfully!!');
         }
     }
 

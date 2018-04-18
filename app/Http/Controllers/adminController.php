@@ -132,11 +132,7 @@ class adminController extends Controller
         $usertype=Auth::user()->usertype;
         if($usertype==0)
         {
-            return redirect(route('companyList'));
-        }
-        else if($usertype==1)
-        {
-            return redirect(Route('companyProfile'));
+            return redirect(route('companyList'))->with('update_message','Your Record has been updated Successfully!!');
         }
     }
 
@@ -145,7 +141,7 @@ class adminController extends Controller
         $company=CompanyProfileModel::find($id);
         $company->delete();
 
-        return redirect(route('companyList'));
+        return redirect(route('companyList'))->with('delete_message','Record has been Deleted Successfully!!');
     }
 
 	public function jobpostlist()
@@ -181,11 +177,11 @@ class adminController extends Controller
         $usertype=Auth::user()->usertype;
         if($usertype==0)
         {
-            return redirect(route('postJobList'));
+            return redirect(route('postJobList'))->with('delete_message','Record has been Deleted Successfully!!');
         }
         else if($usertype==1)
         {
-            return redirect(route('viewJobs'));
+            return redirect(route('viewJobs'))->with('delete_message','Record has been Deleted Successfully!!');
         }
     }
 
@@ -225,7 +221,7 @@ class adminController extends Controller
         $recruiter = RecruiterProfile::find($id);
         $recruiter->delete();
 
-        return redirect(route('recruiterList'));
+        return redirect(route('recruiterList'))->with('delete_message','Record has been Deleted Successfully!!');
     }
 
     public function myEmployeeList()
@@ -269,7 +265,7 @@ class adminController extends Controller
         }
         else
         {
-            return redirect(route('myProposal'));
+            return redirect(route('myProposal'))->with('delete_message','Proposal has been Deleted Successfully!!');
         }
     }
 
@@ -279,13 +275,10 @@ class adminController extends Controller
         $myemployee->delete();
 
         $usertype=Auth::user()->usertype;
-        if($usertype==0)
+
+        if($usertype==2)
         {
-            return redirect(route('myEmployeeList'));
-        }
-        else if($usertype==2)
-        {
-            return redirect(Route('myEmployee'));
+            return redirect(Route('myEmployee'))->with('delete_message','Employee has been Deleted Successfully!!');
         }
     }
 	
@@ -321,7 +314,16 @@ class adminController extends Controller
         $recruiter=EmployeeProfileModel::find($id);
         $recruiter->delete();
 
-        return redirect(route('employeeList'));
+        return redirect(route('employeeList'))->with('delete_message','Employee has been Deleted Successfully!!');
     }
 
+    //============= Contact ===============
+
+    public function destroycontact($id)
+    {
+        $contact=Contact::find($id);
+        $contact->delete();
+
+        return redirect(route('contactUsList'))->with('delete_message','Conact has been Deleted Successfully!!');
+    }
 }

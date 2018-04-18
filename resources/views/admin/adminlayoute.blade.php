@@ -20,6 +20,8 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('assets/admin/dist/css/skins/_all-skins.min.css')}}">
 
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/sweetalert2/sweetalert2.css')}}" media="screen" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -341,6 +343,7 @@
 </div>
 <!-- ./wrapper -->
 
+<script type="text/javascript" src="{{asset('assets/sweetalert2/sweetalert2.js')}}"></script>
 <!-- jQuery 3 -->
 <script src="{{asset('assets/admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!-- Bootstrap 3.3.7 -->
@@ -371,3 +374,41 @@
 </script>
 </body>
 </html>
+
+
+
+<script>
+    @if(session()->has('added_message'))
+    swal("Added!", "{{session()->get('added_message')}}", "success")
+    @endif
+</script>
+<script>
+    @if(session()->has('success_message'))
+    swal("Congratulations!", "{{session()->get('success_message')}}", "success")
+    @endif
+</script>
+<script>
+    @if(session()->has('update_message'))
+    swal("Updated!", "{{session()->get('update_message')}}", "success")
+    @endif
+</script>
+<script>
+    @if(session()->has('error_message'))
+    swal("Ooops!", "{{session()->get('error_message')}}", "error")
+    @endif
+</script>
+<script>
+    @if(session()->has('delete_message'))
+    swal("Deleted!", "{{session()->get('delete_message')}}", "success")
+    @endif
+</script>
+<script>
+    @if(session()->has('accept_message'))
+    swal("Accepted!", "{{session()->get('accept_message')}}", "success")
+    @endif
+</script>
+<script>
+    @if(session()->has('reject_message'))
+    swal("Rejected!", "{{session()->get('reject_message')}}", "error")
+    @endif
+</script>

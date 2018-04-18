@@ -25,7 +25,7 @@ Route::get('/', function () {
 //Home Pages
 Route::get('/index','RodController@index')->name('index'); //index
 Route::get('/about','RodController@about')->name('about'); //about
-Route::get('/contact','RodController@contact')->name('contactus'); //contect
+Route::get('/contact','RodController@contact')->name('contactus'); //contact
 Route::get('/login','RodController@login')->name('login'); //Login
 Route::get('/signup','RodController@signup')->name('signup'); //signup
 Route::get('/userlogout','RodController@userLogout')->name('userLogout');//User Logout Method
@@ -38,7 +38,7 @@ Route::post('/resetlink','RodController@resetlink')->name('resetLink');//Send Re
 //store Data
 Route::post('user/login','RodController@userLogin')->name('userLogin'); //login
 Route::post('user/signup','RodController@userSignup')->name('userSignup'); //signup
-Route::post('contactstore','RodController@contactstore')->name('contactstore');//Contect Store
+Route::post('contactstore','RodController@contactstore')->name('contactstore');//Contact Store
 Route::post('/update password','RodController@updatepassword')->name('updatePassword');//update New Password
 
 //===========================================================================================================================================
@@ -90,6 +90,7 @@ Route::group(['middleware' => ['auth']], function () {
 //Admin Pages
 Route::get('/admin/index','adminController@index')->name('adminindex');//Admin Index
 Route::get('/admin/contactuslist','adminController@contactuslist')->name('contactUsList');//Admin contact Us List
+Route::get('/admin/destroycontact/{id}','adminController@destroycontact')->name('destroyContact');//Destroy Contact
 Route::get('/admin','adminController@admin')->name('admin');//Admin Login Page
 Route::post('/adminlogin','adminController@adminLogin')->name('adminLogin');//Admin login validation check
 Route::get('/adminlogout','adminController@adminLogout')->name('adminLogout');//Admin Logout Method

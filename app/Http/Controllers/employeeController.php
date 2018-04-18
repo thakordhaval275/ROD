@@ -123,12 +123,7 @@ class employeeController extends Controller
 
         if($usertype==0)
         {
-            return redirect(route('employeeList'));
-        }
-        else if($usertype==3)
-        {
-            //dd($usertype);
-            return redirect(route('employeeProfile'));
+            return redirect(route('employeeList'))->with('added_message','Employee has been added Successfully!!');
         }
     }
 
@@ -205,12 +200,12 @@ class employeeController extends Controller
 
         if($usertype==0)
         {
-            return redirect(route('employeeList'));
+            return redirect(route('employeeList'))->with('update_message','Your Record has been updated Successfully!!');
         }
         else if($usertype==3)
         {
             //dd($usertype);
-            return redirect(route('employeeProfile'));
+            return redirect(route('employeeProfile'))->with('update_message','Your Record has been updated Successfully!!');
         }
     }
 }

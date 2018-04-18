@@ -286,7 +286,7 @@
                                                 </div><br><br>
                                                 <div class="form-group">
                                                     <div class="col-md-12 text-center">
-                                                        <button type="submit" class="btn btn-common" id="btnpost" onclick="alertpost()">Post</button>
+                                                        <button type="submit" class="btn btn-common" id="btnpost">Post</button>
                                                         <a id="cancel" name="cancel" class="btn btn-common" href="{{route('viewJobs')}}">Cancel</a>
                                                     </div>
                                                 </div><br><br>
@@ -301,10 +301,4 @@
         </div>
     </div>
     <br>
-    <script>
-        function alertpost()
-        {
-            alert("your job has been posted.");
-        }
-    </script>
 @endsection

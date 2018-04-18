@@ -49,7 +49,7 @@
                                         <td>{{$list->country}}</td>
                                         <td>{{$list->contactno}}</td>
                                         <td>{{$list->howcanwehelp}}</td>
-                                        <td class="text-center"><a href="{{route('destroyEmployee',['id'=>$list->id])}}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>
+                                        <td class="text-center"><a href="{{route('destroyContact',['id'=>$list->id])}}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

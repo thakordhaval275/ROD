@@ -12,6 +12,7 @@ use App\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Alert;
 
 class RodController extends Controller
 {
@@ -50,7 +51,8 @@ class RodController extends Controller
         $resetpwd->password=bcrypt($request->password);
         $resetpwd->save();
 
-        return(redirect(route('login')));
+
+        return(redirect(route('login')))->with('success_message','Password has been updated Successfully!!');
     }
 
     public function signup()
@@ -104,6 +106,7 @@ class RodController extends Controller
             'contactno'=>$request->contactNo,
             'howcanwehelp'=>$request->howCanIHelp
         ]);
+
         return redirect(route('index'));
     }
 

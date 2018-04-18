@@ -89,11 +89,11 @@
                                                 <label>Term</label>
                                                 <div class="form-group">
                                                     <label>
-                                                        <input id="term" type="radio" name="term" value="long" class="minimal-red" >&nbsp;&nbsp;Long Term
+                                                        <input id="term" type="radio" name="term" value="Long Term" class="minimal-red" >&nbsp;&nbsp;Long Term
                                                     </label>
                                                     &nbsp;&nbsp;&nbsp;
                                                     <label>
-                                                        <input id="term" type="radio" name="term" value="short" class="minimal-red">&nbsp;&nbsp;Short Term
+                                                        <input id="term" type="radio" name="term" value="Short Term" class="minimal-red">&nbsp;&nbsp;Short Term
                                                     </label>
                                                 </div>
                                                 @if($errors->first('term'))

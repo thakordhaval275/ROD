@@ -113,13 +113,8 @@ class recruiterController extends Controller
         $usertype=Auth::user()->usertype;
         if($usertype==0)
         {
-            return redirect(Route('recruiterList'));
+            return redirect(Route('recruiterList'))->with('added_message','Recruiter has been added Successfully!!');
         }
-        else if($usertype==2)
-        {
-            return redirect(Route('recruiterProfile'));
-        }
-
     }
 
     public function recruiterupdate(Request $request)
@@ -176,11 +171,11 @@ class recruiterController extends Controller
         $usertype=Auth::user()->usertype;
         if($usertype==0)
         {
-            return redirect(route('recruiterList'));
+            return redirect(route('recruiterList'))->with('update_message','Your Record has been updated Successfully!!');
         }
         else if($usertype==2)
         {
-            return redirect(Route('recruiterProfile'));
+            return redirect(Route('recruiterProfile'))->with('update_message','Your Record has been updated Successfully!!');
         }
     }
 
@@ -276,7 +271,7 @@ class recruiterController extends Controller
             $myempmail=EmployeeProfileModel::find($myemp->id);
             $this->dispatch(new SendAddEmployeeEmail($myempmail->emailid,$useremail));
 
-            return redirect(Route('myEmployee'));
+            return redirect(Route('myEmployee'))->with('success_message','This Employee has been added in your list Successfully!!');
         }
     }
 
@@ -403,7 +398,7 @@ class recruiterController extends Controller
 
         ]);
 
-        return redirect(route('myProposal'));
+        return redirect(route('myProposal'))->with('success_message','Your Proposal has been sent Successfully!!');
     }
 
 
@@ -417,7 +412,7 @@ class recruiterController extends Controller
 
         $this->dispatch(new SendPraposalAcceptEmail($proposal->emailid,$proposal->companyemail));
 
-        return redirect(route('myProposal'));
+        return redirect(route('myProposal'))->with('accept_message','Email has been sent Successfully!!');
     }
 
     public function rejectProposal(Request $request)
@@ -430,7 +425,7 @@ class recruiterController extends Controller
 
         $this->dispatch(new SendPraposalRejectEmail($proposal->emailid,$proposal->companyemail));
 
-        return redirect(route('myProposal'));
+        return redirect(route('myProposal'))->with('reject_message','Rejection Email has been sent Successfully!!');
     }
 
 }

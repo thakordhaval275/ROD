@@ -38,6 +38,11 @@
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/colors/red.css')}}" media="screen" />
 
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/sweetalert2/sweetalert2.css')}}" media="screen" />
+
+
+
+
 </head>
 
 <body>
@@ -73,6 +78,7 @@
 </div>
 
 <!-- Main JS  -->
+<script type="text/javascript" src="{{asset('assets/sweetalert2/sweetalert2.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/jquery-min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/material.min.js')}}"></script>
@@ -92,3 +98,36 @@
 
 </body>
 </html>
+
+<script>
+    @if(session()->has('success_message'))
+    swal("Congratulations!", "{{session()->get('success_message')}}", "success")
+    @endif
+</script>
+<script>
+    @if(session()->has('update_message'))
+    swal("Updated!", "{{session()->get('update_message')}}", "success")
+    @endif
+</script>
+<script>
+    @if(session()->has('error_message'))
+    swal("Ooops!", "{{session()->get('error_message')}}", "error")
+    @endif
+</script>
+<script>
+    @if(session()->has('delete_message'))
+    swal("Deleted!", "{{session()->get('delete_message')}}", "success")
+    @endif
+</script>
+<script>
+    @if(session()->has('accept_message'))
+    swal("Accepted!", "{{session()->get('accept_message')}}", "success")
+    @endif
+</script>
+<script>
+    @if(session()->has('reject_message'))
+    swal("Rejected!", "{{session()->get('reject_message')}}", "error")
+    @endif
+</script>
+
+
