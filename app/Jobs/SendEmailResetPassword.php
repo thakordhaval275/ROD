@@ -38,6 +38,7 @@ class SendEmailResetPassword implements ShouldQueue
 //        $template_path = 'email-template.praposal_accept_email';
 
         Mail::send($template_path, $data, function($message)  {
+            dd($message);
             // Set the receiver and subject of the mail.
             $message->to($this->email, 'Welcome to Resource on Demand.')->subject('Reset Password');
             // Set the sender
